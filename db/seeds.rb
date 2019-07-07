@@ -6,13 +6,13 @@ puts "Building Romes in less than a day..."
 city_attributes = [
   {
     name: "Barcelona",
-    country: "Spain",
-    photo_url: "https://images.unsplash.com/photo-1507619579562-f2e10da1ec86"
+    country: "Spain"
+    # remote_photo_url: "https://images.unsplash.com/photo-1507619579562-f2e10da1ec86"
   },
   {
     name: "Canggu",
-    country: "Indonesia",
-    photo_url: "https://images.unsplash.com/photo-1518982380512-5a3c6d7118c4"
+    country: "Indonesia"
+    # remote_photo_url: "https://images.unsplash.com/photo-1518982380512-5a3c6d7118c4"
   }
 ]
 
@@ -30,7 +30,7 @@ spot_attributes = [
     neighborhood: "Gràcia",
     phone_number: "+34 667 23 81 72",
     website: "https://www.lewagon.com/barcelona",
-    photo_url: "https://secure.meetupstatic.com/photos/theme_body/5/a/2/c/full_7163084.jpeg",
+    # remote_photo_url: "https://secure.meetupstatic.com/photos/theme_body/5/a/2/c/full_7163084.jpeg",
     city_id: 1
   },
   {
@@ -42,7 +42,7 @@ spot_attributes = [
     neighborhood: "Gràcia",
     phone_number: "+34 936 67 27 15",
     website: "https://www.slowmov.com",
-    photo_url: "https://i.pinimg.com/originals/e8/d9/90/e8d990dbcfc32cf5563b7b006c3e0aa0.jpg",
+    # remote_photo_url: "https://i.pinimg.com/originals/e8/d9/90/e8d990dbcfc32cf5563b7b006c3e0aa0.jpg",
     city_id: 1
   },
     {
@@ -54,7 +54,7 @@ spot_attributes = [
     neighborhood: "Gràcia",
     phone_number: "+34 667 23 81 72",
     website: "www.slowmov.com",
-    photo_url: "https://media.timeout.com/images/100677963/630/472/image.jpg",
+    # remote_photo_url: "https://media.timeout.com/images/100677963/630/472/image.jpg",
     city_id: 1
   }
 ]
