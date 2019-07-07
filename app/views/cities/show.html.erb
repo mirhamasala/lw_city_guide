@@ -1,0 +1,15 @@
+<h1><%= @city.name %></h1>
+<p><%= @city.country %><p>
+
+<% @city.spots.each do |spot| %>
+  <%= link_to city_spot_path(spot), class: "card-wrap" do %>
+  <div class="card-hotspot">
+    <p class="card-hotspot__sub-category">
+      <%= spot.sub_category %>
+    </p>
+    <h2 class="card-hotspot__name">
+      <%= spot.name %>
+    </div>
+  </div>
+  <% end %>
+<% end %>
