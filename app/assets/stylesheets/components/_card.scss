@@ -7,8 +7,20 @@
 }
 
 .card-spot {
-  background: $white;
-  padding: 24px;
+  display: flex;
+  align-items: center;
+  padding: 24px 12px;
+  &__photo {
+    height: 128px;
+    width: 128px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+  }
+  &__text {
+    padding: 12px;
+    margin-left: 12px
+  }
   &__sub-category {
     font-size: 0.875rem;
     font-weight: lighter;

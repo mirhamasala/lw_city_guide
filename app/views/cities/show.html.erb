@@ -7,8 +7,11 @@
   <% @city.spots.each do |spot| %>
     <%= link_to spot_path(spot), class: "card-wrap" do %>
     <div class="card-spot spacer-xs">
-      <p class="card-spot__sub-category"><%= spot.sub_category %></p>
-      <h2 class="card-spot__name"><%= spot.name %></h2>
+      <%= image_tag "barcelona.jpeg", class: "card-spot__photo" %>
+      <div class="card-spot__text">
+        <p class="card-spot__sub-category"><%= spot.sub_category %></p>
+        <h2 class="card-spot__name"><%= spot.name %></h2>
+      </div>
     </div>
     <% end %>
   <% end %>
