@@ -53,7 +53,6 @@ spot_attributes = [
     address: "Carrer de Luis Antúnez 18",
     neighborhood: "Gràcia",
     phone_number: "+34 667 23 81 72",
-    website: "www.slowmov.com",
     # remote_photo_url: "https://media.timeout.com/images/100677963/630/472/image.jpg",
     city_id: 1
   }

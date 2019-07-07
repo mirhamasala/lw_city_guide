@@ -9,7 +9,9 @@
     <div class="spot__details">
       <p><%= @spot.address %></p>
       <p><%= @spot.phone_number %></p>
-      <p><%= link_to "Website", @spot.website %></p>
+      <% if @spot.website %>
+        <p><%= link_to "Website", @spot.website %></p>
+      <% end %>
     </div>
   </div>
 </div>
