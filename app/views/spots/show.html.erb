@@ -1,0 +1,15 @@
+<div class="main-container">
+  <div class="hotspot">
+    <div class="hotspot__photo"></div>
+    <div class="hotspot__header">
+      <h1><%= @spot.name %></h1>
+      <span><%= @spot.sub_category %></span>
+    </div>
+    <p><%= @spot.description %></p>
+    <div class="hotspot__details">
+      <p><%= @spot.address %></p>
+      <p><%= @spot.phone_number %></p>
+      <p><%= link_to "Website", @spot.website %></p>
+    </div>
+  </div>
+</div>

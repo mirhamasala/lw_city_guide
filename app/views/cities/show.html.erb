@@ -2,10 +2,10 @@
   <h1><%= @city.name %></h1>
   <p><%= @city.country %><p>
 </div>
-<div class="city-spots">
+<div class="city-spots main-container">
   <span class="city-spots__category">Eat</span>
   <% @city.spots.each do |spot| %>
-    <%= link_to city_spot_path(spot), class: "card-wrap" do %>
+    <%= link_to spot_path(spot), class: "card-wrap" do %>
     <div class="card-hotspot spacer-xs">
       <p class="card-hotspot__sub-category"><%= spot.sub_category %></p>
       <h2 class="card-hotspot__name"><%= spot.name %></h2>
