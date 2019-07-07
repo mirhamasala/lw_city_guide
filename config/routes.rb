@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "cities#home"
 
   resources :cities, only: [:show]
   resources :spots, only: [:show, :destroy]

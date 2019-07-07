@@ -1,6 +1,11 @@
 class CitiesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :home]
   before_action :set_city, only: [:show]
+
+  def home
+    @city = City.find_by_name("Barcelona")
+    render "cities/show"
+  end
 
   def show
   end
