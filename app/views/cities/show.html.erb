@@ -1,15 +1,15 @@
-<h1><%= @city.name %></h1>
-<p><%= @city.country %><p>
-
-<% @city.spots.each do |spot| %>
-  <%= link_to city_spot_path(spot), class: "card-wrap" do %>
-  <div class="card-hotspot">
-    <p class="card-hotspot__sub-category">
-      <%= spot.sub_category %>
-    </p>
-    <h2 class="card-hotspot__name">
-      <%= spot.name %>
+<div class="city-header">
+  <h1><%= @city.name %></h1>
+  <p><%= @city.country %><p>
+</div>
+<div class="city-spots">
+  <span class="city-spots__category">Eat</span>
+  <% @city.spots.each do |spot| %>
+    <%= link_to city_spot_path(spot), class: "card-wrap" do %>
+    <div class="card-hotspot spacer-xs">
+      <p class="card-hotspot__sub-category"><%= spot.sub_category %></p>
+      <h2 class="card-hotspot__name"><%= spot.name %></h2>
     </div>
-  </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

@@ -5,3 +5,15 @@
     text-decoration: none;
   }
 }
+
+.card-hotspot {
+  background: $white;
+  padding: 24px;
+  &__sub-category {
+    font-size: 0.875rem;
+    font-weight: lighter;
+  }
+  &__name {
+    font-size: 1.25rem;
+  }
+}
