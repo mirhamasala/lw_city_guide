@@ -6,11 +6,12 @@ class CreateSpots < ActiveRecord::Migration[5.2]
       t.string :sub_category
       t.text :description
       t.string :address
+      t.string :neighborhood
       t.float :latitude
       t.float :longitude
       t.string :phone_number
       t.string :website
-      t.string :photo_url
+      t.string :photo
       t.references :city, foreign_key: true
 
       t.timestamps

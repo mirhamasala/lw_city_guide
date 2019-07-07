@@ -1,8 +1,8 @@
 class City < ApplicationRecord
-  mount_uploader :photo_url, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
   has_many :spots
 
   validates :name, presence: true, uniqueness: true
-  validates :country, :photo_url, presence: true
+  validates :country, presence: true
 end
