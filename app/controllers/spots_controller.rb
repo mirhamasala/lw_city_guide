@@ -1,10 +1,11 @@
 class SpotsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:show]
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
 
   def new
     @city = City.find_by_name("Barcelona")
     @spot = Spot.new
+    authorize @spot
   end
 
   def create
@@ -14,6 +15,7 @@ class SpotsController < ApplicationController
     @spot.user = @user
     @spot.city = @city
     @spot.save
+    authorize @spot
 
     if @spot.save
       redirect_to @spot
@@ -23,13 +25,17 @@ class SpotsController < ApplicationController
   end
 
   def show
+    authorize @spot
     @city = City.find_by_name("Barcelona")
   end
 
   def edit
+    authorize @spot
   end
 
   def update
+    authorize @spot
+
     if @spot.update(spot_params)
       redirect_to spot_path(@spot)
     else
@@ -38,6 +44,7 @@ class SpotsController < ApplicationController
   end
 
   def destroy
+    authorize @spot
     @spot.destroy
     redirect_to root_path
   end
