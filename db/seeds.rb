@@ -1,6 +1,11 @@
 puts "Wiping out the city..."
 City.destroy_all
 Spot.destroy_all
+User.destroy_all
+
+puts "Adding city builders..."
+User.create!(email: "mirha@testing.com", password: "testing")
+User.create!(email: "g@testing.com", password: "testing")
 
 puts "Building Romes in less than a day..."
 city_attributes = [
@@ -31,7 +36,8 @@ spot_attributes = [
     phone_number: "+34 667 23 81 72",
     website: "https://www.lewagon.com/barcelona",
     # remote_photo_url: "https://secure.meetupstatic.com/photos/theme_body/5/a/2/c/full_7163084.jpeg",
-    city_id: 1
+    city_id: 1,
+    user_id: 1
   },
   {
     name: "SlowMov",
@@ -43,18 +49,20 @@ spot_attributes = [
     phone_number: "+34 936 67 27 15",
     website: "https://www.slowmov.com",
     # remote_photo_url: "https://i.pinimg.com/originals/e8/d9/90/e8d990dbcfc32cf5563b7b006c3e0aa0.jpg",
-    city_id: 1
+    city_id: 1,
+    user_id: 1
   },
     {
     name: "Can Ros",
     category: "eat",
     sub_category: "Sandwiches · Spanish Carbs",
     description: "Set your teeth into the crunchiest sandwiches ever.",
-    address: "Carrer de Luis Antúnez 18",
+    address: "Almirall Aixada 7",
     neighborhood: "Gràcia",
     phone_number: "+34 667 23 81 72",
     # remote_photo_url: "https://media.timeout.com/images/100677963/630/472/image.jpg",
-    city_id: 1
+    city_id: 1,
+    user_id: 1
   }
 ]
 
