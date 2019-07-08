@@ -5,6 +5,7 @@ class CitiesController < ApplicationController
   def home
     @city = City.find_by_name("Barcelona")
     render "cities/show"
+    authorize @city
   end
 
   def show
@@ -14,5 +15,6 @@ class CitiesController < ApplicationController
 
   def set_city
     @city = City.find(params[:id])
+    # authorize @city
   end
 end
