@@ -1,5 +1,5 @@
 class CitiesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :home]
+  skip_before_action :authenticate_user!, only: [:show, :home]
   before_action :set_city, only: [:show]
 
   def home
