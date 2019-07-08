@@ -5,6 +5,13 @@ class SpotsController < ApplicationController
   def new
     @city = City.find_by_name("Barcelona")
     @spot = Spot.new
+    for city in current_user.cities
+      unless city.id == @city.id
+        redirect_to root_path
+      else
+        authorize @spot
+      end
+    end
     authorize @spot
   end
 
