@@ -14,7 +14,7 @@
       <% end %>
     </div>
   </div>
-</div>
 
-<%= link_to :edit, edit_spot_path(@spot) %>
-<%= link_to :destroy, spot_path(@spot), method: :delete %>
+  <%= link_to :edit, edit_spot_path(@spot) if policy(@spot).edit? %>
+  <%= link_to :destroy, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
+</div>
