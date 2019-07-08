@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :cities, only: [:show] do
     resources :spots, only: [:new, :create]
   end
-  resources :spots, only: [:show, :destroy]
+  resources :spots, only: [:show, :edit, :update, :destroy]
 end
