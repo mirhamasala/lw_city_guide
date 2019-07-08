@@ -1,0 +1,4 @@
+<% for city in @cities %>
+  <%# cl_image_tag "city_guide/#{city.name.downcase}" %>
+  <%= link_to city.name, city_path(city) %>
+<% end %>

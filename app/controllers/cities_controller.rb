@@ -1,11 +1,9 @@
 class CitiesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :home]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_city, only: [:show]
 
-  def home
-    @city = City.find_by_name("Barcelona")
-    render "cities/show"
-    authorize @city
+  def index
+    @cities = policy_scope(City)
   end
 
   def show
@@ -15,6 +13,6 @@ class CitiesController < ApplicationController
 
   def set_city
     @city = City.find(params[:id])
-    # authorize @city
+    authorize @city
   end
 end

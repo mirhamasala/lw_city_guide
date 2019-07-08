@@ -1,23 +1,19 @@
 class SpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
+  before_action :set_city, only: [:new, :create]
 
   def new
-    @city = City.find_by_name("Barcelona")
     @spot = Spot.new
-    for city in current_user.cities
-      unless city.id == @city.id
-        redirect_to root_path
-      else
-        authorize @spot
-      end
+    unless current_user.cities.include?(@city)
+      flash[:alert] = "You can't add a spot for #{@city.name}"
+      redirect_back(fallback_location: root_path)
     end
     authorize @spot
   end
 
   def create
     @user = User.find(1)
-    @city = City.find(params[:city_id])
     @spot = Spot.new(spot_params)
     @spot.user = @user
     @spot.city = @city
@@ -32,17 +28,12 @@ class SpotsController < ApplicationController
   end
 
   def show
-    authorize @spot
-    @city = City.find_by_name("Barcelona")
   end
 
   def edit
-    authorize @spot
   end
 
   def update
-    authorize @spot
-
     if @spot.update(spot_params)
       redirect_to spot_path(@spot)
     else
@@ -51,15 +42,19 @@ class SpotsController < ApplicationController
   end
 
   def destroy
-    authorize @spot
     @spot.destroy
-    redirect_to root_path
+    redirect_to city_path(@spot.city)
   end
 
   private
 
   def set_spot
     @spot = Spot.find(params[:id])
+    authorize @spot
+  end
+
+  def set_city
+    @city = City.find(params[:city_id])
   end
 
   def spot_params

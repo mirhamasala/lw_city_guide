@@ -5,11 +5,7 @@ class CityPolicy < ApplicationPolicy
     end
   end
 
-  def home?
+  def show?
     true
   end
-
-  def create
-  end
-
 end
