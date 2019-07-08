@@ -4,8 +4,9 @@ Spot.destroy_all
 User.destroy_all
 
 puts "Adding city builders..."
-User.create!(email: "mirha@testing.com", password: "testing")
-User.create!(email: "g@testing.com", password: "testing")
+User.create!(email: "mirha@testing.com", password: "testing", admin: true)
+User.create!(email: "g@testing.com", password: "testing", admin: true)
+User.create!(email: "gm@testing.com", password: "testing")
 
 puts "Building Romes in less than a day..."
 city_attributes = [
