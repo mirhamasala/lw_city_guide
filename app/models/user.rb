@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :spots
-  has_many :cities, through: :spots
+  has_and_belongs_to_many :cities
 end
