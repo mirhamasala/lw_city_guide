@@ -1,4 +1,9 @@
-<% for city in @cities %>
-  <%# cl_image_tag "city_guide/#{city.name.downcase}" %>
-  <%= link_to city.name, city_path(city) %>
-<% end %>
+<div class="main-container main-container--cities">
+  <% for city in @cities %>
+    <div class="card-city">
+      <%= image_tag "#{city.name.downcase}.jpeg", class: "card-city__photo" %>
+      <%# cl_image_tag "city_guide/#{city.name.downcase}" %>
+      <%= link_to city.name, city_path(city) %>
+    </div>
+  <% end %>
+</div>
