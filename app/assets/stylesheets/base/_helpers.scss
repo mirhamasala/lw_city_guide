@@ -2,10 +2,41 @@
   padding: 0 24px;
 }
 
+.form-container {
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
 .text-center {
   text-align: center;
 }
 
 .spacer-xs {
   margin-bottom: 12px;
+}
+
+/* Media Queries */
+/* Styles for viewports that are 576px wide or more */
+@media screen and (min-width: 576px) {
+  .form-container {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-container {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .form-container {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form-container {
+    width: 25%;
+  }
 }
