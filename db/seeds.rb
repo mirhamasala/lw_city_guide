@@ -26,7 +26,7 @@ city_attributes = [
 City.create!(city_attributes)
 puts "Pinned Barcelona & Madrid on the map..."
 
-puts "Adding ownders to cities..."
+puts "Adding owners to cities..."
 g.cities << City.find_by(name: "Madrid")
 
 lars.cities << City.find_by(name: "Barcelona")
