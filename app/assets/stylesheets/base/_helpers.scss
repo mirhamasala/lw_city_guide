@@ -1,9 +1,5 @@
 .main-container {
   padding: 0 24px;
-}
-
-.form-container {
-  padding: 0 24px;
   margin: 0 auto;
 }
 
@@ -18,25 +14,42 @@
 /* Media Queries */
 /* Styles for viewports that are 576px wide or more */
 @media screen and (min-width: 576px) {
-  .form-container {
-    width: 50%;
+  .main-container {
+    &--form {
+      width: 50%;
+    }
+    &--cities {
+      width: 60%;
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
-  .form-container {
-    width: 40%;
+  .main-container {
+    &--form {
+      width: 40%;
+    }
+    &--cities {
+      width: 50%;
+    }
   }
 }
 
 @media screen and (min-width: 992px) {
-  .form-container {
-    width: 35%;
+  .main-container {
+    &--form {
+      width: 35%;
+    }
+    &--cities {
+      width: 50%;
+    }
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .form-container {
-    width: 25%;
+  .main-container {
+    &--form {
+      width: 25%;
+    }
   }
 }
