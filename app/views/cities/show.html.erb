@@ -1,19 +1,21 @@
-<div class="city-header">
-  <h1><%= @city.name %></h1>
-  <p><%= @city.country %><p>
-</div>
-<div class="city-spots main-container">
-  <span class="city-spots__category">Eat</span>
-  <% @city.spots.each do |spot| %>
-    <%= link_to spot_path(spot), class: "card-wrap" do %>
-    <div class="card-spot spacer-xs">
-      <%= image_tag "barcelona.jpeg", class: "card-spot__photo" %>
-      <%# cl_image_tag "city_guide/barcelona", class: "card-spot__photo" %>
-      <div class="card-spot__text">
-        <p class="card-spot__sub-category"><%= spot.sub_category %></p>
-        <h2 class="card-spot__name"><%= spot.name %></h2>
+<div class="city-spots">
+  <div class="city-spots__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "#{@city.name.downcase}.jpeg" %>')">
+    <h1><%= @city.name %></h1>
+    <p><%= @city.country %><p>
+  </div>
+  <div class="main-container">
+    <span class="city-spots__category">Eat</span>
+    <% @city.spots.each do |spot| %>
+      <%= link_to spot_path(spot), class: "card-wrap" do %>
+      <div class="card-spot spacer-xs">
+        <%= image_tag "barcelona.jpeg", class: "card-spot__photo" %>
+        <%# cl_image_tag "city_guide/barcelona", class: "card-spot__photo" %>
+        <div class="card-spot__text">
+          <p class="card-spot__sub-category"><%= spot.sub_category %></p>
+          <h2 class="card-spot__name"><%= spot.name %></h2>
+        </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
