@@ -28,6 +28,7 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @rating = Rating.where(user: current_user, spot: @spot).first || Rating.new
   end
 
   def edit

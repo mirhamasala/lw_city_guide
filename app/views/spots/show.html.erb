@@ -18,5 +18,12 @@
   <% if user_signed_in? %>
     <%= link_to :edit, edit_spot_path(@spot) if policy(@spot).edit? %>
     <%= link_to :destroy, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
+    <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
   <% end %>
 </div>
+
+<% content_for :after_js do %>
+  <script>
+    window.ratingSlider();
+  </script>
+<% end %>
