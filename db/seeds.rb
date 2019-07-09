@@ -26,7 +26,7 @@ city_attributes = [
 City.create!(city_attributes)
 puts "Pinned Barcelona & Madrid on the map..."
 
-puts "Adding owners to cities..."
+puts "Adding runners to cities..."
 g.cities << City.find_by(name: "Madrid")
 
 lars.cities << City.find_by(name: "Barcelona")
@@ -37,7 +37,7 @@ laura.cities << City.find_by(name: "Madrid")
 
 mirha.cities << City.find_by(name: "Barcelona")
 mirha.cities << City.find_by(name: "Madrid")
-puts "Cities owned..."
+puts "Cities attached to runners..."
 
 puts "Hunting hotspots..."
 spot_attributes = [
