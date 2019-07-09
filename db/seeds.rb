@@ -4,9 +4,11 @@ Spot.destroy_all
 User.destroy_all
 
 puts "Adding city builders..."
-User.create!(email: "mirha@testing.com", password: "testing", admin: true)
-User.create!(email: "g@testing.com", password: "testing", admin: true)
-User.create!(email: "gm@testing.com", password: "testing")
+g = User.create!(email: "g@testing.com", password: "testing", admin: true)
+lars = User.create!(email: "lars@testing.com", password: "testing", admin: true)
+laura = User.create!(email: "laura@testing.com", password: "testing", admin: true)
+mirha = User.create!(email: "mirha@testing.com", password: "testing", admin: true)
+gm = User.create!(email: "gm@testing.com", password: "testing")
 
 puts "Building Spanish Romes in less than a day..."
 city_attributes = [
@@ -23,6 +25,19 @@ city_attributes = [
 
 City.create!(city_attributes)
 puts "Pinned Barcelona & Madrid on the map..."
+
+puts "Adding ownders to cities..."
+g.cities << City.find_by(name: "Madrid")
+
+lars.cities << City.find_by(name: "Barcelona")
+lars.cities << City.find_by(name: "Madrid")
+
+laura.cities << City.find_by(name: "Barcelona")
+laura.cities << City.find_by(name: "Madrid")
+
+mirha.cities << City.find_by(name: "Barcelona")
+mirha.cities << City.find_by(name: "Madrid")
+puts "Cities owned..."
 
 puts "Hunting hotspots..."
 spot_attributes = [
