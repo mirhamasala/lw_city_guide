@@ -1,4 +1,4 @@
-<p><%= spot.name %></p>
+<p><%= link_to spot.name, spot_path(spot) %></p>
 <p><%= spot.address %></p>
 <p><%= spot.phone_number %></p>
 <p><%= link_to "Website", spot.website if spot.website %></p>
