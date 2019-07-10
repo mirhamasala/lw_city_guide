@@ -4,10 +4,10 @@ Spot.destroy_all
 User.destroy_all
 
 puts "Adding city builders..."
-g = User.create!(email: "g@testing.com", password: "testing", admin: true)
-lars = User.create!(email: "lars@testing.com", password: "testing", admin: true)
-laura = User.create!(email: "laura@testing.com", password: "testing", admin: true)
-mirha = User.create!(email: "mirha@testing.com", password: "testing", admin: true)
+g = User.create!(email: "g@testing.com", password: "testing", github_handle: "DctrG", admin: true)
+lars = User.create!(email: "lars@testing.com", password: "testing", github_handle: "datene", admin: true)
+laura = User.create!(email: "laura@testing.com", password: "testing", github_handle: "lozdesign", admin: true)
+mirha = User.create!(email: "mirha@testing.com", password: "testing", github_handle: "mirhamasala", admin: true)
 gm = User.create!(email: "gm@testing.com", password: "testing")
 
 puts "Building Spanish Romes in less than a day..."
