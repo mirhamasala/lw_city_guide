@@ -7,6 +7,16 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @city.spots.where.not(latitude: nil, longtitude: nil)
+
+    @markers = @city.spots.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { spot: spot }),
+        image_url: helpers.asset_url("placemark_#{spot.category}.png")
+      }
+    end
   end
 
   private

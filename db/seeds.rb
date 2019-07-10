@@ -43,7 +43,7 @@ puts "Hunting hotspots..."
 spot_attributes = [
   {
     name: "Le Wagon Barcelona",
-    category: "other",
+    category: "wagon",
     sub_category: "Coding Bootcamp · 🚀",
     description: "Change your life, learn to code.",
     address: "Carrer d'en Grassot 101",
@@ -72,7 +72,7 @@ spot_attributes = [
     category: "eat",
     sub_category: "Sandwiches · Spanish Carbs",
     description: "Set your teeth into the crunchiest sandwiches ever.",
-    address: "Almirall Aixada 7",
+    address: "Carrer de l'Almirall Aixada 7",
     neighborhood: "Gràcia",
     phone_number: "+34 667 23 81 72",
     # remote_photo_url: "https://media.timeout.com/images/100677963/630/472/image.jpg",
@@ -84,7 +84,7 @@ spot_attributes = [
     category: "eat",
     sub_category: "Pizza · Real Deal",
     description: "Neapolitan dough like it should be.",
-    address: "Avinguda de Francesc Cambó 30",
+    address: "Av. de Francesc Cambó 30",
     neighborhood: "Ciutat Vella",
     phone_number: "+34 686 19 26 90",
     website: "https://www.facebook.com/nap.pizzeria/",
@@ -105,11 +105,11 @@ spot_attributes = [
     user_id: 1
   },
     {
-    name: "Boqueria Market",
+    name: "Mercado de La Boqueria",
     category: "shop",
     sub_category: "Market · Veggies & More",
     description: "Nothing like filling your picnic basket at Boqueria.",
-    address: "La Rambla 89",
+    address: "La Rambla 91, 08001 Barcelona",
     neighborhood: "Ciutat Vella",
     phone_number: "+34 933 18 25 84",
     website: "http://www.boqueria.info",
@@ -119,7 +119,7 @@ spot_attributes = [
   },
   {
     name: "Le Wagon Madrid",
-    category: "other",
+    category: "wagon",
     sub_category: "Coding Bootcamp · 🚀",
     description: "Change your life, learn to code.",
     address: "Calle de Juan de Mariana 15",
@@ -162,6 +162,8 @@ spot_attributes = [
     sub_category: "Market · Vintage Deal",
     description: "The Boqueria never stood a chance.",
     address: "Plaza de San Miguel 5",
+    latitude: 40.41537,
+    longitude: 3.70899,
     neighborhood: "Centro",
     phone_number: "+34 915 42 49 36",
     website: "http://www.mercadodesanmiguel.es/",
