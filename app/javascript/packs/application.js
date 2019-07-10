@@ -1,4 +1,4 @@
 import "bootstrap";
-import { checkIfAvatar } from "./github_avatar";
+import { initGetAvatar } from "./github_avatar";
 
-document.addEventListener("DOMContentLoaded", checkIfAvatar);
+document.addEventListener("DOMContentLoaded", initGetAvatar);
