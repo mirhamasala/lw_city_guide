@@ -12,7 +12,8 @@ class CitiesController < ApplicationController
     @markers = @city.spots.map do |spot|
       {
         lat: spot.latitude,
-        lng: spot.longitude
+        lng: spot.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { spot: spot })
       }
     end
   end
