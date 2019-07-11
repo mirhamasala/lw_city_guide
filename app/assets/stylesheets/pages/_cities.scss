@@ -1,12 +1,18 @@
-.card-city {
-  display: flex;
-  flex-direction: column;
-  padding: 24px 12px;
-  &__photo {
-    height: 192px;
-    max-width: 100%;
+.cities {
+  &__header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 92px;
+  }
+  &__headline {
+    position: absolute;
+    font-size: 2rem;
+  }
+  &__background {
+    width: 100%;
+    max-height: 100%;
     object-fit: cover;
-    object-position: center;
-    border-radius: 4px;
+    z-index: -1;
   }
 }

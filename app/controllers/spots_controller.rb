@@ -13,18 +13,15 @@ class SpotsController < ApplicationController
   end
 
   def create
-    @user = User.find(1)
     @spot = Spot.new(spot_params)
-    @spot.user = @user
+    @spot.user = current_user
     @spot.city = @city
-    @spot.save
-    authorize @spot
-
     if @spot.save
       redirect_to @spot
     else
       render :new
     end
+    authorize @spot
   end
 
   def show

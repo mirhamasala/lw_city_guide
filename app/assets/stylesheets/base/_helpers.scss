@@ -11,6 +11,18 @@
   margin-bottom: 12px;
 }
 
+.spacer-s {
+  margin-bottom: 24px;
+}
+
+.spacer-md {
+  margin-bottom: 48px;
+}
+
+.spacer-lg {
+  margin-bottom: 96px;
+}
+
 /* Media Queries */
 /* Styles for viewports that are 576px wide or more */
 @media screen and (min-width: 576px) {

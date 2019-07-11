@@ -1,9 +1,19 @@
-<div class="main-container main-container--cities">
-  <% for city in @cities %>
-    <div class="card-city">
-      <%= image_tag "#{city.name.downcase}.jpeg", class: "card-city__photo" %>
-      <%# cl_image_tag "city_guide/#{city.name.downcase}" %>
-      <%= link_to city.name, city_path(city) %>
-    </div>
-  <% end %>
+<div class="cities">
+  <div class="cities__header spacer-md">
+    <h1 class="cities__headline">Explore <span class="highlight">Spain</span></h1>
+    <%= show_svg("cities_background.svg") %>
+  </div>
+  <div class="cities__main main-container">
+    <% for city in @cities %>
+      <%= link_to city_path(city), class: "card-wrap" do %>
+        <div class="card-spot spacer-xs">
+          <%= image_tag "#{city.name.downcase}.jpeg", class: "card-spot__photo" %>
+          <div class="card-spot__text">
+            <p><%= city.name %></p>
+            <p><%= city.spots.count %> spots</p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
