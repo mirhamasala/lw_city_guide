@@ -28,12 +28,23 @@ ActiveRecord::Schema.define(version: 2019_07_10_002841) do
     t.bigint "user_id", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "score"
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_ratings_on_spot_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
   create_table "spots", force: :cascade do |t|
     t.string "name"
     t.string "category"
     t.string "sub_category"
     t.text "description"
     t.string "address"
+    t.string "neighborhood"
     t.float "latitude"
     t.float "longitude"
     t.string "phone_number"
@@ -42,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_07_10_002841) do
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "neighborhood"
     t.integer "user_id"
     t.index ["city_id"], name: "index_spots_on_city_id"
   end
@@ -61,5 +71,7 @@ ActiveRecord::Schema.define(version: 2019_07_10_002841) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ratings", "spots"
+  add_foreign_key "ratings", "users"
   add_foreign_key "spots", "cities"
 end

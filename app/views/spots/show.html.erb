@@ -17,8 +17,15 @@
   <% if user_signed_in? %>
     <%= link_to :edit, edit_spot_path(@spot) if policy(@spot).edit? %>
     <%= link_to :destroy, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
+    <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
   <% end %>
   <p><%= link_to "Back to #{@spot.city.name}", city_path(@spot.city) %></p>
 </div>
+
+<% content_for :after_js do %>
+  <script>
+    window.ratingSlider();
+  </script>
+<% end %>
 
 <%= image_tag "https://api.mapbox.com/styles/v1/mapbox/light-v9/static/#{@spot.longitude},#{@spot.latitude},14,0,0/890x400@2x?access_token=#{ENV['MAPBOX_API_KEY']}", class: "static-map" %>
