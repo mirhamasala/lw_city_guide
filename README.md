@@ -68,4 +68,10 @@ Source: https://gist.github.com/Eschults/d82b1d481eac8639dbf5f70b895f11b0
 
 ## SVG as background image
 
+```
 <div class="cities__header" style="background-image: url('<%= image_path "cities_background.svg" %>')">
+```
+
+## AJAXify Fire Rating
+
+Lars: If you ajaxify this it’ll be a little different from usual, because the rating is submitted when you release the slider. You'll need to rerender the partial and execute the JS again to attach the event listeners.

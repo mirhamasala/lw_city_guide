@@ -1,9 +1,9 @@
 <div class="main-container">
-  <div class="spot">
+  <div class="spot spacer-md">
     <div class="spot__photo"></div>
     <div class="spot__header">
       <h1><%= @spot.name %></h1>
-      <span><%= @spot.sub_category %></span>
+      <p><%= @spot.sub_category %></p>
     </div>
     <p><%= @spot.description %></p>
     <div class="spot__details">
@@ -13,12 +13,21 @@
         <p><%= link_to "Website", @spot.website %></p>
       <% end %>
     </div>
+    <% if user_signed_in? %>
+      <%= link_to :edit, edit_spot_path(@spot) if policy(@spot).edit? %>
+      <%= link_to :destroy, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
+    <% end %>
   </div>
-  <% if user_signed_in? %>
-    <%= link_to :edit, edit_spot_path(@spot) if policy(@spot).edit? %>
-    <%= link_to :destroy, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
+</div>
+
+<div class="spacer-md">
+  <%= image_tag "https://api.mapbox.com/styles/v1/mapbox/light-v9/static/#{@spot.longitude},#{@spot.latitude},14,0,0/890x400@2x?access_token=#{ENV['MAPBOX_API_KEY']}", class: "static-map" %>
+</div>
+
+<div class="main-container">
+  <div class="spacer-md">
     <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
-  <% end %>
+  </div>
   <p><%= link_to "Back to #{@spot.city.name}", city_path(@spot.city) %></p>
 </div>
 
@@ -27,5 +36,3 @@
     window.ratingSlider();
   </script>
 <% end %>
-
-<%= image_tag "https://api.mapbox.com/styles/v1/mapbox/light-v9/static/#{@spot.longitude},#{@spot.latitude},14,0,0/890x400@2x?access_token=#{ENV['MAPBOX_API_KEY']}", class: "static-map" %>

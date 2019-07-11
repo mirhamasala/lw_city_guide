@@ -1,27 +1,18 @@
-<h3>
-  Leave a rating
-</h3>
+<h3>Hot or Not</h3>
+<p>How hot is this place?</p>
 <div class="rating-wrapper">
-  <%= simple_form_for rating, 
+  <%= simple_form_for rating,
   url: (rating.new_record? ? spot_ratings_path(spot) : spot_rating_path(spot, rating)), html: { id: 'rating-form' } do |f| %>
   <div class="slider-container">
     <%= f.input :score, label: false, as: :range, collection: (0..100).to_a, input_html: { value: (rating.new_record? ? 0 : rating.score)} %>
     <div id="thumb">
-      <span class="value">
-        0°
-      </span>
-      <div class="fire">
-        🔥
-      </div>
+      <span class="value">0°</span>
+      <div class="fire">🔥</div>
     </div>
   </div>
   <% end %>
   <div class="rating-range-container">
-    <p>
-      0°
-    </p>
-    <p>
-      100°
-    </p>
+    <p>0°</p>
+    <p>100°</p>
   </div>
 </div>
