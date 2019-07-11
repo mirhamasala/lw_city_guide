@@ -1,4 +1,4 @@
-# Unused code
+# More Code
 
 ## Using Cloudinary Images as Background Images
 
@@ -65,3 +65,7 @@ export { initMapbox };
 ```
 
 Source: https://gist.github.com/Eschults/d82b1d481eac8639dbf5f70b895f11b0
+
+## SVG as background image
+
+<div class="cities__header" style="background-image: url('<%= image_path "cities_background.svg" %>')">

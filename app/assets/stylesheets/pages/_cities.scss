@@ -1,10 +1,18 @@
 .cities {
-  padding-top: 128px;
   &__header {
+    position: relative;
     display: flex;
     justify-content: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 256px;
+    padding-top: 92px;
+  }
+  &__headline {
+    position: absolute;
+    font-size: 2rem;
+  }
+  &__background {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    z-index: -1;
   }
 }

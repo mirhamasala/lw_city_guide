@@ -1,8 +1,9 @@
 <div class="cities">
-  <div class="cities__header" style="background-image: url('<%= image_path "cities_background.svg" %>')">
-    <h1>Explore Spain</h1>
+  <div class="cities__header spacer-md">
+    <h1 class="cities__headline">Explore <span class="highlight">Spain</span></h1>
+    <%= show_svg("cities_background.svg") %>
   </div>
-  <div class="cities__main">
+  <div class="cities__main main-container">
     <% for city in @cities %>
       <%= link_to city_path(city), class: "card-wrap" do %>
         <div class="card-spot spacer-xs">
