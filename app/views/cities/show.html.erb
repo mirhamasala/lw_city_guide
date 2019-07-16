@@ -7,12 +7,18 @@
     <span class="city-spots__category">Eat</span>
     <% @city.spots.order(created_at: :asc).each do |spot| %>
       <%= link_to spot_path(spot), class: "card-wrap" do %>
-      <div class="card-spot spacer-xs">
+      <div class="card-spot spacer-xs" data-spot-id="<%= spot.id %>">
         <%= image_tag "#{@city.name.downcase}.jpeg", class: "card-spot__photo" %>
         <%# cl_image_tag "city_guide/barcelona", class: "card-spot__photo" %>
         <div class="card-spot__text">
           <p class="card-spot__sub-category"><%= spot.sub_category %></p>
           <h2 class="card-spot__name"><%= spot.name %></h2>
+          <% if user_signed_in? %>
+            <%= link_to :edit, edit_spot_path(spot) if policy(spot).edit? %>
+             <% if policy(spot).destroy? %>
+              <%= link_to :delete, spot_path(spot), method: :delete, data: { confirm: "Are you sure?", remote: true } %>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <% end %>
