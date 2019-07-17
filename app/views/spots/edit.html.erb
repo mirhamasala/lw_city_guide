@@ -1,1 +1,8 @@
-<%= render "form" %>
+<div class="main-container">
+  <%= render "spot" %>
+  <hr>
+  <h2 class="js-edit-header">Edit <%= @spot.name %></h2>
+  <%= render "form" %>
+  <%= link_to "Cancel", spot_path(@spot) %>
+  <%= link_to "Done", spot_path(@spot) %>
+</div>

@@ -1,13 +1,11 @@
-<div class="main-container main-container--form">
-  <%= simple_form_for [@city, @spot] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category %>
-    <%= f.input :sub_category %>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.input :phone_number %>
-    <%= f.input :website %>
-    <%= f.input :photo %>
-    <%= f.submit %>
-  <% end %>
-</div>
+<%= simple_form_for [@city, @spot], remote: true do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :sub_category %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :website %>
+  <%= f.input :photo %>
+  <%= f.submit %>
+<% end %>

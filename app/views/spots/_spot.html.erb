@@ -1,0 +1,15 @@
+<div class="spot">
+  <div class="spot__photo"></div>
+  <div class="spot__header">
+    <h1><%= @spot.name %></h1>
+    <p><%= @spot.sub_category %></p>
+  </div>
+  <p><%= @spot.description %></p>
+  <div class="spot__details">
+    <p><%= @spot.address %></p>
+    <p><%= @spot.phone_number %></p>
+    <% if @spot.website %>
+      <p><%= link_to "Website", @spot.website %></p>
+    <% end %>
+  </div>
+</div>

@@ -33,9 +33,17 @@ class SpotsController < ApplicationController
 
   def update
     if @spot.update(spot_params)
-      redirect_to spot_path(@spot)
+      respond_to do |format|
+        format.html { redirect_back(fallback_location: spot_path(@spot)) }
+        format.js
+      end
+      # redirect_to spot_path(@spot) # Before AJAX
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js
+      end
+      # render :edit # Before AJAX
     end
   end
 
