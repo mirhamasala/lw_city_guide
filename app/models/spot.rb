@@ -6,7 +6,7 @@ class Spot < ApplicationRecord
   belongs_to :city
   belongs_to :user
   has_many :ratings, dependent: :destroy
-
+  belongs_to :category
 
   validates :name, :category, :description, :address, :city_id, presence: true
   validates :address, uniqueness: { scope: :city }
