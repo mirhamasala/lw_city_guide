@@ -1,5 +1,6 @@
 puts "Wiping out civilizations..."
 City.destroy_all
+Category.destroy_all
 Spot.destroy_all
 User.destroy_all
 
@@ -39,11 +40,20 @@ mirha.cities << City.find_by(name: "Barcelona")
 mirha.cities << City.find_by(name: "Madrid")
 puts "Cities attached to runners..."
 
+puts "Creating categories.."
+eat = Category.create!(name: "eat")
+drink = Category.create!(name: "drink")
+play = Category.create!(name: "play")
+see = Category.create!(name: "see")
+shop = Category.create!(name: "shop")
+sleep = Category.create!(name: "sleep")
+wagon = Category.create!(name: "wagon")
+
 puts "Hunting hotspots..."
 spot_attributes = [
   {
     name: "Le Wagon Barcelona",
-    category: "wagon",
+    category: wagon,
     sub_category: "Coding Bootcamp · 🚀",
     description: "Change your life, learn to code.",
     address: "Carrer d'en Grassot 101",
@@ -51,12 +61,12 @@ spot_attributes = [
     phone_number: "+34 667 23 81 72",
     website: "https://www.lewagon.com/barcelona",
     # remote_photo_url: "https://secure.meetupstatic.com/photos/theme_body/5/a/2/c/full_7163084.jpeg",
-    city_id: 1,
-    user_id: 1
+    city: City.find_by(name: "Barcelona"),
+    user: g,
   },
   {
     name: "SlowMov",
-    category: "drink",
+    category: drink,
     sub_category: "Coffee · Specialty Brews",
     description: "Take it slow, have a drip.",
     address: "Carrer de Luis Antúnez 18",
@@ -64,36 +74,36 @@ spot_attributes = [
     phone_number: "+34 936 67 27 15",
     website: "https://www.slowmov.com",
     # remote_photo_url: "https://i.pinimg.com/originals/e8/d9/90/e8d990dbcfc32cf5563b7b006c3e0aa0.jpg",
-    city_id: 1,
-    user_id: 1
+    city: City.find_by(name: "Barcelona"),
+    user: g,
   },
-    {
+  {
     name: "Can Ros",
-    category: "eat",
+    category: eat,
     sub_category: "Sandwiches · Spanish Carbs",
     description: "Set your teeth into the crunchiest sandwiches ever.",
     address: "Carrer de l'Almirall Aixada 7",
     neighborhood: "Gràcia",
     phone_number: "+34 667 23 81 72",
     # remote_photo_url: "https://media.timeout.com/images/100677963/630/472/image.jpg",
-    city_id: 1,
-    user_id: 1
+    city: City.find_by(name: "Barcelona"),
+    user: g,
   },
-    {
+  {
     name: "NAP Antic",
-    category: "eat",
+    category: eat,
     sub_category: "Pizza · Real Deal",
     description: "Neapolitan dough like it should be.",
     address: "Av. de Francesc Cambó 30",
     neighborhood: "Ciutat Vella",
     phone_number: "+34 686 19 26 90",
     website: "https://www.facebook.com/nap.pizzeria/",
-    city_id: 1,
-    user_id: 1
+    city: City.find_by(name: "Barcelona"),
+    user: g,
   },
-    {
+  {
     name: "Dry Martini",
-    category: "drink",
+    category: drink,
     sub_category: "Cocktails · Shaken & Stirred",
     description: "No guns allowed.",
     address: "Carrer d'Aribau 162",
@@ -101,12 +111,12 @@ spot_attributes = [
     phone_number: "+34 932 17 50 72",
     website: "http://www.drymartiniorg.com/",
     # remote_photo_url: "",
-    city_id: 1,
-    user_id: 1
+    city: City.find_by(name: "Barcelona"),
+    user: g,
   },
-    {
+  {
     name: "Mercado de La Boqueria",
-    category: "shop",
+    category: shop,
     sub_category: "Market · Veggies & More",
     description: "Nothing like filling your picnic basket at Boqueria.",
     address: "La Rambla 91, 08001 Barcelona",
@@ -114,12 +124,12 @@ spot_attributes = [
     phone_number: "+34 933 18 25 84",
     website: "http://www.boqueria.info",
     # remote_photo_url: "",
-    city_id: 1,
-    user_id: 1
+    city: City.find_by(name: "Barcelona"),
+    user: g,
   },
   {
     name: "Le Wagon Madrid",
-    category: "wagon",
+    category: wagon,
     sub_category: "Coding Bootcamp · 🚀",
     description: "Change your life, learn to code.",
     address: "Calle de Juan de Mariana 15",
@@ -127,12 +137,12 @@ spot_attributes = [
     phone_number: "+34 646 85 03 58",
     website: "https://www.lewagon.com/madrid",
     # remote_photo_url: "",
-    city_id: 2,
-    user_id: 2
+    city: City.find_by(name: "Madrid"),
+    user: mirha,
   },
   {
     name: "Café Belén",
-    category: "drink",
+    category: drink,
     sub_category: "Mojitos · Minty",
     description: "Square atmosphere and local hangs.",
     address: "Calle de Belén 5",
@@ -140,12 +150,12 @@ spot_attributes = [
     phone_number: "+34 913 08 27 47",
     website: "http://www.elcafebelen.com/",
     # remote_photo_url: "",
-    city_id: 2,
-    user_id: 2
+    city: City.find_by(name: "Madrid"),
+    user: mirha,
   },
-    {
+  {
     name: "Chocolatería San Ginés",
-    category: "eat",
+    category: eat,
     sub_category: "Porras · Better Donuts",
     description: "Life before keto: porras dunked in chocolate.",
     address: "Pasadizo de San Ginés 5",
@@ -153,12 +163,12 @@ spot_attributes = [
     phone_number: "+34 913 65 65 46",
     website: "https://www.chocolateriasangines.com/",
     # remote_photo_url: "",
-    city_id: 2,
-    user_id: 2
+    city: City.find_by(name: "Madrid"),
+    user: mirha,
   },
-    {
+  {
     name: "Mercado De San Miguel",
-    category: "shop",
+    category: shop,
     sub_category: "Market · Vintage Deal",
     description: "The Boqueria never stood a chance.",
     address: "Plaza de San Miguel 5",
@@ -168,8 +178,8 @@ spot_attributes = [
     phone_number: "+34 915 42 49 36",
     website: "http://www.mercadodesanmiguel.es/",
     # remote_photo_url: "",
-    city_id: 2,
-    user_id: 2
+    city: City.find_by(name: "Madrid"),
+    user: mirha,
   }
 ]
 

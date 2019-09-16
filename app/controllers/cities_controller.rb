@@ -14,7 +14,7 @@ class CitiesController < ApplicationController
         lat: spot.latitude,
         lng: spot.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { spot: spot }),
-        image_url: helpers.asset_url("placemark_#{spot.category}.png")
+        image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
       }
     end
   end
