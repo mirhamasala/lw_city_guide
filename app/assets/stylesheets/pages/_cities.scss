@@ -1,18 +1,13 @@
 .cities {
-  &__header {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding-top: 92px;
-  }
   &__headline {
-    position: absolute;
-    font-size: 2rem;
+    font-size: 1.875rem;
+    text-align: center;
   }
   &__background {
     width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    height: 100%;
+    .st0 { fill: #FCF5E8; }
+    .st1 { fill: #FD1015; }
+    .st2 { fill: #F9EBD1; }
   }
 }
