@@ -13,7 +13,12 @@ class Spot < ApplicationRecord
   # validates :name, uniqueness: { scope: :address,
     # message: "already exists on this address" }
 
-  def self.recent
-    order(created_at: :asc)
+  def self.check_coordinates
+    where.not(latitude: nil, longitude: nil)
   end
+
+  def self.recent
+    order(created_at: :desc) # Last spot created appears on top
+  end
+
 end

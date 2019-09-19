@@ -1,7 +1,12 @@
 class SpotsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
-  before_action :set_city, only: [:new, :create]
+  before_action :set_city, only: [:index, :new, :create]
+
+  def index
+    @spots = policy_scope(Spot).where(city: @city).check_coordinates.recent
+    add_map_markers(@spots)
+  end
 
   def new
     @spot = Spot.new
@@ -17,7 +22,7 @@ class SpotsController < ApplicationController
     @spot.user = current_user
     @spot.city = @city
     if @spot.save
-      redirect_to @spot
+      redirect_to spot_path(@spot)
     else
       render :new
     end
@@ -37,24 +42,23 @@ class SpotsController < ApplicationController
         format.html { redirect_back(fallback_location: spot_path(@spot)) }
         format.js
       end
-      # redirect_to spot_path(@spot) # Before AJAX
     else
       respond_to do |format|
         format.html { render :edit }
         format.js
       end
-      # render :edit # Before AJAX
     end
   end
 
   def destroy
     @spot.destroy
     respond_to do |format|
-      format.html { redirect_to city_path(@spot.city) }
+      format.html { redirect_to city_spots_path(@spot.city) }
       format.js
       flash[:notice] = "Succefully deleted #{@spot.name}"
     end
   end
+
 
   private
 
@@ -70,4 +74,16 @@ class SpotsController < ApplicationController
   def spot_params
     params.require(:spot).permit(:name, :category_id, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo)
   end
+
+  def add_map_markers(spots)
+    @markers = spots.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { spot: spot }),
+        image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
+      }
+    end
+  end
+
 end
