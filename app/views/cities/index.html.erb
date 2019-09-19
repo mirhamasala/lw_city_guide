@@ -5,7 +5,7 @@
   </div>
   <div class="cities__main main-container">
     <% for city in @cities %>
-      <%= link_to city_path(city), class: "card-wrap" do %>
+      <%= link_to city_spots_path(city), class: "card-wrap" do %>
         <div class="card-spot spacer-xs">
           <%= image_tag "#{city.name.downcase}.jpeg", class: "card-spot__photo" %>
           <div class="card-spot__text">
