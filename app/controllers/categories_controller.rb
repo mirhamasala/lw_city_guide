@@ -1,18 +1,22 @@
 class CategoriesController < ApplicationController
-  before_action :set_spot
+  # before_action :set_spot
 
-  def create
-    @category = Category.new(category_params)
-    @category.spot = @spot
-  end
+  # def categories
+  #   @categories = Categories.all
+  # end
 
-  private
+  # def create
+  #   @category = Category.new(category_params)
+  #   @category.spot = @spot
+  # end
 
-  def set_spot
-    @spot = Spot.find(params[:spot_id])
-  end
+  # private
 
-  def category_params
-    params.require(:category).permit(:name)
-  end
+  # def set_spot
+  #   @spot = Spot.find(params[:spot_id])
+  # end
+
+  # def category_params
+  #   params.require(:category).permit(:name)
+  # end
 end

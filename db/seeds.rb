@@ -45,8 +45,8 @@ eat = Category.create!(name: "eat")
 drink = Category.create!(name: "drink")
 play = Category.create!(name: "play")
 see = Category.create!(name: "see")
-shop = Category.create!(name: "shop")
-sleep = Category.create!(name: "sleep")
+# shop = Category.create!(name: "shop")
+# sleep = Category.create!(name: "sleep")
 wagon = Category.create!(name: "wagon")
 
 puts "Hunting hotspots..."

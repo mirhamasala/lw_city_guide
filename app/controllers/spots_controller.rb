@@ -4,7 +4,14 @@ class SpotsController < ApplicationController
   before_action :set_city, only: [:index, :new, :create]
 
   def index
-    @spots = policy_scope(Spot).where(city: @city).check_coordinates.recent
+    @categories = Category.all # CR<<: Is it okay to have this here?
+    @spots = policy_scope(Spot).where(city: @city).recent
+    if params[:category].present?
+      category = params[:category]
+      unless @categories.find_by_id(category).spots.blank?
+        @spots = @spots.where(category: category)
+      end
+    end
     add_map_markers(@spots)
   end
 
@@ -72,7 +79,7 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :category_id, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo)
+    params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id)
   end
 
   def add_map_markers(spots)
@@ -85,5 +92,4 @@ class SpotsController < ApplicationController
       }
     end
   end
-
 end
