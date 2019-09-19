@@ -4,8 +4,8 @@
     <p><%= @city.country %><p>
   </div>
   <div class="main-container">
-    <span class="city-spots__category">Eat · <%= pluralize @city.spots.size, "spot" %></span>
-    <% @city.spots.order(created_at: :asc).each do |spot| %>
+    <span class="city-spots__category">Eat · <%= pluralize @spots.size, "spot" %></span>
+    <% @spots.each do |spot| %>
       <%= link_to spot_path(spot), class: "card-wrap" do %>
       <div class="card-spot spacer-xs" data-spot-id="<%= spot.id %>">
         <%= image_tag "#{@city.name.downcase}.jpeg", class: "card-spot__photo" %>
