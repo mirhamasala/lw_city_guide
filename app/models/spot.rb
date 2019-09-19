@@ -12,4 +12,8 @@ class Spot < ApplicationRecord
   validates :address, uniqueness: { scope: :city }
   # validates :name, uniqueness: { scope: :address,
     # message: "already exists on this address" }
+
+  def self.recent
+    order(created_at: :asc)
+  end
 end

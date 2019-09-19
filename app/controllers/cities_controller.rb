@@ -7,9 +7,9 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @city.spots.where.not(latitude: nil, longtitude: nil)
+    @spots = @city.spots.recent.where.not(latitude: nil, longitude: nil)
 
-    @markers = @city.spots.map do |spot|
+    @markers = @spots.map do |spot|
       {
         lat: spot.latitude,
         lng: spot.longitude,
