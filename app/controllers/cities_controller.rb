@@ -3,7 +3,7 @@ class CitiesController < ApplicationController
   before_action :set_city, only: [:show]
 
   def index
-    @cities = policy_scope(City)
+    @cities = policy_scope(City).alphabetize
   end
 
   def show
