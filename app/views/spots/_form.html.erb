@@ -1,4 +1,4 @@
-<%= simple_form_for [@city, @spot], remote: true do |f| %>
+<%= simple_form_for [@city, @spot] do |f| %>
   <%= f.input :name %>
   <%= f.association :category, selected: 1 %>
   <%= f.input :sub_category %>
