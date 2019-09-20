@@ -4,7 +4,13 @@ class SpotsController < ApplicationController
   before_action :set_city, only: [:index, :new, :create]
 
   def index
-    @spots = policy_scope(Spot).where(city: @city).check_coordinates.recent
+    @spots = policy_scope(Spot).where(city: @city)
+    if params[:category].blank?
+      @spots = @spots.recent
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @spots = @spots.where(category_id: @category_id).recent
+    end
     add_map_markers(@spots)
   end
 
@@ -72,7 +78,7 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :category_id, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo)
+    params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id)
   end
 
   def add_map_markers(spots)
@@ -85,5 +91,4 @@ class SpotsController < ApplicationController
       }
     end
   end
-
 end
