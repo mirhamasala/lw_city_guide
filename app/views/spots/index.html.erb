@@ -16,9 +16,8 @@
           <p class="card-spot__sub-category"><%= spot.sub_category %></p>
           <h2 class="card-spot__name"><%= spot.name %></h2>
           <% if user_signed_in? %>
-            <%= link_to :edit, edit_spot_path(spot) if policy(spot).edit? %>
              <% if policy(spot).destroy? %>
-              <%= link_to :delete, spot_path(spot), method: :delete, data: { confirm: "Are you sure?", remote: true } %>
+              <%= link_to :delete, spot_path(spot), method: :delete, data: { confirm: "Are you sure you want to delete #{spot.name}?", remote: true } %>
             <% end %>
           <% end %>
         </div>

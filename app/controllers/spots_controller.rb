@@ -17,7 +17,7 @@ class SpotsController < ApplicationController
   def new
     @spot = Spot.new
     unless current_user.cities.include?(@city)
-      flash[:alert] = "You can't add a spot for #{@city.name}"
+      flash[:alert] = "So sorry, but you can't add places for #{@city.name}. 😕"
       redirect_back(fallback_location: root_path)
     end
     authorize @spot
@@ -27,9 +27,11 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     @spot.user = current_user
     @spot.city = @city
-    if @spot.save
+    if @spot.save!
+      flash[:notice] = "Yay! You've succesfully added #{@spot.name}! 💥"
       redirect_to spot_path(@spot)
     else
+      flash[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :new
     end
     authorize @spot
@@ -43,28 +45,24 @@ class SpotsController < ApplicationController
   end
 
   def update
-    if @spot.update(spot_params)
-      respond_to do |format|
-        format.html { redirect_back(fallback_location: spot_path(@spot)) }
-        format.js
-      end
+    if @spot.update!(spot_params)
+      flash[:notice] = "You've succesfully updated #{@spot.name}! 💥"
+      redirect_to spot_path(@spot)
     else
-      respond_to do |format|
-        format.html { render :edit }
-        format.js
-      end
+      flash[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
+      render :edit
     end
   end
 
   def destroy
-    @spot.destroy
-    respond_to do |format|
-      format.html { redirect_to city_spots_path(@spot.city) }
-      format.js
-      flash[:notice] = "Succefully deleted #{@spot.name}"
+    if @spot.destroy!
+      flash[:notice] = "You've succesfully deleted #{@spot.name}. 💥"
+      respond_to do |format|
+        format.html { redirect_to city_spots_path(@spot.city) }
+        format.js
+      end
     end
   end
-
 
   private
 
