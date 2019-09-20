@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-  validates :name, :category, :description, :address, :city_id, presence: true
+  validates :name, :description, :address, :city_id, :category_id, presence: true
   validates :address, uniqueness: { scope: :city }
   # validates :name, uniqueness: { scope: :address,
   # message: "already exists on this address" }

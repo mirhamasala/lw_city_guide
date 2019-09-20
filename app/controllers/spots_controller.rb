@@ -4,13 +4,12 @@ class SpotsController < ApplicationController
   before_action :set_city, only: [:index, :new, :create]
 
   def index
-    @categories = Category.all # CR<<: Is it okay to have this here?
-    @spots = policy_scope(Spot).where(city: @city).recent
-    if params[:category].present?
-      category = params[:category]
-      unless @categories.find_by_id(category).spots.blank?
-        @spots = @spots.where(category: category)
-      end
+    @spots = policy_scope(Spot).where(city: @city)
+    if params[:category].blank?
+      @spots = @spots.recent
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @spots = @spots.where(category_id: @category_id).recent
     end
     add_map_markers(@spots)
   end
