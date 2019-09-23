@@ -1,0 +1,31 @@
+.card-city-wrapper {
+  display: block;
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+.card-city {
+  display: flex;
+  align-items: center;
+}
+
+.card-city__image {
+  width: 80px;
+  height: 80px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.card-city__text { padding-left: 12px; }
+
+.card-city__name {
+  margin-bottom: 0;
+  font-size: 1.125rem;
+  font-weight: var(--medium-bold);
+}
+
+.card-city__spots {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: var(--light);
+}

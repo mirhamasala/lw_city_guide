@@ -14,7 +14,7 @@ body {
 
 h1 {
   color: $black;
-  font-weight: var(--medium-bold);
+  font-weight: var(--bold);
 }
 
 a {
@@ -26,17 +26,18 @@ a {
 }
 
 .highlighted {
-  padding: 2px 8px 4px;
-  font-weight: var(--medium-bold);
-  border-radius: 3px;
+  padding: 0;
+  border-radius: 0;
 }
 
-.highlighted--red {
-  color: $brand-primary;
-  background: $light-red;
-}
+.highlighted--red { color: $brand-primary; }
+.highlighted--purple { color: $purple; }
 
-.highlighted--purple {
-  color: $purple;
-  background: $light-purple;
+@media screen and (min-width: 768px) {
+  .highlighted {
+    padding: 2px 8px 4px;
+    border-radius: 3px;
+  }
+  .highlighted--red { background: $light-red; }
+  .highlighted--purple { background: $light-purple;}
 }

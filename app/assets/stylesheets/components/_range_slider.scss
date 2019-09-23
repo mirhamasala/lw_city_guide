@@ -1,9 +1,8 @@
 #rating_score {
   -webkit-appearance: none;
-  &:focus {
-    outline: none;
-  }
+  &:focus { outline: none; }
 }
+
 #rating_score::-webkit-slider-thumb {
   -webkit-appearance: none;
   background: transparent;
@@ -11,6 +10,7 @@
   width: 20px;
   margin-top: -8px;
 }
+
 #rating_score::-webkit-slider-runnable-track {
   width: 300px;
   height: 5px;

@@ -1,72 +1,27 @@
 .main-container {
-  padding: 0 24px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
-.headline-container {
-  padding: 0 32px;
-  margin: 0 auto;
-}
+.text-center { text-align: center; }
 
-.text-center {
-  text-align: center;
-}
+.spacer-xs { margin-bottom: 12px; }
+.spacer-sm { margin-bottom: 24px; }
+.spacer-md { margin-bottom: 48px;}
+.spacer-lg { margin-bottom: 96px; }
 
-.spacer-xs {
-  margin-bottom: 12px;
-}
-
-.spacer-sm {
-  margin-bottom: 24px;
-}
-
-.spacer-md {
-  margin-bottom: 48px;
-}
-
-.spacer-lg {
-  margin-bottom: 96px;
-}
-
-/* Media Queries */
-/* Styles for viewports that are 576px wide or more */
 @media screen and (min-width: 576px) {
-  .main-container {
-    &--form {
-      width: 50%;
-    }
-    &--cities {
-      width: 60%;
-    }
-  }
+  .main-container--form { width: 50%; }
 }
 
 @media screen and (min-width: 768px) {
-  .main-container {
-    &--form {
-      width: 40%;
-    }
-    &--cities {
-      width: 50%;
-    }
-  }
+  .main-container--form { width: 40%; }
 }
 
 @media screen and (min-width: 992px) {
-  .main-container {
-    &--form {
-      width: 35%;
-    }
-    &--cities {
-      width: 50%;
-    }
-  }
+  .main-container--form { width: 35%; }
 }
 
 @media screen and (min-width: 1200px) {
-  .main-container {
-    &--form {
-      width: 25%;
-    }
-  }
+  .main-container--form { width: 25%; }
 }

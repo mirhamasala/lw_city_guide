@@ -1,19 +1,19 @@
 <div class="cities">
-  <div class="cities__header spacer-sm">
-    <h1 class="cities__headline headline-container">Which <span class="highlighted highlighted--purple">place</span> would you like to explore?</h1>
+  <header class="cities__header spacer-sm">
+    <h1 class="cities__headline">Which <span class="highlighted highlighted--red">city</span> would you like to explore?</h1>
     <%= show_svg("cities_background.svg") %>
   </div>
   <div class="cities__main main-container">
     <% for city in @cities %>
-      <%= link_to city_spots_path(city), class: "card-wrap" do %>
-        <div class="card-spot spacer-xs">
-          <%= image_tag "#{city.name.downcase}.jpeg", class: "card-spot__photo" %>
-          <div class="card-spot__text">
-            <p><%= city.name %></p>
-            <p><%= pluralize city.spots.size, "spot" %></p>
+      <%= link_to city_spots_path(city), class: "card-city-wrapper" do %>
+        <div class="card-city">
+          <%= image_tag "#{city.name.downcase}.jpeg", class: "card-city__image" %>
+          <div class="card-city__text">
+            <p class="card-city__name"><%= city.name %></p>
+            <p class="card-city__spots"><%= pluralize city.spots.size, "spot" %></p>
           </div>
         </div>
       <% end %>
     <% end %>
-  </div>
+  </header>
 </div>

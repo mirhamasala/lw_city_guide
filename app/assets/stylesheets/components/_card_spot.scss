@@ -1,0 +1,25 @@
+.card-spot {
+  display: flex;
+  align-items: center;
+  padding: 24px 12px;
+}
+
+.card-spot__image {
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.card-spot__text {
+  padding: 12px;
+  margin-left: 12px
+}
+
+.card-spot__sub-category {
+  font-size: 0.875rem;
+  font-weight: lighter;
+}
+
+.card-spot__name { font-size: 1.25rem; }

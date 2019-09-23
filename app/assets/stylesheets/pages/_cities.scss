@@ -1,13 +1,15 @@
-.cities {
-  &__headline {
-    font-size: 1.875rem;
-    text-align: center;
-  }
-  &__background {
-    width: 100%;
-    height: 100%;
-    .st0 { fill: #FCF5E8; }
-    .st1 { fill: #FD1015; }
-    .st2 { fill: #F9EBD1; }
-  }
+.cities__header { padding-top: 30px; }
+
+.cities__headline {
+  padding: 0 20px;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.cities__background {
+  width: 100%;
+  height: 100%;
+  .st0 { fill: #FCF5E8; }
+  .st1 { fill: #FD1015; }
+  .st2 { fill: #F9EBD1; }
 }
