@@ -1,6 +1,8 @@
 <div class="categories">
   <%= link_to "all", city_spots_path(@city) %>
   <% Category.all.each do |category| %>
-    <%= link_to category.name, city_spots_path(category: category.name) %>
+    <% unless category.spots.blank? %>
+      <%= link_to category.name, city_spots_path(category: category.name) %>
+    <% end %>
   <% end %>
 </div>
