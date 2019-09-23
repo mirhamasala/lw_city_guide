@@ -11,11 +11,11 @@
   align-items: center;
   padding: 24px 12px;
   &__photo {
-    height: 128px;
-    width: 128px;
+    height: 80px;
+    width: 80px;
     object-fit: cover;
     object-position: center;
-    border-radius: 4px;
+    border-radius: 3px;
   }
   &__text {
     padding: 12px;
