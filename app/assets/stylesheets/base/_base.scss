@@ -1,5 +1,42 @@
+:root {
+  --light: 300;
+  --regular: 400;
+  --medium-bold: 500;
+  --bold: 700;
+}
+
 body {
-  background-color: $white;
-  min-height: 100vh;
-  max-width: 100vw;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1440px;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: $black;
+  font-weight: var(--medium-bold);
+}
+
+a {
+  color: $gray;
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+  }
+}
+
+.highlighted {
+  padding: 2px 8px 4px;
+  font-weight: var(--medium-bold);
+  border-radius: 3px;
+}
+
+.highlighted--red {
+  color: $brand-primary;
+  background: $light-red;
+}
+
+.highlighted--purple {
+  color: $purple;
+  background: $light-purple;
 }
