@@ -21,9 +21,4 @@ class Spot < ApplicationRecord
   def self.recent
     order(created_at: :desc) # Last spot created appears on top
   end
-
-  def self.category_filter
-    where(category: params[:category])
-  end
-
 end
