@@ -11,6 +11,7 @@ class SpotsController < ApplicationController
       @category_id = Category.find_by(name: params[:category]).id
       @spots = @spots.where(category_id: @category_id).recent
     end
+    @spots = @spots.check_coordinates
     add_map_markers(@spots)
   end
 
