@@ -1,34 +1,28 @@
-<div class="city-spots">
-  <div class="city-spots__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "#{@city.name.downcase}.jpeg" %>')">
-    <h1 class="city-spots__name"><%= @city.name %></h1>
-    <p class="city-spots__country"><%= @city.country %><p>
-  </div>
+<div class="spots">
+  <header class="spots__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "#{@city.name.downcase}.jpeg" %>')">
+    <h1 class="spots__name"><%= @city.name %></h1>
+    <div class="spots__country"><%= @city.country %></div>
+  </header>
   <% if @city.spots.blank? %>
     <p><%= "Oh, oops! No places for #{@city.name} added yet! 💩" %></p>
     <%= link_to "Back to all cities", root_path %>
   <% else %>
     <%= render "shared/categories" %>
-    <div class="main-container">
-      <!--<span class="city-spots__category">Eat · <%= pluralize @spots.size, "spot" %></span>-->
+    <div class="spots__main wrapper spacer-md">
       <% @spots.each do |spot| %>
-        <%= link_to spot_path(spot) do %>
-          <div class="card-spot spacer-xs" data-spot-id="<%= spot.id %>">
+        <%= link_to spot_path(spot), class: "card-spot-wrapper" do %>
+          <div class="card-spot" data-spot-id="<%= spot.id %>">
             <%= image_tag "#{@city.name.downcase}.jpeg", class: "card-spot__image" %>
-            <%# cl_image_tag "city_guide/barcelona", class: "card-spot__image" %>
             <div class="card-spot__text">
-              <p class="card-spot__category"><%= spot.category.name %></p>
               <p class="card-spot__sub-category"><%= spot.sub_category %></p>
-              <h2 class="card-spot__name"><%= spot.name %></h2>
-              <% if user_signed_in? %>
-                <% if policy(spot).destroy? %>
-                  <%= link_to :delete, spot_path(spot), method: :delete, data: { confirm: "Are you sure you want to delete #{spot.name}?", remote: true } %>
-                <% end %>
-              <% end %>
+              <p class="card-spot__name"><%= spot.name %></p>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
-    <%= render "shared/map" %>
+    <div class="wrapper spacer-lg">
+      <%= render "shared/map" %>
+    </div>
   <% end %>
 </div>

@@ -1,8 +1,8 @@
-<div class="categories">
+<div class="categories spacer-md">
   <%= link_to "all", city_spots_path(@city) %>
   <% Category.all.each do |category| %>
     <% unless category.spots.blank? %>
-      <%= link_to category.name, city_spots_path(category: category.name) %>
+      <%= link_to category.name, city_spots_path(category: category.name), class: "categories__name" %>
     <% end %>
   <% end %>
 </div>

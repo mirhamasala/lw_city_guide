@@ -1,0 +1,8 @@
+.categories {
+  padding: 12px 20px;
+  background: $light-gray;
+}
+
+.categories__name:not(:first-child) {
+  padding-left: 12px;
+}

@@ -1,28 +1,16 @@
-.city-spots__header {
+.spots__header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url("barcelona.jpeg");
   background-size: cover;
   background-position: center;
   height: 384px;
   color: $white;
 }
 
-.city-spots__name {
+.spots__name {
   color: $white;
   font-weight: var(--medium-bold);
 }
 
-.city-spots__country {
-  margin-bottom: 0;
-}
-
-.city-spots__category {
-  display: block;
-  padding: 24px 12px;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  text-align: center;
-}

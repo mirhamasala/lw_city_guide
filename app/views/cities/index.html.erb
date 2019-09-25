@@ -1,8 +1,8 @@
 <div class="cities">
-  <header class="cities__header spacer-md">
+  <header class="cities__header spacer-lg">
     <h1 class="cities__headline spacer-xs">Which <span class="highlighted highlighted--red">city</span> would you like to explore?</h1>
     <%= show_svg("cities_background.svg") %>
-  </div>
+  </header>
   <div class="cities__main main-container">
     <% for city in @cities %>
       <%= link_to city_spots_path(city), class: "card-city-wrapper" do %>
@@ -15,5 +15,5 @@
         </div>
       <% end %>
     <% end %>
-  </header>
+  </div>
 </div>
