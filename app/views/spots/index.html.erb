@@ -4,8 +4,13 @@
     <div class="spots__country"><%= @city.country %></div>
   </header>
   <% if @city.spots.blank? %>
-    <p><%= "Oh, oops! No places for #{@city.name} added yet! 💩" %></p>
-    <%= link_to "Back to all cities", root_path %>
+    <div class="wrapper" style="padding-top: 48px">
+      <p><%= "Oh, oops! No places for #{@city.name} added yet! 💩" %></p>
+      <div class="link">
+        <%= show_svg("caret_left.svg") %>
+        <%= link_to "Back to all cities", root_path %>
+      </div>
+    </div>
   <% else %>
     <%= render "shared/categories" %>
     <div class="spots__main wrapper spacer-md">
