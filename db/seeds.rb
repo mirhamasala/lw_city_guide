@@ -13,10 +13,10 @@ puts "Builders be building..."
 
 # 💥
 puts "Building Spanish Romes in less than a day..."
-# bali = City.create!(name: "Bali", country: "Indonesia")
+bali = City.create!(name: "Bali", country: "Indonesia")
 barcelona = City.create!(name: "Barcelona", country: "Spain")
 madrid = City.create!(name: "Madrid", country: "Spain")
-# singapore = City.create!(name: "Singapore", country: "Singapore")
+singapore = City.create!(name: "Singapore", country: "Singapore")
 puts "Pinned Barcelona & Madrid on the map..."
 
 # 💥
