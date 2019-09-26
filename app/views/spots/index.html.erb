@@ -26,8 +26,12 @@
         <% end %>
       <% end %>
     </div>
-    <div class="wrapper spacer-lg">
+    <div class="wrapper spacer-md">
       <%= render "shared/map" %>
+    </div>
+    <div class="link wrapper spacer-lg">
+      <%= show_svg("caret_left.svg") %>
+      <%= link_to "Back to all cities", root_path %>
     </div>
   <% end %>
 </div>
