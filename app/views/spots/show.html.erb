@@ -1,27 +1,10 @@
-<div class="wrapper spacer-lg">
-  <%= render "spot" %>
-  <% if user_signed_in? %>
-    <%= link_to :edit, edit_spot_path(@spot) if policy(@spot).edit? %>
-    <%= link_to :delete, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
-  <% end %>
-</div>
-
-<div class="spacer-lg">
-  <%= image_tag "https://api.mapbox.com/styles/v1/mapbox/light-v9/static/#{@spot.longitude},#{@spot.latitude},14,0,0/890x400@2x?access_token=#{ENV['MAPBOX_API_KEY']}", class: "static-map" %>
-</div>
-
-<div class="wrapper spacer-lg">
-  <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
-</div>
-
-<div class="wrapper link spacer-lg">
+<%= render "spot" %>
+<div class="link link--gray">
   <%= show_svg("caret_left.svg") %>
-    <%= link_to "Back to #{@spot.city.name}", city_spots_path(@spot.city) %>
-  </div>
+  <%= link_to "Back to #{@spot.city.name}", city_spots_path(@spot.city) %>
 </div>
-
 <% content_for :after_js do %>
   <script>
-    window.ratingSlider();
+  window.ratingSlider();
   </script>
 <% end %>
