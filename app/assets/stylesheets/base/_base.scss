@@ -27,10 +27,10 @@ a {
 
 .highlighted {
   padding: 0;
-  font-weight: var(--medium-bold);
   border-radius: 0;
 }
 
+.highlighted--text { font-weight: var(--medium-bold); }
 .highlighted--red { color: $brand-primary; }
 .highlighted--purple { color: $purple; }
 
