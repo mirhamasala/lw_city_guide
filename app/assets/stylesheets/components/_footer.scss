@@ -1,0 +1,24 @@
+footer {
+  padding: 32px 20px;
+  background: $black;
+  color: $white;
+}
+
+.footer__disclaimer {
+  color: $light-gray;
+  font-size: 0.875rem;
+  span {
+    display: block;
+    margin-bottom: 1rem;
+    color: $white;
+    font-size: 1rem;
+    font-weight: var(--medium-bold);
+  }
+  a {
+    color: $light-gray;
+    text-decoration: underline;
+    &:hover {
+      color: $light-gray;
+    }
+  }
+}

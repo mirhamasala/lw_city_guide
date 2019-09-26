@@ -3,7 +3,7 @@
     <h1 class="cities__headline spacer-xs">Which <span class="highlighted highlighted--red">city</span> would you like to explore?</h1>
     <%= show_svg("cities_background.svg") %>
   </header>
-  <div class="cities__main wrapper">
+  <div class="cities__main wrapper spacer-lg">
     <% for city in @cities %>
       <%= link_to city_spots_path(city), class: "card-city-wrapper" do %>
         <div class="card-city">
