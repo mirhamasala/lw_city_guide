@@ -21,4 +21,18 @@ class Spot < ApplicationRecord
   def self.recent
     order(created_at: :desc) # Last spot created appears on top
   end
+
+  def self.in_category(name)
+    where(category: Category.find_by(name: name))
+    # category_id = Category.find_by(name).id
+    # where(category_id: category_id)
+  end
+
+  def self.in_city(city)
+    where(city: city)
+  end
+
+  def rating_for(user)
+    ratings.find_or_initialize_by(user: user)
+  end
 end
