@@ -5,10 +5,28 @@
   font-size: 2.25rem;
 }
 
-.cities__background {
-  width: 100%;
-  height: 100%;
-  .st0 { fill: #FCF5E8; }
-  .st1 { fill: #FD1015; }
-  .st2 { fill: #F9EBD1; }
+@media screen and (min-width: 567px) {
+  .cities__headline {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cities__headline {
+    position: absolute;
+    top: 136px;
+    width: 60%;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .cities__headline {
+    position: relative;
+    top: 0;
+    width: 50%;
+  }
+  .cities__background {
+    display: none;
+  }
 }
