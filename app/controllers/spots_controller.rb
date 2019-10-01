@@ -39,11 +39,6 @@ class SpotsController < ApplicationController
 
   def show
     @rating = @spot.rating_for(current_user)
-    # @rating = Rating.for(current_user, @spot)
-    #1 @rating = find_or_initialize_by(user: current_user, spot: @spot)
-    #2. @rating = Rating.for(current_user, @spot)
-    #3. @rating = Rating.for(user: current_user, spot: @spot)
-    # Find rating and if it can't find it, it will initialize one, but it won't save it one the database
   end
 
   def edit

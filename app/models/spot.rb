@@ -24,8 +24,6 @@ class Spot < ApplicationRecord
 
   def self.in_category(name)
     where(category: Category.find_by(name: name))
-    # category_id = Category.find_by(name).id
-    # where(category_id: category_id)
   end
 
   def self.in_city(city)
