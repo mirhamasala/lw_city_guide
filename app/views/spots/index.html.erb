@@ -1,10 +1,10 @@
 <div class="spots">
-  <header class="spots__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "#{@city.name.downcase}.jpeg" %>')">
+  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "#{@city.name.downcase}.jpeg" %>')">
     <h1 class="spots__name"><%= @city.name %></h1>
     <div class="spots__country"><%= @city.country %></div>
   </header>
   <% if @city.spots.blank? %>
-    <div class="wrapper" style="padding-top: 48px">
+    <div class="wrapper spacer-lg">
       <p><%= "Oh, oops! No places for #{@city.name} added yet! 💩" %></p>
       <div class="link">
         <%= show_svg("caret_left.svg") %>
