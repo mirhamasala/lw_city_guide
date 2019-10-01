@@ -1,6 +1,6 @@
 <%= simple_form_for [@city, @spot] do |f| %>
   <%= f.input :name %>
-  <%= f.association :category, selected: 1 %>
+  <%= f.association :category %>
   <%= f.input :sub_category %>
   <%= f.input :description %>
   <%= f.input :address %>
