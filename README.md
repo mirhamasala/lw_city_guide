@@ -1,77 +1,31 @@
-# More Code
+# Wagon City Guides
 
-## Using Cloudinary Images as Background Images
+When I finished my coding bootcamp with [Le Wagon]("https://www.lewagon.com/"), my teacher Inou suggested that I create a city guide for Le Wagon Bali and keep practicing my coding skills. One freelance project and another front-end job later, I finally got to it.
 
-```html
-<!--app/views/cities/show.html.erb-->
+I made Wagon City Guides for the drivers, community managers, and teachers of Le Wagon, so that they have a platform on which they can share their favorite spots with their students. At the same time, it's also a platform that the teachers themselves can use to find the best that Le Wagon city campuses have to offer when working abroad.
 
-<div class="spots__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "city_guide/barcelona.jpg", height: 300, width: 400, crop: :fill %>')">
-```
+_Side note: Wagon City Guides is also part of my own "web dev MBA." You can find out more about that here: [Leap of Code - The Curriculum]("https://www.mirhamasala.com/leap-of-code/#curriculum")_
 
-or
+## Disclaimer
 
-```
-<div class="spots__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.photo, height: 300, width: 400, crop: :fill %>')">
-```
+[Le Wagon]("https://www.lewagon.com") is an intensive 9-week coding bootcamp.
 
-## Mapbox Other Solution
+Wagon City Guides is not endorsed by Le Wagon. It's an independent project by Laura Crompton and Mirha Masala.
 
-```JavaScript
-// app.js
-// CSS
-import 'mapbox-gl/dist/mapbox-gl.css';
-// internal imports
-import { initMapbox } from '../plugins/init_mapbox';
+## Contributors
 
-initMapbox();
+💻 Code: [Mirha Masala]("https://github.com/mirhamasala")
 
-// init_mapbox.js
-import mapboxgl from 'mapbox-gl';
+👩🏼‍🎨 Figma design: [Laura Crompton]("https://github.com/lozdesign")
 
-const mapElement = document.getElementById('map');
+🔥 Fire rating: [Lars Böhm]("https://github.com/datene")
 
-const buildMap = () => {
-  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-  return new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
-  });
-};
+⭐️ Special thanks to [Inou Ridder]("https://github.com/InouRidder") for the idea
 
-const addMarkersToMap = (map, markers) => {
-  markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-  });
-};
+## Resources
 
-const fitMapToMarkers = (map, markers) => {
-  const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
-};
+- [Backlog]("https://github.com/mirhamasala/lw_city_guide/projects/1")
 
-const initMapbox = () => {
-  if (mapElement) {
-    const map = buildMap();
-    const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
-    fitMapToMarkers(map, markers);
-  }
-};
+- [Database schema]("https://kitt.lewagon.com/db/2357")
 
-export { initMapbox };
-```
-
-Source: https://gist.github.com/Eschults/d82b1d481eac8639dbf5f70b895f11b0
-
-## SVG as background image
-
-```
-<div class="cities__header" style="background-image: url('<%= image_path "cities_background.svg" %>')">
-```
-
-## AJAXify Fire Rating
-
-Lars: If you ajaxify this it’ll be a little different from usual, because the rating is submitted when you release the slider. You'll need to rerender the partial and execute the JS again to attach the event listeners.
+- [Figma design]("https://www.figma.com/file/ROwm7eDNn5VdztbIGPwArIPD/Le-Wagon-on-Tour")
