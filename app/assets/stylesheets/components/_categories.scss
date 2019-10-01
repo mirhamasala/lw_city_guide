@@ -2,7 +2,8 @@
   padding: 12px 20px;
   background: $light-gray;
 }
-.categories__all, .categories__name { font-size: 0.875rem; }
+.categories__all,
+.categories__name { font-size: 0.875rem; }
 
 .categories__name:not(:first-child) {
   padding-left: 12px;
