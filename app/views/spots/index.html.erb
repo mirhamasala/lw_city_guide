@@ -17,7 +17,11 @@
       <% @spots.each do |spot| %>
         <%= link_to spot_path(spot), class: "card-spot-wrapper" do %>
           <div class="card-spot" data-spot-id="<%= spot.id %>">
-            <%= image_tag "#{@city.name.downcase}.jpeg", class: "card-spot__image" %>
+            <% unless spot.photo.blank? %>
+              <%= image_tag "#{spot.photo}", class: "card-spot__image" %>
+                <% else %>
+              <%= image_tag "#{@city.name.downcase}.jpeg", class: "card-spot__image" %>
+            <% end %>
             <div class="card-spot__text">
               <p class="card-spot__sub-category"><%= spot.sub_category %></p>
               <p class="card-spot__name"><%= spot.name %></p>
