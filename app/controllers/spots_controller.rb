@@ -4,14 +4,13 @@ class SpotsController < ApplicationController
   before_action :set_city, only: [:index, :new, :create]
 
   def index
-    @spots = policy_scope(Spot).where(city: @city)
+    @spots = policy_scope(Spot).in_city(@city)
     if params[:category].blank?
-      @spots = @spots.recent
+      @spots = @spots
     else
-      @category_id = Category.find_by(name: params[:category]).id
-      @spots = @spots.where(category_id: @category_id).recent
+      @spots = @spots.in_category(params[:category])
     end
-    @spots = @spots.check_coordinates
+    @spots = @spots.recent.check_coordinates
     add_map_markers(@spots)
   end
 
@@ -39,7 +38,7 @@ class SpotsController < ApplicationController
   end
 
   def show
-    @rating = Rating.where(user: current_user, spot: @spot).first || Rating.new
+    @rating = @spot.rating_for(current_user)
   end
 
   def edit
