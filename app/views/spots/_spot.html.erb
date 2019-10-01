@@ -7,7 +7,7 @@
   <header class="spot__header">
     <h1 class="spot__name"><%= @spot.name %></h1>
     <span class="spot__sub-category"><%= @spot.sub_category %></span>
-    <% unless @spot.ratings.blank? %>
+    <% unless @rating.score.blank? %>
       <span class="spot__score">🔥 <%= @rating.score %>&#176;</span>
     <% end %>
   </header>
