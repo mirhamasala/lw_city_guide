@@ -32,16 +32,18 @@
       <span class="spot__icon">
         <%= show_svg("phone.svg") %>
       </span>
-      <%= @spot.phone_number %>
+      <%= @spot.phone_number.blank? ? "-" : @spot.phone_number %>
     </li>
-    <% if @spot.website %>
     <li class="spot__website spot__details-item">
       <span class="spot__icon">
         <%= show_svg("domain.svg") %>
       </span>
-      <%= link_to "Website", @spot.website %>
+      <% if @spot.website.blank? %>
+        <span>-</span>
+      <% else %>
+        <%= link_to "Website", @spot.website %>
+      <% end %>
     </li>
-    <% end %>
   </ul>
   <div class="spot__spacer"></div>
   <div class="spot__rating wrapper spacer-lg">
