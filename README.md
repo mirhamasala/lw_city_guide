@@ -20,7 +20,7 @@ Wagon City Guides is not endorsed by Le Wagon. It's an independent project by La
 
 🔥 Fire rating: [Lars Böhm](https://github.com/datene)
 
-⭐️ Special thanks to [Inou Ridder](https://github.com/InouRidder) for the idea
+⭐️ Idea: [Inou Ridder](https://github.com/InouRidder)
 
 ## Resources
 
