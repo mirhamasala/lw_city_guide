@@ -24,19 +24,19 @@
   <ul class="spot__details wrapper">
     <li class="spot__address spot__details-item">
       <span class="spot__icon">
-        <%= show_svg("directions.svg") %>
+        <%= show_svg("icon_directions.svg") %>
       </span>
       <%= @spot.address %>
     </li>
     <li class="spot__phone-number spot__details-item">
       <span class="spot__icon">
-        <%= show_svg("phone.svg") %>
+        <%= show_svg("icon_phone.svg") %>
       </span>
       <%= @spot.phone_number.blank? ? "-" : @spot.phone_number %>
     </li>
     <li class="spot__website spot__details-item">
       <span class="spot__icon">
-        <%= show_svg("domain.svg") %>
+        <%= show_svg("icon_domain.svg") %>
       </span>
       <% if @spot.website.blank? %>
         <span>-</span>
