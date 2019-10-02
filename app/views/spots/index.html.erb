@@ -1,5 +1,5 @@
 <div class="spots">
-  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "#{@city.name.downcase}.jpeg" %>')">
+  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "city_#{@city.name.downcase}.jpeg" %>')">
     <h1 class="spots__name"><%= @city.name %></h1>
     <div class="spots__country"><%= @city.country %></div>
   </header>
@@ -20,7 +20,7 @@
             <% unless spot.photo.blank? %>
               <%= image_tag "#{spot.photo}", class: "card-spot__image" %>
                 <% else %>
-              <%= image_tag "#{@city.name.downcase}.jpeg", class: "card-spot__image" %>
+              <%= image_tag "city_#{@city.name.downcase}.jpeg", class: "card-spot__image" %>
             <% end %>
             <div class="card-spot__text">
               <p class="card-spot__sub-category"><%= spot.sub_category %></p>

@@ -7,7 +7,7 @@
     <% for city in @cities %>
       <%= link_to city_spots_path(city), class: "card-city-wrapper" do %>
         <div class="card-city">
-          <%= image_tag "#{city.name.downcase}.jpeg", class: "card-city__image" %>
+          <%= image_tag "city_#{city.name.downcase}.jpeg", class: "card-city__image" %>
           <div class="card-city__text">
             <p class="card-city__name"><%= city.name %></p>
             <p class="card-city__spots"><%= pluralize city.spots.size, "spot" %></p>
