@@ -29,3 +29,7 @@ Wagon City Guides is not endorsed by Le Wagon. It's an independent project by La
 - [Database schema](https://kitt.lewagon.com/db/2357)
 
 - [Figma design](https://www.figma.com/file/ROwm7eDNn5VdztbIGPwArIPD/Le-Wagon-on-Tour)
+
+### More
+
+- Tool for optimizing SVG files: https://jakearchibald.github.io/svgomg/
