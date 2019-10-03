@@ -176,7 +176,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    simple_form (4.1.0)
+    simple_form (5.0.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     spring (2.1.0)
@@ -237,7 +237,7 @@ DEPENDENCIES
   rails (= 5.2.3)
   redis
   sassc-rails
-  simple_form
+  simple_form (>= 5.0.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
