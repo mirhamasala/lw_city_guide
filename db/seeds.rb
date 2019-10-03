@@ -6,9 +6,8 @@ Spot.destroy_all
 
 # 💥
 puts "Adding city builders..."
-g = User.create!(email: "g@testing.com", password: "testing", github_handle: "DctrG", admin: true)
+g = User.create!(email: "g@testing.com", password: "testing", github_handle: "DctrG")
 mirha = User.create!(email: "mirha@testing.com", password: "testing", github_handle: "mirhamasala", admin: true)
-gm = User.create!(email: "gm@testing.com", password: "testing")
 puts "Builders be building..."
 
 # 💥
@@ -30,11 +29,11 @@ puts "Cities attached to runners..."
 puts "Creating categories..."
 eat = Category.create!(name: "eat")
 drink = Category.create!(name: "drink")
-play = Category.create!(name: "play")
 see = Category.create!(name: "see")
 shop = Category.create!(name: "shop")
 sleep = Category.create!(name: "sleep")
 wagon = Category.create!(name: "wagon")
+other = Category.create!(name: "other")
 puts "All boxed up..."
 
 # 💥
