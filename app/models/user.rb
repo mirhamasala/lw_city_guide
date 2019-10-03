@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :github_handle, presence: true
+
   has_many :spots
   has_many :ratings, dependent: :destroy
   has_and_belongs_to_many :cities
