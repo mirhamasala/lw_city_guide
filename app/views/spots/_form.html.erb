@@ -3,7 +3,7 @@
   <%= f.association :category %>
   <%= f.input :sub_category %>
   <%= f.input :description %>
-  <%= f.input :address %>
+  <%= f.input :address, input_html: { autocomplete: "off" } %>
   <%= f.input :latitude %>
   <%= f.input :longitude %>
   <%= f.input :phone_number %>
