@@ -6,7 +6,7 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin?
+    true
   end
 
   def show?
@@ -14,11 +14,11 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? && record.user == user
+    user.admin? || record.user == user
   end
 
   def destroy?
-    user.admin? && record.user == user
+    user.admin? || record.user == user
   end
 
 end
