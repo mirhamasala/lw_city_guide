@@ -190,6 +190,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    table_print (1.5.6)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
@@ -240,6 +241,7 @@ DEPENDENCIES
   simple_form (>= 5.0.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  table_print
   uglifier
   web-console (>= 3.3.0)
   webpacker

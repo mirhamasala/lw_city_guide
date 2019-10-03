@@ -1,10 +1,10 @@
 # Wagon City Guides
 
-When I finished my coding bootcamp with [Le Wagon](https://www.lewagon.com/), my teacher Inou suggested that I create a city guide for Le Wagon Bali and keep practicing my coding skills. One freelance project and another front-end job later, I finally got to it.
+When I finished my coding bootcamp with [Le Wagon](https://www.lewagon.com/) in Bali, my teacher suggested that I create a city guide for Le Wagon Bali to keep practicing my coding skills. One freelance project and another front-end job later, I finally got to it.
 
-I made Wagon City Guides for the drivers, community managers, and teachers of Le Wagon, so that they have a platform on which they can share their favorite spots with their students. At the same time, it's also a platform that the teachers themselves can use to find the best that Le Wagon city campuses have to offer when working abroad.
+I made Wagon City Guides for the drivers, community managers, and teachers of Le Wagon, so that they have an app on which they can share their favorite recommendations with their students. At the same time, it can also be used by the teachers themselves when traveling and working abroad.
 
-_Side note: Wagon City Guides is also part of my own "web dev MBA." You can find out more about that here: [Leap of Code - The Curriculum](https://www.mirhamasala.com/leap-of-code/#curriculum)_
+Wagon City Guides is also part of my "web dev MBA." You can find out more about that here: [Leap of Code - The Curriculum](https://www.mirhamasala.com/leap-of-code/#curriculum)
 
 ## Disclaimer
 
@@ -22,6 +22,10 @@ Wagon City Guides is not endorsed by Le Wagon. It's an independent project by La
 
 ⭐️ Idea: [Inou Ridder](https://github.com/InouRidder)
 
+### Become a contributor
+
+If you would like to fix a bug or implement a feature, you can create a pull request. You may want to check the [backlog](https://github.com/mirhamasala/lw_city_guide/projects/1 first, and let me know what you'll be working on so that I can add it to the "in progress column."
+
 ## Resources
 
 - [Backlog](https://github.com/mirhamasala/lw_city_guide/projects/1)
@@ -32,4 +36,6 @@ Wagon City Guides is not endorsed by Le Wagon. It's an independent project by La
 
 ### More
 
-- Tool for optimizing SVG files: https://jakearchibald.github.io/svgomg/
+- [SVG Optimization Tool](https://jakearchibald.github.io/svgomg/)
+
+- [table_print](http://tableprintgem.com/)
