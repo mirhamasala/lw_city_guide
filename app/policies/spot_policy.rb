@@ -6,7 +6,7 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.admin? || user.cities.include?(record.city)
   end
 
   def show?
@@ -20,5 +20,4 @@ class SpotPolicy < ApplicationPolicy
   def destroy?
     user.admin? || record.user == user
   end
-
 end

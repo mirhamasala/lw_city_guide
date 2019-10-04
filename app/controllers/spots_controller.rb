@@ -15,18 +15,18 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @spot = Spot.new
-    unless current_user.cities.include?(@city)
-      flash[:alert] = "So sorry, but you can't add places for #{@city.name}. 💩"
-      redirect_back(fallback_location: root_path)
-    end
+    # spot = @city.spots.build
+    spot = city.spots.build
+    @not_authorized_message = "So sorry, but you can't add places for #{@city.name}. 💩"
     authorize @spot
+    # render :new, locals: { spot: spot, city: city}
+    # render :new, locals: { spot: spot, city: @city}
   end
 
   def create
-    @spot = Spot.new(spot_params)
+    @spot = @city.spots.build(spot_params)
     @spot.user = current_user
-    @spot.city = @city
+    authorize @spot
     if @spot.save
       flash[:notice] = "Yay! You succcesfully added #{@spot.name}! 🍪"
       redirect_to spot_path(@spot)
@@ -34,7 +34,6 @@ class SpotsController < ApplicationController
       flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :new
     end
-    authorize @spot
   end
 
   def show
@@ -71,9 +70,13 @@ class SpotsController < ApplicationController
     authorize @spot
   end
 
-  def set_city
-    @city = City.find(params[:city_id])
+  def city
+    City.find(params[:city_id])
   end
+
+  # def set_city
+    # @city = City.find(params[:city_id])
+  # end
 
   def spot_params
     params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id)
