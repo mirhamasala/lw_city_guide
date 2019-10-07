@@ -14,10 +14,10 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || record.user == user
+    user.admin? || record.owner == user
   end
 
   def destroy?
-    user.admin? || record.user == user
+    user.admin? || record.owner == user
   end
 end

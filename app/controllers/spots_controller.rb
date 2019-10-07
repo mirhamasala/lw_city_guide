@@ -15,12 +15,9 @@ class SpotsController < ApplicationController
   end
 
   def new
-    # spot = @city.spots.build
-    spot = city.spots.build
+    @spot = @city.spots.build
     @not_authorized_message = "So sorry, but you can't add places for #{@city.name}. 💩"
     authorize @spot
-    # render :new, locals: { spot: spot, city: city}
-    # render :new, locals: { spot: spot, city: @city}
   end
 
   def create
@@ -70,13 +67,9 @@ class SpotsController < ApplicationController
     authorize @spot
   end
 
-  def city
-    City.find(params[:city_id])
+  def set_city
+    @city = City.find(params[:city_id])
   end
-
-  # def set_city
-    # @city = City.find(params[:city_id])
-  # end
 
   def spot_params
     params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id)
