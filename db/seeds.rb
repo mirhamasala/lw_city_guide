@@ -51,6 +51,7 @@ spot_attributes = [
     category: wagon,
     city: barcelona,
     user: g,
+    owner: mirha,
   },
   {
     name: "SlowMov",
@@ -63,6 +64,7 @@ spot_attributes = [
     category: drink,
     city: barcelona,
     user: g,
+    owner: mirha,
   },
   {
     name: "Can Ros",
@@ -74,6 +76,7 @@ spot_attributes = [
     category: eat,
     city: barcelona,
     user: g,
+    owner: mirha,
   },
   {
     name: "NAP Antic",
@@ -86,6 +89,7 @@ spot_attributes = [
     category: eat,
     city: barcelona,
     user: g,
+    owner: mirha,
   },
   {
     name: "Dry Martini",
@@ -98,6 +102,7 @@ spot_attributes = [
     category: drink,
     city: barcelona,
     user: g,
+    owner: mirha,
   },
   {
     name: "Mercado de La Boqueria",
@@ -110,6 +115,7 @@ spot_attributes = [
     category: shop,
     city: barcelona,
     user: g,
+    owner: mirha,
   },
   {
     name: "Le Wagon Madrid",
@@ -122,6 +128,7 @@ spot_attributes = [
     category: wagon,
     city: madrid,
     user: mirha,
+    owner: mirha,
   },
   {
     name: "Café Belén",
@@ -134,6 +141,7 @@ spot_attributes = [
     category: drink,
     city: madrid,
     user: mirha,
+    owner: mirha,
   },
   {
     name: "Chocolatería San Ginés",
@@ -146,6 +154,7 @@ spot_attributes = [
     category: eat,
     city: madrid,
     user: mirha,
+    owner: mirha,
   },
   {
     name: "Mercado De San Miguel",
@@ -160,6 +169,7 @@ spot_attributes = [
     category: shop,
     city: madrid,
     user: mirha,
+    owner: mirha,
   }
 ]
 
