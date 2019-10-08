@@ -6,7 +6,9 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin? || user.cities.include?(record.city)
+    user.admin? || user.cities.include?(record.city) # this is a user and relation
+    # user.admin? || record.city_community_manager?(user) # just dealing with the record, returning true or fals
+    # law of "demeter" - keep the number of types minimal - record.city.community_manager (spot, city, user)
   end
 
   def show?

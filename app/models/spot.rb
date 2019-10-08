@@ -34,4 +34,16 @@ class Spot < ApplicationRecord
   def rating_for(user)
     ratings.find_or_initialize_by(user: user)
   end
+
+  def city_community_manager?(user)
+    city.community_manager == user
+  end
+
+  # def phone_number_test
+  #   if attributes["phone_number"].present?
+  #     attributes["phone_number"]
+  #   else
+  #     "-"
+  #   end
+  # end
 end

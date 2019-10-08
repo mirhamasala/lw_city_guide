@@ -9,4 +9,9 @@ class User < ApplicationRecord
   has_many :spots
   has_many :ratings, dependent: :destroy
   has_and_belongs_to_many :cities
+
+  # User objects tend to become very big, so better to put it elsewhere
+  # def community_manager_for?(city)
+  #   city.community_manager == self # returns true if the current instance of the user is the community manager of the city
+  # end
 end
