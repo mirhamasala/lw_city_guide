@@ -1,9 +1,5 @@
 <div class="spot">
-  <% unless @spot.photo.blank? %>
-    <%= image_tag "#{@spot.photo}", class: "spot__image" %>
-  <% else %>
-    <%= image_tag "city_#{@spot.city.name.downcase}.jpeg", class: "spot__image" %>
-  <% end %>
+  <%= cl_image_tag((@spot.photo.present? ? @spot.photo : @spot.city.photo), class: "spot__image") %>
   <header class="spot__header">
     <h1 class="spot__name"><%= @spot.name %></h1>
     <span class="spot__sub-category"><%= @spot.sub_category %></span>
