@@ -14,7 +14,7 @@ class CitiesController < ApplicationController
   def create
     @city = City.create(city_params)
     authorize @city
-    if @spot.save
+    if @city.save
       flash[:notice] = "Yay! You succcesfully added #{@city.name}! 🍪"
       redirect_to cities_path
     else
