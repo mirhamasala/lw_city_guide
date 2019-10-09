@@ -31,7 +31,7 @@ eat = Category.create!(name: "eat")
 drink = Category.create!(name: "drink")
 see = Category.create!(name: "see")
 shop = Category.create!(name: "shop")
-sleep = Category.create!(name: "sleep")
+stay = Category.create!(name: "stay")
 wagon = Category.create!(name: "wagon")
 other = Category.create!(name: "other")
 puts "All boxed up..."
