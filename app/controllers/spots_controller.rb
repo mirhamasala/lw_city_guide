@@ -22,7 +22,7 @@ class SpotsController < ApplicationController
 
   def create
     @spot = @city.spots.build(spot_params)
-    @spot.user = current_user
+    @spot.owner = current_user
     authorize @spot
     if @spot.save
       flash[:notice] = "Yay! You succcesfully added #{@spot.name}! 🍪"

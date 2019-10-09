@@ -6,7 +6,6 @@ class Spot < ApplicationRecord
 
   belongs_to :category
   belongs_to :city
-  belongs_to :user
   has_many :ratings, dependent: :destroy
   belongs_to :owner, class_name: "User"
 
