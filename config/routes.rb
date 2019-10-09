@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :spots, only: [:show, :edit, :update, :destroy] do
     resources :ratings, only: [:create, :update]
   end
+  resources :categories, only: [:new, :create]
 end
