@@ -50,7 +50,6 @@ spot_attributes = [
     website: "https://www.lewagon.com/barcelona",
     category: wagon,
     city: barcelona,
-    user: g,
     owner: mirha,
   },
   {
@@ -63,7 +62,6 @@ spot_attributes = [
     website: "https://www.slowmov.com",
     category: drink,
     city: barcelona,
-    user: g,
     owner: mirha,
   },
   {
@@ -75,7 +73,6 @@ spot_attributes = [
     phone_number: "+34 667 23 81 72",
     category: eat,
     city: barcelona,
-    user: g,
     owner: mirha,
   },
   {
@@ -88,7 +85,6 @@ spot_attributes = [
     website: "https://www.facebook.com/nap.pizzeria/",
     category: eat,
     city: barcelona,
-    user: g,
     owner: mirha,
   },
   {
@@ -101,7 +97,6 @@ spot_attributes = [
     website: "http://www.drymartiniorg.com/",
     category: drink,
     city: barcelona,
-    user: g,
     owner: mirha,
   },
   {
@@ -114,7 +109,6 @@ spot_attributes = [
     website: "http://www.boqueria.info",
     category: shop,
     city: barcelona,
-    user: g,
     owner: mirha,
   },
   {
@@ -127,7 +121,6 @@ spot_attributes = [
     website: "https://www.lewagon.com/madrid",
     category: wagon,
     city: madrid,
-    user: mirha,
     owner: mirha,
   },
   {
@@ -140,7 +133,6 @@ spot_attributes = [
     website: "http://www.elcafebelen.com/",
     category: drink,
     city: madrid,
-    user: mirha,
     owner: mirha,
   },
   {
@@ -153,7 +145,6 @@ spot_attributes = [
     website: "https://www.chocolateriasangines.com/",
     category: eat,
     city: madrid,
-    user: mirha,
     owner: mirha,
   },
   {
@@ -168,7 +159,6 @@ spot_attributes = [
     website: "http://www.mercadodesanmiguel.es/",
     category: shop,
     city: madrid,
-    user: mirha,
     owner: mirha,
   }
 ]
