@@ -1,5 +1,10 @@
 <div class="wrapper-form">
- <h1>Edit City</h1>
-  <%= render "form" %>
-  <%= link_to "Cancel", cities_path %>
+  <h1 class="spacer-md">Edit City</h1>
+  <div class="spacer-md">
+    <%= render "form" %>
+  </div>
+  <div class="caret-link">
+    <%= show_svg("caret_left.svg") %>
+    <%= link_to "Cancel", cities_path %>
+  </div>
 </div>
