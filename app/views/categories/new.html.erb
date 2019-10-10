@@ -1,7 +1,11 @@
 <div class="wrapper-form">
-  <h1>Add new category</h1>
+  <h1 class="text-center spacer-md">Add a new category</h1>
   <%= simple_form_for(@category) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit %>
+    <div class="spacer-md">
+      <%= f.input :name %>
+    </div>
+    <div class="button-center">
+      <%= f.submit class: "button button-primary" %>
+    </div>
   <% end %>
 </div>
