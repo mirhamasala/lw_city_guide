@@ -29,6 +29,7 @@ puts "Cities attached to runners..."
 puts "Creating categories..."
 eat = Category.create!(name: "eat")
 drink = Category.create!(name: "drink")
+play = Category.create!(name: "play")
 see = Category.create!(name: "see")
 shop = Category.create!(name: "shop")
 stay = Category.create!(name: "stay")
