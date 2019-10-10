@@ -1,4 +1,10 @@
 <div class="wrapper-form">
-  <h1>Add City</h1>
-  <%= render "form" %>
+  <h1 class="spacer-md">Add a new city</h1>
+  <div class="spacer-md">
+    <%= render "form" %>
+  </div>
+  <div class="caret-link">
+    <%= show_svg("caret_left.svg") %>
+    <%= link_to "Cancel and go back home", root_path %>
+  </div>
 </div>
