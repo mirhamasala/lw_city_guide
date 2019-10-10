@@ -26,6 +26,10 @@ a {
   }
 }
 
+.headline-primary {
+  color: $brand-primary;
+}
+
 .highlighted {
   padding: 0;
   border-radius: 0;
@@ -42,4 +46,11 @@ a {
   }
   .highlighted--red { background: $light-red; }
   .highlighted--purple { background: $light-purple;}
+}
+
+.link-primary {
+  color: $brand-primary;
+  &:hover {
+    color: $brand-primary;
+  }
 }
