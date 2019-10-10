@@ -8,6 +8,6 @@
   <%= f.input :longitude %>
   <%= f.input :phone_number %>
   <%= f.input :website %>
-  <%= f.input :photo %>
-  <%= f.submit %>
+  <%= f.input :photo, label: "Upload an image", label_html: { class: "button button-secondary" }, input_html: { class: "button-file-upload" } %>
+  <%= f.submit class: "button button-primary" %>
 <% end %>

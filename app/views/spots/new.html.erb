@@ -1,4 +1,10 @@
 <div class="wrapper-form">
-  <%= render "form" %>
-  <%= link_to "Cancel", city_spots_path(@city) %>
+  <h1 class="spacer-md">Add a new spot</h1>
+  <div class="spacer-md">
+    <%= render "form" %>
+  </div>
+  <div class="caret-link">
+    <%= show_svg("caret_left.svg") %>
+    <%= link_to "Cancel and go back to #{@city.name}", city_spots_path(@city) %>
+  </div>
 </div>
