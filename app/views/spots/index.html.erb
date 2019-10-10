@@ -6,7 +6,7 @@
   <% if @city.spots.blank? %>
     <div class="wrapper spacer-lg">
       <p><%= "Oh, oops! No places for #{@city.name} added yet! 💩" %></p>
-      <div class="link">
+      <div class="caret-link">
         <%= show_svg("caret_left.svg") %>
         <%= link_to "Back to all cities", root_path %>
       </div>

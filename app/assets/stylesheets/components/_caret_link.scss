@@ -1,9 +1,9 @@
-.link {
+.caret-link {
   display: flex;
   align-items: center;
 }
 
-.link a {
+.caret-link a {
   color: $brand-primary;
   font-weight: var(--medium-bold);
   &:hover {
@@ -11,7 +11,7 @@
   }
 }
 
-.link--gray {
+.caret-link--bg-gray {
   padding: 6px 0;
   background: $light-gray;
 }

@@ -1,5 +1,5 @@
 <%= render "spot" %>
-<div class="link link--gray">
+<div class="caret-link caret-link--bg-gray">
   <%= show_svg("caret_left.svg") %>
   <%= link_to "Back to #{@spot.city.name}", city_spots_path(@spot.city) %>
 </div>
