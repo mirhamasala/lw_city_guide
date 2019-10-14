@@ -1,0 +1,19 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  // max-width: 1440px;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: $black;
+  font-weight: $fw-bold;
+}
+
+a {
+  color: $gray;
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+  }
+}

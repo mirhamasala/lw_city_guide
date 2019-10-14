@@ -20,11 +20,11 @@
 .card-city__name {
   margin-bottom: 0;
   font-size: 1.125rem;
-  font-weight: var(--medium-bold);
+  font-weight: $fw-medium-bold;
 }
 
 .card-city__spots {
   margin-bottom: 0;
   font-size: 0.875rem;
-  font-weight: var(--light);
+  font-weight: $fw-light;
 }

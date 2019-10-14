@@ -1,7 +1,4 @@
-// Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
+@import "config/index";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -10,8 +7,7 @@
 @import "mapbox-gl/dist/mapbox-gl.css";
 
 // CSS partials
+@import "base";
+@import "helpers";
 @import "components/index";
 @import "pages/index";
-
-@import "base/base";
-@import "base/helpers";

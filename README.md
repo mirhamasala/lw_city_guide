@@ -34,6 +34,20 @@ If you would like to fix a bug or implement a feature, you can create a pull req
 
 - [Figma design](https://www.figma.com/file/ROwm7eDNn5VdztbIGPwArIPD/Le-Wagon-on-Tour)
 
+### Bem
+
+- [MindBEMding – getting your head ’round BEM syntax](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+
+### CSS Stylesheet Folder Structure
+
+- [Architecture for a Sass Project](https://www.sitepoint.com/architecture-sass-project/)
+
+
+- [How to Organize Your CSS with a Modular Architecture
+(OOCSS, BEM, SMACSS)](https://snipcart.com/blog/organize-css-modular-architecture)
+
+- [Sass: Directory Structures That Help You Maintain Your Code](https://vanseodesign.com/css/sass-directory-structures/)
+
 ### More
 
 - [SVG Optimization Tool](https://jakearchibald.github.io/svgomg/)
