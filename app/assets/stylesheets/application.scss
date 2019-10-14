@@ -1,6 +1,4 @@
 @import "config/index";
-@import "base";
-@import "helpers";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -9,5 +7,7 @@
 @import "mapbox-gl/dist/mapbox-gl.css";
 
 // CSS partials
+@import "base";
+@import "helpers";
 @import "components/index";
 @import "pages/index";
