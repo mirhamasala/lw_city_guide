@@ -5,7 +5,7 @@
 
 .caret-link a {
   color: $brand-primary;
-  font-weight: var(--medium-bold);
+  font-weight: $fw-medium-bold;
   &:hover {
     color: $brand-primary;
   }

@@ -1,0 +1,68 @@
+.brand-primary { color: $brand-primary };
+
+.headline-primary {
+  color: $brand-primary;
+}
+
+.link-primary {
+  color: $brand-primary;
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+.highlighted {
+  padding: 0;
+  border-radius: 0;
+}
+
+.highlighted--text { font-weight: $fw-medium-bold; }
+.highlighted--red { color: $brand-primary; }
+.highlighted--purple { color: $purple; }
+
+@media screen and (min-width: 768px) {
+  .highlighted {
+    padding: 2px 8px 4px;
+    border-radius: 3px;
+  }
+  .highlighted--red { background: $light-red; }
+  .highlighted--purple { background: $light-purple;}
+}
+
+.spacer-xs { margin-bottom: 12px; }
+.spacer-sm { margin-bottom: 24px; }
+.spacer-md { margin-bottom: 32px;}
+.spacer-lg { margin-bottom: 48px; }
+
+.button-center {
+  display: flex;
+  justify-content: center;
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.wrapper { padding: 0 20px; }
+
+.wrapper-form {
+  width: 100%;
+  padding: 0 $wrapper;
+  margin: 48px auto;
+}
+
+@media screen and (min-width: 576px) {
+  .wrapper-form { width: 75%; }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper-form { width: 65%; }
+}
+
+@media screen and (min-width: 992px) {
+  .wrapper-form { width: 50%; }
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper-form { width: 35%; }
+}

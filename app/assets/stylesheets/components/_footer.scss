@@ -1,5 +1,5 @@
 footer {
-  padding: 64px var(--wrapper);
+  padding: 64px $wrapper;
   background: $black;
   color: $white;
 }
@@ -12,7 +12,7 @@ footer {
     margin-bottom: 1rem;
     color: $white;
     font-size: 1rem;
-    font-weight: var(--medium-bold);
+    font-weight: $fw-medium-bold;
   }
   a {
     color: $light-gray;
