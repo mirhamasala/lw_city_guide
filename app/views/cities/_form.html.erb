@@ -2,6 +2,9 @@
   <%= f.input :name %>
   <%= f.input :country %>
   <%= f.input :remote_photo_url %>
-  <%= f.input :photo, label: "Upload an image", label_html: { class: "button button-secondary" }, input_html: { class: "button-file-upload" } %>
+  <%= cl_image_tag(@city.photo.preview, class: "spacer-xs") if @city.photo.present? %>
+  <%= f.input :photo, label: (@city.photo.present? ? "Change image" : "Upload an image"),
+                      label_html: { class: "button button-secondary" },
+                      input_html: { class: "button-file-upload" } %>
   <%= f.submit class: "button button-primary" %>
 <% end %>
