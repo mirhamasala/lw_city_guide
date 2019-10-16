@@ -8,7 +8,7 @@
       <% unless city.spots.count == 0 %>
         <%= link_to city_spots_path(city), class: "card-city-wrapper" do %>
           <div class="card-city">
-            <%= cl_image_tag city.photo, class: "card-city__image" %>
+            <%= cl_image_tag city.photo.thumbnail, class: "card-city__image" %>
             <div class="card-city__text">
               <p class="card-city__name"><%= city.name %></p>
               <p class="card-city__spots"><%= pluralize city.spots.size, "spot" %></p>
