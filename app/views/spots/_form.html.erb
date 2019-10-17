@@ -11,7 +11,7 @@
   <%= cl_image_tag(@spot.photo.preview, class: "spacer-xs") if @spot.photo? %>
   <%= f.input :photo, folder: "city_guides/#{@spot.city.name}/",
                       tags: [@spot.city.country, @spot.city.name, @spot.category],
-                      label: @spot.photo.present? ? "Change image" : "Upload an image",
+                      label: @spot.photo? ? "Change image" : "Upload an image",
                       label_html: { class: "button button-secondary" },
                       input_html: { class: "button-file-upload" } %>
   <%= f.submit class: "button button-primary" %>
