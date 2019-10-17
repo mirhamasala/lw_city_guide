@@ -23,9 +23,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   def tags
     if model.class == Spot
-      [model.city.name, model.category.name]
+      [model.city.country, model.city.name, model.category.name]
     elsif model.class == City
-      [model.country]
+      ["cover"]
     end
   end
 end
