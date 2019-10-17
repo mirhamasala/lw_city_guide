@@ -1,7 +1,7 @@
 <%= simple_form_for(@city) do |f| %>
   <%= f.input :name %>
   <%= f.input :country %>
-  <%= f.input :remote_photo_url %>
+  <%#= f.input :remote_photo_url %>
   <%= cl_image_tag(@city.photo.preview, class: "spacer-xs") if @city.photo? %>
   <%= f.input :photo, folder: "city_guides/cities/",
                       tags: ["cover"],
