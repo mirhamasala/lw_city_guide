@@ -12,11 +12,12 @@ class CitiesController < ApplicationController
   end
 
   def create
-    @city = City.create(city_params)
+    @city = City.new(city_params)
     authorize @city
+    @city.users << current_user
     if @city.save
       flash[:notice] = "Yay! You succcesfully added #{@city.name}! 🍪"
-      redirect_to cities_path
+      redirect_to city_spots_path(@city)
     else
       flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :new
