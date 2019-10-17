@@ -2,10 +2,10 @@
   <%= f.input :name %>
   <%= f.input :country %>
   <%#= f.input :remote_photo_url %>
-  <%= cl_image_tag(@city.photo.preview, class: "spacer-xs") if @city.photo? %>
-  <%= f.input :photo, folder: "city_guides/cities/#{@city.name}/cover/",
+  <%= cl_image_tag(@city.cover.preview, class: "spacer-xs") if @city.cover? %>
+  <%= f.input :cover, folder: "city_guides/cities/#{@city.name}/cover/",
                       tags: ["cover"],
-                      label: @city.photo? ? "Change image" : "Upload an image",
+                      label: @city.cover? ? "Change image" : "Upload an image",
                       label_html: { class: "button button-secondary" },
                       input_html: { class: "button-file-upload" } %>
   <%= f.submit class: "button button-primary" %>

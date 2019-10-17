@@ -1,11 +1,14 @@
 <div class="spots">
-  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @city.photo.url ? @city.photo.url : @city.photo %>')">
+  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @city.cover.url ? @city.cover.url : @city.cover %>')">
     <h1 class="spots__name"><%= @city.name %></h1>
     <div class="spots__country"><%= @city.country %></div>
   </header>
   <% if @city.spots.blank? %>
-    <div class="wrapper spacer-lg">
-      <p><%= "Oh, oops! No places for #{@city.name} added yet! 💩" %></p>
+    <div class="wrapper spacer-md">
+      <p class="spacer-md">Oh, oops! No spots for <strong><%= @city.name %></strong> have been added yet. 💩</p>
+      <% if user_signed_in? && policy(@city.spots).create? %>
+        <%= link_to "Add one now", new_city_spot_path(@city), class: "button button-primary spacer-md" %>
+      <% end %>
       <div class="caret-link">
         <%= show_svg("caret_left.svg") %>
         <%= link_to "Back to all cities", root_path %>
@@ -17,7 +20,7 @@
       <% @spots.each do |spot| %>
         <%= link_to spot_path(spot), class: "card-spot-wrapper" do %>
           <div class="card-spot" data-spot-id="<%= spot.id %>">
-            <%= cl_image_tag((spot.photo.present? ? spot.photo.thumb : spot.city.photo.thumb), class: "card-spot__image") %>
+            <%= cl_image_tag((spot.photo.present? ? spot.photo.thumb : spot.city.cover.thumb), class: "card-spot__image") %>
             <div class="card-spot__text">
               <p class="card-spot__sub-category"><%= spot.sub_category %></p>
               <p class="card-spot__name"><%= spot.name %></p>
