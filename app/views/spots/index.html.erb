@@ -20,7 +20,7 @@
       <% @spots.each do |spot| %>
         <%= link_to spot_path(spot), class: "card-spot-wrapper" do %>
           <div class="card-spot" data-spot-id="<%= spot.id %>">
-            <%= cl_image_tag((spot.photo.present? ? spot.photo.thumb : spot.city.cover.thumb), class: "card-spot__image") %>
+            <%= cl_image_tag((spot.photo? ? spot.photo.thumb : spot.city.cover.thumb), class: "card-spot__image") %>
             <div class="card-spot__text">
               <p class="card-spot__sub-category"><%= spot.sub_category %></p>
               <p class="card-spot__name"><%= spot.name %></p>
