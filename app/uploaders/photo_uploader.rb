@@ -15,9 +15,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   def public_id
     if model.class == Spot
-      "city_guides/#{model.city.name.downcase}/" + model.name.parameterize.underscore
+      "city_guides/cities/#{model.city.name.downcase}/spots/" + model.name.parameterize.underscore
     elsif model.class == City
-      "city_guides/cities/" + model.name.parameterize.underscore
+      "city_guides/cities/#{model.name.downcase}/cover/" + model.name.parameterize.underscore
     end
   end
 
