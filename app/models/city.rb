@@ -6,7 +6,8 @@ class City < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :country, presence: true
-  validates :photo, presence: true, unless: :remote_photo_url
+  validates :photo, presence: true
+  # validates :photo, presence: true, unless: :remote_photo_url
 
   def self.alphabetize
     order(name: :asc)
