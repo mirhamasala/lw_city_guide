@@ -12,10 +12,10 @@ puts "Builders be building..."
 
 # 💥
 puts "Building Spanish Romes in less than a day..."
-barcelona = City.create!(name: "Barcelona", country: "Spain", remote_photo_url: "https://res.cloudinary.com/mirhamasala/image/upload/v1570517368/wagon_city_guides/city_barcelona.jpg")
-madrid = City.create!(name: "Madrid", country: "Spain", remote_photo_url: "https://res.cloudinary.com/mirhamasala/image/upload/v1570517368/wagon_city_guides/city_madrid.jpg")
-# bali = City.create!(name: "Bali", country: "Indonesia", remote_photo_url: "https://res.cloudinary.com/mirhamasala/image/upload/v1570517372/wagon_city_guides/city_bali.jpg")
-# singapore = City.create!(name: "Singapore", country: "Singapore", remote_photo_url: "https://res.cloudinary.com/mirhamasala/image/upload/v1570517368/wagon_city_guides/city_singapore.jpg"")
+barcelona = City.create!(name: "Barcelona", country: "Spain")
+madrid = City.create!(name: "Madrid", country: "Spain")
+# bali = City.create!(name: "Bali", country: "Indonesia")
+# singapore = City.create!(name: "Singapore", country: "Singapore")
 puts "Pinned Barcelona & Madrid on the map..."
 
 # 💥
@@ -39,7 +39,6 @@ puts "All boxed up..."
 
 # 💥
 puts "Hunting hotspots..."
-# category == category_id, city == city_id, owner == owner_id
 spot_attributes = [
   {
     name: "Le Wagon Barcelona",
