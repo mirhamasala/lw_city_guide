@@ -1,19 +1,17 @@
 class Spot < ApplicationRecord
-  validates :name, :description, :address, :city_id, :category_id, presence: true
-  validates :address, uniqueness: { scope: :city }
-  validates :photo, presence: true
-  # validates :name, uniqueness: { scope: :address,
-  # message: "already exists on this address" }
+  mount_uploader :photo, SpotPhotoUploader
 
   belongs_to :category
   belongs_to :city
-  has_many :ratings, dependent: :destroy
   belongs_to :owner, class_name: "User"
+  has_many :ratings, dependent: :destroy
+
+  validates :name, :description, :address, :city_id, :category_id, presence: true
+  validates :address, uniqueness: { scope: :city }
+  validates :photo, presence: true
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-
-  mount_uploader :photo, SpotPhotoUploader
 
   def self.check_coordinates
     where.not(latitude: nil, longitude: nil)
