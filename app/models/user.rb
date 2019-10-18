@@ -6,8 +6,10 @@ class User < ApplicationRecord
 
   has_many :spots
   has_many :ratings, dependent: :destroy
-  has_and_belongs_to_many :cities
-  # has_many :owners, class_name: "Spot", foreign_key: "spot_id"
+
+  has_many :cities_users
+  has_many :cities, through: :cities_users
 
   validates :github_handle, presence: true
 end
+

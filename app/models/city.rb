@@ -2,7 +2,9 @@ class City < ApplicationRecord
   mount_uploader :cover, CityCoverUploader
 
   has_many :spots
-  has_and_belongs_to_many :users
+
+  has_many :cities_users
+  has_many :keepers, through: :cities_users, source: :user
 
   validates :name, presence: true, uniqueness: true
   validates :country, presence: true
@@ -12,3 +14,5 @@ class City < ApplicationRecord
     order(name: :asc)
   end
 end
+
+# Find every place where I call city.users
