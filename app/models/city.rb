@@ -2,7 +2,7 @@ class City < ApplicationRecord
   mount_uploader :cover, CityCoverUploader
 
   has_many :spots
-  has_and_belongs_to_many :users
+  has_and_belongs_to_many :keepers, class_name: "User"
 
   validates :name, presence: true, uniqueness: true
   validates :country, presence: true
