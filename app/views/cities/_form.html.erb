@@ -1,6 +1,9 @@
 <%= simple_form_for(@city) do |f| %>
   <%= f.input :name %>
   <%= f.input :country %>
+  <%= f.association :keepers, collection: User.all.map { |user| [ user.email, user.id ] },
+                              include_hidden: false,
+                              label: "City Keepers" %>
   <%= cl_image_tag(@city.cover.preview, class: "spacer-xs") if @city.cover? %>
   <%= f.input :cover, folder: "city_guides/cities/#{@city.name}/cover/",
                       tags: ["cover"],
