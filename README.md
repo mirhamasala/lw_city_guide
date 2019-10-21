@@ -28,6 +28,10 @@ If you would like to fix a bug or implement a feature, you can create a pull req
 
 ## Resources
 
+### API Keys / Environment Variables
+
+**Note:** Check `.env-example` for a list of required secret keys and environment variables. You'll need to add your own to the `.env` file of your local repo.
+
 - [Backlog](https://github.com/mirhamasala/lw_city_guide/projects/1)
 
 - [Database schema](https://kitt.lewagon.com/db/2357)
