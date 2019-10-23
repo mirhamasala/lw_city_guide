@@ -1,5 +1,5 @@
 <div class="spots">
-  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @city.cover.url ? @city.cover.url : @city.cover %>')">
+  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover.header %>')">
     <h1 class="spots__name"><%= @city.name %></h1>
     <div class="spots__country"><%= @city.country %></div>
   </header>
@@ -20,7 +20,7 @@
       <% @spots.each do |spot| %>
         <%= link_to spot_path(spot), class: "card-spot-wrapper" do %>
           <div class="card-spot" data-spot-id="<%= spot.id %>">
-            <%= cl_image_tag((spot.photo? ? spot.photo.thumb : spot.city.cover.thumb), class: "card-spot__image") %>
+            <%= cl_image_tag((spot.photo? ? spot.photo.card : spot.city.cover.card), class: "card-spot__image") %>
             <div class="card-spot__text">
               <p class="card-spot__sub-category"><%= spot.sub_category %></p>
               <p class="card-spot__name"><%= spot.name %></p>
