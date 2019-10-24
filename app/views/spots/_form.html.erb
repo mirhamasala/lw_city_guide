@@ -8,7 +8,13 @@
   <%= f.input :longitude %>
   <%= f.input :phone_number %>
   <%= f.input :website %>
-  <%= cl_image_tag(@spot.photo.preview, class: "spacer-xs") if @spot.photo? %>
+
+  <%#= cl_image_tag(@spot.photo.preview, class: "spacer-xs photo-preview") if @spot.photo? %>
+  <%= cl_image_tag(@spot.photo, :transformation=>[{:if=>"ar_gt_1:1"},
+                                                  {:width=>192, :crop=>"fit"},
+                                                  {:if=>"else", :width=>192, :crop=>"fill"},
+                                                  {:if=>"end"}],
+                                class: "spacer-xs photo-preview") if @spot.photo? %>
   <%= f.input :photo, folder: "city_guides/#{@spot.city.name}/spots/",
                       tags: [@spot.city.country, @spot.city.name, @spot.category],
                       label: @spot.photo? ? "Change image" : "Upload an image",
