@@ -1755,6 +1755,11 @@ clone-deep@^4.0.1:
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
 
+cloudinary-core@^2.7.4:
+  version "2.7.4"
+  resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.7.4.tgz#35db9b8a851ca7ef9feace6e98496a8455de6663"
+  integrity sha512-toaZSJVvpY1bQhqhin6atI1DPfloE/wOS9T6lriHsZVvdNyQu+c9AyNznM5/4NquI2oLr4G2gGgeX0tImnFUaQ==
+
 coa@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/coa/-/coa-2.0.2.tgz#43f6c21151b4ef2bf57187db0d73de229e3e7ec3"
@@ -5086,10 +5091,10 @@ pkg-dir@^3.0.0:
   dependencies:
     find-up "^3.0.0"
 
-places.js@^1.16.5:
-  version "1.16.5"
-  resolved "https://registry.yarnpkg.com/places.js/-/places.js-1.16.5.tgz#060b983ad77d3b196278e3f3f3f1f561b56c488b"
-  integrity sha512-beV9yyH/baoHoFAgDFzGaPUc329WAFv9u7CuNAqIaJ+lwqeGbiZoChc8DxXgQmrOyUE+zrEh+im1hDHfj0155Q==
+places.js@^1.16.6:
+  version "1.16.6"
+  resolved "https://registry.yarnpkg.com/places.js/-/places.js-1.16.6.tgz#bce243f7d1a1072f9d1a60c9dccdf1c739c82ae2"
+  integrity sha512-SGDYijNL8oPBr52avj81+HL/u//Igvv6V4KmL9umkbLufgh/hbT+tl0RyaCIxt4tKtnxoFInKFiewVq4xygqrQ==
   dependencies:
     algolia-aerial "^1.5.3"
     algoliasearch "^3.31.0"

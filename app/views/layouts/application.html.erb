@@ -17,12 +17,6 @@
     <%= render "shared/footer" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag    "application" %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.3.0/cloudinary-core-shrinkwrap.min.js"></script>
-        <script type="text/javascript">
-    var cl = cloudinary.Cloudinary.new({cloud_name: "mirhamasala"});
-    // replace 'demo' with your cloud name in the line above
-    cl.responsive();
-    </script>
     <% if content_for?(:after_js) %>
       <%= yield :after_js %>
     <% end %>
