@@ -3,5 +3,5 @@ class CityCoverUploader < PhotoUploader
     "city_guides/cities/#{model.name.parameterize.underscore}/cover/#{model.name.parameterize.underscore}"
   end
 
-  process tags => ["cover"]
+  process :tags => ["cover"]
 end
