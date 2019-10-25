@@ -1,5 +1,5 @@
 <div class="spots">
-  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover.header %>')">
+  <header class="spots__header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover %>')">
     <h1 class="spots__name"><%= @city.name %></h1>
     <div class="spots__country"><%= @city.country %></div>
   </header>
