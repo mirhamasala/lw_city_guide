@@ -1,5 +1,6 @@
+<%= content_for(:title, "Edit #{@city.name}") %>
 <div class="wrapper-form">
-  <h1 class="spacer-md">Edit City</h1>
+  <h1 class="spacer-md">Edit <%= @city.name %></h1>
   <div class="spacer-md">
     <%= render "form" %>
   </div>

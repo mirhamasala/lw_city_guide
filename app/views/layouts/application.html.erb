@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Wagon City Guides</title>
+    <title><%= content_for(:title) ? yield(:title) + " · Wagon City Guides" : "Wagon City Guides" %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= favicon_link_tag "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/198/world-map_1f5fa.png" %>

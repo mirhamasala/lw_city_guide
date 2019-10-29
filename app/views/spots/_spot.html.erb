@@ -1,3 +1,4 @@
+<%= content_for(:title, "#{@spot.name} · #{@spot.city.name} · #{@spot.city.country}") %>
 <div class="spot">
   <%= cl_image_tag((@spot.photo? ? @spot.photo : @spot.city.cover), :dpr => :auto, :responsive_placeholder => "blank", :width => :auto, class: "spot__image") %>
   <header class="spot__header">
