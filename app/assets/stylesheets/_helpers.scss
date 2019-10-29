@@ -43,4 +43,7 @@
 .text-right { text-align: right; }
 .text-left { text-align: left; }
 
-.wrapper { padding: 0 20px; }
+.wrapper {
+  padding-right: $wrapper;
+  padding-left: $wrapper;
+}

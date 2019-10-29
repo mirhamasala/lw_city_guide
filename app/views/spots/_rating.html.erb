@@ -1,6 +1,5 @@
-<div class="rating-wrapper">
-  <%= simple_form_for rating,
-  url: (rating.new_record? ? spot_ratings_path(spot) : spot_rating_path(spot, rating)), html: { id: 'rating-form' } do |f| %>
+<%= simple_form_for rating,
+url: (rating.new_record? ? spot_ratings_path(spot) : spot_rating_path(spot, rating)), html: { id: 'rating-form' } do |f| %>
   <div class="slider-container">
     <%= f.input :score, label: false, as: :range, collection: (0..100).to_a, input_html: { value: (rating.new_record? ? 0 : rating.score)} %>
     <div id="thumb">
@@ -8,9 +7,8 @@
       <div class="fire">🔥</div>
     </div>
   </div>
-  <% end %>
-  <div class="rating-range-container">
-    <p>0°</p>
-    <p>100°</p>
-  </div>
+<% end %>
+<div class="rating-range-container">
+  <p>0°</p>
+  <p>100°</p>
 </div>
