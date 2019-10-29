@@ -1,0 +1,25 @@
+.form-wrapper {
+  width: 100%;
+  padding: 0 $wrapper;
+  margin: 48px auto;
+}
+
+@media screen and (min-width: 576px) {
+  .form-wrapper { width: 75%; }
+}
+
+@media screen and (min-width: 768px) {
+  .form-wrapper { width: 65%; }
+}
+
+@media screen and (min-width: 992px) {
+  .form-wrapper { width: 50%; }
+}
+
+@media screen and (min-width: 1200px) {
+  .form-wrapper { width: 35%; }
+}
+
+.form-image-preview {
+  width: 192px;
+}

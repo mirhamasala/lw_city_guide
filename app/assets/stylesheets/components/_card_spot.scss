@@ -1,15 +1,15 @@
-.card-spot-wrapper {
+.spot-card-wrapper {
   display: block;
   margin-bottom: 16px;
 }
 
-.card-spot {
+.spot-card {
   display: flex;
   align-items: center;
 }
 
 // 270px x 160px
-.card-spot__image {
+.spot-card__image {
   width: 80px;
   height: 80px;
   border-radius: 3px;
@@ -17,15 +17,15 @@
   object-fit: cover;
 }
 
-.card-spot__text { padding-left: 16px; }
+.spot-card__text { padding-left: 16px; }
 
-.card-spot__sub-category {
+.spot-card__sub-category {
   margin-bottom: 0;
   font-size: 0.875rem;
   font-weight: $fw-light;
 }
 
-.card-spot__name {
+.spot-card__name {
   margin-bottom: 0;
   font-size: 1.125rem;
   font-weight: $fw-medium-bold;

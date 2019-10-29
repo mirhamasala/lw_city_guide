@@ -1,29 +1,29 @@
-.card-city-wrapper {
+.city-card-wrapper {
   display: block;
   margin-bottom: 16px;
 }
 
-.card-city {
+.city-card {
   display: flex;
   align-items: center;
 }
 
-.card-city__image {
+.city-card__image {
   width: 80px;
   height: 80px;
   object-position: center;
   object-fit: cover;
   border-radius: 3px;
 }
-.card-city__text { padding-left: 12px; }
+.city-card__text { padding-left: 12px; }
 
-.card-city__name {
+.city-card__name {
   margin-bottom: 0;
   font-size: 1.125rem;
   font-weight: $fw-medium-bold;
 }
 
-.card-city__spots {
+.city-card__spots {
   margin-bottom: 0;
   font-size: 0.875rem;
   font-weight: $fw-light;

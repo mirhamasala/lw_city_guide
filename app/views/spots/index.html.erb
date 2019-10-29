@@ -1,6 +1,6 @@
 <%= content_for(:title, "#{@city.name} · #{@city.country}") %>
-<header class="city-header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover %>')">
-  <h1 class="city-header__city"><%= @city.name %></h1>
+<header class="city-header<%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover %>')">
+  <h1 class="city-header__name"><%= @city.name %></h1>
   <div class="city-header__country"><%= @city.country %></div>
 </header>
 <% if @city.spots.blank? %>

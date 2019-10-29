@@ -44,25 +44,3 @@
 .text-left { text-align: left; }
 
 .wrapper { padding: 0 20px; }
-
-.wrapper-form {
-  width: 100%;
-  padding: 0 $wrapper;
-  margin: 48px auto;
-}
-
-@media screen and (min-width: 576px) {
-  .wrapper-form { width: 75%; }
-}
-
-@media screen and (min-width: 768px) {
-  .wrapper-form { width: 65%; }
-}
-
-@media screen and (min-width: 992px) {
-  .wrapper-form { width: 50%; }
-}
-
-@media screen and (min-width: 1200px) {
-  .wrapper-form { width: 35%; }
-}

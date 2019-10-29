@@ -1,21 +1,7 @@
-<div class="cities">
-  <header class="cities__header spacer-lg">
-    <h1 class="cities__headline">Which <span class="highlighted highlighted--red">city</span> would you like to explore?</h1>
-    <%= show_svg("cities_background.svg") %>
-  </header>
-  <div class="cities__main wrapper spacer-lg">
-    <% for city in @cities %>
-      <% unless city.spots.count == 0 %>
-        <%= link_to city_spots_path(city), class: "card-city-wrapper" do %>
-          <div class="card-city">
-            <%= cl_image_tag city.cover.card, class: "card-city__image" %>
-            <div class="card-city__text">
-              <p class="card-city__name"><%= city.name %></p>
-              <p class="card-city__spots"><%= pluralize city.spots.size, "spot" %></p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
+<header class="cities-header spacer-lg">
+  <h1 class="cities-header__headline">Which <span class="highlighted highlighted--red">city</span> would you like to explore?</h1>
+  <%= show_svg("cities_background.svg") %>
+</header>
+<div class="cities wrapper spacer-lg">
+  <%= render @cities %>
 </div>

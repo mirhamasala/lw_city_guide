@@ -1,18 +1,19 @@
-.cities__header { padding-top: 30px; }
+// Header for all cities home page
+.cities-header { padding-top: 30px; }
 
-.cities__headline {
+.cities-header__headline {
   padding: 0 $wrapper;
   font-size: 2.25rem;
 }
 
 @media screen and (min-width: 567px) {
-  .cities__headline {
+  .cities-header__headline {
     width: 65%;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .cities__headline {
+  .cities-header__headline {
     position: absolute;
     top: 136px;
     width: 60%;
@@ -21,12 +22,12 @@
 }
 
 @media screen and (min-width: 992px) {
-  .cities__headline {
+  .cities-header__headline {
     position: relative;
     top: 0;
     width: 50%;
   }
-  .cities__background {
+  .cities-header__background {
     display: none;
   }
 }
