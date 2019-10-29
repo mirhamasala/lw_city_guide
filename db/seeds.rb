@@ -3,6 +3,7 @@ User.destroy_all
 City.destroy_all
 Category.destroy_all
 Spot.destroy_all
+puts "It's a clean slate..."
 
 # 💥
 puts "Adding city builders..."
@@ -12,18 +13,9 @@ puts "Builders be building..."
 
 # 💥
 puts "Building Spanish Romes in less than a day..."
-barcelona = City.create!(name: "Barcelona", country: "Spain")
-madrid = City.create!(name: "Madrid", country: "Spain")
-# bali = City.create!(name: "Bali", country: "Indonesia")
-# singapore = City.create!(name: "Singapore", country: "Singapore")
+barcelona = City.create!(name: "Barcelona", country: "Spain", keepers: [g, mirha], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
+madrid = City.create!(name: "Madrid", country: "Spain", keepers: [g, mirha], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
 puts "Pinned Barcelona & Madrid on the map..."
-
-# 💥
-puts "Adding runners to cities..."
-g.cities << madrid
-mirha.cities << barcelona
-mirha.cities << madrid
-puts "Cities attached to runners..."
 
 # 💥
 puts "Creating categories..."
@@ -48,6 +40,7 @@ spot_attributes = [
     neighborhood: "Gràcia",
     phone_number: "+34 667 23 81 72",
     website: "https://www.lewagon.com/barcelona",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326350/IMG_3791_te4yds.jpg",
     category: wagon,
     city: barcelona,
     owner: mirha,
@@ -60,54 +53,54 @@ spot_attributes = [
     neighborhood: "Gràcia",
     phone_number: "+34 936 67 27 15",
     website: "https://www.slowmov.com",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/IMG_3728_yiierx.jpg",
     category: drink,
     city: barcelona,
     owner: mirha,
   },
   {
-    name: "Can Ros",
-    sub_category: "Sandwiches · Spanish Carbs",
-    description: "Set your teeth into the crunchiest sandwiches ever.",
-    address: "Carrer de l'Almirall Aixada 7",
-    neighborhood: "Gràcia",
-    phone_number: "+34 667 23 81 72",
+    name: "Casa Batlló",
+    sub_category: "Building · Skull Balconies",
+    description: "Some people say he was on mushrooms. I say he was a rock star.",
+    address: "Passeig de Gràcia, 43, 08007 Barcelona, Spain",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572327219/IMG_3975_jrdcfp.jpg",
+    category: see,
+    city: barcelona,
+    owner: mirha,
+  },
+  {
+    name: "Can Pizza",
+    sub_category: "Pizza · Sourdough Deal",
+    description: "Neapolitan dough like it should be, but better.",
+    address: "Carrer de l'Almirall Aixada 7, Barcelona, Catalunya, Spain",
+    phone_number: "+34 932 21 45 79",
+    website: "http://www.canros.cat",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326208/IMG_3888_csgvkm.jpg",
     category: eat,
     city: barcelona,
     owner: mirha,
   },
   {
-    name: "NAP Antic",
-    sub_category: "Pizza · Real Deal",
-    description: "Neapolitan dough like it should be.",
-    address: "Av. de Francesc Cambó 30",
-    neighborhood: "Ciutat Vella",
-    phone_number: "+34 686 19 26 90",
-    website: "https://www.facebook.com/nap.pizzeria/",
-    category: eat,
-    city: barcelona,
-    owner: mirha,
-  },
-  {
-    name: "Dry Martini",
-    sub_category: "Cocktails · Shaken & Stirred",
-    description: "No guns allowed.",
-    address: "Carrer d'Aribau 162",
-    neighborhood: "Eixample",
-    phone_number: "+34 932 17 50 72",
-    website: "http://www.drymartiniorg.com/",
-    category: drink,
-    city: barcelona,
-    owner: mirha,
-  },
-  {
-    name: "Mercado de La Boqueria",
-    sub_category: "Market · Veggies & More",
-    description: "Nothing like filling your picnic basket at Boqueria.",
-    address: "La Rambla 91, 08001 Barcelona",
-    neighborhood: "Ciutat Vella",
-    phone_number: "+34 933 18 25 84",
-    website: "http://www.boqueria.info",
+    name: "Boulangerie Mayer",
+    sub_category: "Bakery · Bread and Butter",
+    description: "Pick up some croissants and a pan de campo.",
+    address: "Carrer del Diluvi, 11, 08012 Barcelona, Spain",
+    phone_number: "+34 932 37 65 03",
+    website: "https://www.boulangeriemayer.com/",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572327383/IMG_4104_gwgvkg.jpg",
     category: shop,
+    city: barcelona,
+    owner: mirha,
+  },
+  {
+    name: "Asador de Aranda",
+    sub_category: "Roasted Lamb · Decadent Gluttony",
+    description: "Bring someone you love. Get a quarter of the baby lamb roasted in clay pot, a green salad, and a bottle of red wine. Call it life.",
+    address: "Av. del Tibidabo, 31, 08022 Barcelona, Spain",
+    phone_number: "+34 934 17 01 15",
+    website: "http://www.asadordearanda.com/",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572327380/IMG_4242_2_fyivei.jpg",
+    category: eat,
     city: barcelona,
     owner: mirha,
   },
@@ -119,6 +112,7 @@ spot_attributes = [
     neighborhood: "Atocha",
     phone_number: "+34 646 85 03 58",
     website: "https://www.lewagon.com/madrid",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg",
     category: wagon,
     city: madrid,
     owner: mirha,
@@ -131,6 +125,7 @@ spot_attributes = [
     neighborhood: "Chueca",
     phone_number: "+34 913 08 27 47",
     website: "http://www.elcafebelen.com/",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/dsc01474_zk6c0z.jpg",
     category: drink,
     city: madrid,
     owner: mirha,
@@ -143,6 +138,7 @@ spot_attributes = [
     neighborhood: "Sol",
     phone_number: "+34 913 65 65 46",
     website: "https://www.chocolateriasangines.com/",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/dsc01439_nvljdp.jpg",
     category: eat,
     city: madrid,
     owner: mirha,
@@ -151,12 +147,13 @@ spot_attributes = [
     name: "Mercado De San Miguel",
     sub_category: "Market · Vintage Deal",
     description: "The Boqueria never stood a chance.",
-    address: "Plaza de San Miguel 5",
+    address: "Madrid, Spain",
     latitude: 40.41537,
-    longitude: 3.70899,
+    longitude: -3.70899,
     neighborhood: "Centro",
     phone_number: "+34 915 42 49 36",
     website: "http://www.mercadodesanmiguel.es/",
+    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326243/dsc01374_xg4ede.jpg",
     category: shop,
     city: madrid,
     owner: mirha,
