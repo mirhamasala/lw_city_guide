@@ -1,4 +1,4 @@
-.spots__header {
+.city-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,10 +9,10 @@
   color: $white;
 }
 
-.spots__name {
+.city-header__city {
   color: $white;
   font-size: 2.25rem;
   font-weight: $fw-medium-bold;
 }
 
-.spots__country { font-size: 1.25rem }
+.city-header__country { font-size: 1.25rem }
