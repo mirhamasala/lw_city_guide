@@ -1,7 +1,14 @@
 .categories {
-  padding: 12px 20px;
+  padding: 12px $wrapper;
   background: $light-gray;
 }
+
+@media screen and (min-width: 768px) {
+  .categories {
+    padding: 12px $wrapper-desktop;
+  }
+}
+
 .categories__all,
 .categories__name { font-size: 0.875rem; }
 

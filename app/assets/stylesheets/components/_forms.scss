@@ -10,7 +10,11 @@
 }
 
 @media screen and (min-width: 768px) {
-  .form-wrapper { width: 65%; }
+  .form-wrapper {
+    padding-right: $wrapper-desktop;
+    padding-left: $wrapper-desktop;
+    width: 65%;
+  }
 }
 
 @media screen and (min-width: 992px) {

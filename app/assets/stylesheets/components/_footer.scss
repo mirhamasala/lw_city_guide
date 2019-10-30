@@ -1,7 +1,13 @@
 footer {
-  padding: 64px $wrapper;
+  padding: 48px $wrapper;
   background: $black;
   color: $white;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    padding: 48px $wrapper-desktop;
+  }
 }
 
 .footer__disclaimer {

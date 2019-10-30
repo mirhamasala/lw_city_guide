@@ -1,9 +1,18 @@
 .navbar-lewagon {
   justify-content: space-between;
-  padding: 20px;
+  padding: 24px $wrapper;
   background: $white;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-lewagon {
+    padding: 48px $wrapper-desktop;
+  }
 }
 
 .navbar-lewagon .navbar-collapse { flex-grow: 0; }
 
-.navbar-toggler { border: none; }
+.navbar-toggler {
+  padding: 0;
+  border: none;
+}

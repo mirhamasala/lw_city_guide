@@ -29,10 +29,10 @@
   .highlighted--purple { background: $light-purple;}
 }
 
-.spacer-xs { margin-bottom: 12px; }
-.spacer-sm { margin-bottom: 24px; }
-.spacer-md { margin-bottom: 32px;}
-.spacer-lg { margin-bottom: 48px; }
+.spacer-xs { margin-bottom: $spacing-xs; }
+.spacer-sm { margin-bottom: $spacing-sm; }
+.spacer-md { margin-bottom: $spacing-md; }
+.spacer-lg { margin-bottom: $spacing-lg; }
 
 .button-center {
   display: flex;
@@ -43,7 +43,16 @@
 .text-right { text-align: right; }
 .text-left { text-align: left; }
 
+
+// Main wrapper
 .wrapper {
   padding-right: $wrapper;
   padding-left: $wrapper;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding-right: $wrapper-desktop;
+    padding-left: $wrapper-desktop;
+  }
 }
