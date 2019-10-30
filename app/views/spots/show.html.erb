@@ -4,7 +4,7 @@
   <header class="spot__header">
     <h1 class="spot__name"><%= @spot.name %></h1>
     <span class="spot__sub-category"><%= @spot.sub_category %></span>
-    <% unless @rating.score.blank? %>
+    <% if @rating.score.present? %>
       <span class="spot__score">🔥 <%= @rating.score %>&#176;</span>
     <% end %>
   </header>
@@ -27,16 +27,16 @@
       <span class="spot__icon">
         <%= show_svg("icon_phone.svg") %>
       </span>
-      <%= @spot.phone_number.blank? ? "-" : @spot.phone_number %>
+      <%= @spot.phone_number.present? ? @spot.phone_number : "-" %>
     </li>
     <li class="spot__website spot__details-item">
       <span class="spot__icon">
         <%= show_svg("icon_domain.svg") %>
       </span>
-      <% if @spot.website.blank? %>
-        <span>-</span>
-      <% else %>
+      <% if @spot.website.present? %>
         <%= link_to "Website", @spot.website %>
+      <% else %>
+        <span>-</span>
       <% end %>
     </li>
   </ul>
