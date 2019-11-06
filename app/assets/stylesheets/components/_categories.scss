@@ -1,3 +1,40 @@
+.category {
+  width: 32px;
+  height: 32px;
+}
+
+.category--eat {
+  circle { fill: $purple; }
+}
+
+.category--drink {
+  circle { fill: $green; }
+}
+
+.category--play {
+  circle { fill: $pink; }
+}
+
+.category--see {
+  circle { fill: $yellow; }
+}
+
+.category--shop {
+  circle { fill: $blue; }
+}
+
+.category--stay {
+  circle { fill: $gray; }
+}
+
+.category--wagon {
+  circle { fill: $brand-primary; }
+}
+
+.category--other {
+  circle { fill: $black; }
+}
+
 .categories {
   padding: 12px $wrapper;
   background: $light-gray;
