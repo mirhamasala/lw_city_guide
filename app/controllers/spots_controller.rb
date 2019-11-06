@@ -11,6 +11,7 @@ class SpotsController < ApplicationController
       @spots = @spots.in_category(params[:category])
     end
     @spots = @spots.recent.check_coordinates
+    @pagy, @spots = pagy(@spots, items: 5)
     add_map_markers(@spots)
   end
 

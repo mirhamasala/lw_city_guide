@@ -19,6 +19,9 @@
   <div class="spots wrapper spacer-md">
     <%= render @spots %>
   </div>
+  <div class="pages wrapper spacer-md">
+    <%= render partial: "shared/pagination", locals: { pagy: @pagy } %>
+  </div>
   <div class="map wrapper spacer-sm">
     <%= render "shared/map" %>
   </div>
