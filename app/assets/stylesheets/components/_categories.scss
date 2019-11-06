@@ -1,43 +1,34 @@
-.category {
-  width: 32px;
-  height: 32px;
-}
-
-.category--eat {
-  circle { fill: $purple; }
-}
-
-.category--drink {
-  circle { fill: $green; }
-}
-
-.category--play {
-  circle { fill: $pink; }
-}
-
-.category--see {
-  circle { fill: $yellow; }
-}
-
-.category--shop {
-  circle { fill: $blue; }
-}
-
-.category--stay {
-  circle { fill: $gray; }
-}
-
-.category--wagon {
-  circle { fill: $brand-primary; }
-}
-
-.category--other {
-  circle { fill: $black; }
-}
-
 .categories {
   padding: 12px $wrapper;
-  background: $light-gray;
+  font-weight: $fw-medium-bold;
+}
+
+.categories__header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.categories__close {
+  height: 24px;
+  width: 24px;
+  fill: $gray;
+}
+
+.categories__list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.categories__item {
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -46,9 +37,6 @@
   }
 }
 
-.categories__all,
-.categories__name { font-size: 0.875rem; }
-
-.categories__name:not(:first-child) {
-  padding-left: 12px;
+.categories__name {
+  padding-left: 18px;
 }
