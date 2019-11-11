@@ -1,0 +1,32 @@
+.spots-main { position: relative; }
+
+.spots-main__map-view {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  cursor: pointer;
+}
+
+.spots-main__filter-options {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  padding-right: $wrapper;
+  padding-bottom: 12px;
+  padding-left: $wrapper;
+  border-bottom: 1px solid $light-gray;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.spots-main__filter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: $white;
+  overflow-y: scroll;
+}

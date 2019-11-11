@@ -1,17 +1,17 @@
-const filterOverlay = document.querySelector(".filter__overlay");
+const filters = document.querySelector(".js-filters");
 
-const showFilters = () => filterOverlay.style.display = "block";
+const showFilters = () => filters.style.display = "block";
 
-const hideFilters = () => filterOverlay.style.display = "none";
+const hideFilters = () => filters.style.display = "none";
 
 const initFilter = () => {
-  if (!filterOverlay) {
+  if (!filters) {
     return;
   }
-  const filterNav = document.querySelector(".filter__nav");
-  const filterCloseBtn = document.querySelector(".filter__close");
-  filterNav.addEventListener("click", showFilters);
-  filterCloseBtn.addEventListener("click", hideFilters);
+  const showFiltersBtn = document.querySelector(".js-filter-show");
+  const closeFiltersBtn = document.querySelector(".js-filter-close");
+  showFiltersBtn.addEventListener("click", showFilters);
+  closeFiltersBtn.addEventListener("click", hideFilters);
 }
 
 export { initFilter };
