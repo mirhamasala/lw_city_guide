@@ -1,0 +1,14 @@
+.categories-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.categories-list__item {
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.categories-list__name { padding-left: 18px; }

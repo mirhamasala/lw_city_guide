@@ -15,7 +15,8 @@
     </div>
   </div>
 <% else %>
-  <%= render "shared/categories" %>
+<div class="city-main">
+  <%= render "shared/filter" %>
   <div class="spots wrapper spacer-md">
     <%= render @spots %>
   </div>
@@ -29,4 +30,5 @@
     <%= show_svg("caret_left.svg") %>
     <%= link_to "Back to all cities", root_path %>
   </div>
+</div>
 <% end %>

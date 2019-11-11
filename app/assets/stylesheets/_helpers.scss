@@ -1,8 +1,6 @@
 .brand-primary { color: $brand-primary };
 
-.headline-primary {
-  color: $brand-primary;
-}
+.headline-primary { color: $brand-primary; }
 
 .link-primary {
   color: $brand-primary;
@@ -12,21 +10,19 @@
 }
 
 .highlighted {
-  padding: 0;
-  border-radius: 0;
+  padding: 2px 8px 4px;
+  border-radius: 3px;
+  font-weight: $fw-medium-bold;
 }
 
-.highlighted--text { font-weight: $fw-medium-bold; }
-.highlighted--red { color: $brand-primary; }
-.highlighted--purple { color: $purple; }
+.highlighted--red {
+  background-color: $light-red;
+  color: $brand-primary;
+}
 
-@media screen and (min-width: 768px) {
-  .highlighted {
-    padding: 2px 8px 4px;
-    border-radius: 3px;
-  }
-  .highlighted--red { background: $light-red; }
-  .highlighted--purple { background: $light-purple;}
+.highlighted--purple {
+  background-color: $light-purple;
+  color: $purple;
 }
 
 .spacer-xs { margin-bottom: $spacing-xs; }
@@ -42,7 +38,6 @@
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .text-left { text-align: left; }
-
 
 // Main wrapper
 .wrapper {
