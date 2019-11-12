@@ -3,7 +3,7 @@
 .spots-main__map-view-btn {
   position: absolute;
   top: -16px;
-  left: 50%;
+  left: calc(50% - 16px);
   width: 32px;
   height: 32px;
   cursor: pointer;
