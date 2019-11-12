@@ -1,0 +1,46 @@
+.spots-main { position: relative; }
+
+.spots-main__map-view-btn {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.spots-main__map-view-btn.clicked g.map {
+  fill: $medium-red;
+}
+
+.spots-main__filter-options {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  padding-right: $wrapper;
+  padding-bottom: 12px;
+  padding-left: $wrapper;
+  border-bottom: 1px solid $light-gray;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.spots-main__filter-overlay {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: $white;
+  overflow-y: scroll;
+}
+
+.spots-main__map-overlay {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
