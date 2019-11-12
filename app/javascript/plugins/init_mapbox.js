@@ -1,6 +1,7 @@
 import mapboxgl from "mapbox-gl";
 
 const mapElement = document.getElementById("map");
+const mapViewBtn = document.querySelector(".js-map-view-btn");
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -14,6 +15,7 @@ const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     const element = document.createElement("div");
+
     element.className = "marker";
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = "contain";
@@ -38,6 +40,7 @@ const toggleMapView = () => {
   const mapOverlay = document.querySelector(".js-map-overlay");
   if (mapOverlay.style.display === "none") {
     mapOverlay.style.display = "block";
+    mapViewBtn.classList.add("clicked");
     if (mapElement) {
       const map = buildMap();
       const markers = JSON.parse(mapElement.dataset.markers);
@@ -46,15 +49,15 @@ const toggleMapView = () => {
     }
   } else {
     mapOverlay.style.display = "none";
+    mapViewBtn.classList.remove("clicked");
   }
 }
 
 const initMapbox = () => {
-  const mapBtn = document.querySelector(".js-map-view");
-  if (!mapBtn) {
-    return
+  if (!mapViewBtn) {
+    return;
   } else {
-    mapBtn.addEventListener("click", toggleMapView)
+    mapViewBtn.addEventListener("click", toggleMapView);
   }
 };
 
