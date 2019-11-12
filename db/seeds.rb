@@ -142,21 +142,6 @@ spot_attributes = [
     category: eat,
     city: madrid,
     owner: mirha,
-  },
-  {
-    name: "Mercado De San Miguel",
-    sub_category: "Market · Vintage Deal",
-    description: "The Boqueria never stood a chance.",
-    address: "Madrid, Spain",
-    latitude: 40.41537,
-    longitude: -3.70899,
-    neighborhood: "Centro",
-    phone_number: "+34 915 42 49 36",
-    website: "http://www.mercadodesanmiguel.es/",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326243/dsc01374_xg4ede.jpg",
-    category: shop,
-    city: madrid,
-    owner: mirha,
   }
 ]
 
