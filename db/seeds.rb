@@ -1,23 +1,22 @@
+start_time = Time.now
+
 puts "Wiping out civilizations..."
 User.destroy_all
 City.destroy_all
 Category.destroy_all
 Spot.destroy_all
-puts "It's a clean slate..."
+puts "[1/5] 🚜 It's a clean slate..."
 
-# 💥
 puts "Adding city builders..."
 g = User.create!(email: "g@testing.com", password: "testing", github_handle: "DctrG")
 mirha = User.create!(email: "mirha@testing.com", password: "testing", github_handle: "mirhamasala", admin: true)
-puts "Builders be building..."
+puts "[2/5] 👷🏽‍♀️ Builders be building..."
 
-# 💥
 puts "Building Spanish Romes in less than a day..."
 barcelona = City.create!(name: "Barcelona", country: "Spain", keepers: [g, mirha], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
 madrid = City.create!(name: "Madrid", country: "Spain", keepers: [g, mirha], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
-puts "Pinned Barcelona & Madrid on the map..."
+puts "[3/5] 🦖 Pinned Barcelona & Madrid on the map..."
 
-# 💥
 puts "Creating categories..."
 eat = Category.create!(name: "eat")
 drink = Category.create!(name: "drink")
@@ -27,9 +26,8 @@ shop = Category.create!(name: "shop")
 stay = Category.create!(name: "stay")
 wagon = Category.create!(name: "wagon")
 other = Category.create!(name: "other")
-puts "All boxed up..."
+puts "[4/5] 📦 All boxed up..."
 
-# 💥
 puts "Hunting hotspots..."
 spot_attributes = [
   {
@@ -146,4 +144,6 @@ spot_attributes = [
 ]
 
 Spot.create!(spot_attributes)
-puts "Let\'s have a bite..."
+puts "[5/5] 🦴 Let\'s have a bite..."
+
+puts "✨ Done in #{(Time.now - start_time).to_f.round(2)}s."
