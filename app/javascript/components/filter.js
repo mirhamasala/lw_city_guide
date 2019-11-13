@@ -1,8 +1,15 @@
 const filters = document.querySelector(".js-filters");
+const mapViewBtn = document.querySelector(".js-map-view-btn");
 
-const showFilters = () => filters.style.display = "block";
+const showFilters = () => {
+  mapViewBtn.style.display = "none";
+  filters.style.display = "block";
+}
 
-const hideFilters = () => filters.style.display = "none";
+const hideFilters = () => {
+  mapViewBtn.style.display = "block";
+  filters.style.display = "none";
+}
 
 const initFilter = () => {
   if (!filters) {
