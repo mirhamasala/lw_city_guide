@@ -7,10 +7,19 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
+  circle {
+    fill: $white;
+    transition: fill .1s;
+  }
+  g.map {
+    fill: $red;
+    transition: fill .1s;
+  }
 }
 
-.spots-main__map-view-btn.clicked g.map {
-  fill: $medium-red;
+.spots-main__map-view-btn.clicked {
+  circle { fill: $red; }
+  g.map { fill: $white; }
 }
 
 .spots-main__filter-options {
