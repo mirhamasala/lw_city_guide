@@ -22,6 +22,8 @@
   g.map { fill: $white; }
 }
 
+.spots-main__map-view-btn.hide { display: none; }
+
 .spots-main__filter-options {
   display: flex;
   justify-content: flex-end;
