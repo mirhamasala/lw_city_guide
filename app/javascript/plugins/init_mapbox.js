@@ -36,28 +36,12 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
-const toggleMapView = () => {
-  const mapOverlay = document.querySelector(".js-map-overlay");
-  if (mapOverlay.style.display === "none") {
-    mapOverlay.style.display = "block";
-    mapViewBtn.classList.add("clicked");
-    if (mapElement) {
-      const map = buildMap();
-      const markers = JSON.parse(mapElement.dataset.markers);
-      addMarkersToMap(map, markers);
-      fitMapToMarkers(map, markers);
-    }
-  } else {
-    mapOverlay.style.display = "none";
-    mapViewBtn.classList.remove("clicked");
-  }
-}
-
 const initMapbox = () => {
-  if (!mapViewBtn) {
-    return;
-  } else {
-    mapViewBtn.addEventListener("click", toggleMapView);
+  if (mapElement) {
+    const map = buildMap();
+    const markers = JSON.parse(mapElement.dataset.markers);
+    addMarkersToMap(map, markers);
+    fitMapToMarkers(map, markers);
   }
 };
 
