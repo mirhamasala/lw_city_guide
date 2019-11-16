@@ -22,6 +22,8 @@ Wagon City Guides is not endorsed by Le Wagon. It's an independent project by La
 
 ⭐️ Idea: [Inou Ridder](https://github.com/InouRidder)
 
+🍃 [Kai](https://github.com/grumbeard) is coming!
+
 ### Become a contributor
 
 If you would like to fix a bug or implement a feature, you can create a pull request. You may want to check the [backlog](https://github.com/mirhamasala/lw_city_guide/projects/1) first, and let me know what you'll be working on so that I can add it to the "in progress column."
