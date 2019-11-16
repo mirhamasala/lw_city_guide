@@ -22,7 +22,7 @@ Wagon City Guides is not endorsed by Le Wagon. It's an independent project by La
 
 ⭐️ Idea: [Inou Ridder](https://github.com/InouRidder)
 
-Kai's coming!
+🍃 [Kai](https://github.com/grumbeard) is coming!
 
 ### Become a contributor
 
