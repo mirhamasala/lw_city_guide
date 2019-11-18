@@ -21,7 +21,7 @@ class SpotPolicy < ApplicationPolicy
     user.admin? || record.owner == user
   end
 
-  def toggle_status?
+  def update_status?
     user.admin? || user.cities.include?(record.city)
   end
 end

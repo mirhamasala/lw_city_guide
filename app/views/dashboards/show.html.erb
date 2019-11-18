@@ -1,0 +1,9 @@
+<h1>Unpublished Spots</h1>
+<% @unpublished_spots_by_city.each do |city, spots| %>
+  <h2><%= city.name %></h2>
+  <ul>
+    <% spots.each do |spot| %>
+      <li><%= link_to "#{spot.name} · review", spot_path(spot) %></li>
+    <% end %>
+  </ul>
+<% end %>

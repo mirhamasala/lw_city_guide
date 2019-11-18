@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_and_belongs_to_many :cities
 
   validates :github_handle, presence: true
+
+  def city_keeper?
+    cities.any?
+  end
 end

@@ -31,6 +31,14 @@ class Spot < ApplicationRecord
     where(city: city)
   end
 
+  def self.for_user(user)
+    if user.admin?
+      all
+    else
+      where(owner: user)
+    end
+  end
+
   def rating_for(user)
     ratings.find_or_initialize_by(user: user)
   end

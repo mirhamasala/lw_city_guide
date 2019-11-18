@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   private
 
   def skip_pundit?
-    devise_controller? || params[:controller] == "dashboard"
+    devise_controller? || params[:controller] == "pages"
   end
 
   def user_not_authorized

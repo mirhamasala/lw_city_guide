@@ -12,4 +12,12 @@ class City < ApplicationRecord
   def self.alphabetize
     order(name: :asc)
   end
+
+  def self.for(user)
+    if user.admin?
+      all
+    else
+      user.cities
+    end
+  end
 end
