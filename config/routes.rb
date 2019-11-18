@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:new, :create]
 
   get '/spots/:id/toggle_status', to: 'spots#toggle_status', as: "toggle_status"
+
+  get '/dashboard/', to: 'dashboard#show', as: "dashboard"
 end
