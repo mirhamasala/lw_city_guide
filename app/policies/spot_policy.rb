@@ -10,7 +10,7 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.published? || user.admin? || user.cities.include(record.city)
   end
 
   def update?
