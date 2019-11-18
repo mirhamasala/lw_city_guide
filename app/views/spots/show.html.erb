@@ -10,6 +10,7 @@
   </header>
   <% if user_signed_in? && policy(@spot).edit? %>
     <div class="spot__admin">
+      <%= link_to @spot.draft? ? "publish" : "draft", toggle_status_path(@spot) %>
       <%= link_to :edit, edit_spot_path(@spot) %>
       <%= link_to :delete, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
     </div>

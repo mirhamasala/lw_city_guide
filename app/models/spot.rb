@@ -1,4 +1,6 @@
 class Spot < ApplicationRecord
+  enum status: { draft: 0, published: 1 }
+
   mount_uploader :photo, SpotPhotoUploader
 
   belongs_to :category
@@ -6,6 +8,7 @@ class Spot < ApplicationRecord
   belongs_to :owner, class_name: "User"
   has_many :ratings, dependent: :destroy
 
+  validates :name, presence: true
   validates :name, :description, :address, :city_id, :category_id, presence: true
   validates :address, uniqueness: { scope: :city }
   validates :photo, presence: true

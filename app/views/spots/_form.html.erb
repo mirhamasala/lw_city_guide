@@ -1,4 +1,7 @@
 <%= simple_form_for [@city, @spot] do |f| %>
+  <% if @spot.persisted? %>
+    <%= f.input :status, as: :radio_buttons, collection: [["draft", "Draft"], ["published", "Published"]], label_method: :second, value_method: :first %>
+  <% end %>
   <%= f.input :name %>
   <%= f.association :category %>
   <%= f.input :sub_category %>

@@ -4,7 +4,7 @@
       <%= cl_image_tag city.cover.card, class: "city-card__image" %>
       <div class="city-card__text">
         <p class="city-card__name"><%= city.name %></p>
-        <p class="city-card__spots"><%= pluralize city.spots.size, "spot" %></p>
+        <p class="city-card__spots"><%= pluralize city.spots.published.size, "spot" %></p>
       </div>
     </div>
   <% end %>
