@@ -7,8 +7,8 @@ puts "It's a clean slate..."
 
 # 💥
 puts "Adding city builders..."
-g = User.create!(email: "g@testing.com", password: "testing", github_handle: "DctrG")
-mirha = User.create!(email: "mirha@testing.com", password: "testing", github_handle: "mirhamasala", admin: true)
+g = User.create!(email: "g@testing.com", password: "testing", github_username: "DctrG")
+mirha = User.create!(email: "mirha@testing.com", password: "testing", github_username: "mirhamasala", admin: true)
 puts "Builders be building..."
 
 # 💥

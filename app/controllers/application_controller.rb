@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:github_handle])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:github_username])
   end
 end

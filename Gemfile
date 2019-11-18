@@ -22,6 +22,7 @@ gem 'carrierwave', '~>1.2'
 gem 'pundit'
 gem 'geocoder'
 gem 'pagy', '3.6.0'
+gem 'omniauth-github'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
