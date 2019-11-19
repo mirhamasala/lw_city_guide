@@ -11,7 +11,7 @@
         <%# <li class="nav-item active"> %>
           <%# link_to "Home", "#", class: "nav-link" %>
         <%# </li> %>
-        <% if current_user.cities.include?(@city) %>
+        <% if current_user.city_keeper_for?(@city) %>
           <li>
             <%= link_to "Add spot", new_city_spot_path(@city), class: "nav-link" if @city %>
           </li>
@@ -19,6 +19,9 @@
         <li class="nav-item dropdown">
           <%= image_tag "", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown", handle: current_user.github_handle }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <% if current_user.admin? || current_user.city_keeper? %>
+              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+            <% end %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

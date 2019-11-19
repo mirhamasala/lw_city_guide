@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :cities, only: [:new, :create, :edit, :update]
   resources :categories, only: [:new, :create]
+  resource :dashboard, only: [:show], as: :dashboard
 end
