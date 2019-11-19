@@ -1,4 +1,6 @@
 class Spot < ApplicationRecord
+  enum status: { draft: 0, published: 1 }
+
   mount_uploader :photo, SpotPhotoUploader
 
   belongs_to :category

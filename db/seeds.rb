@@ -42,6 +42,7 @@ spot_attributes = [
     category: wagon,
     city: barcelona,
     owner: mirha,
+    status: "published"
   },
   {
     name: "SlowMov",
@@ -55,6 +56,7 @@ spot_attributes = [
     category: drink,
     city: barcelona,
     owner: mirha,
+    status: "published"
   },
   {
     name: "Casa Batlló",
@@ -65,6 +67,7 @@ spot_attributes = [
     category: see,
     city: barcelona,
     owner: mirha,
+    status: "published"
   },
   {
     name: "Can Pizza",
@@ -77,6 +80,7 @@ spot_attributes = [
     category: eat,
     city: barcelona,
     owner: mirha,
+    status: "published"
   },
   {
     name: "Boulangerie Mayer",
@@ -89,6 +93,7 @@ spot_attributes = [
     category: shop,
     city: barcelona,
     owner: mirha,
+    status: "draft"
   },
   {
     name: "Asador de Aranda",
@@ -101,6 +106,7 @@ spot_attributes = [
     category: eat,
     city: barcelona,
     owner: mirha,
+    status: "draft"
   },
   {
     name: "Le Wagon Madrid",
@@ -114,6 +120,7 @@ spot_attributes = [
     category: wagon,
     city: madrid,
     owner: mirha,
+    status: "published"
   },
   {
     name: "Café Belén",
@@ -127,6 +134,7 @@ spot_attributes = [
     category: drink,
     city: madrid,
     owner: mirha,
+    status: "published"
   },
   {
     name: "Chocolatería San Ginés",
@@ -140,6 +148,7 @@ spot_attributes = [
     category: eat,
     city: madrid,
     owner: mirha,
+    status: "published"
   }
 ]
 

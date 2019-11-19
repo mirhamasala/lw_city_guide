@@ -10,7 +10,7 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.published? || user.admin? || user.cities.include(record.city)
   end
 
   def update?
@@ -19,5 +19,9 @@ class SpotPolicy < ApplicationPolicy
 
   def destroy?
     user.admin? || record.owner == user
+  end
+
+  def toggle_status?
+    user.admin? || user.cities.include?(record.city)
   end
 end

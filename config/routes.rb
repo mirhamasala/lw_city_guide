@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
   resources :cities, only: [:new, :create, :edit, :update]
   resources :categories, only: [:new, :create]
+
+  get '/spots/:id/toggle_status', to: 'spots#toggle_status', as: "toggle_status"
 end
