@@ -1,6 +1,6 @@
 class SpotStatusesController < ApplicationController
   def update
-    @spot = Spot.find(params[:spot_id])
+    @spot = Spot.find(params[:id])
     authorize @spot, :update_status?
     if @spot.draft?
       @spot.published!
