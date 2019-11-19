@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_spot, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_spot, only: [:show, :edit, :update, :destroy]
   before_action :set_city, only: [:index, :new, :create]
 
   def index
@@ -59,17 +59,6 @@ class SpotsController < ApplicationController
         format.js
       end
     end
-  end
-
-  def toggle_status
-    if @spot.draft?
-      @spot.published!
-      flash[:notice] = "#{@spot.name} is now live! 🚀"
-    elsif @spot.published?
-      @spot.draft!
-      flash[:notice] = "You unpublished #{@spot.name}! 👻"
-    end
-    redirect_to spot_path(@spot)
   end
 
   private
