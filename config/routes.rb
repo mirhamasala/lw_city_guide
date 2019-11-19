@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   end
   resources :spots, only: [:show, :edit, :update, :destroy] do
     resources :ratings, only: [:create, :update]
+    resources :spot_statuses, only: [:update], as: :status
   end
   resources :cities, only: [:new, :create, :edit, :update]
   resources :categories, only: [:new, :create]
-
-  get '/spots/:id/toggle_status', to: 'spots#toggle_status', as: "toggle_status"
 end
