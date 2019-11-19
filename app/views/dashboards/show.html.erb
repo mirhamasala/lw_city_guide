@@ -1,0 +1,14 @@
+<div class="dashboard wrapper">
+  <h1>Dashboard</h1>
+  <h2 class="dashboard__sectionHeader">Unpublished Spots</h1>
+  <div class="dashboard__unpublishedSpots spacer-sm">
+    <% @unpublished_spots_by_city.each do |city, spots| %>
+      <h3><%= city.name %></h3>
+      <ul>
+        <% spots.each do |spot| %>
+          <li><%= link_to spot.name, spot_path(spot) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
