@@ -25,7 +25,11 @@
     <%= render "shared/map" %>
   </div>
   <div class="spots wrapper spacer-md">
-    <%= render @spots %>
+    <% @spots.each do |spot| %>
+      <div class="spots-main__card-wrapper">
+        <%= render partial: "spots/spot_card", locals: { spot: spot} %>
+      </div>
+    <% end %>
   </div>
   <div class="pages wrapper spacer-md">
     <%= render partial: "shared/pagination", locals: { pagy: @pagy } %>
@@ -36,3 +40,12 @@
   </div>
 </div>
 <% end %>
+
+
+<div class="spots">
+  <div class="spots__header">
+    <%# partial for the city_header %>
+  </div>
+  <div class="spots__main"></div>
+</div>
+<%# spots__main-content %>
