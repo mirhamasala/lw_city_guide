@@ -1,36 +1,36 @@
-.category {
+.category-icon {
   width: 32px;
   height: 32px;
 }
 
-.category--eat {
+.category-icon--eat {
   circle { fill: $purple; }
 }
 
-.category--drink {
+.category-icon--drink {
   circle { fill: $green; }
 }
 
-.category--play {
+.category-icon--play {
   circle { fill: $pink; }
 }
 
-.category--see {
+.category-icon--see {
   circle { fill: $yellow; }
 }
 
-.category--shop {
+.category-icon--shop {
   circle { fill: $blue; }
 }
 
-.category--stay {
+.category-icon--stay {
   circle { fill: $gray; }
 }
 
-.category--wagon {
+.category-icon--wagon {
   circle { fill: $brand-primary; }
 }
 
-.category--other {
+.category-icon--other {
   circle { fill: $black; }
 }
