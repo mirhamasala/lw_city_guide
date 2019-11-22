@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_035016) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin"
-    t.string "github_username"
+    t.string "github_handle"
     t.string "provider"
     t.string "uid"
     t.string "github_picture_url"

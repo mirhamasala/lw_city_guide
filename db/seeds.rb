@@ -14,13 +14,13 @@ mirha = User.create!(email: "mirha@testing.com", password: "testing", github_use
 
 
 # Ellyn is the city keeper of two cities, Madrid and Barcelona (and not an admin)
-ellyn = User.create!(email: "ellyn@testing.com", password: "testing", github_handle: "ellynbsc")
+ellyn = User.create!(email: "ellyn@testing.com", password: "testing", github_username: "ellynbsc")
 
 # Inou is the city keeper of one city, Barcelona (and not an admin)
-inou = User.create(email: "inou@testing.com", password: "testing", github_handle: "inouridder")
+inou = User.create(email: "inou@testing.com", password: "testing", github_username: "inouridder")
 
 # G is a user (and not a city keeper nor an admin)
-g = User.create!(email: "g@testing.com", password: "testing", github_handle: "dctrg")
+g = User.create!(email: "g@testing.com", password: "testing", github_username: "dctrg")
 puts "[2/5] 🦖 Keepers be keeping, dwellers be dwelling."
 
 puts "Building Spanish Romes in less than a day..."

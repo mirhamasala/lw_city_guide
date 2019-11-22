@@ -13,7 +13,7 @@
       <%= link_to @spot.draft? ? "publish" : "draft", spot_status_path(@spot), method: :put %>
       <%= link_to :edit, edit_spot_path(@spot) %>
       <%= link_to :delete, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
-      <p class="spot__author">👀 <%= link_to @spot.owner.github_handle, "http://www.github.com/#{@spot.owner.github_handle}" %></p>
+      <p class="spot__author">👀 <%= link_to @spot.owner.github_username, "http://www.github.com/#{@spot.owner.github_username}" %></p>
     </div>
   <% end %>
   <p class="spot__description"><%= @spot.description %></p>

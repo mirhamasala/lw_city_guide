@@ -12,8 +12,7 @@ class User < ApplicationRecord
 
   validates :github_username, presence: true
 
-
-  def self.find_for_github_oauth(autfh)
+  def self.find_for_github_oauth(auth)
     user_params = auth.slice("provider", "uid")
     user_params.merge! auth.info.slice("email", "first_name")
     user_params[:github_username] = auth.info.nickname
