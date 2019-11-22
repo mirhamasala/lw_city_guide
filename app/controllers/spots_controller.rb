@@ -36,7 +36,7 @@ class SpotsController < ApplicationController
 
   def show
     @rating = @spot.rating_for(current_user)
-    add_map_markers(@spot)
+    add_map_marker(@spot)
   end
 
   def edit
@@ -77,6 +77,7 @@ class SpotsController < ApplicationController
     params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id, :status)
   end
 
+  # Add multiple markers
   def add_map_markers(spots)
     @markers = spots.map do |spot|
       {
@@ -86,5 +87,16 @@ class SpotsController < ApplicationController
         image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
       }
     end
+  end
+
+  # Add one marker
+  def add_map_marker(spot)
+    @markers = [
+      {
+        lat: @spot.latitude,
+        lng: @spot.longitude,
+        image_url: helpers.asset_url("placemark_#{@spot.category.name}.png")
+      }
+    ]
   end
 end
