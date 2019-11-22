@@ -8,6 +8,7 @@ class ToggleMapView {
   toggle() {
     this.toggleColorMapViewBtn();
     this.toggleMapOverlay();
+    window.dispatchEvent(new Event('resize'));
   }
 
   toggleColorMapViewBtn() {
