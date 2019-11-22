@@ -1,23 +1,33 @@
+start_time = Time.now
+
 puts "Wiping out civilizations..."
 User.destroy_all
 City.destroy_all
 Category.destroy_all
 Spot.destroy_all
-puts "It's a clean slate..."
+puts "[1/5] 🚜 It's a clean slate."
 
-# 💥
-puts "Adding city builders..."
-g = User.create!(email: "g@testing.com", password: "testing", github_username: "DctrG")
+
+puts "Adding city keepers and dwellers..."
+# Mirha is the admin
 mirha = User.create!(email: "mirha@testing.com", password: "testing", github_username: "mirhamasala", admin: true)
-puts "Builders be building..."
 
-# 💥
+
+# Ellyn is the city keeper of two cities, Madrid and Barcelona (and not an admin)
+ellyn = User.create!(email: "ellyn@testing.com", password: "testing", github_handle: "ellynbsc")
+
+# Inou is the city keeper of one city, Barcelona (and not an admin)
+inou = User.create(email: "inou@testing.com", password: "testing", github_handle: "inouridder")
+
+# G is a user (and not a city keeper nor an admin)
+g = User.create!(email: "g@testing.com", password: "testing", github_handle: "dctrg")
+puts "[2/5] 🦖 Keepers be keeping, dwellers be dwelling."
+
 puts "Building Spanish Romes in less than a day..."
-barcelona = City.create!(name: "Barcelona", country: "Spain", keepers: [g, mirha], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
-madrid = City.create!(name: "Madrid", country: "Spain", keepers: [g, mirha], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
-puts "Pinned Barcelona & Madrid on the map..."
+barcelona = City.create!(name: "Barcelona", country: "Spain", keepers: [ellyn, inou], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
+madrid = City.create!(name: "Madrid", country: "Spain", keepers: [ellyn], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
+puts "[3/5] 📌 Pinned Barcelona & Madrid on the map."
 
-# 💥
 puts "Creating categories..."
 eat = Category.create!(name: "eat")
 drink = Category.create!(name: "drink")
@@ -27,9 +37,8 @@ shop = Category.create!(name: "shop")
 stay = Category.create!(name: "stay")
 wagon = Category.create!(name: "wagon")
 other = Category.create!(name: "other")
-puts "All boxed up..."
+puts "[4/5] 📦 All boxed up."
 
-# 💥
 puts "Hunting hotspots..."
 spot_attributes = [
   {
@@ -43,7 +52,8 @@ spot_attributes = [
     remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326350/IMG_3791_te4yds.jpg",
     category: wagon,
     city: barcelona,
-    owner: mirha,
+    owner: ellyn,
+    status: "published"
   },
   {
     name: "SlowMov",
@@ -56,7 +66,8 @@ spot_attributes = [
     remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/IMG_3728_yiierx.jpg",
     category: drink,
     city: barcelona,
-    owner: mirha,
+    owner: ellyn,
+    status: "published"
   },
   {
     name: "Casa Batlló",
@@ -66,7 +77,8 @@ spot_attributes = [
     remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572327219/IMG_3975_jrdcfp.jpg",
     category: see,
     city: barcelona,
-    owner: mirha,
+    owner: inou,
+    status: "published"
   },
   {
     name: "Can Pizza",
@@ -78,7 +90,8 @@ spot_attributes = [
     remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326208/IMG_3888_csgvkm.jpg",
     category: eat,
     city: barcelona,
-    owner: mirha,
+    owner: inou,
+    status: "published"
   },
   {
     name: "Boulangerie Mayer",
@@ -91,6 +104,7 @@ spot_attributes = [
     category: shop,
     city: barcelona,
     owner: mirha,
+    status: "draft"
   },
   {
     name: "Asador de Aranda",
@@ -103,6 +117,7 @@ spot_attributes = [
     category: eat,
     city: barcelona,
     owner: mirha,
+    status: "draft"
   },
   {
     name: "Le Wagon Madrid",
@@ -115,7 +130,8 @@ spot_attributes = [
     remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg",
     category: wagon,
     city: madrid,
-    owner: mirha,
+    owner: ellyn,
+    status: "published"
   },
   {
     name: "Café Belén",
@@ -128,7 +144,8 @@ spot_attributes = [
     remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/dsc01474_zk6c0z.jpg",
     category: drink,
     city: madrid,
-    owner: mirha,
+    owner: g,
+    status: "published"
   },
   {
     name: "Chocolatería San Ginés",
@@ -142,23 +159,11 @@ spot_attributes = [
     category: eat,
     city: madrid,
     owner: mirha,
-  },
-  {
-    name: "Mercado De San Miguel",
-    sub_category: "Market · Vintage Deal",
-    description: "The Boqueria never stood a chance.",
-    address: "Madrid, Spain",
-    latitude: 40.41537,
-    longitude: -3.70899,
-    neighborhood: "Centro",
-    phone_number: "+34 915 42 49 36",
-    website: "http://www.mercadodesanmiguel.es/",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326243/dsc01374_xg4ede.jpg",
-    category: shop,
-    city: madrid,
-    owner: mirha,
+    status: "published"
   }
 ]
 
 Spot.create!(spot_attributes)
-puts "Let\'s have a bite..."
+puts "[5/5] 🦴 Let\'s have a bite."
+
+puts "✨ Done in #{(Time.now - start_time).to_f.round(2)}s."

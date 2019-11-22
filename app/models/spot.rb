@@ -1,4 +1,6 @@
 class Spot < ApplicationRecord
+  enum status: { draft: 0, published: 1 }
+
   mount_uploader :photo, SpotPhotoUploader
 
   belongs_to :category
@@ -31,5 +33,13 @@ class Spot < ApplicationRecord
 
   def rating_for(user)
     ratings.find_or_initialize_by(user: user)
+  end
+
+  def self.for_user(user)
+    if user.admin?
+      all
+    elsif user.city_keeper?
+      where(city: user.cities)
+    end
   end
 end

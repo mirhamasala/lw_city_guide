@@ -15,18 +15,24 @@
     </div>
   </div>
 <% else %>
-  <%= render "shared/categories" %>
+<div class="spots-main">
+  <div class="spots-main__map-view-btn js-map-view-btn"><%= show_svg("map.svg") %></div>
+  <div class="spots-main__filter-options js-filter-show spacer-md">Filters</div>
+  <div class="spots-main__overlay spots-main__overlay--filters hide js-filters">
+    <%= render "shared/filter" %>
+  </div>
+  <div class="spots-main__overlay spots-main__overlay--map hide js-map-overlay">
+    <%= render "shared/map" %>
+  </div>
   <div class="spots wrapper spacer-md">
     <%= render @spots %>
   </div>
   <div class="pages wrapper spacer-md">
     <%= render partial: "shared/pagination", locals: { pagy: @pagy } %>
   </div>
-  <div class="map wrapper spacer-sm">
-    <%= render "shared/map" %>
-  </div>
   <div class="caret-link wrapper spacer-sm">
     <%= show_svg("caret_left.svg") %>
     <%= link_to "Back to all cities", root_path %>
   </div>
+</div>
 <% end %>

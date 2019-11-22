@@ -1,0 +1,33 @@
+.filter { font-weight: $fw-medium-bold; }
+
+.filter__header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-right: $wrapper;
+  padding-bottom: 12px;
+  padding-left: $wrapper;
+  border-bottom: 1px solid $light-gray;
+  font-size: 0.875rem;
+}
+
+.filter__close {
+  height: 24px;
+  width: 24px;
+  fill: $gray;
+  cursor: pointer;
+}
+
+.filter__clear a:hover { color: $purple; }
+
+.filter__categories {
+  padding-left: $wrapper;
+  padding-right: $wrapper;
+}
+
+@media screen and (min-width: 768px) {
+  .filter__categories {
+    padding-left: $wrapper-desktop;
+    padding-right: $wrapper-desktop;
+  }
+}

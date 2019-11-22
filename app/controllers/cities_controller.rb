@@ -33,7 +33,7 @@ class CitiesController < ApplicationController
       @city.keepers.destroy_all
       @keepers.each { |keeper| @city.keepers << User.find(keeper.to_i) }
       flash[:notice] = "You updated #{@city.name}! ⭐️"
-      redirect_to cities_path
+      redirect_to city_spots_path(@city)
     else
       flash.now[:alert] = "Oops! Something went wrong. Please, try again. 🌈"
       render :edit

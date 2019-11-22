@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   end
   resources :spots, only: [:show, :edit, :update, :destroy] do
     resources :ratings, only: [:create, :update]
+    resources :spot_statuses, only: [:update], as: :status
   end
   resources :cities, only: [:new, :create, :edit, :update]
   resources :categories, only: [:new, :create]
+  resource :dashboard, only: [:show], as: :dashboard
 end

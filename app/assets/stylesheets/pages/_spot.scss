@@ -21,7 +21,6 @@
 
 .spot__sub-category {
   display: block;
-  margin-bottom: 0;
   font-size: 1.125rem;
   font-weight: $fw-light;
 }
@@ -51,10 +50,11 @@
   a:first-child { margin-right: 4px; }
 }
 
-.spot__static-map {
+.spot__author { margin-bottom: 0; }
+
+.spot__map {
   height: 256px;
   width: 100%;
-  object-fit: cover;
 }
 
 .spot__details {
@@ -84,5 +84,11 @@
   padding-right: 32px;
   text-align: center;
 }
-.spot__rating h3 { padding-top: 24px; }
-.spot__rating p { margin-bottom: 0; }
+.spot__rating-headline { padding-top: 24px; }
+
+.spot__rating-tagline {
+  margin-bottom: 0;
+  span {
+    font-weight: $fw-medium-bold;
+  }
+}
