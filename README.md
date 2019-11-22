@@ -18,13 +18,11 @@ Wagon City Guides is not endorsed by Le Wagon. It's an independent project by La
 
 🐥 Duckie: [G](https://github.com/dctrg)
 
+🚀 [Contributors](https://github.com/mirhamasala/lw_city_guide/graphs/contributors): [Danko](https://github.com/beribak), [Farhan](https://github.com/farhanlion), [Kai](https://github.com/grumbeard), and [Lars Böhm](https://github.com/datene) - Fire Rating.
+
 👩🏼‍🎨 Figma design: [Laura Crompton](https://github.com/lozdesign)
 
-🔥 Fire rating: [Lars Böhm](https://github.com/datene)
-
 ⭐️ Idea: [Inou Ridder](https://github.com/InouRidder)
-
-🚀 [Kai](https://github.com/grumbeard) & [Farhan](https://github.com/farhanlion) are coming!
 
 ### Become a contributor
 
