@@ -11,8 +11,8 @@ const buildMap = () => {
 };
 
 const addMarkersAndInfoWindowsToMap = (map, markers) => {
+  const mapOnSpotShowPage = document.querySelector(".js-spot-map");
   markers.forEach((marker) => {
-
     const element = document.createElement("div");
     element.className = "marker";
     element.style.backgroundImage = `url('${marker.image_url}')`;
@@ -22,7 +22,6 @@ const addMarkersAndInfoWindowsToMap = (map, markers) => {
     element.style.height = "32px";
 
     // Don't add info windows on the spot show page
-    const mapOnSpotShowPage = document.querySelector(".js-spot-map");
     if (mapOnSpotShowPage) {
       new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])
