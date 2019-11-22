@@ -36,6 +36,7 @@ class SpotsController < ApplicationController
 
   def show
     @rating = @spot.rating_for(current_user)
+    add_map_markers(@spot)
   end
 
   def edit

@@ -1,7 +1,6 @@
 import mapboxgl from "mapbox-gl";
 
 const mapElement = document.getElementById("map");
-const mapViewBtn = document.querySelector(".js-map-view-btn");
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
