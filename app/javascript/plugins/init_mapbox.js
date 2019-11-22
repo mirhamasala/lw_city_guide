@@ -1,7 +1,6 @@
 import mapboxgl from "mapbox-gl";
 
 const mapElement = document.getElementById("map");
-const mapViewBtn = document.querySelector(".js-map-view-btn");
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -11,11 +10,10 @@ const buildMap = () => {
   });
 };
 
-const addMarkersToMap = (map, markers) => {
+const addMarkersAndInfoWindowsToMap = (map, markers) => {
+  const mapOnSpotShowPage = document.querySelector(".js-spot-map");
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     const element = document.createElement("div");
-
     element.className = "marker";
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = "contain";
@@ -23,10 +21,18 @@ const addMarkersToMap = (map, markers) => {
     element.style.width = "32px";
     element.style.height = "32px";
 
-    new mapboxgl.Marker(element)
-    .setLngLat([marker.lng, marker.lat])
-    .setPopup(popup)
-    .addTo(map);
+    // Don't add info windows on the spot show page
+    if (mapOnSpotShowPage) {
+      new mapboxgl.Marker(element)
+      .setLngLat([marker.lng, marker.lat])
+      .addTo(map);
+    } else {
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+      new mapboxgl.Marker(element)
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(map);
+    }
   });
 };
 
@@ -40,7 +46,7 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
+    addMarkersAndInfoWindowsToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
 };
