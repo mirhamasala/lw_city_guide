@@ -50,6 +50,14 @@ class User < ApplicationRecord
     return user
   end
 
+  def city_keeper?
+    cities.any?
+  end
+
+  def city_keeper_for?(city)
+    cities.include?(city)
+  end
+
 
 end
 
