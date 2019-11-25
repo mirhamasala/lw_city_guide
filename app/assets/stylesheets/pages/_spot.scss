@@ -13,12 +13,6 @@
   text-align: center;
 }
 
-// @media screen and (min-width: 768px) {
-//   .spot__header {
-//     padding: $spacing-12 $wrapper-desktop;
-//   }
-// }
-
 .spot__name { font-size: 1.875rem; }
 
 .spot__sub-category {
@@ -34,14 +28,10 @@
 }
 
 .spot__description {
-  padding: $spacing-6 $wrapper;
+  @include wrapper();
+  padding-top: $spacing-6;
+  padding-bottom: $spacing-6;
   margin-bottom: $spacing-0;
-}
-
-@media screen and (min-width: 768px) {
-  .spot__description {
-    padding: $spacing-6 $wrapper-desktop;
-  }
 }
 
 .spot__admin {
@@ -61,16 +51,8 @@
 
 .spot__details {
   list-style: none;
-  padding-right: $wrapper;
-  padding-left: $wrapper;
+  @include wrapper();
   margin-bottom: $spacing-0;
-}
-
-@media screen and (min-width: 768px) {
-  .spot__details {
-    padding-right: $wrapper-desktop;
-    padding-left: $wrapper-desktop;
-  }
 }
 
 .spot__details-item {
