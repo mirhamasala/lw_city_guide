@@ -21,14 +21,14 @@
 
 .spot__sub-category {
   display: block;
-  font-size: 1.125rem;
-  font-weight: $fw-light;
+  font-size: $text-lg;
+  font-weight: $font-light;
 }
 
 .spot__score {
   display: block;
-  font-size: 1.25rem;
-  font-weight: $fw-regular;
+  font-size: $text-xl;
+  font-weight: $font-normal;
 }
 
 .spot__description {
@@ -52,10 +52,9 @@
 
 .spot__author { margin-bottom: 0; }
 
-.spot__static-map {
+.spot__map {
   height: 256px;
   width: 100%;
-  object-fit: cover;
 }
 
 .spot__details {
@@ -90,6 +89,6 @@
 .spot__rating-tagline {
   margin-bottom: 0;
   span {
-    font-weight: $fw-medium-bold;
+    font-weight: $font-medium;
   }
 }

@@ -22,6 +22,8 @@
   g.map { fill: $white; }
 }
 
+.spots-main__map-view-btn.hide { display: none; }
+
 .spots-main__filter-options {
   display: flex;
   justify-content: flex-end;
@@ -30,26 +32,22 @@
   padding-bottom: 12px;
   padding-left: $wrapper;
   border-bottom: 1px solid $light-gray;
-  font-size: 0.875rem;
+  font-size: $text-sm;
   cursor: pointer;
 }
 
-.spots-main__filter-overlay {
+.spots-main__overlay {
   position: absolute;
   top: 45px;
   left: 0;
-  display: none;
   width: 100%;
   height: 100%;
-  z-index: 10;
+}
+
+.spots-main__overlay--filters {
   background-color: $white;
+  z-index: 10;
   overflow-y: scroll;
 }
 
-.spots-main__map-overlay {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+.spots-main__overlay.hide { display: none; }

@@ -17,7 +17,9 @@
     </div>
   <% end %>
   <p class="spot__description"><%= @spot.description %></p>
-  <%= image_tag "https://api.mapbox.com/styles/v1/mapbox/light-v9/static/#{@spot.longitude},#{@spot.latitude},14,0,0/890x400@2x?access_token=#{ENV['MAPBOX_API_KEY']}", class: "spot__static-map" %>
+  <div class="spot__map js-spot-map">
+    <%= render "shared/map" %>
+  </div>
   <ul class="spot__details wrapper">
     <li class="spot__address spot__details-item">
       <span class="spot__icon">

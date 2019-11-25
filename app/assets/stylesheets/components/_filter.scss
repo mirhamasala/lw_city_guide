@@ -1,4 +1,4 @@
-.filter { font-weight: $fw-medium-bold; }
+.filter { font-weight: $font-medium; }
 
 .filter__header {
   display: flex;
@@ -8,7 +8,7 @@
   padding-bottom: 12px;
   padding-left: $wrapper;
   border-bottom: 1px solid $light-gray;
-  font-size: 0.875rem;
+  font-size: $text-sm;
 }
 
 .filter__close {

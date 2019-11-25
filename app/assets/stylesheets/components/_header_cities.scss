@@ -8,7 +8,7 @@
   margin-bottom: 0;
   padding-right: $wrapper;
   padding-left: $wrapper;
-  font-size: 2.25rem;
+  font-size: $text-4xl;
 }
 
 @media screen and (min-width: 567px) {
@@ -24,7 +24,7 @@
     width: 60%;
     padding-right: $wrapper-desktop;
     padding-left: $wrapper-desktop;
-    font-size: 3rem;
+    font-size: $text-5xl;
   }
 }
 
