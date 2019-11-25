@@ -43,5 +43,7 @@ $spacing-64: 16rem;    // 256px
   }
 }
 
+// Use the `mixin wrapper` above instead of these variables
+// These variables will be removed eventually
 $wrapper: $spacing-4;
 $wrapper-desktop: $spacing-6;
