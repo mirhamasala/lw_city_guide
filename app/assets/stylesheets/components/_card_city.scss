@@ -21,12 +21,12 @@
 
 .city-card__name {
   margin-bottom: 0;
-  font-size: 1.125rem;
-  font-weight: $fw-medium-bold;
+  font-size: $text-lg;
+  font-weight: $font-medium;
 }
 
 .city-card__spots {
   margin-bottom: 0;
-  font-size: 0.875rem;
-  font-weight: $fw-light;
+  font-size: $text-sm;
+  font-weight: $font-light;
 }

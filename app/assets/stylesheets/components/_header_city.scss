@@ -12,8 +12,8 @@
 
 .city-header__name {
   color: $white;
-  font-size: 2.25rem;
-  font-weight: $fw-medium-bold;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
 }
 
-.city-header__country { font-size: 1.25rem }
+.city-header__country { font-size: $text-xl }

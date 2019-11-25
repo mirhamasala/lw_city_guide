@@ -24,10 +24,10 @@
   color: $purple;
 }
 
-.spacer-xs { margin-bottom: $spacing-xs; }
-.spacer-sm { margin-bottom: $spacing-sm; }
-.spacer-md { margin-bottom: $spacing-md; }
-.spacer-lg { margin-bottom: $spacing-lg; }
+.spacer-xs { margin-bottom: $spacing-3; }
+.spacer-sm { margin-bottom: $spacing-5; }
+.spacer-md { margin-bottom: $spacing-8; }
+.spacer-lg { margin-bottom: $spacing-12; }
 
 .button-center {
   display: flex;
