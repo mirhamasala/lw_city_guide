@@ -55,10 +55,7 @@ class SpotsController < ApplicationController
   def destroy
     if @spot.destroy
       flash.now[:notice] = "You deleted #{@spot.name}. ✨"
-      respond_to do |format|
-        format.html { redirect_to city_spots_path(@spot.city) }
-        format.js
-      end
+      redirect_to city_spots_path(@spot.city)
     end
   end
 
