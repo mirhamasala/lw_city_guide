@@ -36,7 +36,7 @@ class SpotsController < ApplicationController
 
   def show
     @rating = @spot.rating_for(current_user)
-    add_map_marker(@spot)
+    add_map_markers(@spot)
   end
 
   def edit
@@ -74,26 +74,38 @@ class SpotsController < ApplicationController
     params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id, :status)
   end
 
-  # Add multiple markers
-  def add_map_markers(spots)
+  def add_map_markers(spot_or_spots)
+    spots = Array(spot_or_spots)
     @markers = spots.map do |spot|
-      {
-        lat: spot.latitude,
-        lng: spot.longitude,
-        infoWindow: render_to_string(partial: "shared/infowindow", locals: { spot: spot }),
-        image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
+      {}.tap { |marker|
+        marker[:lat] = spot.latitude
+        marker[:lng] = spot.longitude
+        marker[:infoWindow] = render_to_string(partial: "shared/infowindow", locals: { spot: spot }) if spots.count > 1
+        marker[:image_url] = helpers.asset_url("placemark_#{spot.category.name}.png")
       }
     end
   end
 
-  # Add one marker
-  def add_map_marker(spot)
-    @markers = [
-      {
-        lat: @spot.latitude,
-        lng: @spot.longitude,
-        image_url: helpers.asset_url("placemark_#{@spot.category.name}.png")
-      }
-    ]
-  end
+  # Add multiple markers
+  # def add_map_markers(spots)
+  #   @markers = spots.map do |spot|
+  #     {
+  #       lat: spot.latitude,
+  #       lng: spot.longitude,
+  #       infoWindow: render_to_string(partial: "shared/infowindow", locals: { spot: spot }),
+  #       image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
+  #     }
+  #   end
+  # end
+
+  # # Add one marker
+  # def add_map_marker(spot)
+  #   @markers = [
+  #     {
+  #       lat: @spot.latitude,
+  #       lng: @spot.longitude,
+  #       image_url: helpers.asset_url("placemark_#{@spot.category.name}.png")
+  #     }
+  #   ]
+  # end
 end

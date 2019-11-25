@@ -19,3 +19,6 @@ class User < ApplicationRecord
     cities.include?(city)
   end
 end
+
+# You are asking this question to a particular user
+# Are you a city keeper?

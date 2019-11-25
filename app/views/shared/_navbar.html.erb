@@ -9,7 +9,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <% if @city %>
-          <% if current_user.admin? || current_user.city_keeper_for?(@city) %>
+          <% if policy(@city).create_spot?  %>
             <li>
               <%= link_to "Add spot", new_city_spot_path(@city), class: "nav-link" %>
             </li>
