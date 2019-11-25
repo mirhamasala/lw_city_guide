@@ -6,14 +6,14 @@
 }
 
 .spot__header {
-  padding: 48px $wrapper;
+  padding: $spacing-12 $wrapper;
   background: $brand-secondary;
   text-align: center;
 }
 
 @media screen and (min-width: 768px) {
   .spot__header {
-    padding: 48px $wrapper-desktop;
+    padding: $spacing-12 $wrapper-desktop;
   }
 }
 
@@ -32,25 +32,25 @@
 }
 
 .spot__description {
-  padding: 24px $wrapper;
-  margin-bottom: 0;
+  padding: $spacing-6 $wrapper;
+  margin-bottom: $spacing-0;
 }
 
 @media screen and (min-width: 768px) {
   .spot__description {
-    padding: 24px $wrapper-desktop;
+    padding: $spacing-6 $wrapper-desktop;
   }
 }
 
 .spot__admin {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
   background: $light-gray;
   text-align: center;
-  a:first-child { margin-right: 4px; }
+  a:first-child { margin-right: $spacing-1; }
 }
 
-.spot__author { margin-bottom: 0; }
+.spot__author { margin-bottom: $spacing-0; }
 
 .spot__map {
   height: 256px;
@@ -59,35 +59,48 @@
 
 .spot__details {
   list-style: none;
-  margin-bottom: 0;
+  padding-right: $wrapper;
+  padding-left: $wrapper;
+  margin-bottom: $spacing-0;
+}
+
+@media screen and (min-width: 768px) {
+  .spot__details {
+    padding-right: $wrapper-desktop;
+    padding-left: $wrapper-desktop;
+  }
 }
 
 .spot__details-item {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 18px 0;
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
   &:not(:last-child) {
     border-bottom: 1px solid $light-gray;
   }
 }
 
-.spot__icon { padding-right: 12px; }
+.spot__icon { padding-right: $spacing-3; }
 
 .spot__spacer {
-  padding: 12px 0;
   background: $light-gray;
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
 }
 
 .spot__rating {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: $spacing-8;
+  padding-right: $spacing-8;
+  margin-bottom: $spacing-12;
   text-align: center;
 }
-.spot__rating-headline { padding-top: 24px; }
+
+.spot__rating-headline { padding-top: $spacing-6; }
 
 .spot__rating-tagline {
-  margin-bottom: 0;
+  margin-bottom: $spacing-0;
   span {
     font-weight: $font-medium;
   }
