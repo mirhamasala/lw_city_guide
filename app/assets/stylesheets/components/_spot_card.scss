@@ -1,14 +1,9 @@
-.spot-card-wrapper {
-  display: block;
-  margin-bottom: 16px;
-}
-
-.spot-card {
+.spot-card__link-wrap {
   display: flex;
   align-items: center;
+  margin-bottom: $spacing-4;
 }
 
-// 270px x 160px
 .spot-card__image {
   width: 80px;
   height: 80px;
@@ -17,7 +12,7 @@
   object-fit: cover;
 }
 
-.spot-card__text { padding-left: 16px; }
+.spot-card__text { padding-left: $spacing-4; }
 
 .spot-card__sub-category {
   margin-bottom: 0;
