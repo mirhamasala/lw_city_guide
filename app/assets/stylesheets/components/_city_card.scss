@@ -6,12 +6,12 @@
 .city-card__image {
   width: 80px;
   height: 80px;
+  border-radius: 3px;
   object-position: center;
   object-fit: cover;
-  border-radius: 3px;
 }
 
-.city-card__text { padding-left: $spacing-3; }
+.city-card__text { padding-left: $spacing-4; }
 
 .city-card__header {
   margin-bottom: $spacing-0;

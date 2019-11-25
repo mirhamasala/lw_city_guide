@@ -13,14 +13,14 @@
 
 .spot-card__text { padding-left: $spacing-4; }
 
-.spot-card__sub-category {
-  margin-bottom: 0;
-  font-size: $text-sm;
-  font-weight: $font-light;
-}
-
-.spot-card__name {
-  margin-bottom: 0;
+.spot-card__header {
+  margin-bottom: $spacing-0;
   font-size: $text-lg;
   font-weight: $font-medium;
+}
+
+.spot-card__sub-category {
+  margin-bottom: $spacing-0;
+  font-size: $text-sm;
+  font-weight: $font-light;
 }
