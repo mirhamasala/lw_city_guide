@@ -1,11 +1,4 @@
-.city-card-wrapper {
-  display: block;
-  &:not(:last-child) {
-    margin-bottom: 16px;
-  }
-}
-
-.city-card {
+.city-card__link-wrapper {
   display: flex;
   align-items: center;
 }
@@ -17,16 +10,17 @@
   object-fit: cover;
   border-radius: 3px;
 }
-.city-card__text { padding-left: 12px; }
 
-.city-card__name {
-  margin-bottom: 0;
+.city-card__text { padding-left: $spacing-3; }
+
+.city-card__header {
+  margin-bottom: $spacing-0;
   font-size: $text-lg;
   font-weight: $font-medium;
 }
 
-.city-card__spots {
-  margin-bottom: 0;
+.city-card__info {
+  margin-bottom: $spacing-0;
   font-size: $text-sm;
   font-weight: $font-light;
 }
