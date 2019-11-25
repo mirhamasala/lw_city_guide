@@ -1,9 +1,9 @@
 <div class="spot-card">
-  <%= link_to spot_path(spot), class: "spot-card__link-wrap" do %>
+  <%= link_to spot_path(spot), class: "spot-card__link-wrapper" do %>
     <%= cl_image_tag((spot.photo? ? spot.photo.card : spot.city.cover.card), class: "spot-card__image") %>
     <div class="spot-card__text">
       <p class="spot-card__sub-category"><%= spot.sub_category %></p>
-      <p class="spot-card__name"><%= spot.name %></p>
+      <p class="spot-card__header"><%= spot.name %></p>
     </div>
   <% end %>
 </div>

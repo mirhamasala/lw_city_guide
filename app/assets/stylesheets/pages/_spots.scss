@@ -1,5 +1,9 @@
 .spots-main { position: relative; }
 
+.spots-main__card-wrapper {
+  margin-bottom: $spacing-4;
+}
+
 .spots-main__map-view-btn {
   position: absolute;
   top: -16px;
@@ -51,3 +55,7 @@
 }
 
 .spots-main__overlay.hide { display: none; }
+
+.spots-main__card-wrapper {
+
+}

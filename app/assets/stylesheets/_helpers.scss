@@ -9,21 +9,6 @@
   }
 }
 
-.highlighted {
-  padding: 2px 8px 4px;
-  border-radius: 3px;
-}
-
-.highlighted--red {
-  background-color: $light-red;
-  color: $brand-primary;
-}
-
-.highlighted--purple {
-  background-color: $light-purple;
-  color: $purple;
-}
-
 .spacer-xs { margin-bottom: $spacing-3; }
 .spacer-sm { margin-bottom: $spacing-5; }
 .spacer-md { margin-bottom: $spacing-8; }
