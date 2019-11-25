@@ -34,5 +34,16 @@ $spacing-64: 16rem;    // 256px
 // Wrappers
 // --------------------------------------------------------------
 
-$wrapper: 18px;
-$wrapper-desktop: 24px;
+@mixin wrapper {
+  padding-right: $spacing-4;
+  padding-left: $spacing-4;
+  @media (min-width: 768px) {
+    padding-right: $spacing-6;
+    padding-left: $spacing-6;
+  }
+}
+
+// Use the `mixin wrapper` above instead of these variables
+// These variables will be removed eventually
+$wrapper: $spacing-4;
+$wrapper-desktop: $spacing-6;
