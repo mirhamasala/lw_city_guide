@@ -6,16 +6,18 @@
 }
 
 .spot__header {
-  padding: $spacing-12 $wrapper;
+  @include wrapper();
+  padding-top: $spacing-12;
+  padding-bottom: $spacing-12;
   background: $brand-secondary;
   text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  .spot__header {
-    padding: $spacing-12 $wrapper-desktop;
-  }
-}
+// @media screen and (min-width: 768px) {
+//   .spot__header {
+//     padding: $spacing-12 $wrapper-desktop;
+//   }
+// }
 
 .spot__name { font-size: 1.875rem; }
 

@@ -50,10 +50,10 @@
     <p class="spot__rating-tagline">How <span class="highlighted highlighted--red">hot</span> is this place?</p>
     <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
   </div>
-</div>
-<div class="caret-link caret-link--bg-gray">
-  <%= show_svg("caret_left.svg") %>
-  <%= link_to "Back to #{@spot.city.name}", city_spots_path(@spot.city) %>
+  <div class="caret-link caret-link--bg-gray">
+    <%= show_svg("caret_left.svg") %>
+    <%= link_to "Back to #{@spot.city.name}", city_spots_path(@spot.city) %>
+  </div>
 </div>
 <% content_for :after_js do %>
   <script>
