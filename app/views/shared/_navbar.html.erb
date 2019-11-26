@@ -8,10 +8,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <% if @city && policy(@city).create_spot? %>
-          <li>
-            <%= link_to "Add spot", new_city_spot_path(@city), class: "nav-link" %>
-          </li>
+        <% if @city %>
+          <% if @city.persisted? && policy(@city).create_spot? %>
+            <li>
+              <%= link_to "Add spot", new_city_spot_path(@city), class: "nav-link" %>
+            </li>
+          <% end %>
         <% end %>
         <li class="nav-item dropdown">
           <%= image_tag "", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown", handle: current_user.github_handle }, 'aria-haspopup': true, 'aria-expanded': false %>
