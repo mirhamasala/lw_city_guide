@@ -1,10 +1,38 @@
-.spots-main { position: relative; }
+.spots { margin-bottom: $spacing-5; }
 
-.spots-main__card-wrapper {
-  margin-bottom: $spacing-4;
+.spots__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  height: 384px;
+  color: $white;
 }
 
-.spots-main__map-view-btn {
+.spots__city {
+  color: $white;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
+}
+
+.spots__country { font-size: $text-xl }
+
+.spots__main { position: relative; }
+
+.spots__main--nospots {
+  position: static;
+  @include wrapper();
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-8;
+}
+
+.spots__message-wrapper { margin-bottom: $spacing-8; }
+
+.spots__message { margin-bottom: $spacing-8; }
+
+.spots__map-button {
   position: absolute;
   top: -16px;
   left: calc(50% - 16px);
@@ -21,14 +49,14 @@
   }
 }
 
-.spots-main__map-view-btn.clicked {
+.spots__map-button.clicked {
   circle { fill: $red; }
   g.map { fill: $white; }
 }
 
-.spots-main__map-view-btn.hide { display: none; }
+.spots__map-button.hide { display: none; }
 
-.spots-main__filter-options {
+.spots__filters-button {
   display: flex;
   justify-content: flex-end;
   @include wrapper();
@@ -39,7 +67,7 @@
   cursor: pointer;
 }
 
-.spots-main__overlay {
+.spots__overlay {
   position: absolute;
   top: 45px;
   left: 0;
@@ -47,14 +75,25 @@
   height: 100%;
 }
 
-.spots-main__overlay--filters {
+.spots__overlay.hide { display: none; }
+
+.spots__overlay--filters {
   background-color: $white;
   z-index: 10;
   overflow-y: scroll;
 }
 
-.spots-main__overlay.hide { display: none; }
-
-.spots-main__card-wrapper {
-
+.spots__cards {
+  @include wrapper();
+  margin-bottom: $spacing-8;
 }
+
+.spots__card-wrapper { margin-bottom: $spacing-4; }
+
+.spots__pagination {
+  @include wrapper();
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-8;
+}
+
+.spots__footer { @include wrapper(); }

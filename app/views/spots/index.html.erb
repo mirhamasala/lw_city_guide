@@ -1,42 +1,48 @@
 <%= content_for(:title, "#{@city.name} · #{@city.country}") %>
-<header class="city-header <%= 'spacer-lg' if @city.spots.blank? %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover %>')">
-  <h1 class="city-header__name"><%= @city.name %></h1>
-  <div class="city-header__country"><%= @city.country %></div>
-</header>
-<% if @city.spots.blank? %>
-  <div class="wrapper spacer-md">
-    <p class="spacer-md">Oh, oops! No spots for <strong><%= @city.name %></strong> have been added yet. 💩</p>
-    <% if user_signed_in? && policy(@city.spots).create? %>
-      <%= link_to "Add one now", new_city_spot_path(@city), class: "button button--primary spacer-md" %>
-    <% end %>
-    <div class="caret-link">
-      <%= show_svg("caret_left.svg") %>
-      <%= link_to "Back to all cities", root_path %>
+<div class="spots">
+  <header class="spots__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover %>')">
+    <h1 class="spots__city"><%= @city.name %></h1>
+    <div class="spots__country"><%= @city.country %></div>
+  </header>
+  <% if @city.spots.blank? %>
+    <div class="spots__main spots__main--nospots">
+      <div class="spots__message-wrapper">
+        <p class="spots__message">Oh, oops! No spots for <strong><%= @city.name %></strong> have been added yet. 💩</p>
+        <% if user_signed_in? && policy(@city.spots).create? %>
+          <%= link_to "Add one now", new_city_spot_path(@city), class: "button button--primary" %>
+        <% end %>
+      </div>
+      <div class="caret-link">
+        <%= show_svg("caret_left.svg") %>
+        <%= link_to "Back to all cities", root_path %>
+      </div>
+    </div>
+  <% else %>
+  <div class="spots__main">
+    <div class="spots__map-button js-map-view-btn"><%= show_svg("map.svg") %></div>
+    <div class="spots__filters-button js-filter-show spacer-md">Filters</div>
+    <div class="spots__overlay spots__overlay--filters hide js-filters">
+      <%= render "shared/filter" %>
+    </div>
+    <div class="spots__overlay hide js-map-overlay">
+      <%= render "shared/map" %>
+    </div>
+    <div class="spots__cards">
+      <% @spots.each do |spot| %>
+        <div class="spots__card-wrapper">
+          <%= render partial: "spots/spot_card", locals: { spot: spot} %>
+        </div>
+      <% end %>
+    </div>
+    <div class="spots__pagination">
+      <%= render partial: "shared/pagination", locals: { pagy: @pagy } %>
+    </div>
+    <div class="spots__footer">
+      <div class="caret-link">
+        <%= show_svg("caret_left.svg") %>
+        <%= link_to "Back to all cities", root_path %>
+      </div>
     </div>
   </div>
-<% else %>
-<div class="spots-main">
-  <div class="spots-main__map-view-btn js-map-view-btn"><%= show_svg("map.svg") %></div>
-  <div class="spots-main__filter-options js-filter-show spacer-md">Filters</div>
-  <div class="spots-main__overlay spots-main__overlay--filters hide js-filters">
-    <%= render "shared/filter" %>
-  </div>
-  <div class="spots-main__overlay spots-main__overlay--map hide js-map-overlay">
-    <%= render "shared/map" %>
-  </div>
-  <div class="spots wrapper spacer-md">
-    <% @spots.each do |spot| %>
-      <div class="spots-main__card-wrapper">
-        <%= render partial: "spots/spot_card", locals: { spot: spot} %>
-      </div>
-    <% end %>
-  </div>
-  <div class="pages wrapper spacer-md">
-    <%= render partial: "shared/pagination", locals: { pagy: @pagy } %>
-  </div>
-  <div class="caret-link wrapper spacer-sm">
-    <%= show_svg("caret_left.svg") %>
-    <%= link_to "Back to all cities", root_path %>
-  </div>
+  <% end %>
 </div>
-<% end %>
