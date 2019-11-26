@@ -7,7 +7,6 @@
 @import "mapbox-gl/dist/mapbox-gl.css";
 
 // CSS partials
-@import "base";
-@import "helpers";
+@import "base/base";
 @import "components/index";
 @import "pages/index";
