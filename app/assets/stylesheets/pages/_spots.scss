@@ -62,6 +62,7 @@
   @include wrapper();
   padding-top: $spacing-3;
   padding-bottom: $spacing-3;
+  margin-bottom: $spacing-8;
   border-bottom: 1px solid $light-gray;
   font-size: $text-sm;
   cursor: pointer;
