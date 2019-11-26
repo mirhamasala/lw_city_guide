@@ -1,12 +1,14 @@
-.brand-primary { color: $brand-primary };
+// --------------------------------------------------------------
+// To be (re)moved
+// --------------------------------------------------------------
+
+// Please don't use these helper classes anymore.
 
 .headline-primary { color: $brand-primary; }
 
 .link-primary {
   color: $brand-primary;
-  &:hover {
-    color: $brand-primary;
-  }
+  &:hover { color: $brand-primary; }
 }
 
 .button-center {
