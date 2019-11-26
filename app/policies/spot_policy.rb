@@ -10,7 +10,7 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def show?
-    admin_or_city_keeper? || record.published?
+    record.published? || admin_or_city_keeper?
   end
 
   def update?
