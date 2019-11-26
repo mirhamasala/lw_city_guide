@@ -43,7 +43,25 @@ $spacing-64: 16rem;    // 256px
   }
 }
 
-// Use the `mixin wrapper` above instead of these variables
-// These variables will be removed eventually
-$wrapper: $spacing-4;
-$wrapper-desktop: $spacing-6;
+// --------------------------------------------------------------
+// To be removed
+// --------------------------------------------------------------
+
+// Use the spacing variables above instead of the spacer classes below.
+// These classes will be removed.
+
+.spacer-xs { margin-bottom: $spacing-3; }
+.spacer-sm { margin-bottom: $spacing-5; }
+.spacer-md { margin-bottom: $spacing-8; }
+.spacer-lg { margin-bottom: $spacing-12; }
+
+// --------------------------------------------------------------
+// To be removed
+// --------------------------------------------------------------
+
+// Use the `mixin wrapper` above instead of the wrapper class below.
+// This wrapper class will be removed.
+
+.wrapper {
+  @include wrapper();
+}

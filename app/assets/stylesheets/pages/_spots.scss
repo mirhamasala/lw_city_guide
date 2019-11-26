@@ -31,10 +31,9 @@
 .spots-main__filter-options {
   display: flex;
   justify-content: flex-end;
-  padding-top: 12px;
-  padding-right: $wrapper;
-  padding-bottom: 12px;
-  padding-left: $wrapper;
+  @include wrapper();
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
   border-bottom: 1px solid $light-gray;
   font-size: $text-sm;
   cursor: pointer;

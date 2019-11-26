@@ -4,15 +4,13 @@
 }
 
 .cities__headline {
+  @include wrapper();
   margin-bottom: $spacing-0;
-  padding-right: $wrapper;
-  padding-left: $wrapper;
   font-size: $text-4xl;
 }
 
 .cities__main {
-  padding-right: $wrapper;
-  padding-left: $wrapper;
+  @include wrapper();
   margin-bottom: $spacing-8;
 }
 
@@ -31,13 +29,7 @@
     position: absolute;
     top: 136px;
     width: 60%;
-    padding-right: $wrapper-desktop;
-    padding-left: $wrapper-desktop;
     font-size: $text-5xl;
-  }
-  .cities__main {
-    padding-right: $wrapper-desktop;
-    padding-left: $wrapper-desktop;
   }
 }
 

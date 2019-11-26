@@ -1,8 +1,7 @@
 .form-wrapper {
   width: 100%;
-  padding-right: $wrapper;
-  padding-left: $wrapper;
-  margin: 32px auto;
+  @include wrapper();
+  margin: $spacing-8 auto;
 }
 
 @media screen and (min-width: 576px) {
@@ -10,11 +9,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .form-wrapper {
-    padding-right: $wrapper-desktop;
-    padding-left: $wrapper-desktop;
-    width: 65%;
-  }
+  .form-wrapper { width: 65%; }
 }
 
 @media screen and (min-width: 992px) {
@@ -25,6 +20,4 @@
   .form-wrapper { width: 35%; }
 }
 
-.form-image-preview {
-  width: 192px;
-}
+.form-image-preview { width: 192px; }

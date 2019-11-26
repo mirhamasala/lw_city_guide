@@ -9,11 +9,6 @@
   }
 }
 
-.spacer-xs { margin-bottom: $spacing-3; }
-.spacer-sm { margin-bottom: $spacing-5; }
-.spacer-md { margin-bottom: $spacing-8; }
-.spacer-lg { margin-bottom: $spacing-12; }
-
 .button-center {
   display: flex;
   justify-content: center;
@@ -22,16 +17,3 @@
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .text-left { text-align: left; }
-
-// Main wrapper
-.wrapper {
-  padding-right: $wrapper;
-  padding-left: $wrapper;
-}
-
-@media screen and (min-width: 768px) {
-  .wrapper {
-    padding-right: $wrapper-desktop;
-    padding-left: $wrapper-desktop;
-  }
-}
