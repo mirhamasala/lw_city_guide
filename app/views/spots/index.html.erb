@@ -7,7 +7,7 @@
   <div class="wrapper spacer-md">
     <p class="spacer-md">Oh, oops! No spots for <strong><%= @city.name %></strong> have been added yet. 💩</p>
     <% if user_signed_in? && policy(@city.spots).create? %>
-      <%= link_to "Add one now", new_city_spot_path(@city), class: "button button-primary spacer-md" %>
+      <%= link_to "Add one now", new_city_spot_path(@city), class: "button button--primary spacer-md" %>
     <% end %>
     <div class="caret-link">
       <%= show_svg("caret_left.svg") %>
