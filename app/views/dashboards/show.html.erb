@@ -1,7 +1,7 @@
-<div class="dashboard wrapper">
+<div class="dashboard">
   <h1>Dashboard</h1>
-  <h2 class="dashboard__sectionHeader">Unpublished Spots</h1>
-  <div class="dashboard__unpublishedSpots spacer-sm">
+  <h2 class="dashboard__section-header">Unpublished Spots</h1>
+  <div class="dashboard__unpublished-spots">
     <% @unpublished_spots_by_city.each do |city, spots| %>
       <h3><%= city.name %></h3>
       <ul>

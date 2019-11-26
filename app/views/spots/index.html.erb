@@ -18,14 +18,18 @@
 <div class="spots-main">
   <div class="spots-main__map-view-btn js-map-view-btn"><%= show_svg("map.svg") %></div>
   <div class="spots-main__filter-options js-filter-show spacer-md">Filters</div>
-  <div class="spots-main__filter-overlay js-filters">
+  <div class="spots-main__overlay spots-main__overlay--filters hide js-filters">
     <%= render "shared/filter" %>
   </div>
-  <div class="spots-main__map-overlay js-map-overlay" style="display: none">
+  <div class="spots-main__overlay spots-main__overlay--map hide js-map-overlay">
     <%= render "shared/map" %>
   </div>
   <div class="spots wrapper spacer-md">
-    <%= render @spots %>
+    <% @spots.each do |spot| %>
+      <div class="spots-main__card-wrapper">
+        <%= render partial: "spots/spot_card", locals: { spot: spot} %>
+      </div>
+    <% end %>
   </div>
   <div class="pages wrapper spacer-md">
     <%= render partial: "shared/pagination", locals: { pagy: @pagy } %>
