@@ -12,7 +12,7 @@
     <ul class="categories-list">
       <% Category.all.each do |category| %>
         <li class="categories-list__item">
-          <div class="categories-list__icon">
+          <div class="categories-list__icon" data-id="<%= category.id %>">
             <%= show_svg("placemark_#{category.name}.svg") %>
           </div>
           <%= link_to category.name.capitalize, city_spots_path(category: category.name), class: "categories-list__name" %>

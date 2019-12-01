@@ -27,13 +27,9 @@
     <div class="spots__overlay hide js-map-overlay">
       <%= render "shared/map" %>
     </div>
-    <div class="spots__cards">
-      <% @spots.each do |spot| %>
-        <div class="spots__card-wrapper">
-          <%= render partial: "spots/spot_card", locals: { spot: spot} %>
-        </div>
-      <% end %>
-    </div>
+    <div style="display: none" data-spots="<%= @spots.to_json %>"></div>
+      <%= render partial: "spots/spot_card", locals: { spots: @spots} %>
+      <div class="spots__cards" id="spot__card"></div>
     <div class="spots__pagination">
       <%= render partial: "shared/pagination", locals: { pagy: @pagy } %>
     </div>
