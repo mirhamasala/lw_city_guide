@@ -35,10 +35,18 @@ $spacing-64: 16rem;    // 256px
 // --------------------------------------------------------------
 
 @mixin wrapper {
-  padding-right: $spacing-4;
-  padding-left: $spacing-4;
+  padding-right: $spacing-5;
+  padding-left: $spacing-5;
   @media (min-width: 768px) {
-    padding-right: $spacing-6;
-    padding-left: $spacing-6;
+    padding-right: $spacing-12;
+    padding-left: $spacing-12;
+  }
+  @media (min-width: 992px) {
+    padding-right: $spacing-24;
+    padding-left: $spacing-24;
+  }
+  @media (min-width: 1200px) {
+    padding-right: $spacing-40;
+    padding-left: $spacing-40;
   }
 }

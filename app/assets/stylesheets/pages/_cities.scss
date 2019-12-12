@@ -6,7 +6,27 @@
 .cities__headline {
   @include wrapper();
   margin-bottom: $spacing-0;
-  font-size: $text-4xl;
+  font-size: $text-3xl;
+}
+
+.cities__inner-text-wrap { white-space: nowrap; }
+
+@media (min-width: 768px) {
+  .cities__headline {
+    position: absolute;
+    top: 136px;
+    font-size: $text-4xl;
+  }
+  .cities__text-wrap { white-space: nowrap; }
+}
+
+@media (min-width: 992px) {
+  .cities__headline {
+    position: relative;
+    top: 0;
+    font-size: $text-5xl;
+  }
+  .cities__background { display: none; }
 }
 
 .cities__main {
@@ -14,32 +34,4 @@
   margin-bottom: $spacing-8;
 }
 
-.cities__card-wrapper {
-  margin-bottom: $spacing-4;
-}
-
-@media screen and (min-width: 567px) {
-  .cities__headline {
-    width: 65%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .cities__headline {
-    position: absolute;
-    top: 136px;
-    width: 60%;
-    font-size: $text-5xl;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .cities__headline {
-    position: relative;
-    top: 0;
-    width: 50%;
-  }
-  .cities__background {
-    display: none;
-  }
-}
+.cities__card-wrapper { margin-bottom: $spacing-4; }
