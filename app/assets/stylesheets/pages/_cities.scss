@@ -6,20 +6,14 @@
 .cities__headline {
   @include wrapper();
   margin-bottom: $spacing-0;
-  font-size: $text-4xl;
-}
-
-@media (min-width: 576px) {
-  .cities__headline {
-    width: 65%
-  }
+  font-size: $text-3xl;
 }
 
 @media (min-width: 768px) {
   .cities__headline {
     position: absolute;
     top: 136px;
-    font-size: $text-5xl;
+    font-size: $text-4xl;
   }
 }
 
@@ -27,17 +21,16 @@
   .cities__headline {
     position: relative;
     top: 0;
+    font-size: $text-5xl;
   }
-  .cities__background {
-    display: none;
-  }
+  .cities__background { display: none; }
 }
+
+.cities__text-wrap { white-space: nowrap; }
 
 .cities__main {
   @include wrapper();
   margin-bottom: $spacing-8;
 }
 
-.cities__card-wrapper {
-  margin-bottom: $spacing-4;
-}
+.cities__card-wrapper { margin-bottom: $spacing-4; }

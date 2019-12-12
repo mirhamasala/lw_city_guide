@@ -9,3 +9,11 @@
   background-color: $light-purple;
   color: $purple;
 }
+
+@media (max-width: 767.98px) {
+  .highlight--none {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+}
