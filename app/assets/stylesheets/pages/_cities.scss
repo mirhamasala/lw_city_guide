@@ -9,12 +9,15 @@
   font-size: $text-3xl;
 }
 
+.cities__inner-text-wrap { white-space: nowrap; }
+
 @media (min-width: 768px) {
   .cities__headline {
     position: absolute;
     top: 136px;
     font-size: $text-4xl;
   }
+  .cities__text-wrap { white-space: nowrap; }
 }
 
 @media (min-width: 992px) {
@@ -25,8 +28,6 @@
   }
   .cities__background { display: none; }
 }
-
-.cities__text-wrap { white-space: nowrap; }
 
 .cities__main {
   @include wrapper();
