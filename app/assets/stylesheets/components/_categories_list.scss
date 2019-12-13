@@ -1,14 +1,14 @@
 .categories-list {
   list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
+  padding-left: $spacing-0;
+  margin-bottom: $spacing-0;
 }
 
 .categories-list__item {
   display: flex;
   align-items: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
 }
 
-.categories-list__name { padding-left: 18px; }
+.categories-list__name { padding-left: $spacing-4; }

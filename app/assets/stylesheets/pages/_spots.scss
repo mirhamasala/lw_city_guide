@@ -1,46 +1,100 @@
-.spots-main { position: relative; }
+.spots { margin-bottom: $spacing-5; }
 
-.spots-main__map-view-btn {
+.spots__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  height: 384px;
+  color: $white;
+}
+
+.spots__city {
+  color: $white;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
+}
+
+.spots__country { font-size: $text-xl }
+
+.spots__main { position: relative; }
+
+.spots__main--nospots {
+  position: static;
+  @include wrapper();
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-8;
+}
+
+.spots__message-wrapper { margin-bottom: $spacing-8; }
+
+.spots__message { margin-bottom: $spacing-8; }
+
+.spots__map-button {
   position: absolute;
   top: -16px;
   left: calc(50% - 16px);
   width: 32px;
   height: 32px;
   cursor: pointer;
+  circle {
+    fill: $white;
+    transition: fill .1s;
+  }
+  g.map {
+    fill: $red;
+    transition: fill .1s;
+  }
 }
 
-.spots-main__map-view-btn.clicked g.map {
-  fill: $medium-red;
+.spots__map-button.clicked {
+  circle { fill: $red; }
+  g.map { fill: $white; }
 }
 
-.spots-main__filter-options {
+.spots__map-button.hide { display: none; }
+
+.spots__filters-button {
   display: flex;
   justify-content: flex-end;
-  padding-top: 12px;
-  padding-right: $wrapper;
-  padding-bottom: 12px;
-  padding-left: $wrapper;
+  @include wrapper();
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
+  margin-bottom: $spacing-8;
   border-bottom: 1px solid $light-gray;
-  font-size: 0.875rem;
+  font-size: $text-sm;
   cursor: pointer;
 }
 
-.spots-main__filter-overlay {
+.spots__overlay {
   position: absolute;
   top: 45px;
   left: 0;
-  display: none;
   width: 100%;
-  height: 100%;
-  z-index: 10;
+  height: calc(100% - 25px);
+}
+
+.spots__overlay.hide { display: none; }
+
+.spots__overlay--filters {
   background-color: $white;
+  z-index: 10;
   overflow-y: scroll;
 }
 
-.spots-main__map-overlay {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.spots__cards {
+  @include wrapper();
+  margin-bottom: $spacing-8;
 }
+
+.spots__card-wrapper { margin-bottom: $spacing-4; }
+
+.spots__pagination {
+  @include wrapper();
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-8;
+}
+
+.spots__footer { @include wrapper(); }

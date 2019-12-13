@@ -6,18 +6,28 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin? || user.cities.include?(record.city)
+    admin_or_city_keeper?
   end
 
   def show?
-    true
+    record.published? || admin_or_city_keeper?
   end
 
   def update?
-    user.admin? || record.owner == user
+    admin_or_city_keeper?
   end
 
   def destroy?
-    user.admin? || record.owner == user
+    admin_or_city_keeper?
+  end
+
+  def update_status?
+    admin_or_city_keeper?
+  end
+
+  private
+
+  def admin_or_city_keeper?
+    user.admin? || user.city_keeper_for?(record.city)
   end
 end

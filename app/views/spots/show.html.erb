@@ -10,13 +10,17 @@
   </header>
   <% if user_signed_in? && policy(@spot).edit? %>
     <div class="spot__admin">
+      <%= link_to @spot.draft? ? "publish" : "draft", spot_status_path(@spot), method: :put %>
       <%= link_to :edit, edit_spot_path(@spot) %>
       <%= link_to :delete, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
+      <p class="spot__author">👀 <%= link_to @spot.owner.github_handle, "http://www.github.com/#{@spot.owner.github_handle}" %></p>
     </div>
   <% end %>
   <p class="spot__description"><%= @spot.description %></p>
-  <%= image_tag "https://api.mapbox.com/styles/v1/mapbox/light-v9/static/#{@spot.longitude},#{@spot.latitude},14,0,0/890x400@2x?access_token=#{ENV['MAPBOX_API_KEY']}", class: "spot__static-map" %>
-  <ul class="spot__details wrapper">
+  <div class="spot__map js-spot-map">
+    <%= render "shared/map" %>
+  </div>
+  <ul class="spot__details">
     <li class="spot__address spot__details-item">
       <span class="spot__icon">
         <%= show_svg("icon_directions.svg") %>
@@ -41,15 +45,15 @@
     </li>
   </ul>
   <div class="spot__spacer"></div>
-  <div class="spot__rating spacer-lg">
+  <div class="spot__rating">
     <h3 class="spot__rating-headline">Hot or Not</h3>
-    <p class="spot__rating-tagline">How <span class="highlighted highlighted--red">hot</span> is this place?</p>
+    <p class="spot__rating-tagline">How <span class="highlight">hot</span> is this place?</p>
     <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
   </div>
-</div>
-<div class="caret-link caret-link--bg-gray">
-  <%= show_svg("caret_left.svg") %>
-  <%= link_to "Back to #{@spot.city.name}", city_spots_path(@spot.city) %>
+  <div class="caret-link caret-link--bg-gray">
+    <%= show_svg("caret_left.svg") %>
+    <%= link_to "Back to #{@spot.city.name}", city_spots_path(@spot.city) %>
+  </div>
 </div>
 <% content_for :after_js do %>
   <script>

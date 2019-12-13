@@ -10,7 +10,7 @@ class SpotsController < ApplicationController
     else
       @spots = @spots.in_category(params[:category])
     end
-    @spots = @spots.recent.check_coordinates
+    @spots = @spots.published.recent.check_coordinates
     @pagy, @spots = pagy(@spots, items: 5)
     add_map_markers(@spots)
   end
@@ -36,6 +36,7 @@ class SpotsController < ApplicationController
 
   def show
     @rating = @spot.rating_for(current_user)
+    add_map_marker(@spot)
   end
 
   def edit
@@ -54,10 +55,7 @@ class SpotsController < ApplicationController
   def destroy
     if @spot.destroy
       flash.now[:notice] = "You deleted #{@spot.name}. ✨"
-      respond_to do |format|
-        format.html { redirect_to city_spots_path(@spot.city) }
-        format.js
-      end
+      redirect_to city_spots_path(@spot.city)
     end
   end
 
@@ -73,9 +71,10 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id)
+    params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id, :status)
   end
 
+  # Add multiple markers
   def add_map_markers(spots)
     @markers = spots.map do |spot|
       {
@@ -85,5 +84,16 @@ class SpotsController < ApplicationController
         image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
       }
     end
+  end
+
+  # Add one marker
+  def add_map_marker(spot)
+    @markers = [
+      {
+        lat: @spot.latitude,
+        lng: @spot.longitude,
+        image_url: helpers.asset_url("placemark_#{@spot.category.name}.png")
+      }
+    ]
   end
 end
