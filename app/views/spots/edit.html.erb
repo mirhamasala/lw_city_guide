@@ -1,7 +1,7 @@
 <%= content_for(:title, "Edit #{@spot.name} in #{@spot.city.name}") %>
-<div class="form-wrapper">
-  <h1 class="spacer-md">Edit <%= @spot.name %></h1>
-  <div class="spacer-md">
+<div class="form">
+  <h1 class="form__header">Edit <%= @spot.name %></h1>
+  <div class="form__main">
     <%= render "form" %>
   </div>
   <div class="caret-link">

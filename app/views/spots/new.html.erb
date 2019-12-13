@@ -1,7 +1,7 @@
 <%= content_for(:title, "Add a spot for #{@city.name}") %>
-<div class="form-wrapper">
-  <h1 class="spacer-md">Add a new spot for <%= @city.name %></h1>
-  <div class="spacer-md">
+<div class="form">
+  <h1 class="form__header">Add a new spot for <%= @city.name %></h1>
+  <div class="form__main">
     <%= render "form" %>
   </div>
   <div class="caret-link">

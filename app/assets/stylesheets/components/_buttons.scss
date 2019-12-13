@@ -7,27 +7,15 @@
   text-align: center;
 }
 
-.button-big {
-  width: 256px;
-}
+.button--big { width: 256px; }
 
-.button-file-upload {
-  display: none;
-}
-
-.button-primary {
+.button--primary {
   background-color: $brand-primary;
   color: $white;
   border: 1px solid $brand-primary;
-  &:hover {
-    color: $white;
-  }
+  &:hover { color: $white; }
 }
 
-.button-secondary {
-  background-color: $light-gray;
-}
+.button--secondary { background-color: $light-gray; }
 
-.button-cancel {
-  background-color: transparent;
-}
+.button--file-upload { display: none; }

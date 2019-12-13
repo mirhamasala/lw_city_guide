@@ -1,4 +1,7 @@
 <%= simple_form_for [@city, @spot] do |f| %>
+  <% if @spot.persisted? %>
+    <%= f.input :status, as: :radio_buttons, collection: [["draft", "Draft"], ["published", "Published"]], label_method: :second, value_method: :first %>
+  <% end %>
   <%= f.input :name %>
   <%= f.association :category %>
   <%= f.input :sub_category %>
@@ -8,7 +11,7 @@
   <%= f.input :longitude %>
   <%= f.input :phone_number %>
   <%= f.input :website %>
-  <%= cl_image_tag(@spot.photo, class: "spacer-xs form-image-preview",
+  <%= cl_image_tag(@spot.photo, class: "form__image-preview",
                                 :transformation=>[{:if=>"ar_gt_1:1"},
                                                   {:width=>192, :crop=>"fit"},
                                                   {:if=>"else", :width=>192, :crop=>"fill"},
@@ -16,7 +19,7 @@
   <%= f.input :photo, folder: "city_guides/#{@spot.city.name}/spots/",
                       tags: [@spot.city.country, @spot.city.name, @spot.category],
                       label: @spot.photo? ? "Change image" : "Upload an image",
-                      label_html: { class: "button button-secondary" },
-                      input_html: { class: "button-file-upload" } %>
-  <%= f.submit class: "button button-primary" %>
+                      label_html: { class: "button button--secondary" },
+                      input_html: { class: "button--file-upload" } %>
+  <%= f.submit class: "button button--primary" %>
 <% end %>

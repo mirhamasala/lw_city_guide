@@ -1,0 +1,19 @@
+.highlight {
+  background-color: $light-red;
+  color: $red;
+  padding: $spacing-1 $spacing-2;
+  border-radius: 3px;
+}
+
+.highlight--purple {
+  background-color: $light-purple;
+  color: $purple;
+}
+
+@media (max-width: 767.98px) {
+  .highlight--none {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+}
