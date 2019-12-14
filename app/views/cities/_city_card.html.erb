@@ -1,11 +1,10 @@
 <% if city.spots.any? %>
   <div class="city-card">
-    <%= link_to city_spots_path(city), class: "city-card__link-wrapper" do %>
       <%= cl_image_tag city.cover.card, class: "city-card__image" %>
       <div class="city-card__text">
         <p class="city-card__header"><%= city.name %></p>
         <p class="city-card__info"><%= pluralize city.spots.published.size, "spot" %></p>
       </div>
-    <% end %>
+      <%= link_to "", city_spots_path(city), class: "city-card__link" %>
   </div>
 <% end %>
