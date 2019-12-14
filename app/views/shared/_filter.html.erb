@@ -10,7 +10,7 @@
   </div>
   <div class="filter__categories">
     <ul class="categories-list">
-      <% Category.all.each do |category| %>
+      <% Category.all.alphabetize.each do |category| %>
         <li class="categories-list__item">
           <div class="categories-list__icon">
             <%= show_svg("placemark_#{category.name}.svg") %>
