@@ -1,10 +1,10 @@
 .cards-grid {
   display: grid;
-  grid-column: 1fr;
+  grid-template-columns: 1fr;
   grid-gap: $spacing-5;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .cards-grid {
     grid-template-columns: 1fr 1fr;
   }
