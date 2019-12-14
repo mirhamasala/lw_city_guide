@@ -16,7 +16,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
                                                       }
   version :card do
     eager
-    resize_to_fill(256, 192)
+    resize_to_fill(640, 480)
   end
 
   version :preview do

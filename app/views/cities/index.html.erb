@@ -4,10 +4,10 @@
     <%= show_svg("cities_background.svg") %>
   </div>
   <div class="cities__main">
-    <% @cities.each do |city| %>
-      <div class="cities__card-wrapper">
+    <div class="cards-grid">
+      <% @cities.each do |city| %>
         <%= render partial: "cities/city_card", locals: { city: city} %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
