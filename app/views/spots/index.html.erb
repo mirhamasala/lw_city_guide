@@ -28,15 +28,15 @@
       <%= render "shared/map" %>
     </div>
     <div class="spots__cards">
-      <% @spots.each do |spot| %>
-        <div class="spots__card-wrapper">
+      <div class="cards-grid">
+        <% @spots.each do |spot| %>
           <%= render partial: "spots/spot_card", locals: { spot: spot} %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-    <div class="spots__pagination">
+    <% <div class="spots__pagination"> %>
       <%= render partial: "shared/pagination", locals: { pagy: @pagy } %>
-    </div>
+    <% </div> %>
     <div class="spots__footer">
       <div class="caret-link">
         <%= show_svg("caret_left.svg") %>

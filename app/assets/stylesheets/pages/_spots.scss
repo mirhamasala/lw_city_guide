@@ -74,13 +74,14 @@
   left: 0;
   width: 100%;
   height: calc(100% - 25px);
+  z-index: 2;
 }
 
 .spots__overlay.hide { display: none; }
 
 .spots__overlay--filters {
   background-color: $white;
-  z-index: 10;
+  z-index: 3;
   overflow-y: scroll;
 }
 
@@ -88,8 +89,6 @@
   @include wrapper();
   margin-bottom: $spacing-8;
 }
-
-.spots__card-wrapper { margin-bottom: $spacing-4; }
 
 .spots__pagination {
   @include wrapper();
