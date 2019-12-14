@@ -1,8 +1,10 @@
 # Wagon City Guides
 
-When I finished my coding bootcamp with [Le Wagon](https://www.lewagon.com/) in Bali, my teacher suggested that I create a city guide for Le Wagon Bali to keep practicing my coding skills. One freelance project and another front-end job later, I finally got to it.
+When I finished my coding bootcamp with [Le Wagon](https://www.lewagon.com/), my teacher suggested that I create a city guide for Le Wagon Bali to keep practicing my coding skills. One freelance project and another front-end job later, I finally got to it.
 
-I made Wagon City Guides for the drivers, community managers, and teachers of Le Wagon, so that they have an app on which they can share their favorite recommendations with their students. At the same time, it can also be used by the teachers themselves when traveling and working abroad.
+I made Wagon City Guides for the community of Le Wagon who study and teach in 39 countries.
+
+With Wagon City Guides we now have an app on which we can share and find recommendations for all the cities of Le Wagon's campuses.
 
 Wagon City Guides is also part of my "web dev MBA." You can find out more about that here: [Leap of Code - The Curriculum](https://www.mirhamasala.com/leap-of-code/#curriculum)
 
@@ -18,7 +20,7 @@ Wagon City Guides is not endorsed by Le Wagon. It's an independent project by La
 
 🐥 Duckie: [G](https://github.com/dctrg)
 
-🚀 [Contributors](https://github.com/mirhamasala/lw_city_guide/graphs/contributors) · [Danko](https://github.com/beribak), [Farhan](https://github.com/farhanlion), [Kai](https://github.com/grumbeard), and [Lars](https://github.com/datene).
+🚀 [Contributors](https://github.com/mirhamasala/lw_city_guide/graphs/contributors)
 
 👩🏼‍🎨 Figma design: [Laura Crompton](https://github.com/lozdesign)
 
