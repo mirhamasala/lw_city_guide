@@ -42,4 +42,8 @@ class Spot < ApplicationRecord
       where(city: user.cities)
     end
   end
+
+  def self.author?(user)
+    where(owner: user)
+  end
 end
