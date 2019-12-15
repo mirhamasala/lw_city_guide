@@ -13,10 +13,6 @@ class CityPolicy < ApplicationPolicy
     user.admin?
   end
 
-  def create_spot?
-    admin_or_city_keeper?
-  end
-
   private
 
   def admin_or_city_keeper?
