@@ -2,34 +2,40 @@
   <%= link_to root_path do %>
     <%= show_svg("logo_compass.svg") %>
   <% end %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <% if @city %>
-          <% if @city.persisted? && policy(@city).create_spot? %>
-            <li>
-              <%= link_to "Add spot", new_city_spot_path(@city), class: "nav-link" %>
-            </li>
-          <% end %>
-        <% end %>
-        <li class="nav-item dropdown">
-          <%= image_tag "", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown", handle: current_user.github_handle }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <% if policy(:dashboard).show? %>
-              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-            <% end %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+    <% unless current_page?(root_path) %>
+      <li>
+        <%= link_to "Explore all cities", root_path, class: "nav-link" %>
+      </li>
+    <% end %>
+    <% if @city %>
+      <% if @city.persisted? %>
+        <li>
+          <%= link_to "Share your 🔥 spots", new_city_spot_path(@city), class: "nav-link" %>
         </li>
       <% end %>
+    <% end %>
+    <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <%= image_tag "", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown", handle: current_user.github_handle }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <% if policy(:dashboard).show? %>
+            <%= link_to "Profile", dashboard_path, class: "dropdown-item" %>
+          <% end %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
     </ul>
   </div>
 </div>
-

@@ -6,7 +6,7 @@ class SpotPolicy < ApplicationPolicy
   end
 
   def create?
-    admin_or_city_keeper?
+    true
   end
 
   def show?
