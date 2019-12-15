@@ -1,19 +1,21 @@
-.spot__image {
-  height: 256px;
-  width: 100%;
-  object-position: center;
-  object-fit: cover;
-}
+.spot { margin-bottom: $spacing-12; }
 
 .spot__header {
-  @include wrapper();
-  padding-top: $spacing-12;
-  padding-bottom: $spacing-12;
-  background: $brand-secondary;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  height: 384px;
+  color: $white;
 }
 
-.spot__name { font-size: 1.875rem; }
+.spot__name {
+  color: $white;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
+}
 
 .spot__sub-category {
   display: block;
@@ -21,18 +23,9 @@
   font-weight: $font-light;
 }
 
-.spot__score {
-  display: block;
-  font-size: $text-xl;
-  font-weight: $font-normal;
-}
+.spot__section { margin-top: $spacing-12; }
 
-.spot__description {
-  @include wrapper();
-  padding-top: $spacing-6;
-  padding-bottom: $spacing-6;
-  margin-bottom: $spacing-0;
-}
+.spot__main { @include wrapper(); }
 
 .spot__admin {
   padding-top: $spacing-4;
@@ -47,49 +40,59 @@
   a:hover { text-decoration: underline; }
 }
 
-.spot__author { margin-bottom: $spacing-0; }
+.spot__description {
+  padding-top: $spacing-6;
+  padding-bottom: $spacing-6;
+  margin-bottom: $spacing-0;
+}
 
-.spot__map {
-  height: 256px;
-  width: 100%;
+.spot__author {
+  padding-bottom: $spacing-4;
+  padding-bottom: $spacing-4;
+  border-bottom: 1px solid $light-gray;
+  font-size: $text-sm;
 }
 
 .spot__details {
   list-style: none;
-  @include wrapper();
   margin-bottom: $spacing-0;
+  padding-left: 0;
 }
 
 .spot__details-item {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-top: $spacing-4;
-  padding-bottom: $spacing-4;
-  &:not(:last-child) {
-    border-bottom: 1px solid $light-gray;
-  }
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
 }
 
 .spot__icon { padding-right: $spacing-3; }
 
-.spot__spacer {
-  background: $light-gray;
-  padding-top: $spacing-3;
-  padding-bottom: $spacing-3;
+.spot__map {
+  height: 256px;
+  width: 100%;
 }
 
-.spot__rating {
-  padding-left: $spacing-8;
-  padding-right: $spacing-8;
-  margin-bottom: $spacing-12;
-  text-align: center;
+.spot__rating-summary {
+  display: flex;
+  justify-content: space-between;
 }
 
-.spot__rating-headline { padding-top: $spacing-6; }
+.spot__rating-score, .spot__rating-size {
+  color: $brand-primary;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
+}
+
+.spot__rating-slider {
+  padding: $spacing-8;
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+}
 
 .spot__rating-tagline {
-  margin-bottom: $spacing-0;
+  text-align: center;
   span {
     font-weight: $font-medium;
   }
