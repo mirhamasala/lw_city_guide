@@ -10,10 +10,25 @@
   </header>
   <% if user_signed_in? && policy(@spot).edit? %>
     <div class="spot__admin">
-      <%= link_to @spot.draft? ? "publish" : "draft", spot_status_path(@spot), method: :put %>
-      <%= link_to :edit, edit_spot_path(@spot) %>
-      <%= link_to :delete, spot_path(@spot), method: :delete if policy(@spot).destroy? %>
-      <p class="spot__author">👀 <%= link_to @spot.owner.github_handle, "http://www.github.com/#{@spot.owner.github_handle}" %></p>
+      <% if @spot.draft? %>
+        <div class="spot__link">
+          <span>📬</span>
+          <%= link_to "Publish", spot_status_path(@spot), method: :put %>
+        </div>
+      <% else %>
+        <div class="spot__link">
+          <span>📭</span>
+          <%= link_to "Unpublish", spot_status_path(@spot), method: :put %>
+        </div>
+      <% end %>
+      <div class="spot__link">
+        <span>✏️</span>
+        <%= link_to "Edit", edit_spot_path(@spot) %>
+      </div>
+      <div class="spot__link">
+        <span>🗑</span>
+        <%= link_to "Delete", spot_path(@spot), method: :delete if policy(@spot).destroy? %>
+      </div>
     </div>
   <% end %>
   <p class="spot__description"><%= @spot.description %></p>
