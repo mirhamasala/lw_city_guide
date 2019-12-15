@@ -1,14 +1,52 @@
 <div class="dashboard">
-  <h1>Dashboard</h1>
-  <h2 class="dashboard__section-header">Unpublished Spots</h1>
-  <div class="dashboard__unpublished-spots">
-    <% @unpublished_spots_by_city.each do |city, spots| %>
-      <h3><%= city.name %></h3>
-      <ul>
-        <% spots.each do |spot| %>
-          <li><%= link_to spot.name, spot_path(spot) %></li>
-        <% end %>
-      </ul>
-    <% end %>
+  <h1 class="dashboard__header">Profile</h1>
+  <div class="dashboard__section">
+    <h2 class="dashboard__section-header">Your Details</h2>
+    <p><%= "📧 #{current_user.email}" %></p>
+    <p><%= link_to "👾 #{current_user.github_handle}", "https://github.com/#{current_user.github_handle}" %></p>
   </div>
+  <div class="dashboard__section">
+    <h2 class="dashboard__section-header">Your Spots</h2>
+    <ul>
+      <% @spots.each do |spot| %>
+        <li>
+          <%= link_to spot.name, spot_path(spot) if spot.published?  %>
+          <% if spot.draft? %>
+            <span><%= "#{spot.name} · pending review" %></span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <% if current_user.admin? || current_user.city_keeper? %>
+    <div class="dashboard__section">
+      <h2 class="dashboard__section-header">Dashboard</h2>
+      <div class="dashboard__sub-section">
+        <h3 class="dashboard__sub-section-header">Pending Reviews</h3>
+        <div class="dashboard__unpublished-spots">
+          <% @unpublished_spots_by_city.each do |city, spots| %>
+            <h3><%= city.name %></h3>
+            <ul>
+              <% spots.each do |spot| %>
+                <li>
+                  <%= link_to spot.name, spot_path(spot) %>
+                  <span><%= "· #{spot.owner.github_handle}" %></span>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+      <% if current_user.admin? %>
+        <div class="dashboard__sub-section">
+          <h3 class="dashboard__sub-section-header">Cities</h3>
+          <%= link_to "Add city", new_city_path %>
+        </div>
+        <div class="dashboard__sub-section">
+          <h3 class="dashboard__sub-section-header">Categories</h3>
+          <%= link_to "Add category", new_category_path %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
