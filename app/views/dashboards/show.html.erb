@@ -22,7 +22,8 @@
     <div class="dashboard__section">
       <h2 class="dashboard__section-header">Dashboard</h2>
       <div class="dashboard__sub-section">
-        <h3 class="dashboard__sub-section-header">Pending Reviews</h3>
+
+        <h3 class="dashboard__sub-section-header"><%= "#{'Pending Review'.pluralize(@unpublished_spots.size)}" "(#{@unpublished_spots.size})"  %> </h3>
         <div class="dashboard__unpublished-spots">
           <% @unpublished_spots_by_city.each do |city, spots| %>
             <h3><%= city.name %></h3>
