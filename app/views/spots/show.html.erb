@@ -31,7 +31,7 @@
     <div class="spot__about">
       <h2 class="spot__section">About this place</h2>
       <p class="spot__description"><%= @spot.description %></p>
-      <p class="spot__author">Added by<%= link_to "#{@spot.owner.github_handle}", "https://www.github.com/#{@spot.owner.github_handle}" %> </p>
+      <p class="spot__author">Added by <%= link_to "#{@spot.owner.github_handle}", "https://www.github.com/#{@spot.owner.github_handle}" %> </p>
     </div>
     <ul class="spot__details">
       <li class="spot__address spot__details-item">
