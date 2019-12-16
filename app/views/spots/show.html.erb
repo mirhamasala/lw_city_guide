@@ -1,73 +1,81 @@
 <%= content_for(:title, "#{@spot.name} · #{@spot.city.name} · #{@spot.city.country}") %>
 <div class="spot">
-  <%= cl_image_tag((@spot.photo? ? @spot.photo : @spot.city.cover), :dpr => :auto, :responsive_placeholder => "blank", :width => :auto, class: "spot__image") %>
-  <header class="spot__header">
+  <header class="spot__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @spot.photo %>')">
     <h1 class="spot__name"><%= @spot.name %></h1>
     <p class="spot__sub-category"><%= @spot.sub_category %></p>
-    <% if @rating.score.present? %>
-      <span class="spot__score">🔥 <%= @rating.score %>&#176;</span>
-    <% end %>
   </header>
   <% if user_signed_in? && policy(@spot).edit? %>
     <div class="spot__admin">
       <% if @spot.draft? %>
-        <div class="spot__link">
+        <div class="spot__admin-link">
           <span>📬</span>
           <%= link_to "Publish", spot_status_path(@spot), method: :put %>
         </div>
       <% else %>
-        <div class="spot__link">
+        <div class="spot__admin-link">
           <span>📭</span>
           <%= link_to "Unpublish", spot_status_path(@spot), method: :put %>
         </div>
       <% end %>
-      <div class="spot__link">
+      <div class="spot__admin-link">
         <span>✏️</span>
         <%= link_to "Edit", edit_spot_path(@spot) %>
       </div>
-      <div class="spot__link">
+      <div class="spot__admin-link">
         <span>🗑</span>
         <%= link_to "Delete", spot_path(@spot), method: :delete if policy(@spot).destroy? %>
       </div>
     </div>
   <% end %>
-  <p class="spot__description"><%= @spot.description %></p>
-  <div class="spot__map js-spot-map">
-    <%= render "shared/map" %>
-  </div>
-  <ul class="spot__details">
-    <li class="spot__address spot__details-item">
-      <span class="spot__icon">
-        <%= show_svg("icon_directions.svg") %>
-      </span>
-      <%= @spot.address %>
-    </li>
-    <li class="spot__phone-number spot__details-item">
-      <span class="spot__icon">
-        <%= show_svg("icon_phone.svg") %>
-      </span>
-      <%= @spot.phone_number.present? ? @spot.phone_number : "-" %>
-    </li>
-    <li class="spot__website spot__details-item">
-      <span class="spot__icon">
-        <%= show_svg("icon_domain.svg") %>
-      </span>
-      <% if @spot.website.present? %>
-        <%= link_to "Website", @spot.website %>
-      <% else %>
-        <span>-</span>
+  <div class="spot__main">
+    <div class="spot__about">
+      <h2 class="spot__section">About this place</h2>
+      <p class="spot__description"><%= @spot.description %></p>
+      <p class="spot__author">Added by<%= link_to "#{@spot.owner.github_handle}", "https://www.github.com/#{@spot.owner.github_handle}" %> </p>
+    </div>
+    <ul class="spot__details">
+      <li class="spot__address spot__details-item">
+        <span class="spot__details-icon">🗺</span>
+        <%= @spot.address %>
+      </li>
+      <li class="spot__phone-number spot__details-item">
+        <span class="spot__details-icon">☎️</span>
+        <%= @spot.phone_number.present? ? @spot.phone_number : "-" %>
+      </li>
+      <li class="spot__website spot__details-item">
+        <span class="spot__details-icon">🔗</span>
+        <% if @spot.website.present? %>
+          <%= link_to "Website", @spot.website %>
+        <% else %>
+          <span>-</span>
+        <% end %>
+      </li>
+    </ul>
+    <div class="spot__map js-spot-map">
+      <%= render "shared/map" %>
+    </div>
+    <div class="spot__rating">
+      <h2 class="spot__rating-header">Hot or not</h2>
+      <% if @rating.score.present? %>
+        <div class="spot__rating-summary">
+          <div class="spot__rating-average">
+            <p class="spot__rating-score"><%= @rating.score %>&#176;</p>
+            <p>🔥 average heat-rating</p>
+          </div>
+          <div class="spot__rating-reviewers">
+            <p class="spot__rating-size"><%= @spot.ratings.size %></p>
+            <p>🔥 <%= "#{'person'.pluralize(@spot.ratings.size)} #{'says'.pluralize(@spot.ratings.size)} this place is lit"  %></p>
+          </div>
+        </div>
       <% end %>
-    </li>
-  </ul>
-  <div class="spot__spacer"></div>
-  <div class="spot__rating">
-    <h3 class="spot__rating-headline">Hot or Not</h3>
-    <p class="spot__rating-tagline">How <span class="highlight">hot</span> is this place?</p>
-    <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
-  </div>
-  <div class="caret-link caret-link--bg-gray">
-    <%= show_svg("caret_left.svg") %>
-    <%= link_to "Back to #{@spot.city.name}", city_spots_path(@spot.city) %>
+      <% if @rating.score.nil? %>
+        <p class="spot__rating-summary">Oh, no! 💩 There are no ratings for this place yet. You can be first, though. Just slide the 🔥 over to the right and let everyone know how hot you think this place is.</p>
+      <% end %>
+      <div class="spot__rating-slider">
+        <p class="spot__rating-tagline">How <span class="highlight">hot</span> is this place?</p>
+        <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
+      </div>
+    </div>
   </div>
 </div>
 <% content_for :after_js do %>

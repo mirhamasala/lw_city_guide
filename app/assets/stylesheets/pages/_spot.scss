@@ -1,37 +1,24 @@
-.spot__image {
-  height: 256px;
-  width: 100%;
-  object-position: center;
-  object-fit: cover;
-}
-
 .spot__header {
-  @include wrapper();
-  padding-top: $spacing-12;
-  padding-bottom: $spacing-12;
-  background: $brand-secondary;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  height: 384px;
+  color: $white;
 }
 
-.spot__name { font-size: 1.875rem; }
+.spot__name {
+  color: $white;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
+}
 
 .spot__sub-category {
   display: block;
   font-size: $text-lg;
   font-weight: $font-light;
-}
-
-.spot__score {
-  display: block;
-  font-size: $text-xl;
-  font-weight: $font-normal;
-}
-
-.spot__description {
-  @include wrapper();
-  padding-top: $spacing-6;
-  padding-bottom: $spacing-6;
-  margin-bottom: $spacing-0;
 }
 
 .spot__admin {
@@ -41,56 +28,135 @@
   text-align: center;
 }
 
-.spot__link {
+.spot__admin-link {
   display: inline-block;
+  font-size: $text-sm;
   &:not(:last-of-type) { margin-right: $spacing-4; }
   a:hover { text-decoration: underline; }
 }
 
-.spot__author { margin-bottom: $spacing-0; }
+@media (min-width: 576px) {
+  .spot__admin-link {
+    font-size: $text-base;
+    margin-right: $spacing-8;
+    &:not(:last-of-type) { margin-right: $spacing-8; }
+  }
+}
 
-.spot__map {
-  height: 256px;
-  width: 100%;
+.spot__main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "about"
+    "details"
+    "map"
+    "rating";
+  @include wrapper();
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-8;
+}
+
+@media (min-width: 768px) {
+  .spot__main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-column-gap: $spacing-8;
+    grid-template-areas:
+      "about map"
+      "details map"
+      "rating rating";
+    margin-top: $spacing-12;
+    margin-bottom: $spacing-12;
+  }
+}
+
+.spot__about { grid-area: about; }
+
+.spot__author {
+  padding-bottom: $spacing-4;
+  border-bottom: 1px solid $light-gray;
+  font-size: $text-sm;
 }
 
 .spot__details {
+  grid-area: details;
   list-style: none;
-  @include wrapper();
   margin-bottom: $spacing-0;
+  padding-left: 0;
 }
 
 .spot__details-item {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  padding-top: $spacing-4;
-  padding-bottom: $spacing-4;
-  &:not(:last-child) {
-    border-bottom: 1px solid $light-gray;
-  }
+  align-items: baseline;
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
 }
 
-.spot__icon { padding-right: $spacing-3; }
+.spot__details-icon { padding-right: $spacing-3; }
 
-.spot__spacer {
-  background: $light-gray;
-  padding-top: $spacing-3;
-  padding-bottom: $spacing-3;
+.spot__map {
+  grid-area: map;
+  height: 256px;
+  width: 100%;
+  margin-top: $spacing-4;
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+}
+
+@media (min-width: 768px) {
+  .spot__map { margin-top: $spacing-0; }
 }
 
 .spot__rating {
-  padding-left: $spacing-8;
-  padding-right: $spacing-8;
-  margin-bottom: $spacing-12;
-  text-align: center;
+  grid-area: rating;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "header"
+    "summary"
+    "slider";
+  margin-top: $spacing-8;
 }
 
-.spot__rating-headline { padding-top: $spacing-6; }
+@media (min-width: 768px) {
+  .spot__rating {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content;
+    grid-column-gap: $spacing-8;
+    grid-template-areas:
+      "header slider"
+      "summary slider";
+  }
+}
+
+.spot__rating-header { grid-area: header; }
+
+.spot__rating-summary {
+  grid-area: summary;
+  display: flex;
+}
+
+.spot__rating-average,
+.spot__rating-reviewers {
+  max-width: 128px;
+}
+
+.spot__rating-score, .spot__rating-size {
+  color: $brand-primary;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
+}
+
+.spot__rating-slider {
+  grid-area: slider;
+  padding: $spacing-8;
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+}
 
 .spot__rating-tagline {
-  margin-bottom: $spacing-0;
-  span {
-    font-weight: $font-medium;
-  }
+  text-align: center;
+  span { font-weight: $font-medium; }
 }
