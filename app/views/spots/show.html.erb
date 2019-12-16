@@ -7,21 +7,21 @@
   <% if user_signed_in? && policy(@spot).edit? %>
     <div class="spot__admin">
       <% if @spot.draft? %>
-        <div class="spot__link">
+        <div class="spot__admin-link">
           <span>📬</span>
           <%= link_to "Publish", spot_status_path(@spot), method: :put %>
         </div>
       <% else %>
-        <div class="spot__link">
+        <div class="spot__admin-link">
           <span>📭</span>
           <%= link_to "Unpublish", spot_status_path(@spot), method: :put %>
         </div>
       <% end %>
-      <div class="spot__link">
+      <div class="spot__admin-link">
         <span>✏️</span>
         <%= link_to "Edit", edit_spot_path(@spot) %>
       </div>
-      <div class="spot__link">
+      <div class="spot__admin-link">
         <span>🗑</span>
         <%= link_to "Delete", spot_path(@spot), method: :delete if policy(@spot).destroy? %>
       </div>
@@ -35,15 +35,15 @@
     </div>
     <ul class="spot__details">
       <li class="spot__address spot__details-item">
-        <span class="spot__icon">🗺</span>
+        <span class="spot__details-icon">🗺</span>
         <%= @spot.address %>
       </li>
       <li class="spot__phone-number spot__details-item">
-        <span class="spot__icon">☎️</span>
+        <span class="spot__details-icon">☎️</span>
         <%= @spot.phone_number.present? ? @spot.phone_number : "-" %>
       </li>
       <li class="spot__website spot__details-item">
-        <span class="spot__icon">🔗</span>
+        <span class="spot__details-icon">🔗</span>
         <% if @spot.website.present? %>
           <%= link_to "Website", @spot.website %>
         <% else %>
@@ -55,7 +55,7 @@
       <%= render "shared/map" %>
     </div>
     <div class="spot__rating">
-      <h2 class="spot__section">Hot or not?</h2>
+      <h2 class="spot__rating-header">Hot or not</h2>
       <% if @rating.score.present? %>
         <div class="spot__rating-summary">
           <div class="spot__rating-average">
@@ -68,8 +68,11 @@
           </div>
         </div>
       <% end %>
+      <% if @rating.score.nil? %>
+        <p class="spot__rating-summary">Oh, no! 💩 There are no ratings for this place yet. You can be first, though. Just slide the 🔥 over to the right and let everyone know how hot you think this place is.</p>
+      <% end %>
       <div class="spot__rating-slider">
-      <p class="spot__rating-tagline">How <span class="highlight">hot</span> is this place?</p>
+        <p class="spot__rating-tagline">How <span class="highlight">hot</span> is this place?</p>
         <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
       </div>
     </div>
