@@ -1,24 +1,21 @@
-.main-header {
-  padding-top: $spacing-8;
-  padding-bottom: $spacing-8;
-}
-
 .main-header__title {
   @include wrapper();
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
   margin-bottom: $spacing-0;
   font-size: $text-3xl;
   font-weight: $font-semibold;
 }
+
+.main-header__background { display: block; }
 
 .main-header__inner-text-wrap { white-space: nowrap; }
 
 @media (min-width: 768px) {
   .main-header__title {
     position: absolute;
-    top: 136px;
     font-size: $text-4xl;
     font-weight: $font-semibold;
-
   }
   .main-header__text-wrap { white-space: nowrap; }
 }
@@ -26,7 +23,8 @@
 @media (min-width: 992px) {
   .main-header__title {
     position: relative;
-    top: 0;
+    padding-top: $spacing-6;
+    padding-bottom: $spacing-0;
     font-size: $text-5xl;
     font-weight: $font-semibold;
   }

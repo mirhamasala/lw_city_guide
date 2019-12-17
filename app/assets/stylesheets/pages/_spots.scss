@@ -1,17 +1,9 @@
-.spots { margin-bottom: $spacing-5; }
-
 .spots__main { position: relative; }
 
-.spots__main--nospots {
-  position: static;
+.spots__message-wrapper {
   @include wrapper();
-  margin-top: $spacing-8;
-  margin-bottom: $spacing-8;
+  @include spacer();
 }
-
-.spots__message-wrapper { margin-bottom: $spacing-8; }
-
-.spots__message { margin-bottom: $spacing-8; }
 
 .spots__map-button {
   position: absolute;
@@ -43,7 +35,6 @@
   @include wrapper();
   padding-top: $spacing-3;
   padding-bottom: $spacing-3;
-  margin-bottom: $spacing-8;
   border-bottom: 1px solid $light-gray;
   font-size: $text-sm;
   cursor: pointer;
@@ -68,13 +59,10 @@
 
 .spots__cards {
   @include wrapper();
-  margin-bottom: $spacing-8;
+  @include spacer();
 }
 
 .spots__pagination {
   @include wrapper();
-  margin-top: $spacing-8;
-  margin-bottom: $spacing-8;
+  @include spacer();
 }
-
-.spots__footer { @include wrapper(); }

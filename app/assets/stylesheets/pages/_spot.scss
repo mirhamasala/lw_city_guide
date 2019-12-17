@@ -30,8 +30,7 @@
     "map"
     "rating";
   @include wrapper();
-  margin-top: $spacing-8;
-  margin-bottom: $spacing-8;
+  @include spacer();
 }
 
 @media (min-width: 768px) {
@@ -43,8 +42,6 @@
       "about map"
       "details map"
       "rating rating";
-    margin-top: $spacing-12;
-    margin-bottom: $spacing-12;
   }
 }
 

@@ -1,4 +1,4 @@
 .cities__main {
   @include wrapper();
-  margin-bottom: $spacing-8;
+  @include spacer();
 }

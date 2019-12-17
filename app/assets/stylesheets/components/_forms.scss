@@ -1,7 +1,9 @@
 .form {
   width: 100%;
   @include wrapper();
-  margin: $spacing-8 auto;
+  @include spacer();
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .form__header { margin-bottom: $spacing-8; }
