@@ -1,8 +1,8 @@
-<div class="spot-card">
-  <%= cl_image_tag spot.photo.card, class: "spot-card__image" %>
-  <div class="spot-card__text">
-    <p class="spot-card__header"><%= spot.name %></p>
-    <p class="spot-card__sub-category"><%= spot.sub_category %></p>
+<div class="main-card">
+  <%= cl_image_tag spot.photo.card, class: "main-card__image" %>
+  <div class="main-card__content">
+    <p class="main-card__title"><%= spot.name %></p>
+    <p class="main-card__sub-title"><%= spot.sub_category %></p>
   </div>
-  <%= link_to "", spot_path(spot), class: "spot-card__link" %>
+  <%= link_to "", spot_path(spot), class: "main-card__link" %>
 </div>
