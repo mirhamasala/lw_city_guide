@@ -6,7 +6,7 @@ class City < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :country, presence: true
-  validates :cover, presence: true
+  # validates :cover, presence: true
   validates :keepers, presence: true
 
   def self.alphabetize
