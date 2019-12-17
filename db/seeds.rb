@@ -5,7 +5,7 @@ User.destroy_all
 City.destroy_all
 Category.destroy_all
 Spot.destroy_all
-puts "[1/5] 🚜 It's a clean slate."
+puts "[1/6] 🚜 It's a clean slate."
 
 puts "Adding city keepers and dwellers..."
 # Mirha is the admin
@@ -19,12 +19,16 @@ inou = User.create(email: "inou@testing.com", password: "testing", github_handle
 
 # G is a user (and not a city keeper nor an admin)
 g = User.create!(email: "g@testing.com", password: "testing", github_handle: "dctrg")
-puts "[2/5] 🦖 Keepers be keeping, dwellers be dwelling."
+puts "[2/6] 🦖 Keepers be keeping, dwellers be dwelling."
+
+puts "Building Spain..."
+  spain = Country.create!(name: "Spain")
+puts "[3/6] 🇪🇸 Hola!..."
 
 puts "Building Spanish Romes in less than a day..."
-barcelona = City.create!(name: "Barcelona", country: "Spain", keepers: [ellyn, inou], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
-madrid = City.create!(name: "Madrid", country: "Spain", keepers: [ellyn], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
-puts "[3/5] 📌 Pinned Barcelona & Madrid on the map."
+barcelona = City.create!(name: "Barcelona", country: spain, keepers: [ellyn, inou], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
+madrid = City.create!(name: "Madrid", country: spain, keepers: [ellyn], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
+puts "[4/6] 📌 Pinned Barcelona & Madrid on the map."
 
 puts "Creating categories..."
 eat = Category.create!(name: "eat")
@@ -35,7 +39,7 @@ shop = Category.create!(name: "shop")
 stay = Category.create!(name: "stay")
 wagon = Category.create!(name: "wagon")
 other = Category.create!(name: "other")
-puts "[4/5] 📦 All boxed up."
+puts "[5/6] 📦 All boxed up."
 
 puts "Hunting hotspots..."
 spot_attributes = [
@@ -162,6 +166,6 @@ spot_attributes = [
 ]
 
 Spot.create!(spot_attributes)
-puts "[5/5] 🦴 Let\'s have a bite."
+puts "[6/6] 🦴 Let\'s have a bite."
 
 puts "✨ Done in #{(Time.now - start_time).to_f.round(2)}s."

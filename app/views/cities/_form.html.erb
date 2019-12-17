@@ -1,6 +1,6 @@
 <%= simple_form_for(@city) do |f| %>
   <%= f.input :name %>
-  <%= f.input :country %>
+  <%= f.association :country %>
   <%= f.association :keepers, collection: User.all.map { |user| [ user.email, user.id ] },
                               include_hidden: false,
                               label: "City Keepers" %>
