@@ -22,8 +22,8 @@ g = User.create!(email: "g@testing.com", password: "testing", github_handle: "dc
 puts "[2/5] 🦖 Keepers be keeping, dwellers be dwelling."
 
 puts "Building Spanish Romes in less than a day..."
-barcelona = City.create!(name: "Barcelona", country: "Spain", keepers: [ellyn, inou], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
-madrid = City.create!(name: "Madrid", country: "Spain", keepers: [ellyn], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
+barcelona = City.create!(name: "Barcelona", keepers: [ellyn, inou], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
+madrid = City.create!(name: "Madrid", keepers: [ellyn], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
 puts "[3/5] 📌 Pinned Barcelona & Madrid on the map."
 
 puts "Creating categories..."
