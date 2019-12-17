@@ -8,7 +8,6 @@ class City < ApplicationRecord
   validates :country, presence: true
   validates :cover, presence: true
   validates :keepers, presence: true
-  validates :flag, presence: true
 
   def self.alphabetize
     order(name: :asc)

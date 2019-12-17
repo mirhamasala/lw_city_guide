@@ -48,7 +48,7 @@ class CitiesController < ApplicationController
   end
 
   def city_params
-    params.require(:city).permit(:name, :country, :cover, :flag)
+    params.require(:city).permit(:name, :country, :cover)
   end
 
   def set_keepers
