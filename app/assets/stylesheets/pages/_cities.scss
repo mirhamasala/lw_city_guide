@@ -3,16 +3,17 @@
   padding-bottom: $spacing-8;
 }
 
-.cities__headline {
+.cities__title {
   @include wrapper();
   margin-bottom: $spacing-0;
   font-size: $text-3xl;
+  font-weight: $font-semibold;
 }
 
 .cities__inner-text-wrap { white-space: nowrap; }
 
 @media (min-width: 768px) {
-  .cities__headline {
+  .cities__title {
     position: absolute;
     top: 136px;
     font-size: $text-4xl;
@@ -21,7 +22,7 @@
 }
 
 @media (min-width: 992px) {
-  .cities__headline {
+  .cities__title {
     position: relative;
     top: 0;
     font-size: $text-5xl;

@@ -5,9 +5,13 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  color: $black;
-  font-weight: $font-bold;
+h2 {
+  font-size: $text-3xl;
+  font-weight: $font-semibold;
+}
+
+@media (min-width: 576px) {
+  h2 { font-size: $text-4xl; }
 }
 
 a {

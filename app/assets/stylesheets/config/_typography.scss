@@ -2,7 +2,7 @@
 // Fonts
 // --------------------------------------------------------------
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
 
 $font-sans: "Montserrat", sans-serif;
 
@@ -34,3 +34,23 @@ $font-semibold:  600;
 $font-bold:      700;
 $font-extrabold: 800;
 $font-black:     900;
+
+// --------------------------------------------------------------
+// Font Notes
+// --------------------------------------------------------------
+
+// ------------     h2               page-header__title   page-header__sub-title   cities__title    card__header      card__sub-category
+// < 576px
+// font-size:       $text-3xl        $text-4xl            $text-lg                 $text-3xl         $text-lg         $text-sm
+// font-weight:     $font-semibold   $font-medium         $font-normal             $font-semibold    $font-semibold   $font-light
+
+// 576px
+// font-size:       $text-4xl        $text-2xl                                     $text-5xl
+// font-weight:     $font-semibold   $font-light                                   $font-medium
+// 768px
+// font-size:       $text-4xl
+// font-weight:     $font-semibold
+
+// 992px
+// font-size:       $text-5xl
+// font-weight:     $font-semibold

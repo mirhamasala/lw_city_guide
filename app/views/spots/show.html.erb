@@ -29,7 +29,7 @@
   <% end %>
   <div class="spot__main">
     <div class="spot__about">
-      <h2 class="spot__section">About this place</h2>
+      <h2>About this place</h2>
       <p class="spot__description"><%= @spot.description %></p>
       <p class="spot__author">Added by <%= link_to "#{@spot.owner.github_handle}", "https://www.github.com/#{@spot.owner.github_handle}" %> </p>
     </div>
