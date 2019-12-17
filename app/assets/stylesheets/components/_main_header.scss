@@ -1,0 +1,34 @@
+.main-header {
+  padding-top: $spacing-8;
+  padding-bottom: $spacing-8;
+}
+
+.main-header__title {
+  @include wrapper();
+  margin-bottom: $spacing-0;
+  font-size: $text-3xl;
+  font-weight: $font-semibold;
+}
+
+.main-header__inner-text-wrap { white-space: nowrap; }
+
+@media (min-width: 768px) {
+  .main-header__title {
+    position: absolute;
+    top: 136px;
+    font-size: $text-4xl;
+    font-weight: $font-semibold;
+
+  }
+  .main-header__text-wrap { white-space: nowrap; }
+}
+
+@media (min-width: 992px) {
+  .main-header__title {
+    position: relative;
+    top: 0;
+    font-size: $text-5xl;
+    font-weight: $font-semibold;
+  }
+  .main-header__background { display: none; }
+}
