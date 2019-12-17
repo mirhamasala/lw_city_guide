@@ -3,6 +3,7 @@ class City < ApplicationRecord
 
   has_many :spots
   has_and_belongs_to_many :keepers, class_name: "User"
+  belongs_to :country
 
   validates :name, presence: true, uniqueness: true
   validates :country, presence: true
