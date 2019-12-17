@@ -1,26 +1,3 @@
-.spot__header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  height: 384px;
-  color: $white;
-}
-
-.spot__name {
-  color: $white;
-  font-size: $text-4xl;
-  font-weight: $font-medium;
-}
-
-.spot__sub-category {
-  display: block;
-  font-size: $text-lg;
-  font-weight: $font-light;
-}
-
 .spot__admin {
   padding-top: $spacing-4;
   padding-bottom: $spacing-4;

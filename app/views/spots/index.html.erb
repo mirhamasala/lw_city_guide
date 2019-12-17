@@ -1,8 +1,8 @@
 <%= content_for(:title, "#{@city.name} · #{@city.country}") %>
 <div class="spots">
-  <header class="spots__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover %>')">
-    <h1 class="spots__city"><%= @city.name %></h1>
-    <div class="spots__country"><%= @city.country %></div>
+  <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover %>')">
+    <h1 class="page-header__title"><%= @city.name %></h1>
+    <div class="page-header__sub-title"><%= @city.country %></div>
   </header>
   <% if @city.spots.blank? %>
     <div class="spots__main spots__main--nospots">
