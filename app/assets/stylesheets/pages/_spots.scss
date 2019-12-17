@@ -1,24 +1,5 @@
 .spots { margin-bottom: $spacing-5; }
 
-.spots__header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  height: 384px;
-  color: $white;
-}
-
-.spots__city {
-  color: $white;
-  font-size: $text-4xl;
-  font-weight: $font-medium;
-}
-
-.spots__country { font-size: $text-xl; }
-
 .spots__main { position: relative; }
 
 .spots__main--nospots {

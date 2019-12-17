@@ -1,8 +1,8 @@
 <%= content_for(:title, "#{@spot.name} · #{@spot.city.name} · #{@spot.city.country}") %>
 <div class="spot">
-  <header class="spot__header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @spot.photo %>')">
-    <h1 class="spot__name"><%= @spot.name %></h1>
-    <p class="spot__sub-category"><%= @spot.sub_category %></p>
+  <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @spot.photo %>')">
+    <h1 class="page-header__title"><%= @spot.name %></h1>
+    <p class="page-header__sub-title"><%= @spot.sub_category %></p>
   </header>
   <% if user_signed_in? && policy(@spot).edit? %>
     <div class="spot__admin">
