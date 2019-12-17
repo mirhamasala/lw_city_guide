@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_authorized
-    flash[:alert] = @not_authorized_message || "You are not authorized to perform this action."
+    flash[:alert] = "So sorry, but you're not authorized for this. 💩"
     redirect_to(root_path)
   end
 

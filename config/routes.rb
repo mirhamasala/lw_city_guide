@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "cities#index"
   resources :cities, only: [:index] do
-    resources :spots, only: [:index, :new, :create]
+    resources :spots, only: [:index]
   end
-  resources :spots, only: [:show, :edit, :update, :destroy] do
+  resources :spots, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :ratings, only: [:create, :update]
     resources :spot_statuses, only: [:update], as: :status
   end

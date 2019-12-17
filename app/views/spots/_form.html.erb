@@ -7,8 +7,11 @@
   <%= f.input :sub_category %>
   <%= f.input :description %>
   <%= f.input :address, input_html: { autocomplete: "off" } %>
-  <%= f.input :latitude %>
-  <%= f.input :longitude %>
+  <%= f.association :city %>
+  <% if current_user.admin? || current_user.city_keeper? %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+  <% end %>
   <%= f.input :phone_number %>
   <%= f.input :website %>
   <%= cl_image_tag(@spot.photo, class: "form__image-preview",
@@ -16,8 +19,8 @@
                                                   {:width=>192, :crop=>"fit"},
                                                   {:if=>"else", :width=>192, :crop=>"fill"},
                                                   {:if=>"end"}]) if @spot.photo? %>
-  <%= f.input :photo, folder: "city_guides/#{@spot.city.name}/spots/",
-                      tags: [@spot.city.country, @spot.city.name, @spot.category],
+  <%= f.input :photo, folder: "city_guides/#{@spot.city}/spots/",
+                      tags: [@spot.city, @spot.category],
                       label: @spot.photo? ? "Change image" : "Upload an image",
                       label_html: { class: "button button--secondary" },
                       input_html: { class: "button--file-upload" } %>
