@@ -39,18 +39,19 @@ $font-black:     900;
 // Font Notes
 // --------------------------------------------------------------
 
-// ------------     h2               page-header__title   page-header__sub-title   cities__title    card__header      card__sub-category
+// ------------     h2                main-header__title   page-header__title   page-header__sub-title   card__header       card__sub-category
 // < 576px
-// font-size:       $text-3xl        $text-4xl            $text-lg                 $text-3xl         $text-lg         $text-sm
-// font-weight:     $font-semibold   $font-medium         $font-normal             $font-semibold    $font-semibold   $font-light
+// font-size:       $text-3xl         $text-3xl            $text-4xl            $text-lg                  $text-lg           $text-sm
+// font-weight:     $font-semibold    $font-semibold       $font-medium         $font-normal              $font-semibold     $font-light
 
 // 576px
-// font-size:       $text-4xl        $text-2xl                                     $text-5xl
-// font-weight:     $font-semibold   $font-light                                   $font-medium
+// font-size:       $text-4xl         $text-4xl            $text-5xl            $text-2xl
+// font-weight:     $font-semibold    $font-semibold       $font-medium         $font-light
+
 // 768px
-// font-size:       $text-4xl
-// font-weight:     $font-semibold
+// font-size:       $text-4xl         $text-4xl
+// font-weight:     $font-semibold    $font-semibold
 
 // 992px
-// font-size:       $text-5xl
-// font-weight:     $font-semibold
+// font-size:       $text-5xl         $text-5xl
+// font-weight:     $font-semibold    $font-semibold
