@@ -40,6 +40,10 @@
       </div>
       <% if current_user.admin? %>
         <div class="dashboard__sub-section">
+          <h3 class="dashboard__sub-section-header">Countries</h3>
+          <%= link_to "Add country", new_country_path %>
+        </div>
+        <div class="dashboard__sub-section">
           <h3 class="dashboard__sub-section-header">Cities</h3>
           <%= link_to "Add city", new_city_path %>
         </div>

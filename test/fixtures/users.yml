@@ -1,0 +1,17 @@
+mirha:
+  email: mirha@testing.com
+  github_handle: mirhamasala
+  admin: true
+
+ellyn:
+  email: ellyn@testing.com
+  github_handle: ellynbsc
+
+inou:
+  email: inou@testing.com
+  github_handle: inouridder
+
+g:
+  email: g@testing.com
+  github_handle: dctrg
+  admin: false
