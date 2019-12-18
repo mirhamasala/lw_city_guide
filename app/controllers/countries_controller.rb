@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
   def new
-    authorize @country
     @country = Country.new
+    authorize @country
   end
 
   def create
@@ -9,7 +9,7 @@ class CountriesController < ApplicationController
     authorize @country
     if @country.save
       flash[:notice] = "Yay! You successfully created #{@country.name}! 🍪"
-      reditrect_to root_path
+      redirect_to root_path
     else
       flash[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :new
