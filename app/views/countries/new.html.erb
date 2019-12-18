@@ -1,0 +1,13 @@
+<div class="form">
+  <h1 class="form__header">Add a new country</h1>
+  <div class="form__main">
+    <%= simple_form_for(@country) do |f| %>
+      <div class="form__country">
+        <%= f.input :name %>
+      </div>
+      <div class="form__submit-button">
+        <%= f.submit class: "button button--primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
