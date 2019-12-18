@@ -1,0 +1,11 @@
+barcelona:
+  name: Barcelona
+  country: spain
+  keepers: [ellyn, inou]
+  cover: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg"
+
+madrid:
+  name: Madrid
+  country: spain
+  keepers: [ellyn]
+  cover: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg"
