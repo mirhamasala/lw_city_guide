@@ -6,7 +6,7 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
   include Warden::Test::Helpers
-  Wardern.test_mode!
+  Warden.test_mode!
 
   # Add more helper methods to be used by all tests here...
 end
