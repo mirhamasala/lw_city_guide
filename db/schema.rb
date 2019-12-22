@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_035016) do
+ActiveRecord::Schema.define(version: 2019_12_17_064917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,22 @@ ActiveRecord::Schema.define(version: 2019_11_18_035016) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.string "country"
     t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "country_id"
+    t.index ["country_id"], name: "index_cities_on_country_id"
   end
 
   create_table "cities_users", id: false, force: :cascade do |t|
     t.bigint "city_id", null: false
     t.bigint "user_id", null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -87,6 +94,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_035016) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cities", "countries"
   add_foreign_key "ratings", "spots"
   add_foreign_key "ratings", "users"
   add_foreign_key "spots", "categories"

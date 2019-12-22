@@ -6,7 +6,7 @@ gem "devise", ">= 4.7.1"
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
-gem 'rails', '5.2.3'
+gem 'rails', '6.0'
 gem 'redis'
 gem 'table_print'
 gem 'awesome_print'
@@ -36,4 +36,7 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'capybara'
+  gem 'webdrivers'
+  gem 'launchy'
 end

@@ -1,9 +1,57 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700");
+// --------------------------------------------------------------
+// Fonts
+// --------------------------------------------------------------
 
-$body-font: "Montserrat", sans-serif;
-$headers-font: "Montserrat", sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
 
-$fw-light: 300;
-$fw-regular: 400;
-$fw-medium-bold: 500;
-$fw-bold: 700;
+$font-sans: "Montserrat", sans-serif;
+
+// --------------------------------------------------------------
+// Font Size
+// --------------------------------------------------------------
+
+$text-xs:   .75rem;   // 12px
+$text-sm:   .875rem;  // 14px
+$text-base: 1rem;     // 16px
+$text-lg:   1.125rem; // 18px
+$text-xl:   1.25rem;  // 20px
+$text-2xl:  1.5rem;   // 24px
+$text-3xl:  1.875rem; // 30px
+$text-4xl:  2.25rem;  // 36px
+$text-5xl:  3rem;     // 48px
+$text-6xl:  4rem;     // 64px
+
+// --------------------------------------------------------------
+// Font Weight
+// --------------------------------------------------------------
+
+$font-hairline:  100;
+$font-thin:      200;
+$font-light:     300;
+$font-normal:    400;
+$font-medium:    500;
+$font-semibold:  600;
+$font-bold:      700;
+$font-extrabold: 800;
+$font-black:     900;
+
+// --------------------------------------------------------------
+// Font Notes
+// --------------------------------------------------------------
+
+// ------------     h2                main-header__title   page-header__title   page-header__sub-title   card__header       card__sub-category
+// < 576px
+// font-size:       $text-3xl         $text-3xl            $text-4xl            $text-lg                  $text-lg           $text-sm
+// font-weight:     $font-semibold    $font-semibold       $font-medium         $font-normal              $font-semibold     $font-light
+
+// 576px
+// font-size:       $text-4xl         $text-4xl            $text-5xl            $text-2xl
+// font-weight:     $font-semibold    $font-semibold       $font-medium         $font-light
+
+// 768px
+// font-size:       $text-4xl         $text-4xl
+// font-weight:     $font-semibold    $font-semibold
+
+// 992px
+// font-size:       $text-5xl         $text-5xl
+// font-weight:     $font-semibold    $font-semibold

@@ -28,11 +28,11 @@
   align-items: center;
   position: absolute;
   top: 50px;
-  font-size: 30px;
+  font-size: $text-3xl;
   left: -10px;
   pointer-events: none;
   .value {
-    font-size: 18px;
+    font-size: $text-lg;
     color: $red;
   }
   animation-name: fade-in;

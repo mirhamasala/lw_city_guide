@@ -6,6 +6,6 @@ class DashboardPolicy < ApplicationPolicy
   end
 
   def show?
-    user.admin? || user.city_keeper?
+    true
   end
 end

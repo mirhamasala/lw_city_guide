@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
-  before_action :set_city, only: [:index, :new, :create]
+  before_action :set_city, only: [:index]
 
   def index
     @spots = policy_scope(Spot).in_city(@city)
@@ -16,18 +16,17 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @spot = @city.spots.build
-    @not_authorized_message = "So sorry, but you can't add places for #{@city.name}. 💩"
+    @spot = Spot.new
     authorize @spot
   end
 
   def create
-    @spot = @city.spots.build(spot_params)
+    @spot = Spot.new(spot_params)
     @spot.owner = current_user
     authorize @spot
     if @spot.save
-      flash[:notice] = "Yay! You succcesfully added #{@spot.name}! 🍪"
-      redirect_to spot_path(@spot)
+      flash[:notice] = "Yay! You succcesfully submitted #{@spot.name}! 🍪"
+      redirect_to city_spots_path(@spot.city)
     else
       flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :new
@@ -55,10 +54,7 @@ class SpotsController < ApplicationController
   def destroy
     if @spot.destroy
       flash.now[:notice] = "You deleted #{@spot.name}. ✨"
-      respond_to do |format|
-        format.html { redirect_to city_spots_path(@spot.city) }
-        format.js
-      end
+      redirect_to city_spots_path(@spot.city)
     end
   end
 
@@ -74,7 +70,7 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id, :status)
+    params.require(:spot).permit(:name, :sub_category, :description, :address, :latitude, :longitude, :phone_number, :website, :photo, :category_id, :status, :city_id)
   end
 
   # Add multiple markers

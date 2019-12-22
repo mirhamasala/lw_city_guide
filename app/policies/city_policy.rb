@@ -12,4 +12,10 @@ class CityPolicy < ApplicationPolicy
   def update?
     user.admin?
   end
+
+  private
+
+  def admin_or_city_keeper?
+    user.admin? || user.city_keeper_for?(record)
+  end
 end

@@ -1,6 +1,11 @@
-.spots-main { position: relative; }
+.spots__main { position: relative; }
 
-.spots-main__map-view-btn {
+.spots__message-wrapper {
+  @include wrapper();
+  @include spacer();
+}
+
+.spots__map-button {
   position: absolute;
   top: -16px;
   left: calc(50% - 16px);
@@ -17,37 +22,47 @@
   }
 }
 
-.spots-main__map-view-btn.clicked {
+.spots__map-button.clicked {
   circle { fill: $red; }
   g.map { fill: $white; }
 }
 
-.spots-main__map-view-btn.hide { display: none; }
+.spots__map-button.hide { display: none; }
 
-.spots-main__filter-options {
+.spots__filters-button {
   display: flex;
   justify-content: flex-end;
-  padding-top: 12px;
-  padding-right: $wrapper;
-  padding-bottom: 12px;
-  padding-left: $wrapper;
+  @include wrapper();
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
   border-bottom: 1px solid $light-gray;
-  font-size: 0.875rem;
+  font-size: $text-sm;
   cursor: pointer;
 }
 
-.spots-main__overlay {
+.spots__overlay {
   position: absolute;
   top: 45px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 1px);
+  z-index: 2;
 }
 
-.spots-main__overlay--filters {
+.spots__overlay.hide { display: none; }
+
+.spots__overlay--filters {
   background-color: $white;
-  z-index: 10;
+  z-index: 3;
   overflow-y: scroll;
 }
 
-.spots-main__overlay.hide { display: none; }
+.spots__cards {
+  @include wrapper();
+  @include spacer();
+}
+
+.spots__pagination {
+  @include wrapper();
+  @include spacer();
+}

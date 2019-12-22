@@ -1,11 +1,11 @@
-<%= content_for(:title, "Add a spot for #{@city.name}") %>
-<div class="form-wrapper">
-  <h1 class="spacer-md">Add a new spot for <%= @city.name %></h1>
-  <div class="spacer-md">
+<%= content_for(:title, "Share your favorite 🔥 spot") %>
+<div class="form">
+  <h1 class="form__header">Share your favorite 🔥 spot</h1>
+  <div class="form__main">
     <%= render "form" %>
   </div>
   <div class="caret-link">
     <%= show_svg("caret_left.svg") %>
-    <%= link_to "Cancel", city_spots_path(@city) %>
+    <%= link_to "Cancel", :back %>
   </div>
 </div>

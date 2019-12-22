@@ -1,14 +1,14 @@
 <%= simple_form_for(@city) do |f| %>
   <%= f.input :name %>
-  <%= f.input :country %>
+  <%= f.association :country %>
   <%= f.association :keepers, collection: User.all.map { |user| [ user.email, user.id ] },
                               include_hidden: false,
                               label: "City Keepers" %>
-  <%= cl_image_tag(@city.cover.preview, class: "spacer-xs") if @city.cover? %>
+  <%= cl_image_tag(@city.cover.preview, class: "form__image-preview") if @city.cover? %>
   <%= f.input :cover, folder: "city_guides/cities/#{@city.name}/cover/",
                       tags: ["cover"],
                       label: @city.cover? ? "Change image" : "Upload an image",
-                      label_html: { class: "button button-secondary" },
-                      input_html: { class: "button-file-upload" } %>
-  <%= f.submit class: "button button-primary" %>
+                      label_html: { class: "button button--secondary" },
+                      input_html: { class: "button--file-upload" } %>
+  <%= f.submit class: "button button--primary" %>
 <% end %>

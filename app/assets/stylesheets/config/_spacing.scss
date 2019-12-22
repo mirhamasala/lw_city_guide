@@ -1,0 +1,65 @@
+// --------------------------------------------------------------
+// Spacing
+// --------------------------------------------------------------
+
+$spacing-0:  0;        // 0
+$spacing-1:  .25rem;   // 4px
+$spacing-2:  .5rem;    // 8px
+$spacing-3:  .75rem;   // 12px
+$spacing-4:  1rem;     // 16px
+$spacing-5:  1.25rem;  // 20px
+$spacing-6:  1.5rem;   // 24px
+$spacing-8:  2rem;     // 32px
+$spacing-10: 2.5rem;   // 40px
+$spacing-12: 3rem;     // 48px
+$spacing-16: 4rem;     // 64px
+$spacing-20: 5rem;     // 80px
+$spacing-24: 6rem;     // 96px
+$spacing-32: 8rem;     // 128px
+$spacing-40: 10rem;    // 160px
+$spacing-48: 12rem;    // 192px
+$spacing-56: 14rem;    // 224px
+$spacing-64: 16rem;    // 256px
+
+// 384px  (16 x 24)
+// 512px  (16 x 32)
+// 640px  (16 x 40)
+// 768px  (16 x 48)
+// 896px  (16 x 56)*
+// 960px  (16 x 60)*
+// 1024px (16 x 64)*
+// 1152px (16 x 72)*
+
+// --------------------------------------------------------------
+// Spacers
+// --------------------------------------------------------------
+
+@mixin spacer() {
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-8;
+  @media (min-width: 768px) {
+    margin-top: $spacing-12;
+    margin-bottom: $spacing-12;
+  }
+}
+
+// --------------------------------------------------------------
+// Wrappers
+// --------------------------------------------------------------
+
+@mixin wrapper {
+  padding-right: $spacing-5;
+  padding-left: $spacing-5;
+  @media (min-width: 768px) {
+    padding-right: $spacing-12;
+    padding-left: $spacing-12;
+  }
+  @media (min-width: 992px) {
+    padding-right: $spacing-24;
+    padding-left: $spacing-24;
+  }
+  @media (min-width: 1200px) {
+    padding-right: $spacing-40;
+    padding-left: $spacing-40;
+  }
+}

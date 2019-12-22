@@ -1,0 +1,10 @@
+.dashboard {
+  @include wrapper();
+  @include spacer();
+}
+
+.dashboard__section:not(:last-child),
+.dashboard__sub-section:not(:last-child) {
+  margin-bottom: $spacing-6;
+  border-bottom: 1px solid $light-gray;
+}

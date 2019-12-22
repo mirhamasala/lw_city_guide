@@ -1,0 +1,33 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  height: 384px;
+  color: $white;
+}
+
+.page-header__title {
+  color: $white;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
+}
+
+.page-header__sub-title {
+  display: block;
+  font-size: $text-lg;
+  font-weight: $font-normal;
+}
+
+@media (min-width: 576px) {
+  .page-header__title {
+    font-size: $text-5xl;
+    font-weight: $font-medium;
+  }
+  .page-header__sub-title {
+    font-size: $text-2xl;
+    font-weight: $font-light;
+  }
+}

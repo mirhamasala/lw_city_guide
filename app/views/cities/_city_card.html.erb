@@ -1,0 +1,14 @@
+<% if city.spots.published.any? %>
+  <div class="main-card">
+    <% if city.cover? %>
+      <%= cl_image_tag city.cover, class: "main-card__image" %>
+    <% else %>
+      <%= image_tag "cover_placeholder.jpeg", class: "main-card__image" %>
+    <% end %>
+    <div class="main-card__content">
+      <p class="main-card__title"><%= city.name %></p>
+      <p class="main-card__sub-title"><%= pluralize city.spots.published.size, "spot" %></p>
+    </div>
+    <%= link_to "", city_spots_path(city), class: "main-card__link" %>
+  </div>
+<% end %>

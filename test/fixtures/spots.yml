@@ -1,0 +1,17 @@
+can_pizza:
+  status: published
+  name: Can Pizza
+  category: eat
+  description: Neapolitan dough like it should be, but better.
+  address: Carrer de l'Almirall Aixada 7 Barcelona Catalunya Spain
+  city: barcelona
+  photo: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326208/IMG_3888_csgvkm.jpg"
+
+cafe_belen:
+  status: published
+  name: Café Belén
+  category: drink
+  description: Square atmosphere and local hangs.
+  address: Calle de Belén 5 Madrid Spain
+  city: madrid
+  photo: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/dsc01474_zk6c0z.jpg"

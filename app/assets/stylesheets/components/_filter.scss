@@ -1,14 +1,14 @@
-.filter { font-weight: $fw-medium-bold; }
+.filter { font-weight: $font-medium; }
 
 .filter__header {
   display: flex;
   justify-content: space-between;
-  padding-top: 12px;
-  padding-right: $wrapper;
-  padding-bottom: 12px;
-  padding-left: $wrapper;
+  @include wrapper();
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
+  margin-bottom: $spacing-5;
   border-bottom: 1px solid $light-gray;
-  font-size: 0.875rem;
+  font-size: $text-sm;
 }
 
 .filter__close {
@@ -20,14 +20,4 @@
 
 .filter__clear a:hover { color: $purple; }
 
-.filter__categories {
-  padding-left: $wrapper;
-  padding-right: $wrapper;
-}
-
-@media screen and (min-width: 768px) {
-  .filter__categories {
-    padding-left: $wrapper-desktop;
-    padding-right: $wrapper-desktop;
-  }
-}
+.filter__categories { @include wrapper(); }
