@@ -7,7 +7,7 @@
   <%= f.input :sub_category %>
   <%= f.input :description %>
   <%= f.input :address, input_html: { autocomplete: "off" } %>
-  <%= f.association :city %>
+  <%= f.association :city, collection: City.alphabetize %>
   <% if current_user.admin? || current_user.city_keeper? %>
     <%= f.input :latitude %>
     <%= f.input :longitude %>
