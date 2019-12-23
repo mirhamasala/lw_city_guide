@@ -25,8 +25,13 @@ class SpotsController < ApplicationController
     @spot.owner = current_user
     authorize @spot
     if @spot.save
-      flash[:notice] = "Yay! You succcesfully submitted #{@spot.name}! 🍪"
-      redirect_to city_spots_path(@spot.city)
+      if current_user.admin? || current_user.city_keeper?
+        flash[:notice] = "Yay! You succesfully submitted #{@spot.name}! Please review it now and hit 'publish' when ready. 🍪"
+        redirect_to spot_path(@spot)
+      else
+        flash[:notice] = "Sprinkels! Thank you for sharing #{@spot.name}! We'll review it and publish shortly. 🍪"
+        redirect_to dashboard_path
+      end
     else
       flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :new
