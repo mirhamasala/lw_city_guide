@@ -1,3 +1,9 @@
+bali:
+  name: Tarifa
+  country: spain
+  keepers: [ellyn]
+  cover: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg"
+
 barcelona:
   name: Barcelona
   country: spain
