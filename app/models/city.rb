@@ -17,4 +17,8 @@ class City < ApplicationRecord
   def self.for(user)
     user.admin? ? all : user.cities
   end
+
+  def self.with_published_spots
+    joins(:spots).where(spots: { status: :published }).distinct
+  end
 end
