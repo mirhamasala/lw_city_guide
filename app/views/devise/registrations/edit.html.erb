@@ -2,9 +2,7 @@
 <div class="form">
   <h1 class="form__header form__header--primary form__header--center">Edit Profile<%#= resource_name.to_s.humanize %></h1>
   <div class="form__main form__main--user">
-    <div class="form__message">
-      <p>Your details, like your name and profile photo, are linked to your GitHub account.</p>
-    </div>
+    <p class="form__message">Your details, like your name and profile photo, are linked to your GitHub account.</p>
     <div class="form__button">
       <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button button--big" %>
     </div>
