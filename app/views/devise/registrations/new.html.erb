@@ -1,14 +1,14 @@
-<%= content_for(:title, "Sign Up") %>
+<%= content_for(:title, "Sign up") %>
 <div class="form form--user">
-  <h2 class="form__header form__header--primary form__header--center">Sign up</h2>
-  <div class="form__main">
+  <h1 class="form__header form__header--primary form__header--center">Sign up</h1>
+  <div class="form__main form__main--user">
     <div class="form__button">
-      <%= link_to "Sign up with Github", user_github_omniauth_authorize_path, class: "button button--primary" %>
+      <%= link_to "Sign up with GitHub", user_github_omniauth_authorize_path, class: "button button--big button--primary" %>
     </div>
     <div class="form__link">
       <div class="caret-link">
         <%= show_svg("caret_left.svg") %>
-        <%= link_to "Log in", new_session_path(resource_name) %><br />
+        <%= link_to "Log in", new_session_path(resource_name) %>
       </div>
     </div>
   </div>

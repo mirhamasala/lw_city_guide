@@ -22,7 +22,7 @@
   <%= f.input :photo, folder: "city_guides/#{@spot.city}/spots/",
                       tags: [@spot.city, @spot.category],
                       label: @spot.photo? ? "Change image" : "Upload an image",
-                      label_html: { class: "button button--secondary" },
+                      label_html: { class: "button button--big button--image-upload" },
                       input_html: { class: "button--file-upload" } %>
-  <%= f.submit class: "button button--primary" %>
+  <%= f.submit class: "button button--big button--primary" %>
 <% end %>
