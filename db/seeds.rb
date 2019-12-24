@@ -36,7 +36,7 @@ inou = User.create!(
                       username: "inouridder",
                       avatar: "https://avatars1.githubusercontent.com/u/22443485?v=4",
                       name: "Inou Ridder",
-                      github_profile: "InouRidder"
+                      github_profile: "https://github.com/inouridder"
                   )
 
 # G is a user (and not a city keeper nor an admin)
@@ -46,7 +46,7 @@ g = User.create!(
                   username: "dctrg",
                   avatar: "https://avatars3.githubusercontent.com/u/23130911?v=4",
                   name: "G",
-                  github_profile: "https://api.github.com/users/DctrG"
+                  github_profile: "https://github.com/dctrg"
                 )
 puts "[2/6] 🦖 Keepers be keeping, dwellers be dwelling."
 
