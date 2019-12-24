@@ -1,15 +1,15 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+ # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[github]
 
   has_many :spots
   has_many :ratings, dependent: :destroy
 
   has_and_belongs_to_many :cities
 
-  validates :github_handle, presence: true
+  # validates :github_handle, presence: true
 
   def city_keeper?
     cities.any?
@@ -17,5 +17,16 @@ class User < ApplicationRecord
 
   def city_keeper_for?(city)
     cities.include?(city)
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.username = auth.info.nickname
+      user.avatar = auth.info.image
+      user.name = auth.info.name
+      user.github_profile = auth.info.urls.GitHub
+    end
   end
 end
