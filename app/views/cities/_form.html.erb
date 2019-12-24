@@ -8,7 +8,7 @@
   <%= f.input :cover, folder: "city_guides/cities/#{@city.name}/cover/",
                       tags: ["cover"],
                       label: @city.cover? ? "Change image" : "Upload an image",
-                      label_html: { class: "button button--secondary" },
+                      label_html: { class: "button button--big button--image-upload" },
                       input_html: { class: "button--file-upload" } %>
-  <%= f.submit class: "button button--primary" %>
+  <%= f.submit class: "button button--big button--primary" %>
 <% end %>

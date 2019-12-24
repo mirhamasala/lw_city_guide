@@ -1,21 +1,25 @@
 .button {
   display: block;
   width: 192px;
-  padding: 6px 12px;
-  border: 1px solid $form-gray;
+  padding: $spacing-3 $spacing-6;
   border-radius: 3px;
+  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  font-weight: $font-semibold;
   text-align: center;
 }
 
-.button--big { width: 256px; }
+.button--big { width: 224px; }
 
 .button--primary {
   background-color: $brand-primary;
   color: $white;
-  border: 1px solid $brand-primary;
   &:hover { color: $white; }
 }
 
-.button--secondary { background-color: $light-gray; }
+.button--image-upload {
+  background-color: $light-gray;
+  box-shadow: none;
+  font-weight: $font-normal;
+}
 
 .button--file-upload { display: none; }
