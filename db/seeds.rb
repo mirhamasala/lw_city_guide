@@ -9,21 +9,50 @@ puts "[1/6] 🚜 It's a clean slate."
 
 puts "Adding city keepers and dwellers..."
 # Mirha is the admin
-mirha = User.create!(email: "mirha@testing.com", password: "testing", username: "mirhamasala", admin: true)
+mirha = User.create!(
+                      email: "mirha@testing.com",
+                      password: "testing",
+                      username: "mirhamasala",
+                      avatar: "https://avatars0.githubusercontent.com/u/26620750?v=4",
+                      name: "Mirha Masala",
+                      github_profile: "https://github.com/mirhamasala",
+                      admin: true
+                    )
 
 # Ellyn is the city keeper of two cities, Madrid and Barcelona (and not an admin)
-ellyn = User.create!(email: "ellyn@testing.com", password: "testing", username: "ellynbsc")
+ellyn = User.create!(
+                      email: "ellyn@testing.com",
+                      password: "testing",
+                      username: "ellynbsc",
+                      avatar: "https://avatars2.githubusercontent.com/u/25570813?v=4",
+                      name: "Ellyn",
+                      github_profile: "https://github.com/EllynBsc"
+                    )
 
 # Inou is the city keeper of one city, Barcelona (and not an admin)
-inou = User.create(email: "inou@testing.com", password: "testing", username: "inouridder")
+inou = User.create!(
+                      email: "inou@testing.com",
+                      password: "testing",
+                      username: "inouridder",
+                      avatar: "https://avatars1.githubusercontent.com/u/22443485?v=4",
+                      name: "Inou Ridder",
+                      github_profile: "InouRidder"
+                  )
 
 # G is a user (and not a city keeper nor an admin)
-g = User.create!(email: "g@testing.com", password: "testing", username: "dctrg")
+g = User.create!(
+                  email: "g@testing.com",
+                  password: "testing",
+                  username: "dctrg",
+                  avatar: "https://avatars3.githubusercontent.com/u/23130911?v=4",
+                  name: "G",
+                  github_profile: "https://api.github.com/users/DctrG"
+                )
 puts "[2/6] 🦖 Keepers be keeping, dwellers be dwelling."
 
 puts "Building Spain..."
-  spain = Country.create!(name: "Spain")
-puts "[3/6] 🇪🇸 Hola!..."
+spain = Country.create!(name: "Spain")
+puts "[3/6] 🇪🇸  Hola!..."
 
 puts "Building Spanish Romes in less than a day..."
 barcelona = City.create!(name: "Barcelona", country: spain, keepers: [ellyn, inou], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")

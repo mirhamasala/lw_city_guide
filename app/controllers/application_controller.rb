@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
 
   protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
 
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -20,9 +19,5 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     flash[:alert] = "So sorry, but you're not authorized for this. 💩"
     redirect_to(root_path)
-  end
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:github_handle])
   end
 end

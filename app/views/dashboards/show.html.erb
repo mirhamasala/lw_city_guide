@@ -1,9 +1,9 @@
 <div class="dashboard">
   <h1 class="dashboard__header">Profile</h1>
   <div class="dashboard__section">
-    <h2 class="dashboard__section-header">Your Details</h2>
+    <h2 class="dashboard__section-header"><%= "#{current_user.name}" %></h2>
     <p><%= "📧 #{current_user.email}" %></p>
-    <p><%= link_to "👾 #{current_user.github_handle}", "https://github.com/#{current_user.github_handle}" %></p>
+    <p><%= link_to "👾 #{current_user.github_profile}" %></p>
   </div>
   <div class="dashboard__section">
     <h2 class="dashboard__section-header">Your Spots</h2>
@@ -31,7 +31,7 @@
               <% spots.each do |spot| %>
                 <li>
                   <%= link_to spot.name, spot_path(spot) %>
-                  <span><%= "· #{spot.owner.github_handle}" %></span>
+                  <span><%= "· #{spot.owner.username}" %></span>
                 </li>
               <% end %>
             </ul>
