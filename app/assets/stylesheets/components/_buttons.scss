@@ -13,6 +13,7 @@
 .button--primary {
   background-color: $brand-primary;
   color: $white;
+  border: $brand-primary;
   &:hover { color: $white; }
 }
 
