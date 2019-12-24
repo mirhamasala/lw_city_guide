@@ -9,16 +9,16 @@ puts "[1/6] 🚜 It's a clean slate."
 
 puts "Adding city keepers and dwellers..."
 # Mirha is the admin
-mirha = User.create!(email: "mirha@testing.com", password: "testing", github_handle: "mirhamasala", admin: true)
+mirha = User.create!(email: "mirha@testing.com", password: "testing", username: "mirhamasala", admin: true)
 
 # Ellyn is the city keeper of two cities, Madrid and Barcelona (and not an admin)
-ellyn = User.create!(email: "ellyn@testing.com", password: "testing", github_handle: "ellynbsc")
+ellyn = User.create!(email: "ellyn@testing.com", password: "testing", username: "ellynbsc")
 
 # Inou is the city keeper of one city, Barcelona (and not an admin)
-inou = User.create(email: "inou@testing.com", password: "testing", github_handle: "inouridder")
+inou = User.create(email: "inou@testing.com", password: "testing", username: "inouridder")
 
 # G is a user (and not a city keeper nor an admin)
-g = User.create!(email: "g@testing.com", password: "testing", github_handle: "dctrg")
+g = User.create!(email: "g@testing.com", password: "testing", username: "dctrg")
 puts "[2/6] 🦖 Keepers be keeping, dwellers be dwelling."
 
 puts "Building Spain..."
