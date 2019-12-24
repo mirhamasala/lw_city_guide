@@ -31,7 +31,7 @@
               <% spots.each do |spot| %>
                 <li>
                   <%= link_to spot.name, spot_path(spot) %>
-                  <span><%= "· #{spot.owner.username}" %></span>
+                  <span> · <%= spot.owner.username %></span>
                 </li>
               <% end %>
             </ul>
