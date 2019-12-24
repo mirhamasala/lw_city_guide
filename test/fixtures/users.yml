@@ -1,17 +1,17 @@
 mirha:
   email: mirha@testing.com
-  github_handle: mirhamasala
+  username: mirhamasala
   admin: true
 
 ellyn:
   email: ellyn@testing.com
-  github_handle: ellynbsc
+  username: ellynbsc
 
 inou:
   email: inou@testing.com
-  github_handle: inouridder
+  username: inouridder
 
 g:
   email: g@testing.com
-  github_handle: dctrg
+  username: dctrg
   admin: false
