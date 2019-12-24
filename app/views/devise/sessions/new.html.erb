@@ -16,6 +16,7 @@
 
       <div class="form-actions form__submit-button">
         <%= f.button :submit, "Log in", class: "button button--primary" %>
+        <%= link_to "Log in with Github", user_github_omniauth_authorize_path, class: "button" %>
       </div>
     <% end %>
   </div>
