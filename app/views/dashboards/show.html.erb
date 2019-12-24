@@ -3,7 +3,7 @@
   <div class="dashboard__section">
     <p><%= link_to "🤖 Edit profile", edit_user_registration_path, class: "link" %></p>
     <p><%= "📧 #{current_user.email}" %></p>
-    <p><%= link_to "👾 #{current_user.github_profile}" %></p>
+    <p><%= link_to "👾 #{current_user.github_profile}", current_user.github_profile %></p>
   </div>
   <div class="dashboard__section">
     <h2 class="dashboard__section-header">Your Spots</h2>
