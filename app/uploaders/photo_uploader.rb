@@ -23,4 +23,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
     eager
     resize_to_fit(192, 256)
   end
+
+  def default_url(*args)
+    ActionController::Base.helpers.asset_path("fallback/" + [version_name, "city_and_spot_placeholder.jpeg"].compact.join('_'))
+  end
 end

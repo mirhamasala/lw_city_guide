@@ -1,10 +1,6 @@
 <%= content_for(:title, "#{@city.name}") %>
 <div class="spots">
-  <% if @city.cover.blank? %>
-    <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "cover_placeholder.jpeg" %>')">
-  <% else %>
-    <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover %>')">
-  <% end %>
+  <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover? ? @city.cover : @city.cover.url %>')">
     <h1 class="page-header__title"><%= @city.name %></h1>
     <div class="page-header__sub-title"><%= @city.country.name %></div>
   </header>
