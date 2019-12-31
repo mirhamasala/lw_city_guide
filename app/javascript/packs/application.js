@@ -1,15 +1,22 @@
 import "bootstrap";
+import "mapbox-gl/dist/mapbox-gl.css";
 
-import { ratingSlider } from "../components/rating_slider";
-import { initMapbox } from "../plugins/init_mapbox";
+// Plugins
 import { initAutocomplete } from "../plugins/init_autocomplete";
 import { initCloudinary } from "../plugins/init_cloudinary";
-import ToggleMapView from "../components/toggle_map_view";
-import Filters from "../components/filters";
+import { initMapbox } from "../plugins/init_mapbox";
 
-initMapbox();
+// Components
+import { ratingSlider } from "../components/rating_slider";
+
+import Filters from "../components/filters";
+import ToggleMapView from "../components/toggle_map_view";
+
+// Initialize
+
 initAutocomplete();
 initCloudinary();
+initMapbox();
 
 new ToggleMapView();
 new Filters();
