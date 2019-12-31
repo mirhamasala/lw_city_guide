@@ -8,15 +8,14 @@
     <%= action_cable_meta_tag %>
     <%= favicon_link_tag "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/198/world-map_1f5fa.png" %>
     <%= stylesheet_link_tag "application", media: "all" %>
-    <%#= stylesheet_pack_tag "application", media: "all" %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag "application", media: "all" %>
   </head>
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
     <%= render "shared/footer" %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_pack_tag    "application" %>
+    <%= javascript_pack_tag "application" %>
     <% if content_for?(:after_js) %>
       <%= yield :after_js %>
     <% end %>
