@@ -4,6 +4,6 @@ class SpotPhotoUploader < PhotoUploader
   end
 
   def tags
-    [model.city.country, model.city.name, model.category.name]
+    [model.city.name, model.category.name]
   end
 end
