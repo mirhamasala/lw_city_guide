@@ -1,5 +1,5 @@
 <div class="main-card">
-  <%= cl_image_tag city.cover? ? city.cover : city.cover.url, class: "main-card__image" %>
+  <%= cl_image_tag city.cover? ? city.cover.card : city.cover.url, :width => :auto, :dpr => :auto, :responsive_placeholder => "blank", class: "main-card__image" %>
   <div class="main-card__content">
     <p class="main-card__title"><%= city.name %></p>
     <p class="main-card__sub-title"><%= pluralize city.spots.published.size, "spot" %></p>
