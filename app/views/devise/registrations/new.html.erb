@@ -3,7 +3,7 @@
   <h1 class="form__header form__header--primary form__header--center">Sign up</h1>
   <div class="form__main form__main--user">
     <div class="form__button">
-      <%= link_to "Sign up with GitHub", user_github_omniauth_authorize_path, class: "button button--big button--primary" %>
+      <%= link_to "Sign up with GitHub", user_github_omniauth_authorize_path, method: :post, class: "button button--big button--primary" %>
     </div>
     <div class="form__link">
       <div class="caret-link">
