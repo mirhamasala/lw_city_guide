@@ -55,8 +55,8 @@ spain = Country.create!(name: "Spain")
 puts "[3/6] 🇪🇸  Hola!..."
 
 puts "Building Spanish Romes in less than a day..."
-barcelona = City.create!(name: "Barcelona", country: spain, keepers: [ellyn, inou], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325925/cover_barcelona_tj454l.jpg")
-madrid = City.create!(name: "Madrid", country: spain, keepers: [ellyn], remote_cover_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg")
+barcelona = City.create!(name: "Barcelona", country: spain, keepers: [ellyn, inou], remote_cover_url: "https://res-4.cloudinary.com/mirhamasala/image/upload/v1577873305/city_guides/cities/barcelona/cover/barcelona.jpg")
+madrid = City.create!(name: "Madrid", country: spain, keepers: [ellyn], remote_cover_url: "https://res-3.cloudinary.com/mirhamasala/image/upload/v1577873324/city_guides/cities/madrid/cover/madrid.jpg")
 puts "[4/6] 📌 Pinned Barcelona & Madrid on the map."
 
 puts "Creating categories..."
@@ -80,7 +80,7 @@ spot_attributes = [
     neighborhood: "Gràcia",
     phone_number: "+34 667 23 81 72",
     website: "https://www.lewagon.com/barcelona",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326350/IMG_3791_te4yds.jpg",
+    remote_photo_url: "https://res-3.cloudinary.com/mirhamasala/image/upload/v1570000791/wuqzvb7ogc9gtwm820nq.jpg",
     category: wagon,
     city: barcelona,
     owner: ellyn,
@@ -94,7 +94,7 @@ spot_attributes = [
     neighborhood: "Gràcia",
     phone_number: "+34 936 67 27 15",
     website: "https://www.slowmov.com",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/IMG_3728_yiierx.jpg",
+    remote_photo_url: "https://res-3.cloudinary.com/mirhamasala/image/upload/v1569923253/hlzwddkplzeral9b1kip.jpg",
     category: drink,
     city: barcelona,
     owner: ellyn,
@@ -105,7 +105,7 @@ spot_attributes = [
     sub_category: "Building · Skull Balconies",
     description: "Some people say he was on mushrooms. I say he was a rock star.",
     address: "Passeig de Gràcia, 43, 08007 Barcelona, Spain",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572327219/IMG_3975_jrdcfp.jpg",
+    remote_photo_url: "https://res-4.cloudinary.com/mirhamasala/image/upload/v1569999262/qdaz1cumfizxr2xzlsqe.jpg",
     category: see,
     city: barcelona,
     owner: inou,
@@ -118,7 +118,7 @@ spot_attributes = [
     address: "Carrer de l'Almirall Aixada 7, Barcelona, Catalunya, Spain",
     phone_number: "+34 932 21 45 79",
     website: "http://www.canros.cat",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326208/IMG_3888_csgvkm.jpg",
+    remote_photo_url: "https://res-2.cloudinary.com/mirhamasala/image/upload/v1569922969/hblsl2jfa2bokfy0qxwm.jpg",
     category: eat,
     city: barcelona,
     owner: inou,
@@ -131,7 +131,7 @@ spot_attributes = [
     address: "Carrer del Diluvi, 11, 08012 Barcelona, Spain",
     phone_number: "+34 932 37 65 03",
     website: "https://www.boulangeriemayer.com/",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572327383/IMG_4104_gwgvkg.jpg",
+    remote_photo_url: "https://res-2.cloudinary.com/mirhamasala/image/upload/v1570000458/asvwriprj02bhateq6tn.jpg",
     category: shop,
     city: barcelona,
     owner: mirha,
@@ -144,7 +144,7 @@ spot_attributes = [
     address: "Av. del Tibidabo, 31, 08022 Barcelona, Spain",
     phone_number: "+34 934 17 01 15",
     website: "http://www.asadordearanda.com/",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572327380/IMG_4242_2_fyivei.jpg",
+    remote_photo_url: "https://res-1.cloudinary.com/mirhamasala/image/upload/v1569999995/lo4xgc8ugxuflrhty0qk.jpg",
     category: eat,
     city: barcelona,
     owner: mirha,
@@ -158,7 +158,7 @@ spot_attributes = [
     neighborhood: "Atocha",
     phone_number: "+34 646 85 03 58",
     website: "https://www.lewagon.com/madrid",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572325929/cover_madrid_v3shdw.jpg",
+    remote_photo_url: "https://res-2.cloudinary.com/mirhamasala/image/upload/v1577873717/city_guides/cities/madrid/spots/le_wagon_madrid.jpg",
     category: wagon,
     city: madrid,
     owner: ellyn,
@@ -172,7 +172,7 @@ spot_attributes = [
     neighborhood: "Chueca",
     phone_number: "+34 913 08 27 47",
     website: "http://www.elcafebelen.com/",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/dsc01474_zk6c0z.jpg",
+    remote_photo_url: "https://res-3.cloudinary.com/mirhamasala/image/upload/v1570004631/xtmczww6gv6uwspjbi8j.jpg",
     category: drink,
     city: madrid,
     owner: g,
@@ -186,7 +186,7 @@ spot_attributes = [
     neighborhood: "Sol",
     phone_number: "+34 913 65 65 46",
     website: "https://www.chocolateriasangines.com/",
-    remote_photo_url: "https://res.cloudinary.com/hvrft8ujk/image/upload/v1572326244/dsc01439_nvljdp.jpg",
+    remote_photo_url: "https://res-3.cloudinary.com/mirhamasala/image/upload/v1570004987/accn2avjieaddfayuc4l.jpg",
     category: eat,
     city: madrid,
     owner: mirha,
