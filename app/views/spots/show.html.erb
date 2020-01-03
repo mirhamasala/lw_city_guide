@@ -59,10 +59,10 @@
     </div>
     <div class="spot__rating">
       <h2 class="spot__rating-header">Hot or not</h2>
-      <% if @average_rating_score.present? %>
+      <% if @spot.average_rating %>
         <div class="spot__rating-summary">
           <div class="spot__rating-average">
-            <p class="spot__rating-score"><%= @average_rating_score %>&#176;</p>
+            <p class="spot__rating-score"><%= @spot.average_rating %>&#176;</p>
             <p>🔥 average heat-rating</p>
           </div>
           <div class="spot__rating-reviewers">
