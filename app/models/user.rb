@@ -26,6 +26,8 @@ class User < ApplicationRecord
       user.avatar = auth.info.image
       user.name = auth.info.name
       user.github_profile = auth.info.urls.GitHub
+      user.bio = auth.extra.raw_info.bio
+      user.location = auth.extra.raw_info.location
     end
   end
 end

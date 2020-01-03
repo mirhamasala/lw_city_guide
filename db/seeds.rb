@@ -16,6 +16,8 @@ mirha = User.create!(
                       avatar: "https://avatars0.githubusercontent.com/u/26620750?v=4",
                       name: "Mirha Masala",
                       github_profile: "https://github.com/mirhamasala",
+                      location: "Singapore",
+                      bio: "Web developer, blogger",
                       admin: true
                     )
 
@@ -26,7 +28,9 @@ ellyn = User.create!(
                       username: "ellynbsc",
                       avatar: "https://avatars2.githubusercontent.com/u/25570813?v=4",
                       name: "Ellyn",
-                      github_profile: "https://github.com/EllynBsc"
+                      github_profile: "https://github.com/EllynBsc",
+                      location: "",
+                      bio: "Teaching code to creative people."
                     )
 
 # Inou is the city keeper of one city, Barcelona (and not an admin)
@@ -36,7 +40,9 @@ inou = User.create!(
                       username: "inouridder",
                       avatar: "https://avatars1.githubusercontent.com/u/22443485?v=4",
                       name: "Inou Ridder",
-                      github_profile: "https://github.com/inouridder"
+                      github_profile: "https://github.com/inouridder",
+                      location: "",
+                      bio: "teacher @lewagon freelance rails - vue"
                   )
 
 # G is a user (and not a city keeper nor an admin)
@@ -46,7 +52,9 @@ g = User.create!(
                   username: "dctrg",
                   avatar: "https://avatars3.githubusercontent.com/u/23130911?v=4",
                   name: "G",
-                  github_profile: "https://github.com/dctrg"
+                  github_profile: "https://github.com/dctrg",
+                  location: "",
+                  bio: "",
                 )
 puts "[2/6] 🦖 Keepers be keeping, dwellers be dwelling."
 
