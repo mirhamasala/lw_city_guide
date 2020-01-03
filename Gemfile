@@ -26,6 +26,8 @@ gem 'pagy', '3.6.0'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
+gem 'http'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

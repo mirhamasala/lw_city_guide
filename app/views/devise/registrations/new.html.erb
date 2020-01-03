@@ -5,11 +5,13 @@
     <div class="form__button">
       <%= link_to "Sign up with GitHub", user_github_omniauth_authorize_path, method: :post, class: "button button--big button--primary" %>
     </div>
+  <% if ENV['DEV_ALTER_SIGNUP'] %>
     <div class="form__link">
       <div class="caret-link">
         <%= show_svg("caret_left.svg") %>
         <%= link_to "Log in", new_session_path(resource_name) %>
       </div>
     </div>
+  <% end %>
   </div>
 </div>
