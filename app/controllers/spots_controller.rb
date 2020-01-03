@@ -40,6 +40,7 @@ class SpotsController < ApplicationController
 
   def show
     @rating = @spot.rating_for(current_user)
+    @average_rating_score = Rating.average(@spot)
     add_map_marker(@spot)
   end
 
