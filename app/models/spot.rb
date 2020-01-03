@@ -46,4 +46,9 @@ class Spot < ApplicationRecord
   def self.author?(user)
     where(owner: user)
   end
+
+  def average_rating
+    return nil unless ratings.pluck(:score).any?
+    ratings.average(:score).to_i
+  end
 end
