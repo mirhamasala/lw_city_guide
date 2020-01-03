@@ -31,7 +31,10 @@
     <div class="spot__about">
       <h2>About this place</h2>
       <p class="spot__description"><%= @spot.description %></p>
-      <p class="spot__author">Shared by <%= link_to @spot.owner.username, @spot.owner.github_profile %> </p>
+      <div class="spot__author-info">
+        <%= image_tag @spot.owner.avatar, class: "avatar avatar--small" %>
+        <p class="spot__author">Shared by <%= link_to @spot.owner.username, @spot.owner.github_profile, class: "spot__author-link" %></p>
+      </div>
     </div>
     <ul class="spot__details">
       <li class="spot__address spot__details-item">

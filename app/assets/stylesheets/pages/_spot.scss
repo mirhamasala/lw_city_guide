@@ -47,10 +47,24 @@
 
 .spot__about { grid-area: about; }
 
-.spot__author {
+.spot__author-info  {
+  display: flex;
+  align-items: center;
   padding-bottom: $spacing-4;
   border-bottom: 1px solid $light-gray;
+}
+
+.spot__author {
   font-size: $text-sm;
+  margin-left: $spacing-2;
+  margin-bottom: 0;
+}
+
+.spot__author-link {
+  text-decoration: underline;
+  &:hover {
+  text-decoration: underline;
+  }
 }
 
 .spot__details {
