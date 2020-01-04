@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'spot_autocompletes/run' # spot autocomplete (google API call)
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "cities#index"
   resources :cities, only: [:index] do
