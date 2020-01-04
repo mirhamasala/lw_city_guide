@@ -30,9 +30,9 @@ module Api
       return nil
     end
 
-    # searches for a keyword
-    # - returns predictions array by google
-    # - or nil if no predictions made
+    # Searches for a keyword
+    # - Returns predictions array by Google
+    # - Or nil if no predictions made
     def autocomplete(keyword)
       base_url = "https://maps.googleapis.com/maps/api/place/autocomplete/json?"
       params = "input=#{url_safe(keyword)}&key=#{@api_key}&sessiontoken=#{@session_token}"
@@ -45,7 +45,7 @@ module Api
       end
     end
 
-    # see documentation https://developers.google.com/places/web-service/details#fields
+    # See documentation https://developers.google.com/places/web-service/details#fields
     ALL_PLACE_DETAILS_FIELDS = [
       "address_components",
       "adr_address",
@@ -71,8 +71,8 @@ module Api
 
     private
 
-    # session tokens are needed for autocomplete calls, otherwise we pay for each single request!
-    # just add them by default to all requests (doesn't hurt)
+    # Session tokens are needed for autocomplete calls, otherwise we pay for each single request!
+    # Just add them by default to all requests (doesn't hurt)
     def session_token
       SecureRandom.uuid # => generate UUID in this format: "96b0a57c-d9ae-453f-b56f-3b154eb10cda"
     end
@@ -80,12 +80,10 @@ module Api
       @session_token = session_token # reinitialize session token
     end
 
-    # escape url (string) to make it safe (only strip at the moment)
+    # Escape url (string) to make it safe (only strip at the moment)
     def url_safe(str)
       # str.strip.gsub(/\s/, "%20")
       URI.encode(str.strip)
     end
   end
 end
-
-
