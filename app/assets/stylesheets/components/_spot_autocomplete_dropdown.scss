@@ -1,0 +1,38 @@
+.autocomplete-dropdown__anchor {
+  position: relative;
+}
+
+.autocomplete-dropdown__main {
+  border: 1px solid rgba(0,0,0,0.1);
+  position: absolute;
+  width: 100%;
+  background: white;
+}
+
+.autocomplete-dropdown__main--invisible {
+  visibility: collapse;
+}
+
+.autocomplete-dropdown__main > div {
+  padding: $spacing-2 $spacing-3;
+  cursor: pointer;
+  border-bottom: 0.5px solid rgba(0,0,0,0.1);
+}
+
+.autocomplete-dropdown__main > div:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-dropdown__main > div:hover {
+  background-color: $light-gray;
+}
+
+/* Remove margin from bottom of name-input to attach autocomplete dropdown */
+.form-group.string.required.spot_name {
+  margin-bottom: $spacing-0;
+}
+
+/* Add missing margin to next element (spot_category form-group) */
+.form-group.select.required.spot_category {
+  margin-top: $spacing-4;
+}

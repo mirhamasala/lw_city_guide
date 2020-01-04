@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # Automatically search for spots in Google database; two Google APIs used:
+  #  Google place autocomplete : https://developers.google.com/places/web-service/autocomplete
+  #  Google place details      : https://developers.google.com/places/web-service/details
+  post "spot_autocompletes/autocomplete"
+  post "spot_autocompletes/place_details"
+
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "cities#index"
   resources :cities, only: [:index] do
