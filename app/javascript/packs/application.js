@@ -8,6 +8,7 @@ import { initMapbox } from "../plugins/init_mapbox";
 
 // Components
 import { ratingSlider } from "../components/rating_slider";
+import { } from "../components/spot_autocomplete_dropdown";
 
 import Filters from "../components/filters";
 import ToggleMapView from "../components/toggle_map_view";
