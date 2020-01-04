@@ -7,12 +7,16 @@
   width: 100%;
   background: white;
 }
-.autocomplete-dropdown--invisible {
+.invisible {
   visibility: collapse;
 }
 .autocomplete-dropdown__main > div {
   padding: 6px 12px;
   cursor: pointer;
+  border-bottom: 0.5px solid rgba(0,0,0,0.1);
+}
+.autocomplete-dropdown__main > div:last-child {
+  border-bottom: none;
 }
 .autocomplete-dropdown__main > div:hover {
   background-color: #efefef;
