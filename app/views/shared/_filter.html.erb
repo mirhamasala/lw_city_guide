@@ -9,15 +9,6 @@
     </div>
   </div>
   <div class="filter__categories">
-    <ul class="categories-list">
-      <% Category.all.alphabetize.each do |category| %>
-        <li class="categories-list__item">
-          <div class="categories-list__icon">
-            <%= show_svg("placemark_#{category.name}.svg") %>
-          </div>
-          <%= link_to category.name.capitalize, city_spots_path(category: category.name), class: "categories-list__name" %>
-        </li>
-      <% end %>
-    </ul>
+    <%= render partial: "shared/categories", locals: { categories: @categories } %>
   </div>
 </div>

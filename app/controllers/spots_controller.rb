@@ -2,6 +2,7 @@ class SpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
   before_action :set_city, only: [:index]
+  before_action :set_categories, only: [:index]
 
   def index
     @spots = policy_scope(Spot).in_city(@city)
@@ -72,6 +73,10 @@ class SpotsController < ApplicationController
 
   def set_city
     @city = City.find(params[:city_id])
+  end
+
+  def set_categories
+    @categories = Category.all.alphabetize
   end
 
   def spot_params
