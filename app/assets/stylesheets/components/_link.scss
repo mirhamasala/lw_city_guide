@@ -2,3 +2,10 @@
   color: $brand-primary;
   &:hover { color: $brand-primary; }
 }
+
+.link--underline {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
+}
