@@ -9,6 +9,13 @@
     </div>
   </div>
   <div class="filter__categories">
-    <%= render partial: "shared/categories", locals: { categories: @categories } %>
+    <ul class="categories-list">
+      <% @categories.each do |category| %>
+        <li class="categories-list__item">
+          <%= show_svg("placemark_#{category.name}.svg") %>
+          <%= link_to category.name.capitalize, city_spots_path(category: category.name), class: "categories-list__name" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
