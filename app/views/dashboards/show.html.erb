@@ -51,7 +51,10 @@
         </div>
         <div class="dashboard__sub-section">
           <h3 class="dashboard__sub-section-header">Categories</h3>
-          <%= link_to "Add category", new_category_path %>
+          <div class="dashboard__categories">
+            <%= render partial: "shared/categories", locals: { categories: @categories } %>
+          </div>
+          <%= link_to "+ Add new category", new_category_path, class: "link link--underline" %>
         </div>
       <% end %>
     </div>

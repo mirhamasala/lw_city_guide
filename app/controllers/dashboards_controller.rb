@@ -5,5 +5,6 @@ class DashboardsController < ApplicationController
     @cities = City.for(current_user)
     @unpublished_spots = Spot.draft.for_user(current_user)
     @unpublished_spots_by_city = @unpublished_spots.group_by(&:city).sort_by(&:first)
+    @categories = Category.all.alphabetize
   end
 end
