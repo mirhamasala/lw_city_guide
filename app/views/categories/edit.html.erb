@@ -1,0 +1,11 @@
+<%= content_for(:name, "Edit #{@category.name}") %>
+<div class="form">
+  <h1 class="form__header">Edit <%= @category.name %></h1>
+  <div class="form__main">
+    <%= render "form" %>
+  </div>
+  <div class="caret-link">
+    <%= show_svg("caret_left.svg") %>
+    <%= link_to "Cancel", dashboard_path %>
+  </div>
+</div>

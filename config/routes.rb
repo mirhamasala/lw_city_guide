@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :spot_statuses, only: [:update], as: :status
   end
   resources :cities, only: [:new, :create, :edit, :update]
-  resources :categories, only: [:new, :create]
+  resources :categories, only: [:new, :create, :edit, :update]
   resource :dashboard, only: [:show], as: :dashboard
   resources :countries, only: [:new, :create]
 end
