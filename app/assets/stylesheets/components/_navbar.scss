@@ -12,3 +12,16 @@
   padding: $spacing-0;
   border: none;
 }
+
+.navbar-light .navbar-nav .nav-link {
+  color: $gray;
+  &:hover {
+    color: $gray;
+  }
+}
+
+@media (min-width: 576px) {
+  .avatar.dropdown-toggle {
+    margin-left: $spacing-5;
+  }
+}
