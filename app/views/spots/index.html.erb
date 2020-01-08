@@ -2,7 +2,7 @@
 <div class="spots">
   <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover? ? @city.cover : @city.cover.url %>')">
     <h1 class="page-header__title"><%= @city.name %></h1>
-    <div class="page-header__sub-title"><%= @city.country.name %></div>
+    <p class="page-header__sub-title"><%= @city.country.name %></p>
   </header>
   <% if @city.spots.blank? %>
     <div class="spots__message-wrapper">

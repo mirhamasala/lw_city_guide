@@ -1,4 +1,5 @@
 .page-header {
+  @include wrapper();
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,12 +14,14 @@
   color: $white;
   font-size: $text-4xl;
   font-weight: $font-medium;
+  text-align: center;
 }
 
 .page-header__sub-title {
   display: block;
   font-size: $text-lg;
   font-weight: $font-normal;
+  text-align: center;
 }
 
 @media (min-width: 576px) {

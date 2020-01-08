@@ -1,6 +1,6 @@
 <%= content_for(:title, "#{@spot.name} · #{@spot.city.name}") %>
 <div class="spot">
-  <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @spot.photo? ? @spot.photo :  @spot.photo.url %>')">
+  <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @spot.photo? ? @spot.photo : @spot.photo.url %>')">
     <h1 class="page-header__title"><%= @spot.name %></h1>
     <p class="page-header__sub-title"><%= @spot.sub_category %></p>
   </header>
