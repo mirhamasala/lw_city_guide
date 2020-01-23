@@ -70,7 +70,7 @@ puts "[4/6] 📌 Pinned Barcelona & Madrid on the map."
 puts "Creating categories..."
 eat = Category.create!(name: "eat")
 drink = Category.create!(name: "drink")
-play = Category.create!(name: "dance")
+dance = Category.create!(name: "dance")
 see = Category.create!(name: "see")
 shop = Category.create!(name: "shop")
 stay = Category.create!(name: "stay")
