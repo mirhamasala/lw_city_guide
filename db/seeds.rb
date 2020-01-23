@@ -73,7 +73,7 @@ drink = Category.create!(name: "drink")
 dance = Category.create!(name: "dance")
 see = Category.create!(name: "see")
 shop = Category.create!(name: "shop")
-stay = Category.create!(name: "stay")
+sleep = Category.create!(name: "sleep")
 wagon = Category.create!(name: "wagon")
 other = Category.create!(name: "other")
 puts "[5/6] 📦 All boxed up."
