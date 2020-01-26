@@ -7,8 +7,36 @@
 .categories-list__item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding-top: $spacing-2;
   padding-bottom: $spacing-2;
+}
+
+.categories-list__checkbox {
+  display: none;
+}
+
+.categories-list__checkbox + .categories-list__label .checkbox-marked {
+  opacity: 0.3;
+  flex-shrink: 0;
+}
+
+.categories-list__checkbox:checked + .categories-list__label .checkbox-marked {
+  opacity: 1;
+}
+
+.categories-list__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.categories-list__tag {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .categories-list__name {

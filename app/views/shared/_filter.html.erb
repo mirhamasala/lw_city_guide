@@ -12,8 +12,14 @@
     <ul class="categories-list">
       <% @categories.each do |category| %>
         <li class="categories-list__item">
-          <%= show_svg("placemark_#{category.name}.svg") %>
-          <%= link_to category.name.capitalize, city_spots_path(category: category.name), class: "categories-list__name" %>
+          <input type="checkbox" id="categories-list__checkbox-<%= category.name %>" class="categories-list__checkbox">
+          <label class="categories-list__label" for="categories-list__checkbox-<%= category.name %>">
+            <div class="categories-list__tag">
+              <%= show_svg("placemark_#{category.name}.svg") %>
+              <span class="categories-list__name"><%= category.name.capitalize %></span>
+            </div>
+            <%= show_svg("checkbox_marked.svg") %>
+          </label>
         </li>
       <% end %>
     </ul>
