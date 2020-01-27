@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     resources :ratings, only: [:create, :update]
     resources :spot_statuses, only: [:update], as: :status
   end
-  resources :cities, only: [:new, :create, :edit, :update]
+  resources :cities, only: [:new, :create, :edit, :update, :destroy]
   resources :categories, only: [:new, :create, :edit, :update]
   resource :dashboard, only: [:show], as: :dashboard
-  resources :countries, only: [:new, :create]
+  resources :countries, only: [:new, :create, :edit, :update, :destroy]
 end
