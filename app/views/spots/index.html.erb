@@ -16,16 +16,11 @@
       <div class="spots__overlay spots__overlay--filters hide js-filters">
         <%= render "shared/filter" %>
       </div>
-      <div class="spots__overlay hide js-map-overlay">
-        <%= render "shared/map" %>
+
+      <div class="js-spots-cards">
+        <%= render "spots_results" %>
       </div>
-      <div class="spots__cards">
-        <div class="cards-grid">
-          <% @spots.each do |spot| %>
-            <%= render partial: "spots/spot_card", locals: { spot: spot} %>
-          <% end %>
-        </div>
-      </div>
+
       <!-- Pagination is currently unused but please leave commented for now -->
       <%# <div class="spots__pagination"> %>
         <%#= render partial: "shared/pagination", locals: { pagy: @pagy } %>

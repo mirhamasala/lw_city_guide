@@ -10,18 +10,20 @@
   </div>
   <div class="filter__categories">
     <ul class="categories-list">
-      <% @categories.each do |category| %>
-        <li class="categories-list__item">
-          <input type="checkbox" id="categories-list__checkbox-<%= category.name %>" class="categories-list__checkbox">
-          <label class="categories-list__label" for="categories-list__checkbox-<%= category.name %>">
-            <div class="categories-list__tag">
-              <%= show_svg("placemark_#{category.name}.svg") %>
-              <span class="categories-list__name"><%= category.name.capitalize %></span>
-            </div>
-            <%= show_svg("checkbox_marked.svg") %>
-          </label>
-        </li>
-      <% end %>
+      <div class="spots__filters js-spots-filters" data-base-url=<%= city_spots_path(@city) %>>
+        <% @categories.each do |category| %>
+          <li class="categories-list__item">
+            <input type="checkbox" id="categories-list__checkbox-<%= category.name %>" class="categories-list__checkbox js-spot-filter" data-category="<%= category.name %>">
+            <label class="categories-list__label" for="categories-list__checkbox-<%= category.name %>">
+              <div class="categories-list__tag">
+                <%= show_svg("placemark_#{category.name}.svg") %>
+                <span class="categories-list__name"><%= category.name.capitalize %></span>
+              </div>
+              <%= show_svg("checkbox_marked.svg") %>
+            </label>
+          </li>
+        <% end %>
+      </div>
     </ul>
   </div>
 </div>

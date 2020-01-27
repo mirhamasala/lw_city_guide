@@ -12,6 +12,7 @@ import { } from "../components/spot_autocomplete_dropdown";
 
 import Filters from "../components/filters";
 import ToggleMapView from "../components/toggle_map_view";
+import FilterSpots from "../components/filter_spots";
 
 // Initialize
 
@@ -21,3 +22,4 @@ initMapbox();
 
 new ToggleMapView();
 new Filters();
+new FilterSpots();

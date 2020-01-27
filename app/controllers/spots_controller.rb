@@ -6,14 +6,20 @@ class SpotsController < ApplicationController
 
   def index
     @spots = policy_scope(Spot).in_city(@city)
-    if params[:category].blank?
+    if params[:categories].blank?
       @spots = @spots
     else
-      @spots = @spots.in_category(params[:category])
+      @spots = @spots.in_category(params[:categories].split(","))
     end
     @spots = @spots.published.recent.check_coordinates
     # @pagy, @spots = pagy(@spots, items: 5)
     add_map_markers(@spots)
+
+    if request.xhr?
+      render partial: "spots_results"
+    else
+      render "index"
+    end
   end
 
   def new

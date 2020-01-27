@@ -1,0 +1,13 @@
+<div class="spots__results">
+  <div class="spots__overlay hide js-map-overlay">
+    <%= render "shared/map" %>
+  </div>
+
+  <div class="spots__cards">
+    <div class="cards-grid">
+      <% @spots.each do |spot| %>
+        <%= render partial: "spots/spot_card", locals: { spot: spot} %>
+      <% end %>
+    </div>
+  </div>
+</div>
