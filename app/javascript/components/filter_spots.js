@@ -1,57 +1,56 @@
-import ToggleMapView from "./toggle_map_view";
+import MapView from "./map_view";
 import { initMapbox } from "../plugins/init_mapbox";
 
 class FilterSpots {
   constructor() {
-    this.spotFiltersContainer = document.querySelector(".js-spots-filters");
-    this.spotFilters = this.spotFiltersContainer.querySelectorAll(".js-spot-filter");
-    this.spotCards = document.querySelector(".js-spots-cards");
-
-    this.baseUrl = this.spotFiltersContainer.dataset.baseUrl;
-
+    this.spotsFiltersContainer = document.querySelector(".js-spots-filters");
+    this.categoryFilters = document.querySelectorAll(".js-category-filter");
+    this.spotResultsContainer = document.querySelector(".js-spot-results");
     this.bind();
   }
 
   getCheckedCategories() {
     let categories = [];
-    this.spotFilters.forEach(cat => {
-      if(cat.checked) {
-        categories.push(cat.dataset.category)
+    this.categoryFilters.forEach(cat => {
+      if (cat.checked) {
+        categories.push(cat.dataset.category);
       }
-    })
+    });
     return categories;
   }
 
   buildUrl(categories) {
-    if(categories.length > 0) {
-      return this.baseUrl + "?categories=" + categories.join(",")
+    let baseUrl = this.spotsFiltersContainer.dataset.baseUrl;
+    if (categories.length > 0) {
+      return baseUrl + "?categories=" + categories.join(",");
     } else {
-      return this.baseUrl;
+      return baseUrl;
     }
   }
 
   getResults(url) {
-    fetch(url, {"headers": {"X-Requested-With": "XMLHttpRequest"}})
-      .then(response => {
+    fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } }).then(
+      response => {
         response.text().then(html => {
-          this.spotCards.innerHTML = html;
+          this.spotResultsContainer.innerHTML = html;
           initMapbox();
-          new ToggleMapView();
+          new MapView();
         });
-      });
+      }
+    );
   }
 
   bind() {
-    if(!this.spotFiltersContainer) {
+    if (!this.spotsFiltersContainer) {
       return;
     }
-
-    this.spotFilters.forEach(element => element.addEventListener("change", (e) => {
-      let categories = this.getCheckedCategories();
-      let url = this.buildUrl(categories);
-
-      this.getResults(url);
-    }));
+    this.categoryFilters.forEach(element =>
+      element.addEventListener("change", e => {
+        let categories = this.getCheckedCategories();
+        let url = this.buildUrl(categories);
+        this.getResults(url);
+      })
+    );
   }
 }
 

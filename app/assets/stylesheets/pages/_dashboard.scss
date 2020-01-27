@@ -8,3 +8,20 @@
   margin-bottom: $spacing-6;
   border-bottom: 1px solid $light-gray;
 }
+
+.dashboard__list {
+  list-style: none;
+  padding-left: $spacing-0;
+  margin-bottom: $spacing-0;
+}
+
+.dashboard__list-item {
+  display: flex;
+  align-items: center;
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
+}
+
+.dashboard__list-item-name {
+  padding-left: $spacing-4;
+}

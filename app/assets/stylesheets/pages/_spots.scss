@@ -1,4 +1,6 @@
-.spots__main { position: relative; }
+.spots__main {
+  position: relative;
+}
 
 .spots__message-wrapper {
   @include wrapper();
@@ -14,20 +16,26 @@
   cursor: pointer;
   circle {
     fill: $white;
-    transition: fill .1s;
+    transition: fill 0.1s;
   }
   g.map {
     fill: $red;
-    transition: fill .1s;
+    transition: fill 0.1s;
   }
 }
 
-.spots__map-button.clicked {
-  circle { fill: $red; }
-  g.map { fill: $white; }
+.spots__map-button--pressed {
+  circle {
+    fill: $red;
+  }
+  g.map {
+    fill: $white;
+  }
 }
 
-.spots__map-button.hide { display: none; }
+.spots__map-button--hide {
+  display: none;
+}
 
 .spots__filters-button {
   display: flex;
@@ -40,29 +48,27 @@
   cursor: pointer;
 }
 
-.spots__overlay {
+.spots__filters-overlay {
   position: absolute;
   top: 45px;
   left: 0;
   width: 100%;
   height: calc(100% - 1px);
-  z-index: 2;
-}
-
-.spots__overlay.hide { display: none; }
-
-.spots__overlay--filters {
   background-color: $white;
-  z-index: 3;
   overflow-y: scroll;
+  z-index: 3;
 }
 
-.spots__cards {
+.spots__filters-overlay--hide {
+  display: none;
+}
+
+.spots__results {
   @include wrapper();
   @include spacer();
 }
 
-.spots__pagination {
-  @include wrapper();
-  @include spacer();
-}
+// .spots__pagination {
+//   @include wrapper();
+//   @include spacer();
+// }

@@ -1,8 +1,0 @@
-<ul class="categories-list">
-  <% categories.each do |category| %>
-    <li class="categories-list__item">
-      <%= show_svg("placemark_#{category.name}.svg") %>
-      <%= link_to category.name, edit_category_path(category), class: "categories-list__name" %>
-    </li>
-  <% end %>
-</ul>

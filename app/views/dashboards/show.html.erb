@@ -51,9 +51,14 @@
         </div>
         <div class="dashboard__sub-section">
           <h3 class="dashboard__sub-section-header">Categories</h3>
-          <div class="dashboard__categories">
-            <%= render partial: "shared/categories", locals: { categories: @categories } %>
-          </div>
+          <ul class="dashboard__list">
+            <% @categories.each do |category| %>
+              <li class="dashboard__list-item">
+                <%= show_svg("placemark_#{category.name}.svg") %>
+                <%= link_to category.name, edit_category_path(category), class: "dashboard__list-item-name" %>
+              </li>
+            <% end %>
+          </ul>
           <%= link_to "+ Add new category", new_category_path, class: "link link--underline" %>
         </div>
       <% end %>
