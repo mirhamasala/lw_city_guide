@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
+  rescue_from ActiveRecord::InvalidForeignKey, with: :invalid_foreign_key
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_city, only: [:edit, :update]
+  before_action :set_city, only: [:edit, :update, :destroy]
   before_action :set_keepers, only: [:create, :update]
 
   def index
@@ -40,6 +41,13 @@ class CitiesController < ApplicationController
     end
   end
 
+  def destroy
+    if @city.destroy
+      flash.now[:notice] = "You deleted #{@city.name}. ✨"
+      redirect_back(fallback_location: dashboard_path)
+    end
+  end
+
   private
 
   def set_city
@@ -53,5 +61,9 @@ class CitiesController < ApplicationController
 
   def set_keepers
     @keepers = params[:city][:keeper_ids]
+  end
+
+  def invalid_foreign_key
+    redirect_back(fallback_location: dashboard_path, notice: "You can't delete #{@city.name} since it still has spots. 💩")
   end
 end

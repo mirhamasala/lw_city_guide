@@ -13,6 +13,10 @@ class CityPolicy < ApplicationPolicy
     user.admin?
   end
 
+  def destroy?
+    user.admin?
+  end
+
   private
 
   def admin_or_city_keeper?

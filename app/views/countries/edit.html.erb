@@ -1,6 +1,6 @@
-<%= content_for(:title, "Add Country") %>
+<%= content_for(:title, "Edit #{@country.name}") %>
 <div class="form">
-  <h1 class="form__header">Add a new country</h1>
+  <h1 class="form__header">Edit <%= @country.name %></h1>
   <div class="form__main">
     <%= render "form" %>
   </div>
