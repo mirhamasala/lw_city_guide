@@ -1,0 +1,12 @@
+.spots-results__map-overlay {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 1px);
+  z-index: 2;
+}
+
+.spots-results__map-overlay--hide {
+  display: none;
+}

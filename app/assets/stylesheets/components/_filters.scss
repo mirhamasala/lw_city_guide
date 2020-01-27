@@ -1,0 +1,74 @@
+.filters {
+  font-weight: $font-medium;
+}
+
+.filters__header {
+  display: flex;
+  justify-content: space-between;
+  @include wrapper();
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
+  margin-bottom: $spacing-5;
+  border-bottom: 1px solid $light-gray;
+  font-size: $text-sm;
+}
+
+.filters__close-button {
+  height: 24px;
+  width: 24px;
+  fill: $gray;
+  cursor: pointer;
+}
+
+.filters__all-button a:hover {
+  color: $purple;
+}
+
+.filters__main {
+  @include wrapper();
+}
+
+.filters__list {
+  list-style: none;
+  padding-left: $spacing-0;
+  margin-bottom: $spacing-0;
+}
+
+.filters__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $spacing-2;
+  padding-bottom: $spacing-2;
+}
+
+.filters__checkbox {
+  display: none;
+}
+
+.filters__checkbox + .filters__label .checkbox-marked {
+  opacity: 0.3;
+  flex-shrink: 0;
+}
+
+.filters__checkbox:checked + .filters__label .checkbox-marked {
+  opacity: 1;
+}
+
+.filters__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.filters__tag {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.filters__name {
+  padding-left: $spacing-4;
+}

@@ -1,9 +1,9 @@
 import mapboxgl from "mapbox-gl";
 
-const mapElement = document.getElementById("map");
+const mapElement = () =>  { return document.getElementById("map") };
 
 const buildMap = () => {
-  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  mapboxgl.accessToken = mapElement().dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/light-v9"
@@ -43,9 +43,9 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const initMapbox = () => {
-  if (mapElement) {
+  if (mapElement()) {
     const map = buildMap();
-    const markers = JSON.parse(mapElement.dataset.markers);
+    const markers = JSON.parse(mapElement().dataset.markers);
     addMarkersAndInfoWindowsToMap(map, markers);
     fitMapToMarkers(map, markers);
   }

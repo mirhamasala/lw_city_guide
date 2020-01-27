@@ -11,20 +11,13 @@
     </div>
   <% else %>
     <div class="spots__main">
-      <div class="spots__map-button js-map-view-btn"><%= show_svg("map.svg") %></div>
-      <div class="spots__filters-button js-filter-show">Filters</div>
-      <div class="spots__overlay spots__overlay--filters hide js-filters">
-        <%= render "shared/filter" %>
+      <div class="spots__map-button js-map-button"><%= show_svg("map.svg") %></div>
+      <div class="spots__filters-button js-filters-button">Filters</div>
+      <div class="spots__filters-overlay spots__filters-overlay--hide js-filters-overlay">
+        <%= render "shared/filters" %>
       </div>
-      <div class="spots__overlay hide js-map-overlay">
-        <%= render "shared/map" %>
-      </div>
-      <div class="spots__cards">
-        <div class="cards-grid">
-          <% @spots.each do |spot| %>
-            <%= render partial: "spots/spot_card", locals: { spot: spot} %>
-          <% end %>
-        </div>
+      <div class="spots__results js-spot-results">
+        <%= render "spots_results" %>
       </div>
       <!-- Pagination is currently unused but please leave commented for now -->
       <%# <div class="spots__pagination"> %>

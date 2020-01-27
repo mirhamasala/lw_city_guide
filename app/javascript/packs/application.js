@@ -9,15 +9,15 @@ import { initMapbox } from "../plugins/init_mapbox";
 // Components
 import { ratingSlider } from "../components/rating_slider";
 import { } from "../components/spot_autocomplete_dropdown";
-
-import Filters from "../components/filters";
-import ToggleMapView from "../components/toggle_map_view";
+import FiltersOverlay from "../components/filters_overlay";
+import FilterSpots from "../components/filter_spots";
+import MapView from "../components/map_view";
 
 // Initialize
-
 initAutocomplete();
 initCloudinary();
 initMapbox();
 
-new ToggleMapView();
-new Filters();
+new FiltersOverlay();
+new FilterSpots();
+new MapView();

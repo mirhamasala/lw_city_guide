@@ -1,0 +1,27 @@
+<div class="filters">
+  <div class="filters__header">
+    <div class="filters__close-button js-close-filters-button">
+      <%= show_svg("close.svg") %>
+    </div>
+    <div class="filters__subheader">Categories</div>
+    <div class="filters__all-button">
+      <%= link_to "All", city_spots_path(@city), class: "highlight highlight--purple" %>
+    </div>
+  </div>
+  <div class="filters__main js-spots-filters" data-base-url="<%= city_spots_path(@city) %>">
+    <ul class="filters__list">
+        <% @categories.each do |category| %>
+          <li class="filters__item">
+            <input type="checkbox" id="filters__checkbox-<%= category.name %>" class="filters__checkbox js-category-filter" data-category="<%= category.name %>">
+            <label class="filters__label" for="filters__checkbox-<%= category.name %>">
+              <div class="filters__tag">
+                <%= show_svg("placemark_#{category.name}.svg") %>
+                <span class="filters__name"><%= category.name.capitalize %></span>
+              </div>
+              <%= show_svg("checkbox_marked.svg") %>
+            </label>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+</div>
