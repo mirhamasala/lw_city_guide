@@ -80,7 +80,7 @@
                 <p class="dashboard__listItemName"><%= category.name %></p>
                 <div class="dashboard__listLinkWrap">
                   <%= link_to "✏️ edit", edit_category_path(category), class: "dashboard__listLink" %>
-                  <%= link_to "🗑 delete", category_path(category), method: :delete, class: "dashboard__listLink" %>
+                  <%#= link_to "🗑 delete", category_path(category), method: :delete, class: "dashboard__listLink" %>
                 </div>
               </li>
             <% end %>
