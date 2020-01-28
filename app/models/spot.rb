@@ -15,6 +15,10 @@ class Spot < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  def self.alphabetize
+    order(name: :asc)
+  end
+
   def self.check_coordinates
     where.not(latitude: nil, longitude: nil)
   end
