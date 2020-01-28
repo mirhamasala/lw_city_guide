@@ -3,10 +3,44 @@
   @include spacer();
 }
 
-.dashboard__section:not(:last-child),
+.dashboard__profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-12;
+}
+
+.dashboard__userPicture {
+  height: 192px;
+  width: 192px;
+  margin-right: $spacing-24;
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+}
+
+.dashboard__wrap {
+  display: flex;
+}
+
+.dashboard__sectionHeader {
+  font-size: $text-lg;
+  padding-bottom: $spacing-1;
+  margin-bottom: $spacing-8;
+  border-bottom: 1px solid $light-gray;
+}
+
+.dashboard__subSectionHeader {
+  font-size: $text-lg;
+}
+
 .dashboard__subSection:not(:last-child) {
+  padding-bottom: $spacing-2;
   margin-bottom: $spacing-6;
   border-bottom: 1px solid $light-gray;
+}
+
+.dashboard__link {
+  padding-top: $spacing-3;    // check
+  padding-bottom: $spacing-6; // check
 }
 
 .dashboard__list {
@@ -18,8 +52,6 @@
 .dashboard__listItem {
   display: flex;
   align-items: center;
-  padding-top: $spacing-2;
-  padding-bottom: $spacing-2;
   &:hover > .dashboard__listLinkWrap {
     display: block;
     cursor: pointer;
@@ -27,7 +59,7 @@
 }
 
 .dashboard__listItemName {
-  margin-bottom: $spacing-0;
+  margin-bottom: $spacing-0; // check
 }
 
 .dashboard__listLinkWrap {
@@ -46,5 +78,28 @@
 }
 
 .dashboard__placemarkIcon {
+  padding-top: $spacing-1;
   padding-right: $spacing-4;
+  padding-bottom: $spacing-1;
+}
+
+.dashboard__status {
+  min-width: 192px; // Same as .dashboard__userPicture
+  margin-right: $spacing-24;
+}
+
+.dashboard_statusHeader {
+  color: $medium-gray;
+  font-size: $text-lg;
+  font-weight: $font-medium;
+  padding-bottom: $spacing-1;
+  margin-bottom: $spacing-2;
+  border-bottom: 1px solid $light-gray;
+}
+
+.dashboard__publishedSpotsSizeDigit {
+  color: $brand-primary;
+  font-size: $text-4xl;
+  font-weight: $font-medium;
+  margin-right: $spacing-2;
 }
