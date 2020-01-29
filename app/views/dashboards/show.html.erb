@@ -119,17 +119,19 @@
               </li>
             <% end %>
           </ul>
-          <h3 class="dashboard__subSectionHeader"><%= "#{'Pending review'.pluralize(@unpublished_spots.size)}" " · #{@unpublished_spots.size}" %></h3>
-          <ul class="dashboard__list">
-            <% @unpublished_spots.each do |spot| %>
-              <li class="dashboard__listItem">
-                <div class="dashboard__listWrap">
-                  <span><%= spot.name %></span>
-                  <span>pending review</span>
-                </div>
-              </li>
-            <% end %>
-          </ul>
+          <% unless current_user.admin? %>
+            <h3 class="dashboard__subSectionHeader"><%= "#{'Pending review'.pluralize(@unpublished_spots.size)}" " · #{@unpublished_spots.size}" %></h3>
+            <ul class="dashboard__list">
+              <% @unpublished_spots.each do |spot| %>
+                <li class="dashboard__listItem">
+                  <div class="dashboard__listWrap">
+                    <span><%= spot.name %></span>
+                    <span>pending review</span>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
       <% else %>
         <% if current_user.admin? || current_user.city_keeper? %>
