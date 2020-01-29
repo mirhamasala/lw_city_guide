@@ -1,20 +1,33 @@
 .button {
   display: block;
-  width: 192px;
+  width: auto; // check other buttons (192px before)
   padding: $spacing-3 $spacing-6;
   border-radius: 3px;
+  border-color: transparent;
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   font-weight: $font-semibold;
   text-align: center;
+  white-space: nowrap;
 }
 
-.button--big { width: 224px; }
+.button--big {
+  width: 224px; // check if still necessary
+}
 
 .button--primary {
   background-color: $brand-primary;
   color: $white;
   border: $brand-primary;
-  &:hover { color: $white; }
+  &:hover {
+    color: $white;
+  }
+}
+
+.button--secondary {
+  color: $brand-primary;
+  &:hover {
+    color: $brand-primary;
+  }
 }
 
 .button--image-upload {
@@ -23,4 +36,6 @@
   font-weight: $font-normal;
 }
 
-.button--file-upload { display: none; }
+.button--file-upload {
+  display: none;
+}

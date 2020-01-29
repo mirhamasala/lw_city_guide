@@ -17,7 +17,7 @@
   box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
-.dashboard__wrap {
+.dashboard__mainWrapper {
   display: flex;
 }
 
@@ -102,4 +102,15 @@
   font-size: $text-4xl;
   font-weight: $font-medium;
   margin-right: $spacing-2;
+}
+
+.dashboard__message {
+  padding: $spacing-8;
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+}
+
+.dashboard__highlight {
+  font-size: $text-xl;
+  font-weight: $font-medium;
 }

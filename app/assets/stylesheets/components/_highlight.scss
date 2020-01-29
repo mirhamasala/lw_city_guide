@@ -10,6 +10,11 @@
   color: $purple;
 }
 
+.highlight--yellow {
+  background-color: $light-yellow;
+  color: $yellow;
+}
+
 @media (max-width: 767.98px) {
   .highlight--none {
     background-color: transparent;
