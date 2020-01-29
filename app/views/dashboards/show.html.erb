@@ -104,21 +104,25 @@
       <% if @spots.any? %>
         <div class="dashboard__section">
           <h2 class="dashboard__sectionHeader"><%= "#{'Your Spot'.pluralize(@published_spots.size)}" %></h2>
-          <h3 class="dashboard__subSectionHeader"><%= "#{'Published spot'.pluralize(@published_spots.size)}" %></h3>
-          <ul class="dashboard__list">
-            <% @published_spots.each do |spot| %>
-              <li class="dashboard__listItem">
-                <p class="dashboard__listItemName"><%= spot.name %></p>
-                <div class="dashboard__listLinkWrap">
-                  <%= link_to "👀 view", spot_path(spot), class: "dashboard__listLink" %>
-                  <% if current_user.admin? || current_user.city_keeper? %>
-                    <%= link_to "✏️ edit", edit_spot_path(spot), class: "dashboard__listLink" %>
-                    <%= link_to "🗑 delete", spot_path(spot), method: :delete, class: "dashboard__listLink" %>
-                  <% end %>
-                </div>
-              </li>
+          <div class="dashboard__publishedSpots">
+            <% @published_spots_by_city.each do |city, spots| %>
+              <h3 class="dashboard__subSectionHeader"><%= city.name %></h3>
+              <ul class="dashboard__list">
+                <% spots.each do |spot| %>
+                  <li class="dashboard__listItem">
+                    <p class="dashboard__listItemName"><%= spot.name %></p>
+                    <div class="dashboard__listLinkWrap">
+                      <%= link_to "👀 view", spot_path(spot), class: "dashboard__listLink" %>
+                      <% if current_user.admin? || current_user.city_keeper? %>
+                        <%= link_to "✏️ edit", edit_spot_path(spot), class: "dashboard__listLink" %>
+                        <%= link_to "🗑 delete", spot_path(spot), method: :delete, class: "dashboard__listLink" %>
+                      <% end %>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
             <% end %>
-          </ul>
+          </div>
           <% unless current_user.admin? %>
             <h3 class="dashboard__subSectionHeader"><%= "#{'Pending review'.pluralize(@unpublished_spots.size)}" " · #{@unpublished_spots.size}" %></h3>
             <ul class="dashboard__list">
