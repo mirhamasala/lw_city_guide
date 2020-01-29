@@ -14,7 +14,7 @@
     <% if @spots.any? %>
       <div class="dashboard__status">
         <h3 class="dashboard_statusHeader">Status</h3>
-        <p class="dashboard__publishedSpotsSize"><span class="dashboard__publishedSpotsSizeDigit"><%= @published_spots.size %></span> 🔥 <%= "#{' spot'.pluralize(@published_spots.size)}" %> shared</p>
+        <p class="dashboard__publishedSpotsSize"><span class="dashboard__publishedSpotsSizeDigit"><%= @published_spots.size %></span> 🔥 <%= 'spot'.pluralize(@published_spots.size) %> shared</p>
       </div>
       <% end %>
     <div class="dashboard__main">
