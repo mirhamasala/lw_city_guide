@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:edit, :update]
+  rescue_from ActiveRecord::InvalidForeignKey, with: :invalid_foreign_key
+  before_action :set_category, only: [:edit, :update, :destroy]
 
   def new
     @category = Category.new
@@ -11,9 +12,10 @@ class CategoriesController < ApplicationController
     authorize @category
     if @category.save
       flash[:notice] = "Yay! You succesfully added the category #{@category.name}! 🍪"
-      redirect_to root_path
+      redirect_to dashboard_path
     else
-      flash[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
+      flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
+      render :new
     end
   end
 
@@ -25,8 +27,15 @@ class CategoriesController < ApplicationController
       flash[:notice] = "You updated the category #{@category.name} succesfully! ⭐️"
       redirect_to dashboard_path
     else
-      flash[:alert] = "Oops! Something went wrong. Please, try again. 🌈"
+      flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :edit
+    end
+  end
+
+  def destroy
+    if @category.destroy
+      flash[:notice] = "You deleted the category #{@category.name}. ✨"
+      redirect_back(fallback_location: dashboard_path)
     end
   end
 
@@ -39,5 +48,9 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def invalid_foreign_key
+    redirect_back(fallback_location: dashboard_path, notice: "You can't delete the category #{@category.name} since it still has spots. 💩")
   end
 end
