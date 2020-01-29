@@ -18,7 +18,7 @@ class SpotsController < ApplicationController
     if request.xhr?
       render partial: "spots_results"
     else
-      render "index"
+      render :index
     end
   end
 
@@ -65,8 +65,8 @@ class SpotsController < ApplicationController
 
   def destroy
     if @spot.destroy
-      flash.now[:notice] = "You deleted #{@spot.name}. ✨"
-      redirect_to city_spots_path(@spot.city)
+      flash[:notice] = "You deleted #{@spot.name}. ✨"
+      redirect_back(fallback_location: dashboard_path)
     end
   end
 

@@ -11,9 +11,9 @@ class CountriesController < ApplicationController
     authorize @country
     if @country.save
       flash[:notice] = "Yay! You successfully created #{@country.name}! 🍪"
-      redirect_to root_path
+      redirect_to dashboard_path
     else
-      flash[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
+      flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :new
     end
   end
@@ -23,17 +23,17 @@ class CountriesController < ApplicationController
 
   def update
     if @country.update(country_params)
-      flash[:notice] = "You updated #{@country.name}! ⭐️"
+      flash[:notice] = "You updated #{@country.name} succesfully! ⭐️"
       redirect_to dashboard_path
     else
-      flash.now[:alert] = "Oops! Something went wrong. Please, try again. 🌈"
+      flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :edit
     end
   end
 
   def destroy
     if @country.destroy
-      flash.now[:notice] = "You deleted #{@country.name}. ✨"
+      flash[:notice] = "You deleted #{@country.name}. ✨"
       redirect_back(fallback_location: dashboard_path)
     end
   end

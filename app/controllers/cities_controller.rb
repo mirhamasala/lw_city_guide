@@ -19,7 +19,7 @@ class CitiesController < ApplicationController
     @keepers.each { |keeper| @city.keepers << User.find(keeper.to_i) } if @keepers
     if @city.save
       flash[:notice] = "Yay! You succcesfully added #{@city.name}! 🍪"
-      redirect_to city_spots_path(@city)
+      redirect_to dashboard_path
     else
       flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :new
@@ -34,16 +34,16 @@ class CitiesController < ApplicationController
       @city.keepers.destroy_all
       @keepers.each { |keeper| @city.keepers << User.find(keeper.to_i) }
       flash[:notice] = "You updated #{@city.name}! ⭐️"
-      redirect_to city_spots_path(@city)
+      redirect_to dashboard_path
     else
-      flash.now[:alert] = "Oops! Something went wrong. Please, try again. 🌈"
+      flash.now[:alert] = "Hm, it looks like something went wrong. Please, try again. 🌈"
       render :edit
     end
   end
 
   def destroy
     if @city.destroy
-      flash.now[:notice] = "You deleted #{@city.name}. ✨"
+      flash[:notice] = "You deleted #{@city.name}. ✨"
       redirect_back(fallback_location: dashboard_path)
     end
   end
