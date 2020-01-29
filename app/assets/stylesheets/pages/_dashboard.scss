@@ -45,6 +45,13 @@
   font-weight: $font-medium;
 }
 
+
+@media screen and (min-width: 576px) {
+  .dashboard__header {
+    font-size: $text-4xl;
+  }
+}
+
 .dashboard__mainWrapper {
   display: flex;
   flex-direction: column;
