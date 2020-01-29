@@ -103,7 +103,7 @@
       <% end %>
       <% if @spots.any? %>
         <div class="dashboard__section">
-          <h2 class="dashboard__sectionHeader"><%= "#{'Your Spot'.pluralize(@published_spots.size)}" %></h2>
+          <h2 class="dashboard__sectionHeader">Your Spots</h2>
           <div class="dashboard__publishedSpots">
             <% @published_spots_by_city.each do |city, spots| %>
               <h3 class="dashboard__subSectionHeader"><%= city.name %></h3>
@@ -139,7 +139,7 @@
         </div>
       <% else %>
         <% if current_user.admin? || current_user.city_keeper? %>
-          <h2 class="dashboard__sectionHeader"><%= "#{'Your Spot'.pluralize(@published_spots.size)}" %></h2>
+          <h2 class="dashboard__sectionHeader">Your Spots</h2>
         <% end %>
         <div class="dashboard__message">
           <p><span class="dashboard__highlight highlight highlight--yellow">Oh, bummer!</span> It looks like you haven't added any spots yet.<p>
