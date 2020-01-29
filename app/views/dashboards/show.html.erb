@@ -89,7 +89,7 @@
                     <p class="dashboard__listItemName"><%= category.name %></p>
                     <div class="dashboard__listLinkWrap">
                       <%= link_to "✏️ edit", edit_category_path(category), class: "dashboard__listLink" %>
-                      <%#= link_to "🗑 delete", category_path(category), method: :delete, class: "dashboard__listLink" %>
+                      <%= link_to "🗑 delete", category_path(category), method: :delete, class: "dashboard__listLink" %>
                     </div>
                   </li>
                 <% end %>
@@ -139,7 +139,7 @@
           <p><span class="dashboard__highlight highlight highlight--yellow">Oh, bummer!</span> It looks like you haven't added any spots yet.<p>
           <p>Please don't keep all the good stuff to yourself, and share your favorite hot spots with us now.</p>
           <%= button_to "Share your 🔥 spots", new_spot_path, method: :get, class: "button button--secondary" %>
-        </div>
+      </div>
       <% end %>
     </div>
   </div>
