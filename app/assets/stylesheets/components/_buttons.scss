@@ -3,7 +3,6 @@
   width: auto; // check other buttons (192px before)
   padding: $spacing-3 $spacing-6;
   border-radius: 3px;
-  border-color: transparent;
   box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
   font-weight: $font-semibold;
   text-align: center;
@@ -24,7 +23,9 @@
 }
 
 .button--secondary {
+  background-color: $white;
   color: $brand-primary;
+  border: $white;
   &:hover {
     color: $brand-primary;
   }

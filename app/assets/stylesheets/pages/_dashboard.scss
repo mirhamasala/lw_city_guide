@@ -5,20 +5,54 @@
 
 .dashboard__profile {
   display: flex;
-  align-items: center;
-  margin-bottom: $spacing-12;
+  flex-direction: column;
+  margin-bottom: $spacing-6;
+}
+
+@media screen and (min-width: 576px) {
+  .dashboard__profile {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: $spacing-12;
+  }
 }
 
 .dashboard__userPicture {
-  height: 192px;
-  width: 192px;
-  margin-right: $spacing-24;
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .dashboard__userPicture {
+  display: block;
+  height: 160px;
+  width: 160px;
+  margin-right: $spacing-16;
   border-radius: 6px;
   box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+  }
+}
+
+.dashboard__header {
+  font-size: $text-3xl;
+  font-weight: $font-medium;
+}
+
+@media screen and (min-width: 576px) {
+  .dashboard__userPicture {
+    font-size: $text-4xl;
+    font-weight: $font-medium;
+  }
 }
 
 .dashboard__mainWrapper {
   display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 576px) {
+  .dashboard__mainWrapper {
+    flex-direction: row;
+  }
 }
 
 .dashboard__sectionHeader {
@@ -84,8 +118,15 @@
 }
 
 .dashboard__status {
-  min-width: 192px; // Same as .dashboard__userPicture
-  margin-right: $spacing-24;
+  // display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .dashboard__status {
+    // display: block;
+    min-width: 192px; // Same as .dashboard__userPicture
+    margin-right: $spacing-24;
+  }
 }
 
 .dashboard_statusHeader {
@@ -105,10 +146,17 @@
 }
 
 .dashboard__message {
-  padding: $spacing-8;
+  padding: $spacing-6;
   border-radius: 6px;
   box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
 }
+
+@media screen and (min-width: 576px) {
+  .dashboard__message {
+    padding: $spacing-12;
+  }
+}
+
 
 .dashboard__highlight {
   font-size: $text-xl;
