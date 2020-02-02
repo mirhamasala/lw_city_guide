@@ -9,7 +9,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: $spacing-48;
+  padding-bottom: $spacing-12;
+}
+
+@media screen and (min-width: 576px) {
+  .spots__message-wrapper {
+    padding-bottom: $spacing-48;
+  }
+
+  .spots__message {
+    width: 545px;
+  }
 }
 
 .spots__message {

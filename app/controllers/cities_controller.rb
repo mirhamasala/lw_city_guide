@@ -5,7 +5,7 @@ class CitiesController < ApplicationController
   before_action :set_keepers, only: [:create, :update]
 
   def index
-    @cities = policy_scope(City).alphabetize
+    @cities = policy_scope(City).with_published_spots.alphabetize
   end
 
   def new
