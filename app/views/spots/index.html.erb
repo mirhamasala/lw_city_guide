@@ -6,8 +6,16 @@
   </header>
   <% if @city.spots.blank? %>
     <div class="spots__message-wrapper">
-      <p class="spots__message">Oh, oops! No spots for <strong><%= @city.name %></strong> have been added yet. 💩</p>
-      <%= link_to "Share one now", new_spot_path, class: "button button--primary" %>
+      <h2 class="spots__message"><span class="highlight highlight--purple">
+        Sorry,</span> there are no hot spots
+        <br>listed for this city yet.
+      </h2>
+      <p class="spots__message">
+        Feel free to add your personal hot spots now, so that this list
+        <br>doesn't stay empty for long. Otherwise feel free to select a
+        <br>different category or city.
+      </p>
+      <%= link_to "Share one now", new_spot_path, class: "button button--primary button--big" %>
     </div>
   <% else %>
     <div class="spots__main">
