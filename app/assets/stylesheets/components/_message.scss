@@ -1,0 +1,69 @@
+.message__inner-wrap {
+  @include wrapper();
+  @include spacer();
+}
+
+.message__inner-wrap--no-wrap {
+  margin-top: $spacing-0;
+  margin-bottom: $spacing-0;
+  padding-right: $spacing-0;
+  padding-left: $spacing-0;
+}
+
+.message__header,
+.message__text {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .message__header,
+  .message__text {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .message__header,
+  .message__text {
+    width: 60%;
+  }
+}
+
+.message__header--small {
+  font-size: $text-2xl;
+  font-weight: $font-semibold;
+}
+
+.message__text {
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-8;
+  margin-bottom: $spacing-0;
+}
+
+.message__svg {
+  position: relative;
+  bottom: 50px;
+  margin-bottom: -50px;
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .message__svg {
+    bottom: 130px;
+    margin-bottom: -130px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .message__svg {
+    bottom: 240px;
+    margin-bottom: -240px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .message__svg {
+    bottom: 360px;
+    margin-bottom: -360px;
+  }
+}

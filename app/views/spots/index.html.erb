@@ -16,19 +16,19 @@
       </div>
     </div>
   <% else %>
-    <div class="spots__message">
-      <div class="spots__message-main">
-        <h2 class="spots__message-header">
+    <div class="message">
+      <div class="message__inner-wrap">
+        <h2 class="message__header">
           <span class="highlight highlight--purple">Sorry,</span>
           <span>there are no spots listed for this city yet.</span>
         </h2>
-        <p class="spots__message-text">Feel free to add your favorite hot spots, so that this list doesn't stay empty for too long. Otherwise, go ahead and check out a different city.</p>
+        <p class="message__text">Feel free to add your favorite hot spots, so that this list doesn't stay empty for too long. Otherwise, go ahead and check out a different city.</p>
+        <%= link_to "Share your spots", new_spot_path, class: "button button--big button--with-margin button--primary" %>
+        <%= link_to "Back to all cities", root_path, class: "button button--big button--with-margin button--secondary" %>
       </div>
-      <%= link_to "Share your spots", new_spot_path, class: "button button--big button--with-margin button--primary" %>
-      <%= link_to "Back to all cities", root_path, class: "button button--big button--with-margin button--secondary" %>
-    </div>
-    <div class="spots__svg">
-      <%= show_svg("main_svg.svg") %>
+      <div class="message__svg">
+        <%= show_svg("main_svg.svg") %>
+      </div>
     </div>
       <!-- Pagination is currently unused but please leave commented for now -->
       <%# <div class="spots__pagination"> %>
