@@ -1,7 +1,7 @@
 <div class="dashboard">
   <div class="dashboard__profile">
     <div class="dashboard__avatar">
-      <%= image_tag current_user.avatar, class: "dashboard__userPicture" %>
+      <%= image_tag current_user.avatar, class: "dashboard__user-photo" %>
     </div>
     <div class="dashboard__profileDetails">
       <h1 class="dashboard__header"><%= current_user.name %></h1>
@@ -10,32 +10,34 @@
       <p><%= link_to "👾 #{current_user.github_profile}", current_user.github_profile %></p>
     </div>
   </div>
-  <div class="dashboard__mainWrapper">
-    <% if @spots.any? %>
+  <div class="dashboard__main-wrapper">
+    <% if @spots.published.any? %>
       <div class="dashboard__status">
-        <h3 class="dashboard_statusHeader">Status</h3>
-        <p class="dashboard__publishedSpotsSize"><span class="dashboard__publishedSpotsSizeDigit"><%= @published_spots.size %></span> 🔥 <%= 'spot'.pluralize(@published_spots.size) %> shared</p>
+        <h3 class="dashboard_status-header">Status</h3>
+        <p class="dashboard__publishedSpotsSize"><span class="dashboard__published-spots-digit"><%= @spots.published.size %></span> 🔥 <%= 'spot'.pluralize(@spots.published.size) %> shared</p>
       </div>
-      <% end %>
+    <% end %>
     <div class="dashboard__main">
       <% if current_user.admin? || current_user.city_keeper? %>
         <div class="dashboard__section">
-          <h2 class="dashboard__sectionHeader">Dashboard</h2>
+          <h2 class="dashboard__section-header">Dashboard</h2>
           <div class="dashboard__subSection">
-            <h3 class="dashboard__subSectionHeader"><%= "#{'Pending review'.pluralize(@unpublished_spots.size)}" " · #{@unpublished_spots.size}" %></h3>
+            <h3 class="dashboard__sub-section-header"><%= "#{'Pending review'.pluralize(@spots.draft.size)}" " · #{@spots.draft.size}" %></h3>
             <div class="dashboard__unpublishedSpots">
               <% @unpublished_spots_by_city.each do |city, spots| %>
-                <h3 class="dashboard__subSectionHeader"><%= city.name %></h3>
+                <h4 class="dashboard__sub-section-header"><%= city.name %></h4>
                 <ul class="dashboard__list">
                   <% spots.each do |spot| %>
-                    <li class="dashboard__listItem">
-                      <p class="dashboard__listItemName"><%= spot.name %></p>
+                    <li class="dashboard__list-item">
+                      <p class="dashboard__list-item-name"><%= spot.name %></p>
                       <span>&nbsp;·&nbsp;</span>
                       <%= link_to spot.owner.username, spot.owner.github_profile if spot.owner.github_profile.present? %>
-                      <div class="dashboard__listLinkWrap">
-                        <%= link_to "👀 view", spot_path(spot), class: "dashboard__listLink" %>
-                        <%= link_to "✏️ edit", edit_spot_path(spot), class: "dashboard__listLink" %>
-                        <%= link_to "🗑 delete", spot_path(spot), method: :delete, class: "dashboard__listLink" %>
+                      <div class="dashboard__list-link-wrap">
+                        <%= link_to "👀 view", spot_path(spot), class: "dashboard__list-link" %>
+                        <% if current_user.admin? || current_user.city_keeper? %>
+                          <%= link_to "✏️ edit", edit_spot_path(spot), class: "dashboard__list-link" %>
+                          <%= link_to "🗑 delete", spot_path(spot), method: :delete, class: "dashboard__list-link" %>
+                        <% end %>
                       </div>
                     </li>
                   <% end %>
@@ -45,31 +47,31 @@
           </div>
           <% if current_user.admin? %>
             <div class="dashboard__subSection">
-              <h3 class="dashboard__subSectionHeader">Countries</h3>
+              <h3 class="dashboard__sub-section-header">Countries</h3>
               <ul class="dashboard__list">
                 <% @countries.each do |country| %>
-                    <li class="dashboard__listItem">
-                      <p class="dashboard__listItemName"><%= country.name %></p>
-                      <div class="dashboard__listLinkWrap">
-                        <%= link_to "✏️ edit", edit_country_path(country), class: "dashboard__listLink" %>
-                        <%= link_to "🗑 delete", country_path(country), method: :delete, class: "dashboard__listLink" %>
-                      </div>
-                    </li>
-                  <% end %>
-                </ul>
+                  <li class="dashboard__list-item">
+                    <p class="dashboard__list-item-name"><%= country.name %></p>
+                    <div class="dashboard__list-link-wrap">
+                      <%= link_to "✏️ edit", edit_country_path(country), class: "dashboard__list-link" %>
+                      <%= link_to "🗑 delete", country_path(country), method: :delete, class: "dashboard__list-link" %>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
               <div class="dashboard__link">
                 <%= link_to "+ Add new country", new_country_path, class: "link link--underline" %>
               </div>
             </div>
             <div class="dashboard__subSection">
-              <h3 class="dashboard__subSectionHeader">Cities</h3>
+              <h3 class="dashboard__sub-section-header">Cities</h3>
               <ul class="dashboard__list">
                 <% @cities.each do |city| %>
-                  <li class="dashboard__listItem">
-                    <p class="dashboard__listItemName"><%= city.name %></p>
-                    <div class="dashboard__listLinkWrap">
-                      <%= link_to "✏️ edit", edit_city_path(city), class: "dashboard__listLink" %>
-                      <%= link_to "🗑 delete", city_path(city), method: :delete, class: "dashboard__listLink" %>
+                  <li class="dashboard__list-item">
+                    <p class="dashboard__list-item-name"><%= city.name %></p>
+                    <div class="dashboard__list-link-wrap">
+                      <%= link_to "✏️ edit", edit_city_path(city), class: "dashboard__list-link" %>
+                      <%= link_to "🗑 delete", city_path(city), method: :delete, class: "dashboard__list-link" %>
                     </div>
                   </li>
                 <% end %>
@@ -79,17 +81,17 @@
               </div>
             </div>
             <div class="dashboard__subSection">
-              <h3 class="dashboard__subSectionHeader">Categories</h3>
+              <h3 class="dashboard__sub-section-header">Categories</h3>
               <ul class="dashboard__list">
                 <% @categories.each do |category| %>
-                  <li class="dashboard__listItem">
-                    <div class="dashboard__placemarkIcon">
+                  <li class="dashboard__list-item">
+                    <div class="dashboard__placemark-icon">
                       <%= show_svg("placemark_#{category.name}.svg") %>
                     </div>
-                    <p class="dashboard__listItemName"><%= category.name %></p>
-                    <div class="dashboard__listLinkWrap">
-                      <%= link_to "✏️ edit", edit_category_path(category), class: "dashboard__listLink" %>
-                      <%= link_to "🗑 delete", category_path(category), method: :delete, class: "dashboard__listLink" %>
+                    <p class="dashboard__list-item-name"><%= category.name %></p>
+                    <div class="dashboard__list-link-wrap">
+                      <%= link_to "✏️ edit", edit_category_path(category), class: "dashboard__list-link" %>
+                      <%= link_to "🗑 delete", category_path(category), method: :delete, class: "dashboard__list-link" %>
                     </div>
                   </li>
                 <% end %>
@@ -103,50 +105,62 @@
       <% end %>
       <% if @spots.any? %>
         <div class="dashboard__section">
-          <h2 class="dashboard__sectionHeader">Your Spots</h2>
-          <div class="dashboard__publishedSpots">
-            <% @published_spots_by_city.each do |city, spots| %>
-              <h3 class="dashboard__subSectionHeader"><%= city.name %></h3>
-              <ul class="dashboard__list">
-                <% spots.each do |spot| %>
-                  <li class="dashboard__listItem">
-                    <p class="dashboard__listItemName"><%= spot.name %></p>
-                    <div class="dashboard__listLinkWrap">
-                      <%= link_to "👀 view", spot_path(spot), class: "dashboard__listLink" %>
-                      <% if current_user.admin? || current_user.city_keeper? %>
-                        <%= link_to "✏️ edit", edit_spot_path(spot), class: "dashboard__listLink" %>
-                        <%= link_to "🗑 delete", spot_path(spot), method: :delete, class: "dashboard__listLink" %>
-                      <% end %>
-                    </div>
-                  </li>
-                <% end %>
-              </ul>
-            <% end %>
-          </div>
-          <% unless current_user.admin? %>
-            <h3 class="dashboard__subSectionHeader"><%= "#{'Pending review'.pluralize(@unpublished_spots.size)}" " · #{@unpublished_spots.size}" %></h3>
-            <ul class="dashboard__list">
-              <% @unpublished_spots.each do |spot| %>
-                <li class="dashboard__listItem">
-                  <div class="dashboard__listWrap">
-                    <span><%= spot.name %></span>
-                    <span>pending review</span>
-                  </div>
-                </li>
+          <h2 class="dashboard__section-header">Your Spots</h2>
+          <% if @spots.published.any? %>
+            <div class="dashboard__subSection">
+            <h3 class="dashboard__sub-section-header">Published spots</h3>
+              <% @published_spots_by_city.each do |city, spots| %>
+                <h4 class="dashboard__sub-section-header"><%= city.name %></h4>
+                <ul class="dashboard__list">
+                  <% spots.each do |spot| %>
+                    <li class="dashboard__list-item">
+                      <p class="dashboard__list-item-name"><%= spot.name %></p>
+                      <div class="dashboard__list-link-wrap">
+                        <%= link_to "👀 view", spot_path(spot), class: "dashboard__list-link" %>
+                        <% if current_user.admin? || current_user.city_keeper? %>
+                          <%= link_to "✏️ edit", edit_spot_path(spot), class: "dashboard__list-link" %>
+                          <%= link_to "🗑 delete", spot_path(spot), method: :delete, class: "dashboard__list-link" %>
+                        <% end %>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
               <% end %>
-            </ul>
+            </div>
+          <% end %>
+          <% if @spots.draft.any? %>
+            <div class="dashboard__subSection">
+            <h3 class="dashboard__sub-section-header">Awaiting review</h3>
+              <% @unpublished_spots_by_city.each do |city, spots| %>
+                <h4 class="dashboard__sub-section-header"><%= city.name %></h3>
+                <ul class="dashboard__list">
+                  <% spots.each do |spot| %>
+                    <li class="dashboard__list-item">
+                      <p class="dashboard__list-item-name"><%= spot.name %></p>
+                      <div class="dashboard__list-link-wrap">
+                        <%= link_to "⏳ pending review", "", class: "dashboard__list-link dashboard__list-link--no-link" %>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </div>
           <% end %>
         </div>
       <% else %>
-        <% if current_user.admin? || current_user.city_keeper? %>
-          <h2 class="dashboard__sectionHeader">Your Spots</h2>
-        <% end %>
-        <div class="dashboard__message">
-          <p><span class="dashboard__highlight highlight highlight--yellow">Oh, bummer!</span> It looks like you haven't added any spots yet.<p>
-          <p>Please don't keep all the good stuff to yourself, and share your favorite hot spots with us now.</p>
-          <%= link_to "Share your spots", new_spot_path, class: "button button--big button--secondary" %>
-      </div>
+        <div class="dashboard__spacer"></div>
+        <div class="message">
+          <div class="message__inner-wrap message__inner-wrap--no-wrap">
+            <h2 class="message__header message__header--small">
+              <span class="highlight highlight--yellow">Oh, bummer!</span>
+              <span>It looks like you haven't added any spots yet.<span>
+            </h2>
+            <p class="message__text">Please don't keep all the good stuff to yourself, and share your favorite hot spots with us now.</p>
+            <%= link_to "Share your spots", new_spot_path, class: "button button--big button--primary" %>
+          </div>
+        </div>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
