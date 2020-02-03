@@ -2,32 +2,6 @@
   position: relative;
 }
 
-.spots__message {
-  @include wrapper();
-  @include spacer();
-}
-
-.spots__message-main {
-  width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  .spots__message-main {
-    width: 75%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .spots__message-main {
-    width: 60%;
-  }
-}
-
-.spots__message-text {
-  padding-top: $spacing-5;
-  padding-bottom: $spacing-8;
-}
-
 .spots__map-button {
   position: absolute;
   top: -16px;
@@ -87,6 +61,59 @@
 .spots__results {
   @include wrapper();
   @include spacer();
+}
+
+.spots__message {
+  @include wrapper();
+  @include spacer();
+}
+
+.spots__message-main {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .spots__message-main {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .spots__message-main {
+    width: 60%;
+  }
+}
+
+.spots__message-text {
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-8;
+}
+
+.spots__svg {
+  position: relative;
+  bottom: 50px;
+  margin-bottom: -50px;
+}
+
+@media screen and (min-width: 768px) {
+  .spots__svg {
+    bottom: 130px;
+    margin-bottom: -130px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .spots__svg {
+    bottom: 240px;
+    margin-bottom: -240px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .spots__svg {
+    bottom: 360px;
+    margin-bottom: -360px;
+  }
 }
 
 // .spots__pagination {

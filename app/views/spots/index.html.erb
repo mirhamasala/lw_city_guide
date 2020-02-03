@@ -27,6 +27,9 @@
       <%= link_to "Share your spots", new_spot_path, class: "button button--big button--with-margin button--primary" %>
       <%= link_to "Back to all cities", root_path, class: "button button--big button--with-margin button--secondary" %>
     </div>
+    <div class="spots__svg">
+      <%= show_svg("main_svg.svg") %>
+    </div>
       <!-- Pagination is currently unused but please leave commented for now -->
       <%# <div class="spots__pagination"> %>
         <%#= render partial: "shared/pagination", locals: { pagy: @pagy } %>
