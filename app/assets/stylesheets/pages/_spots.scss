@@ -93,6 +93,7 @@
   position: relative;
   bottom: 50px;
   margin-bottom: -50px;
+  z-index: -1;
 }
 
 @media screen and (min-width: 768px) {
