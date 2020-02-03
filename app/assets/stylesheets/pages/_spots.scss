@@ -2,33 +2,30 @@
   position: relative;
 }
 
-.spots__message-wrapper {
+.spots__message {
   @include wrapper();
   @include spacer();
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: $spacing-12;
 }
 
-@media screen and (min-width: 576px) {
-  .spots__message-wrapper {
-    padding-bottom: $spacing-48;
-  }
+.spots__message-main {
+  width: 100%;
+}
 
-  .spots__message {
-    width: 545px;
+@media screen and (min-width: 768px) {
+  .spots__message-main {
+    width: 75%;
   }
 }
 
-.spots__message {
-  text-align: center;
-  margin: $spacing-5 0px;
+@media screen and (min-width: 1200px) {
+  .spots__message-main {
+    width: 60%;
+  }
 }
 
-.spots__button {
-  margin: $spacing-3 0px;
+.spots__message-text {
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-8;
 }
 
 .spots__map-button {
