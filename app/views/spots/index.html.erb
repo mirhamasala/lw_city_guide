@@ -4,7 +4,18 @@
     <h1 class="page-header__title"><%= @city.name %></h1>
     <p class="page-header__sub-title"><%= @city.country.name %></p>
   </header>
-  <% if @city.spots.published.blank? %>
+  <% if @spots.present? %>
+    <div class="spots__main">
+      <div class="spots__map-button js-map-button"><%= show_svg("map.svg") %></div>
+      <div class="spots__filters-button js-filters-button">Filters</div>
+      <div class="spots__filters-overlay spots__filters-overlay--hide js-filters-overlay">
+        <%= render "shared/filters" %>
+      </div>
+      <div class="spots__results js-spot-results">
+        <%= render "spots_results" %>
+      </div>
+    </div>
+  <% else %>
     <div class="spots__message">
       <div class="spots__message-main">
         <h2 class="spots__message-header">
@@ -16,20 +27,9 @@
       <%= link_to "Share your spots", new_spot_path, class: "button button--big button--with-margin button--primary" %>
       <%= link_to "Back to all cities", root_path, class: "button button--big button--with-margin button--secondary" %>
     </div>
-  <% else %>
-    <div class="spots__main">
-      <div class="spots__map-button js-map-button"><%= show_svg("map.svg") %></div>
-      <div class="spots__filters-button js-filters-button">Filters</div>
-      <div class="spots__filters-overlay spots__filters-overlay--hide js-filters-overlay">
-        <%= render "shared/filters" %>
-      </div>
-      <div class="spots__results js-spot-results">
-        <%= render "spots_results" %>
-      </div>
       <!-- Pagination is currently unused but please leave commented for now -->
       <%# <div class="spots__pagination"> %>
         <%#= render partial: "shared/pagination", locals: { pagy: @pagy } %>
       <%# </div> %>
-    </div>
   <% end %>
 </div>
