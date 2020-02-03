@@ -2,9 +2,30 @@
   position: relative;
 }
 
-.spots__message-wrapper {
+.spots__message {
   @include wrapper();
   @include spacer();
+}
+
+.spots__message-main {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .spots__message-main {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .spots__message-main {
+    width: 60%;
+  }
+}
+
+.spots__message-text {
+  padding-top: $spacing-5;
+  padding-bottom: $spacing-8;
 }
 
 .spots__map-button {

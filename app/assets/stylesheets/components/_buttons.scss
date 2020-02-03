@@ -8,9 +8,17 @@
   text-align: center;
   white-space: nowrap;
 }
-
 .button--big {
-  width: 224px; // check if still necessary
+  width: 224px;
+}
+
+.button--centered {
+  display: flex;
+  justify-content: center;
+}
+
+.button--with-margin {
+  margin-bottom: $spacing-4;
 }
 
 .button--primary {
@@ -30,6 +38,7 @@
     color: $brand-primary;
   }
 }
+
 
 .button--image-upload {
   background-color: $light-gray;
