@@ -144,7 +144,7 @@
         <div class="dashboard__message">
           <p><span class="dashboard__highlight highlight highlight--yellow">Oh, bummer!</span> It looks like you haven't added any spots yet.<p>
           <p>Please don't keep all the good stuff to yourself, and share your favorite hot spots with us now.</p>
-          <%= button_to "Share your 🔥 spots", new_spot_path, method: :get, class: "button button--secondary" %>
+          <%= link_to "Share your spots", new_spot_path, class: "button button--big button--secondary" %>
       </div>
       <% end %>
     </div>

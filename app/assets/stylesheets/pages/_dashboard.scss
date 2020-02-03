@@ -45,10 +45,9 @@
   font-weight: $font-medium;
 }
 
-
 @media screen and (min-width: 576px) {
   .dashboard__header {
-    font-size: $text-4xl;
+    font-size: $text-4xl; // 2.5rem originally
   }
 }
 
