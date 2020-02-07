@@ -2,9 +2,9 @@ class DashboardsController < ApplicationController
   def show
     authorize :dashboard
 
-    @categories = Category.all.alphabetize
-    @cities = City.all.alphabetize
-    @countries = Country.all.alphabetize
+    @categories = Category.alphabetize
+    @cities = City.alphabetize
+    @countries = Country.alphabetize
 
     if current_user.admin? || current_user.city_keeper?
       @spots = Spot.for_user(current_user)

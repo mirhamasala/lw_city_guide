@@ -82,7 +82,7 @@ class SpotsController < ApplicationController
   end
 
   def set_categories
-    @categories = Category.all.alphabetize
+    @categories = Category.alphabetize
   end
 
   def spot_params
