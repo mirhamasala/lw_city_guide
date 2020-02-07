@@ -42,8 +42,10 @@ class Spot < ApplicationRecord
   def self.for_user(user)
     if user.admin?
       all
-    else
+    elsif user.city_keeper?
       where(city: user.cities)
+    else
+      author?(user)
     end
   end
 
