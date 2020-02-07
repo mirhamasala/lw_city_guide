@@ -3,6 +3,6 @@ class Category < ApplicationRecord
     validates :name, presence: true, uniqueness: true
 
   def self.alphabetize
-    order("CASE WHEN name = 'other' THEN 2 ELSE 1 END, name")
+    order(Arel.sql("CASE WHEN name = 'other' THEN 2 ELSE 1 END, name"))
   end
 end
