@@ -20,7 +20,8 @@ class Spot < ApplicationRecord
   end
 
   def self.check_coordinates
-    where.not(latitude: nil, longitude: nil)
+    where("latitude IS NOT NULL AND longitude IS NOT NULL")
+    # where("latitude IS NOT ? AND longitude IS NOT ?", nil, nil)
   end
 
   def self.recent
@@ -42,8 +43,11 @@ class Spot < ApplicationRecord
   def self.for_user(user)
     if user.admin?
       all
-    else
+    elsif user.city_keeper?
       where(city: user.cities)
+    else
+      author?(user)
+      # where(owner: user)
     end
   end
 
