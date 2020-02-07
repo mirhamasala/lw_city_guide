@@ -20,7 +20,7 @@ class Spot < ApplicationRecord
   end
 
   def self.check_coordinates
-    where.not(latitude: nil, longitude: nil)
+    where("latitude IS NOT NULL AND longitude IS NOT NULL")
   end
 
   def self.recent
