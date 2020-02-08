@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   private
 
   def skip_pundit?
-    devise_controller? || params[:controller] == "pages"
+    devise_controller? || params[:controller] == "pages" || "error_pages"
   end
 
   def user_not_authorized
