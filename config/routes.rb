@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   root to: "cities#index"
-  get "/404", to: "error_pages#not_found"
-  get "/422", to: "error_pages#unacceptable"
-  get "/500", to: "error_pages#internal_error"
+  get "/404", to: "errors#not_found"
+  get "/422", to: "errors#unacceptable"
+  get "/500", to: "errors#internal_error"
 
   # Automatically search for spots in Google database; two Google APIs used:
   # Google place autocomplete : https://developers.google.com/places/web-service/autocomplete
