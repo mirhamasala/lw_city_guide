@@ -2,9 +2,9 @@
   <div class="message__inner-wrap">
     <h2 class="message__header">
       <span class="highlight highlight--purple">Oops,</span>
-      <span>it's a <%= status %>.</span>
+      <span>it's a <%= @error_status %>.</span>
     </h2>
-    <p class="message__text"><%= error_message %></p>
+    <p class="message__text"><%= @error_message %></p>
     <%= link_to "Take me home", root_path, class: "button button--big button--with-margin button--primary" %>
   </div>
   <div class="message__svg">

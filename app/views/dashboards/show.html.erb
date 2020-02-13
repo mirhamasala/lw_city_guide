@@ -24,7 +24,7 @@
           <div class="dashboard__subSection">
             <h3 class="dashboard__sub-section-header"><%= "#{'Pending review'.pluralize(@spots.unpublished.size)}" " · #{@spots.unpublished.size}" %></h3>
             <div class="dashboard__unpublishedSpots">
-              <% @spots.unpublished.each do |city, spots| %>
+              <% @spots.unpublished_grouped_by_city.each do |city, spots| %>
                 <h4 class="dashboard__sub-section-header"><%= city.name %></h4>
                 <ul class="dashboard__list">
                   <% spots.each do |spot| %>
@@ -109,7 +109,7 @@
           <% if @your_spots.published.any? %>
             <div class="dashboard__subSection">
               <h3 class="dashboard__sub-section-header">Published spots</h3>
-              <% @your_spots.published.each do |city, spots| %>
+              <% @your_spots.published_grouped_by_city.each do |city, spots| %>
                 <h4 class="dashboard__sub-section-header"><%= city.name %></h4>
                 <ul class="dashboard__list">
                   <% spots.each do |spot| %>
@@ -131,7 +131,7 @@
           <% if @your_spots.unpublished.any? %>
             <div class="dashboard__subSection">
               <h3 class="dashboard__sub-section-header">Awaiting review</h3>
-              <% @your_spots.unpublished.each do |city, spots| %>
+              <% @your_spots.unpublished_grouped_by_city.each do |city, spots| %>
                 <h4 class="dashboard__sub-section-header"><%= city.name %></h3>
                 <ul class="dashboard__list">
                   <% spots.each do |spot| %>
