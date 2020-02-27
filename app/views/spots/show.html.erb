@@ -75,7 +75,7 @@
       <% end %>
       <div class="spot__rating-slider">
         <p class="spot__rating-tagline">How <span class="highlight">hot</span> is this place?</p>
-        <%= render partial: "rating", locals: { spot: @spot, rating: @rating } %>
+        <%= render "rating", spot: @spot, rating: @rating %>
       </div>
     </div>
   </div>

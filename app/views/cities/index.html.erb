@@ -6,7 +6,7 @@
   <div class="cities__main">
     <div class="cards-grid">
       <% @cities.each do |city| %>
-        <%= render partial: "cities/city_card", locals: { city: city} %>
+        <%= render "cities/city_card", city: city %>
       <% end %>
     </div>
   </div>

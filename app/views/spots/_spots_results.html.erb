@@ -4,7 +4,7 @@
   </div>
   <div class="cards-grid">
     <% @spots.each do |spot| %>
-      <%= render partial: "spots/spot_card", locals: { spot: spot} %>
+      <%= render "spots/spot_card", spot: spot %>
     <% end %>
   </div>
 </div>

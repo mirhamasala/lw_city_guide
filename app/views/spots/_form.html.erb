@@ -3,7 +3,7 @@
     <%= f.input :status, as: :radio_buttons, collection: [["draft", "Draft"], ["published", "Published"]], label_method: :second, value_method: :first %>
   <% end %>
   <%= f.input :name, label: "Spot name", input_html: { autocomplete: "off" } %>
-  <%= render partial: "spots/autocomplete_dropdown" %>
+  <%= render "spots/autocomplete_dropdown" %>
   <%= f.association :category %>
   <%= f.input :sub_category %>
   <%= f.input :description %>

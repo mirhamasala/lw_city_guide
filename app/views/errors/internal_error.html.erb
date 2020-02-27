@@ -1,2 +1,2 @@
 <% content_for(:title, "500") %>
-<%= render partial: "base", locals: { status: @status, error_message: @error_message } %>
+<%= render "base", status: @status, error_message: @error_message %>
