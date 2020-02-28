@@ -15,7 +15,7 @@ class SpotsController < ApplicationController
     add_map_markers(@spots)
 
     if request.xhr?
-      render "spots_results"
+      render partial: "spots_results"
     else
       render :index
     end
