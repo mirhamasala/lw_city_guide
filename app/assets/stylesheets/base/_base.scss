@@ -1,8 +1,5 @@
-body {
-  margin: 0 auto;
-  padding: 0;
-  max-width: 1440px;
-  overflow-x: hidden;
+html {
+  height: 100%;
 }
 
 h2 {
@@ -11,7 +8,9 @@ h2 {
 }
 
 @media (min-width: 576px) {
-  h2 { font-size: $text-4xl; }
+  h2 {
+    font-size: $text-4xl;
+  }
 }
 
 a {

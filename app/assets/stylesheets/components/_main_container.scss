@@ -1,0 +1,14 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-container__top {
+  flex: 1 0 auto;
+  @include main-container();
+}
+
+.main-container__footer {
+  flex-shrink: 0;
+}

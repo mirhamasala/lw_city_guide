@@ -10,11 +10,15 @@
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= stylesheet_pack_tag "application", media: "all" %>
   </head>
-  <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <%= render "shared/footer" %>
+  <body class="main-container">
+    <div class="main-container__top">
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+      <%= yield %>
+    </div>
+    <div class="main-container__footer">
+      <%= render "shared/footer" %>
+    </div>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>
     <% if content_for?(:after_js) %>

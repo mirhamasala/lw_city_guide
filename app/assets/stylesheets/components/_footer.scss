@@ -4,12 +4,15 @@ footer {
 }
 
 .footer__inner {
+  @include main-container();
   @include wrapper();
   padding-top: $spacing-20;
   padding-bottom: $spacing-20;
 }
 
-.footer__references { margin-bottom: $spacing-12; }
+.footer__references {
+  margin-bottom: $spacing-12;
+}
 
 .footer__disclaimer {
   color: $light-gray;
@@ -24,6 +27,8 @@ footer {
   a {
     color: $light-gray;
     text-decoration: underline;
-    &:hover { color: $light-gray; }
+    &:hover {
+      color: $light-gray;
+    }
   }
 }
