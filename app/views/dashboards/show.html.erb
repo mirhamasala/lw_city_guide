@@ -35,7 +35,7 @@
                       <div class="dashboard__list-link-wrap">
                         <%= link_to "👀 view", spot_path(spot), class: "dashboard__list-link" %>
                         <% if current_user.admin? || current_user.city_keeper? %>
-                          <%= link_to "✏️ edit", edit_spot_path(spot), class: "dashboard__list-link" %>
+                          <%= link_to "✏️ edit · #{spot.id}", edit_spot_path(spot), class: "dashboard__list-link" %>
                           <%= link_to "🗑 delete", spot_path(spot), method: :delete, class: "dashboard__list-link" %>
                         <% end %>
                       </div>
@@ -53,7 +53,7 @@
                   <li class="dashboard__list-item">
                     <p class="dashboard__list-item-name"><%= country.name %></p>
                     <div class="dashboard__list-link-wrap">
-                      <%= link_to "✏️ edit", edit_country_path(country), class: "dashboard__list-link" %>
+                      <%= link_to "✏️ edit · #{country.id}", edit_country_path(country), class: "dashboard__list-link" %>
                       <%= link_to "🗑 delete", country_path(country), method: :delete, class: "dashboard__list-link" %>
                     </div>
                   </li>
@@ -70,7 +70,8 @@
                   <li class="dashboard__list-item">
                     <p class="dashboard__list-item-name"><%= city.name %></p>
                     <div class="dashboard__list-link-wrap">
-                      <%= link_to "✏️ edit", edit_city_path(city), class: "dashboard__list-link" %>
+                      <%= link_to "👀 view", city_spots_path(city), class: "dashboard__list-link" %>
+                      <%= link_to "✏️ edit · #{city.id}", edit_city_path(city), class: "dashboard__list-link" %>
                       <%= link_to "🗑 delete", city_path(city), method: :delete, class: "dashboard__list-link" %>
                     </div>
                   </li>
@@ -90,7 +91,7 @@
                     </div>
                     <p class="dashboard__list-item-name"><%= category.name %></p>
                     <div class="dashboard__list-link-wrap">
-                      <%= link_to "✏️ edit", edit_category_path(category), class: "dashboard__list-link" %>
+                      <%= link_to "✏️ edit · #{category.id}", edit_category_path(category), class: "dashboard__list-link" %>
                       <%= link_to "🗑 delete", category_path(category), method: :delete, class: "dashboard__list-link" %>
                     </div>
                   </li>
