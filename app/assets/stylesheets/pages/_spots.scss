@@ -1,5 +1,6 @@
 .spots__main {
   position: relative;
+  height:
 }
 
 .spots__map-button {
@@ -62,8 +63,3 @@
   @include wrapper();
   @include spacer();
 }
-
-// .spots__pagination {
-//   @include wrapper();
-//   @include spacer();
-// }
