@@ -22,7 +22,6 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~>1.2'
 gem 'pundit'
 gem 'geocoder'
-gem 'pagy', '3.6.0'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
