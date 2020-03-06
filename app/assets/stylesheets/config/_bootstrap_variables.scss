@@ -12,14 +12,14 @@
 
 $font-family-sans-serif: $font-sans;
 $headings-font-family:   $font-sans;
-$body-bg:                $white;
+$body-bg:                $theme-background;
 $font-size-base:         $text-base;
 
 // --------------------------------------------------------------
 // Colors
 // --------------------------------------------------------------
 
-$body-color: $gray;
+$body-color: $theme-body;
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
