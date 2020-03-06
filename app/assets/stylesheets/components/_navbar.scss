@@ -3,7 +3,6 @@
   @include wrapper();
   padding-top: $spacing-6;
   padding-bottom: $spacing-6;
-  background: $white;
 }
 
 .navbar-lewagon .navbar-collapse { flex-grow: 0; }
@@ -14,9 +13,9 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: $gray;
+  color: $theme-body;
   &:hover {
-    color: $gray;
+    color: $theme-body;
   }
 }
 
