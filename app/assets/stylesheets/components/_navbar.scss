@@ -5,8 +5,13 @@
   padding-bottom: $spacing-6;
 
   .theme-icon {
-    width: 100px;
-    color: white;
+    width: 40px;
+    height: 40px;
+    fill: $theme-body;
+
+    &:hover {
+      fill: $theme-body-hover;
+    }
   }
 }
 
@@ -21,8 +26,11 @@
   color: $theme-body;
   &:hover {
     color: $theme-body-hover;
-
   }
+
+  li {
+    display: flex;
+  } 
 }
 
 @media (min-width: 576px) {
