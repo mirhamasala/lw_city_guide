@@ -1,0 +1,21 @@
+// --------------------------------------------------------------
+// Below sets variables for any styling that needs to change based on the theme. 
+// Any variable declared here must also be declared in the equivilent Dark Theme file.
+// --------------------------------------------------------------
+
+$theme-brand-primary:   $brand-primary;
+$theme-brand-secondary: $brand-secondary;
+
+$theme-primary:         $blue;
+$theme-success:         $green;
+$theme-info:            $yellow;
+$theme-danger:          $red;
+$theme-warning:         $orange;
+
+$theme-background:      $white;
+
+$theme-body:            $gray;  // Text
+$theme-body-hover:      $medium-gray;
+
+$theme-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+$theme-shadow-hover: 0 15px 35px rgba(126,87,88,.2), 0 5px 15px rgba(0,0,0,.07);

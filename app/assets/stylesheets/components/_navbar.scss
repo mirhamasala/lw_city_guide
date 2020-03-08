@@ -3,7 +3,11 @@
   @include wrapper();
   padding-top: $spacing-6;
   padding-bottom: $spacing-6;
-  background: $white;
+
+  .theme-icon {
+    width: 100px;
+    color: white;
+  }
 }
 
 .navbar-lewagon .navbar-collapse { flex-grow: 0; }
@@ -14,14 +18,19 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: $gray;
+  color: $theme-body;
   &:hover {
-    color: $gray;
+    color: $theme-body-hover;
+
   }
 }
 
 @media (min-width: 576px) {
   .avatar.dropdown-toggle {
     margin-left: $spacing-5;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

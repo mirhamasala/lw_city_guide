@@ -1,11 +1,12 @@
 .link {
   color: $brand-primary;
-  &:hover { color: $brand-primary; }
+  &:hover { color: $brand-primary-deep; }
 }
 
 .link--underline {
   text-decoration: underline;
   &:hover {
     text-decoration: underline;
+    color: $brand-primary-deep;
   }
 }

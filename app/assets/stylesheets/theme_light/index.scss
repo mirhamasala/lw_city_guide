@@ -1,0 +1,2 @@
+@import "../config/colors";   // Imported from config because must be imported before theme, but both themes use same colors file.
+@import "light_theme";

@@ -6,7 +6,8 @@
 .caret-link a {
   color: $brand-primary;
   font-weight: $font-medium;
-  &:hover { color: $brand-primary; }
+  &:hover 
+  { color: $brand-primary-deep; }
 }
 
 .caret-link--bg-gray {

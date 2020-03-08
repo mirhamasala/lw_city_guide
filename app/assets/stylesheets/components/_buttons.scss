@@ -7,6 +7,10 @@
   font-weight: $font-semibold;
   text-align: center;
   white-space: nowrap;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 .button--big {
   width: 224px;
@@ -27,6 +31,7 @@
   border: $brand-primary;
   &:hover {
     color: $white;
+    background-color: $brand-primary-deep
   }
 }
 
@@ -36,14 +41,20 @@
   border: $white;
   &:hover {
     color: $brand-primary;
+    background-color: $light-gray;
   }
 }
 
 
 .button--image-upload {
   background-color: $light-gray;
+  color: $gray;
   box-shadow: none;
   font-weight: $font-normal;
+
+  &:hover {
+    background-color: $form-gray;
+  }
 }
 
 .button--file-upload {

@@ -9,6 +9,20 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  def set_light_theme
+    cookies[:theme] = {
+      value: 'light'
+    }
+    redirect_back(fallback_location: root_path)
+  end
+
+  def set_dark_theme
+    cookies[:theme] = {
+      value: 'dark'
+    }
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def skip_pundit?

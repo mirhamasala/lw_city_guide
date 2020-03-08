@@ -11,7 +11,7 @@
   padding-top: $spacing-8;
   padding-bottom: $spacing-8;
   border-radius: 6px;
-  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+  box-shadow: $theme-shadow;
 }
 
 .form__header { margin-bottom: $spacing-8; }

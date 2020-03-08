@@ -14,9 +14,9 @@ h2 {
 }
 
 a {
-  color: $gray;
+  color: $theme-body;
   &:hover {
-    color: $gray;
+    color: $theme-body;
     text-decoration: none;
   }
 }

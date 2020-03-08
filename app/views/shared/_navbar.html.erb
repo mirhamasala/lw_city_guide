@@ -7,10 +7,19 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <% if cookies[:theme] == 'dark' %>
+      <%= link_to light_theme_path do %>
+        <%= inline_svg_tag('sun-icon.svg', options={class: 'theme-icon'}) %>
+      <% end %>
+      <% else %>
+      <%= link_to dark_theme_path do %>
+        <%= inline_svg_tag('sun-icon.svg', options={class: 'theme-icon'}) %>
+      <% end %>
+      <% end %>
       <% unless current_page?(root_path) %>
         <li><%= link_to "Explore all cities", root_path, class: "nav-link" %></li>
       <% end %>
-        <li><%= link_to "Share your 🔥 spots", new_spot_path, class: "nav-link" %></li>
+        <li><%= link_to "Share your 🔥spots", new_spot_path, class: "nav-link" %></li>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

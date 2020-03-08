@@ -1,0 +1,24 @@
+// --------------------------------------------------------------
+// Below sets variables for any styling that needs to change based on the theme. 
+// Any variable declared here must also be declared in the equivilent Light Theme file.
+// --------------------------------------------------------------
+
+$theme-brand-primary:   $brand-primary;
+$theme-brand-secondary: $brand-secondary;
+
+$theme-primary:         $blue;
+$theme-success:         $green;
+$theme-info:            $yellow;
+$theme-danger:          $red;
+$theme-warning:         $orange;
+
+$theme-background:      $dark-gray;
+
+$theme-body:            $light-gray;  // Text
+$theme-body-hover:      $form-gray;  // For 'On Hover' state on Links in the body
+
+$theme-shadow: 3px 4px 3px rgba(110, 110, 110, 0.1);
+$theme-shadow-hover: 3px 4px 6px rgba(120, 120, 120, 0.2);
+
+$theme-transition: background-color 1s ease;
+
