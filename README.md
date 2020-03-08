@@ -32,7 +32,9 @@ If you would like to fix a bug or implement a feature, you can create a pull req
 
 ## Project Resources
 
-[Backlog](https://github.com/mirhamasala/lw_city_guide/projects/1)
+📋 [Backlog](https://github.com/mirhamasala/lw_city_guide/projects/1)
+
+🎨 [Figma Design](https://www.figma.com/file/bU6KtCjRsrnSN79THTTEvk/le-wagon-city-guide-2.0)
 
 ~~[Database schema](https://kitt.lewagon.com/db/2357)~~
 
