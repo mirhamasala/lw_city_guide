@@ -8,12 +8,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li>
-        <% if cookies[:theme] == 'dark' %>
-          <%= link_to light_theme_path do %>
+        <%= link_to set_theme_path do %>
+          <% if cookies[:theme] == 'dark' %>
             <%= inline_svg_tag('sun-icon.svg', options={class: 'theme-icon nav-link'}) %>
-          <% end %>
           <% else %>
-          <%= link_to dark_theme_path do %>
             <%= inline_svg_tag('moon-icon.svg', options={class: 'theme-icon nav-link'}) %>
           <% end %>
         <% end %>

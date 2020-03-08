@@ -23,6 +23,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:new, :create, :edit, :update, :destroy]
   resource :dashboard, only: [:show], as: :dashboard
   resources :countries, only: [:new, :create, :edit, :update, :destroy]
-  get '/dark_theme', to: 'application#set_dark_theme', as: 'dark_theme'
-  get '/light_theme', to: 'application#set_light_theme', as: 'light_theme'
+  get '/set_theme', to: 'application#set_theme', as: 'set_theme'
 end

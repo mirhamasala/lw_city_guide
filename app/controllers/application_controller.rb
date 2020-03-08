@@ -6,22 +6,29 @@ class ApplicationController < ActionController::Base
 
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  skip_before_action :authenticate_user!, only: :set_theme
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  def set_light_theme
-    cookies[:theme] = {
-      value: 'light'
-    }
+  def set_theme
+    if cookies[:theme] == 'dark'
+      cookies[:theme] = {
+        value: 'light'
+      }
+    else
+      cookies[:theme] = {
+          value: 'dark'
+        }
+    end
     redirect_back(fallback_location: root_path)
   end
 
-  def set_dark_theme
-    cookies[:theme] = {
-      value: 'dark'
-    }
-    redirect_back(fallback_location: root_path)
-  end
+  # def set_dark_theme
+  #   cookies[:theme] = {
+  #     value: 'dark'
+  #   }
+  #   redirect_back(fallback_location: root_path)
+  # end
 
   private
 
