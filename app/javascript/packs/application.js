@@ -1,5 +1,4 @@
 import "bootstrap";
-import "mapbox-gl/dist/mapbox-gl.css";
 
 // Plugins
 import { initAutocomplete } from "../plugins/init_autocomplete";
