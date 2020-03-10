@@ -3,6 +3,19 @@
   height: 100%;
 }
 
-.mapboxgl-popup { max-width: 200px; }
+.mapboxgl-popup {
+  width: 400px;
+}
 
-// .mapboxgl-popup-content { }
+.mapboxgl-popup-content {
+  background: $theme-color-wdg;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: $theme-color-wdg;
+}
+
+.mapboxgl-popup-close-button {
+  background: $theme-color-wdg;
+  color: $theme-color-gw;
+}
