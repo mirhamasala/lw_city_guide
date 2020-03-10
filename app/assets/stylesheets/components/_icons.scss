@@ -26,7 +26,7 @@
 
 .icon--checkbox {
   rect {
-    fill: $theme-icon-wdg;
+    fill: $theme-color-wdg;
   }
   svg {
     fill: $brand-primary;
@@ -34,7 +34,7 @@
 }
 
 .icon--close {
-  fill: $theme-icon-gw;
+  fill: $theme-color-gw;
 }
 
 .icon--compass {
@@ -42,7 +42,7 @@
     fill: $brand-primary;
   }
   svg {
-    fill: $theme-icon-wb;
+    fill: $theme-color-wb;
   }
 }
 

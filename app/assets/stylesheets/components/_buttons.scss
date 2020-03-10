@@ -1,8 +1,8 @@
 .button {
   display: block;
   width: auto; // check other buttons (192px before)
-  background-color: $theme-background-wdg;
-  color: $theme-text;
+  background-color: $theme-color-wdg;
+  color: $theme-color-glg;
   padding: $spacing-3 $spacing-6;
   border-radius: 3px;
   box-shadow: $theme-box-shadow-small;
@@ -43,7 +43,7 @@
 }
 
 .button--image-upload {
-  background-color: $theme-background-wdg;
+  background-color: $theme-color-wdg;
   box-shadow: none;
   font-weight: $font-normal;
 }

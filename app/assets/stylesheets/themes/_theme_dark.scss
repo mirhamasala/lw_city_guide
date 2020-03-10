@@ -4,21 +4,13 @@
 // theme_light.scss
 // --------------------------------------------------------------
 
-$theme-text:             $light-gray;
-$theme-link:             $light-gray;
-
-$theme-background-wb:    $black;
-$theme-background-wdg:   $dark-gray;
-$theme-background-gb:    $black;
+$theme-color-glg:        $light-gray;   // gray       - light-gray
+$theme-color-gw:         $white;        // gray       - white
+$theme-color-lgb:        $black;        // light-gray - black
+$theme-color-lgdg:       $dark-gray;    // light-gray - dark-gray
+$theme-color-lrdg:       $dark-gray;    // light-red  - dark-gray
+$theme-color-wb:         $black;        // white      - black
+$theme-color-wdg:        $dark-gray;    // white      - dark-gray
 
 $theme-box-shadow:       none;
 $theme-box-shadow-small: none;
-
-$theme-highlight:        $dark-gray;
-
-$theme-icon-gw:          $white;
-$theme-icon-wb:          $black;
-$theme-icon-wdg:         $dark-gray;
-
-$theme-separator-wg:     $dark-gray;
-$theme-separator-gg:     $dark-gray;

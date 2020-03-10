@@ -38,7 +38,7 @@
   @include wrapper();
   padding-top: $spacing-3;
   padding-bottom: $spacing-3;
-  border-bottom: 1px solid $theme-separator-gg;
+  border-bottom: 1px solid $theme-color-lgdg;
   font-size: $text-sm;
   cursor: pointer;
 }
@@ -49,7 +49,7 @@
   left: 0;
   width: 100%;
   height: calc(100% - 1px);
-  background-color: $theme-background-wb;
+  background-color: $theme-color-wb;
   overflow-y: scroll;
   z-index: 3;
 }
