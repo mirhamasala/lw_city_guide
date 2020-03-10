@@ -1,0 +1,24 @@
+// --------------------------------------------------------------
+// Here you can set the variables for the light theme
+// Every variable in this file must have an equivalent in
+// theme_dark.scss
+// --------------------------------------------------------------
+
+$theme-text:             $gray;
+$theme-link:             $gray;
+
+$theme-background-wb:    $white;
+$theme-background-wdg:   $white;
+$theme-background-gb:    $light-gray;
+
+$theme-box-shadow:       $box-shadow;
+$theme-box-shadow-small: $box-shadow--small;
+
+$theme-highlight:        $light-red;
+
+$theme-icon-gw:          $gray;
+$theme-icon-wb:          $white;
+$theme-icon-wdg:         $white;
+
+$theme-separator-wg:     $white;
+$theme-separator-gg:     $light-gray;

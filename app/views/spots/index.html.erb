@@ -6,7 +6,9 @@
   </header>
   <% if @spots.present? %>
     <div class="spots__main">
-      <div class="spots__map-button js-map-button"><%= show_svg("map.svg") %></div>
+      <div class="spots__map-button js-map-button">
+        <%= inline_svg_tag("icon_map.svg", options={class: "icon icon--medium"}) %>
+      </div>
       <div class="spots__filters-button js-filters-button">Filters</div>
       <div class="spots__filters-overlay spots__filters-overlay--hide js-filters-overlay">
         <%= render "shared/filters" %>

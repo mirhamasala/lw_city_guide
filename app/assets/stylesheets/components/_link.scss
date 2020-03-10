@@ -1,6 +1,8 @@
 .link {
   color: $brand-primary;
-  &:hover { color: $brand-primary; }
+  &:hover {
+    color: $brand-primary;
+  }
 }
 
 .link--underline {

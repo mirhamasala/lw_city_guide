@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-
   root to: "cities#index"
+
+  get "/set_theme", to: "application#set_theme", as: "set_theme"
+
   get "/404", to: "errors#not_found"
   get "/422", to: "errors#unacceptable"
   get "/500", to: "errors#internal_error"

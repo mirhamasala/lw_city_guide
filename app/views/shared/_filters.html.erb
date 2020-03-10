@@ -1,7 +1,7 @@
 <div class="filters">
   <div class="filters__header">
-    <div class="filters__close-button js-close-filters-button">
-      <%= show_svg("close.svg") %>
+    <div class="js-close-filters-button">
+      <%= inline_svg_tag("icon_close.svg", options={class: "icon icon--small icon--close"}) %>
     </div>
     <div class="filters__subheader">Categories</div>
     <div class="filters__all-button">
@@ -18,7 +18,7 @@
                 <%= show_svg("placemark_#{category.name}.svg") %>
                 <span class="filters__name"><%= category.name.capitalize %></span>
               </div>
-              <%= show_svg("checkbox_marked.svg") %>
+              <%= inline_svg_tag("icon_checkbox_marked.svg", options={class: "icon icon--tiny icon--checkbox"}) %>
             </label>
           </li>
         <% end %>

@@ -8,23 +8,36 @@
 
 .form--user {
   width: 90%;
+  background: $theme-background-wdg;
   padding-top: $spacing-8;
   padding-bottom: $spacing-8;
   border-radius: 6px;
-  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+  box-shadow: $theme-box-shadow;
 }
 
-.form__header { margin-bottom: $spacing-8; }
+.form__header {
+  margin-bottom: $spacing-8;
+}
 
-.form__header--center { text-align: center; }
+.form__header--center {
+  text-align: center;
+}
 
-.form__header--primary { color: $brand-primary; }
+.form__header--primary {
+  color: $brand-primary;
+}
 
-.form__main { margin-bottom: $spacing-8; }
+.form__main {
+  margin-bottom: $spacing-8;
+}
 
-.form__main--user { margin-bottom: $spacing-0; }
+.form__main--user {
+  margin-bottom: $spacing-0;
+}
 
-.form__category { margin-bottom: $spacing-8; }
+.form__category {
+  margin-bottom: $spacing-8;
+}
 
 .form__image-preview {
   margin-bottom: $spacing-3;
@@ -48,16 +61,28 @@
 }
 
 @media screen and (min-width: 576px) {
-  .form { width: 85%; }
-  .form--user { width: 85%; }
+  .form {
+    width: 85%;
+  }
+  .form--user {
+    width: 85%;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .form { width: 80%; }
-  .form--user { width: 55%; }
+  .form {
+    width: 80%;
+  }
+  .form--user {
+    width: 55%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-  .form { width: 70%; }
-  .form--user { width: 40%; }
+  .form {
+    width: 70%;
+  }
+  .form--user {
+    width: 40%;
+  }
 }

@@ -28,7 +28,7 @@
     width: 160px;
     margin-right: $spacing-16;
     border-radius: 6px;
-    box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+    box-shadow: $theme-box-shadow;
   }
 }
 
@@ -66,7 +66,7 @@
   font-size: $text-lg;
   padding-bottom: $spacing-1;
   margin-bottom: $spacing-8;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $theme-separator-gg;
 }
 
 .dashboard__sub-section-header {
@@ -79,7 +79,7 @@
 .dashboard__subSection:not(:last-child),
 .dashboard__spacer {
   margin-bottom: $spacing-6;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $theme-separator-gg;
 }
 
 .dashboard__link {
@@ -154,7 +154,7 @@
   font-weight: $font-medium;
   padding-bottom: $spacing-1;
   margin-bottom: $spacing-2;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $theme-separator-gg;
 }
 
 .dashboard__published-spots-digit {
