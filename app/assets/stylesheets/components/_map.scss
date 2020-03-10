@@ -8,7 +8,7 @@
 }
 
 .mapboxgl-popup-content {
-  background: $theme-color-wdg;
+  background-color: $theme-color-wdg;
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
@@ -16,6 +16,9 @@
 }
 
 .mapboxgl-popup-close-button {
-  background: $theme-color-wdg;
+  background-color: $theme-color-wdg;
   color: $theme-color-gw;
+  &:hover {
+    background-color: $theme-color-lgg;
+  }
 }
