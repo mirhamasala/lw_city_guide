@@ -9,15 +9,8 @@
   padding-top: $spacing-3;
   padding-bottom: $spacing-3;
   margin-bottom: $spacing-5;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $theme-separator-gg;
   font-size: $text-sm;
-}
-
-.filters__close-button {
-  height: 24px;
-  width: 24px;
-  fill: $gray;
-  cursor: pointer;
 }
 
 .filters__all-button a:hover {
@@ -46,12 +39,12 @@
   display: none;
 }
 
-.filters__checkbox + .filters__label .checkbox-marked {
+.filters__checkbox + .filters__label .icon--checkbox {
   opacity: 0.3;
   flex-shrink: 0;
 }
 
-.filters__checkbox:checked + .filters__label .checkbox-marked {
+.filters__checkbox:checked + .filters__label .icon--checkbox {
   opacity: 1;
 }
 

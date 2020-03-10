@@ -1,13 +1,16 @@
 .button {
   display: block;
   width: auto; // check other buttons (192px before)
+  background-color: $theme-background-wdg;
+  color: $theme-text;
   padding: $spacing-3 $spacing-6;
   border-radius: 3px;
-  box-shadow: 0 2px 14px rgba(126,87,88,.1), 0 3px 6px rgba(0,0,0,.08);
+  box-shadow: $theme-box-shadow-small;
   font-weight: $font-semibold;
   text-align: center;
   white-space: nowrap;
 }
+
 .button--big {
   width: 224px;
 }
@@ -39,9 +42,8 @@
   }
 }
 
-
 .button--image-upload {
-  background-color: $light-gray;
+  background-color: $theme-background-wdg;
   box-shadow: none;
   font-weight: $font-normal;
 }

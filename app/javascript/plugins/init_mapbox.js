@@ -7,6 +7,7 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/light-v9"
+    // style: "mapbox://styles/mapbox/dark-v10"
   });
 };
 
