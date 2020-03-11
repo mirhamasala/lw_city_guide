@@ -24,6 +24,19 @@
   }
 }
 
+.dropdown-menu {
+  background-color: $theme-color-wdg;
+}
+
+.dropdown-item {
+    color: $theme-color-gw;
+  &:hover {
+    color: $theme-color-gw;
+    background-color: $theme-color-lgb;
+    text-decoration: none;
+  }
+}
+
 @media (min-width: 576px) {
   .avatar.dropdown-toggle {
     margin-left: $spacing-5;
