@@ -15,6 +15,10 @@
   color: $yellow;
 }
 
+.highlight--hot {
+  background-color: $theme-color-lrb;
+}
+
 @media (max-width: 767.98px) {
   .highlight--none {
     background-color: transparent;
