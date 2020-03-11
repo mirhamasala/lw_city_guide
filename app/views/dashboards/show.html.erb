@@ -87,7 +87,7 @@
                 <% @categories.each do |category| %>
                   <li class="dashboard__list-item">
                     <div class="dashboard__placemark-icon">
-                      <%= show_svg("placemark_#{category.name}.svg") %>
+                      <%= inline_svg_tag("icon_placemark.svg", options={class: "icon icon--placemark icon--#{category.name}"}) %>
                     </div>
                     <p class="dashboard__list-item-name"><%= category.name %></p>
                     <div class="dashboard__list-link-wrap">

@@ -46,6 +46,63 @@
   }
 }
 
-.icon--moon, .icon--sun {
+.icon--moon,
+.icon--sun {
   fill: $gray;
+}
+
+// --------------------------------------------------------------
+// Placemark Icons
+// --------------------------------------------------------------
+
+.icon--placemark {
+  fill: $white;
+}
+
+.icon--eat {
+  circle {
+    fill: $purple;
+  }
+}
+
+.icon--dance {
+  circle {
+    fill: $pink;
+  }
+}
+
+.icon--drink {
+  circle {
+    fill: $green;
+  }
+}
+
+.icon--see {
+  circle {
+    fill: $yellow;
+  }
+}
+
+.icon--shop {
+  circle {
+    fill: $blue;
+  }
+}
+
+.icon--sleep {
+  circle {
+    fill: $gray;
+  }
+}
+
+.icon--wagon {
+  circle {
+    fill: $brand-primary;
+  }
+}
+
+.icon--other {
+  circle {
+    fill: $black;
+  }
 }

@@ -15,7 +15,7 @@
             <input type="checkbox" id="filters__checkbox-<%= category.name %>" class="filters__checkbox js-category-filter" data-category="<%= category.name %>">
             <label class="filters__label" for="filters__checkbox-<%= category.name %>">
               <div class="filters__tag">
-                <%= show_svg("placemark_#{category.name}.svg") %>
+                <%= inline_svg_tag("icon_placemark.svg", options={class: "icon icon--placemark icon--#{category.name}"}) %>
                 <span class="filters__name"><%= category.name.capitalize %></span>
               </div>
               <%= inline_svg_tag("icon_checkbox_marked.svg", options={class: "icon icon--tiny icon--checkbox"}) %>
