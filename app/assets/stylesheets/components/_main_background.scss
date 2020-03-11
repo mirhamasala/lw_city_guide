@@ -1,0 +1,26 @@
+.main-background {
+  display: block;
+  fill: none;
+  .rectangle {
+    height: 48px;
+    width: 100%;
+    fill: $brand-secondary;
+  }
+  .eiffel,
+  .temple,
+  .palm-tree {
+    fill: $brand-secondary;
+  }
+  .kangaroo {
+    fill: #faebd1;
+  }
+  .wagon {
+    fill:$brand-primary;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-background {
+    display: none;
+  }
+}

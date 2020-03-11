@@ -1,10 +1,10 @@
 <%= content_for(:title, "#{@city.name}") %>
 <div class="spots">
+  <% if @spots.present? %>
   <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover? ? @city.cover : @city.cover.url %>')">
     <h1 class="page-header__title"><%= @city.name %></h1>
     <p class="page-header__sub-title"><%= @city.country.name %></p>
   </header>
-  <% if @spots.present? %>
     <div class="spots__main">
       <div class="spots__map-button js-map-button">
         <%= inline_svg_tag("icon_map.svg", options={class: "icon icon--medium"}) %>
@@ -18,19 +18,11 @@
       </div>
     </div>
   <% else %>
-    <div class="message">
-      <div class="message__inner-wrap">
-        <h2 class="message__header">
-          <span class="highlight highlight--purple">Sorry,</span>
-          <span>there are no spots listed for this city yet.</span>
-        </h2>
-        <p class="message__text">Feel free to add your favorite hot spots, so that this list doesn't stay empty for too long. Otherwise, go ahead and check out a different city.</p>
-        <%= link_to "Share your spots", new_spot_path, class: "button button--big button--with-margin button--primary" %>
-        <%= link_to "Back to all cities", root_path, class: "button button--big button--with-margin button--secondary" %>
-      </div>
-      <div class="message__svg">
-        <%= show_svg("main_svg.svg") %>
-      </div>
-    </div>
+    <%= render "shared/message",
+            message_text: "Please let us take you home, so you can pick a different city.",
+            :captured => capture { %>
+            <span class="highlight highlight--purple">Sorry,</span>
+            <span>we have no spots listed for <%= @city.name %> yet.</span>
+    <% } %>
   <% end %>
 </div>

@@ -7,9 +7,9 @@
   font-weight: $font-semibold;
 }
 
-.main-header__background { display: block; }
-
-.main-header__inner-text-wrap { white-space: nowrap; }
+.main-header__inner-text-wrap {
+  white-space: nowrap;
+}
 
 @media (min-width: 768px) {
   .main-header__title {
@@ -17,7 +17,9 @@
     font-size: $text-4xl;
     font-weight: $font-semibold;
   }
-  .main-header__text-wrap { white-space: nowrap; }
+  .main-header__text-wrap {
+    white-space: nowrap;
+  }
 }
 
 @media (min-width: 992px) {
@@ -28,5 +30,4 @@
     font-size: $text-5xl;
     font-weight: $font-semibold;
   }
-  .main-header__background { display: none; }
 }

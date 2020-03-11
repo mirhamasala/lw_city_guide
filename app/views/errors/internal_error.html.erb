@@ -1,2 +1,7 @@
 <% content_for(:title, "500") %>
-<%= render "base", status: @status, error_message: @error_message %>
+<%= render "shared/message",
+          message_text: @error_message,
+          :captured => capture { %>
+          <span>Oops, it's a</span>
+          <span class="highlight highlight--purple"><%= @status %>.</span>
+<% } %>
