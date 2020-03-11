@@ -5,7 +5,7 @@
     <%= render "form" %>
   </div>
   <div class="caret-link">
-    <%= show_svg("caret_left.svg") %>
+    <%= inline_svg_tag("icon_caret_left.svg", options={class: "icon icon--tiny"}) %>
     <%= link_to "Cancel", dashboard_path %>
   </div>
 </div>
