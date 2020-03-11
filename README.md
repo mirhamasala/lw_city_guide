@@ -54,6 +54,7 @@ Have a look at the file `.env-example` for a list of required secret keys and en
 
 ### Useful Tools & Gems
 
+- [inline_svg](https://github.com/jamesmartin/inline_svg) (thanks to [Josh Unwin](https://github.com/josh-unwin) for the 🎩 tip)
 - [table_print](http://tableprintgem.com/)
 - [SVG Optimization Tool](https://jakearchibald.github.io/svgomg/)
 
