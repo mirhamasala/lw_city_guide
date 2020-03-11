@@ -10,21 +10,21 @@
   height: 32px;
   cursor: pointer;
   circle {
-    fill: $white;
+    fill: $theme-color-wb;
     transition: fill 0.1s;
   }
   g.map {
-    fill: $red;
+    fill: $theme-color-gw;
     transition: fill 0.1s;
   }
 }
 
 .spots__map-button--pressed {
   circle {
-    fill: $red;
+    fill: $theme-color-wb;
   }
   g.map {
-    fill: $white;
+    fill: $brand-primary;
   }
 }
 
