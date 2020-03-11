@@ -1,13 +1,11 @@
+<%= content_for(:name, "Add category") %>
 <div class="form">
   <h1 class="form__header">Add a new category</h1>
   <div class="form__main">
-    <%= simple_form_for(@category) do |f| %>
-      <div class="form__category">
-        <%= f.input :name %>
-      </div>
-      <div class="form__button">
-        <%= f.submit class: "button button--primary" %>
-      </div>
-    <% end %>
+    <%= render "form" %>
+  </div>
+  <div class="caret-link">
+    <%= inline_svg_tag("icon_caret_left.svg", options={class: "icon icon--tiny"}) %>
+    <%= link_to "Cancel", dashboard_path %>
   </div>
 </div>
