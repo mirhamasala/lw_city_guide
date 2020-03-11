@@ -3,15 +3,16 @@
 // Every variable in this file must have an equivalent in
 // theme_dark.scss
 // --------------------------------------------------------------
-
-$theme-color-glg:        $gray;        // gray        - light-gray
-$theme-color-gw:         $gray;        // gray        - white
-$theme-color-lgb:        $light-gray;  // light-gray  - black
-$theme-color-lgg:        $light-gray;  // light-gray  - gray
-$theme-color-lgdg:       $light-gray;  // light-gray  - dark-gray
-$theme-color-lrdg:       $light-red;   // light-red   - dark-gray
-$theme-color-wb:         $white;       // white       - black
-$theme-color-wdg:        $white;       // white       - dark-gray
+$theme-color-cg:         #faebd1;         // custom          - gray
+$theme-color-sdg:        $brand-secondary;  // brand-secondary - dark-gray
+$theme-color-glg:        $gray;             // gray            - light-gray
+$theme-color-gw:         $gray;             // gray            - white
+$theme-color-lgb:        $light-gray;       // light-gray      - black
+$theme-color-lgg:        $light-gray;       // light-gray      - gray
+$theme-color-lgdg:       $light-gray;       // light-gray      - dark-gray
+$theme-color-lrdg:       $light-red;        // light-red       - dark-gray
+$theme-color-wb:         $white;            // white           - black
+$theme-color-wdg:        $white;            // white           - dark-gray
 
 $theme-box-shadow:       $box-shadow;
 $theme-box-shadow-small: $box-shadow--small;
