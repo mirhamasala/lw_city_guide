@@ -64,9 +64,20 @@
 
 .dashboard__section-header {
   font-size: $text-lg;
-  padding-bottom: $spacing-1;
   margin-bottom: $spacing-8;
-  border-bottom: 1px solid $theme-color-lgdg;
+}
+
+.dashboard__section-header {
+  &:after {
+    content: "";
+    display: block;
+    width: 256px;
+    padding-bottom: $spacing-1;
+    border-bottom: 1px solid $theme-color-lgdg;
+  }
+  &:last-child:after {
+    border-bottom: none;
+  }
 }
 
 .dashboard__sub-section-header {
@@ -76,10 +87,22 @@
   }
 }
 
-.dashboard__subSection:not(:last-child),
 .dashboard__spacer {
   margin-bottom: $spacing-6;
   border-bottom: 1px solid $theme-color-lgdg;
+}
+
+.dashboard__subSection {
+  &:after {
+    content: "";
+    display: block;
+    width: 256px;
+    margin-bottom: $spacing-6;
+    border-bottom: 1px solid $theme-color-lgdg;
+  }
+  &:last-child:after {
+    border-bottom: none;
+  }
 }
 
 .dashboard__link {
