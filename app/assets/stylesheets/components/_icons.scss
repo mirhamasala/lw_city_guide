@@ -103,6 +103,8 @@
 
 .icon--other {
   circle {
+    stroke: $theme-color-bw;
+    stroke-width: 4;
     fill: $black;
   }
 }
