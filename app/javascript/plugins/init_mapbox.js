@@ -15,7 +15,6 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: "map",
     style: currentStyle(),
-
   });
 };
 
