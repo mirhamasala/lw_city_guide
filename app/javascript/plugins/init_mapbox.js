@@ -2,12 +2,20 @@ import mapboxgl from "mapbox-gl";
 
 const mapElement = () =>  { return document.getElementById("map") };
 
+const currentStyle = () => {
+  const themeLight = new RegExp(/theme=light/g);
+  if (themeLight.test(document.cookie)) {
+    return "mapbox://styles/mapbox/light-v9";
+  }
+  return "mapbox://styles/mapbox/dark-v10";
+}
+
 const buildMap = () => {
   mapboxgl.accessToken = mapElement().dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/light-v9"
-    // style: "mapbox://styles/mapbox/dark-v10"
+    style: currentStyle(),
+
   });
 };
 
