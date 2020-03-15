@@ -1,24 +1,18 @@
 .filters {
+  width: 256px;
+  background: $theme-color-wdg;
+  padding: $spacing-5 $spacing-6;
+  color: $theme-color-glg;
   font-weight: $font-medium;
+  box-shadow: $theme-box-shadow;
 }
 
 .filters__header {
   display: flex;
   justify-content: space-between;
-  @include wrapper();
-  padding-top: $spacing-3;
-  padding-bottom: $spacing-3;
-  margin-bottom: $spacing-5;
-  border-bottom: 1px solid $theme-color-lgdg;
-  font-size: $text-sm;
-}
-
-.filters__all-button a:hover {
-  color: $purple;
-}
-
-.filters__main {
-  @include wrapper();
+  padding-bottom: $spacing-5;
+  margin-bottom: $spacing-3;
+  border-bottom: 1px solid $theme-color-lgb;
 }
 
 .filters__list {

@@ -43,18 +43,16 @@
   cursor: pointer;
 }
 
-.spots__filters-overlay {
+.spots__filters-menu {
   position: absolute;
-  top: 45px;
-  left: 0;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  height: calc(100% - 1px);
-  background-color: $theme-color-wb;
-  overflow-y: scroll;
+  @include wrapper();
   z-index: 3;
 }
 
-.spots__filters-overlay--hide {
+.spots__filters-menu--hide {
   display: none;
 }
 

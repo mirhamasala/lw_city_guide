@@ -1,16 +1,17 @@
 <%= content_for(:title, "#{@city.name}") %>
 <div class="spots">
   <% if @spots.present? %>
-  <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover? ? @city.cover : @city.cover.url %>')">
-    <h1 class="page-header__title"><%= @city.name %></h1>
-    <p class="page-header__sub-title"><%= @city.country.name %></p>
-  </header>
+    <header class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @city.cover? ? @city.cover : @city.cover.url %>')">
+      <h1 class="page-header__title"><%= @city.name %></h1>
+      <p class="page-header__sub-title"><%= @city.country.name %></p>
+    </header>
     <div class="spots__main">
       <div class="spots__map-button js-map-button">
         <%= inline_svg_tag("icon_map.svg", options={class: "icon icon--medium"}) %>
       </div>
       <div class="spots__filters-button js-filters-button">Filters</div>
-      <div class="spots__filters-overlay spots__filters-overlay--hide js-filters-overlay">
+      <div class="spots__filters-menu spots__filters-menu--hide js-filters-menu">
+        <div></div>
         <%= render "shared/filters" %>
       </div>
       <div class="spots__results js-spot-results">
@@ -21,8 +22,8 @@
     <%= render "shared/message",
             message_text: "Please let us take you home, so you can pick a different city.",
             :captured => capture { %>
-            <span class="highlight highlight--purple">Sorry,</span>
-            <span>we have no spots listed for <%= @city.name %> yet.</span>
+    <span class="highlight highlight--purple">Sorry,</span>
+    <span>we have no spots listed for <%= @city.name %> yet.</span>
     <% } %>
   <% end %>
 </div>
