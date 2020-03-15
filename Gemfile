@@ -5,7 +5,7 @@ gem 'bootsnap', require: false
 gem "devise", ">= 4.7.1"
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
-gem 'puma'
+gem 'puma', '>= 4.3.3'
 gem 'rails', '6.0'
 gem 'redis'
 gem 'table_print'
