@@ -1,27 +1,22 @@
 <div class="filters">
   <div class="filters__header">
-    <div class="js-close-filters-button">
-      <%= inline_svg_tag("icon_close.svg", options={class: "icon icon--small icon--close"}) %>
-    </div>
     <div class="filters__subheader">Categories</div>
-    <div class="filters__all-button">
-      <%= link_to "All", city_spots_path(@city), class: "highlight highlight--purple" %>
-    </div>
+    <%= link_to "All", city_spots_path(@city), class: "link link--underline" %>
   </div>
   <div class="filters__main js-spots-filters" data-base-url="<%= city_spots_path(@city) %>">
     <ul class="filters__list">
-        <% @categories.each do |category| %>
-          <li class="filters__item">
-            <input type="checkbox" id="filters__checkbox-<%= category.name %>" class="filters__checkbox js-category-filter" data-category="<%= category.name %>">
-            <label class="filters__label" for="filters__checkbox-<%= category.name %>">
-              <div class="filters__tag">
-                <%= inline_svg_tag("icon_placemark.svg", options={class: "icon icon--placemark icon--#{category.name}"}) %>
-                <span class="filters__name"><%= category.name.capitalize %></span>
-              </div>
-              <%= inline_svg_tag("icon_checkbox_marked.svg", options={class: "icon icon--tiny icon--checkbox"}) %>
-            </label>
-          </li>
-        <% end %>
+      <% @categories.each do |category| %>
+        <li class="filters__item">
+          <input type="checkbox" id="filters__checkbox-<%= category.name %>" class="filters__checkbox js-category-filter" data-category="<%= category.name %>">
+          <label class="filters__label" for="filters__checkbox-<%= category.name %>">
+            <div class="filters__tag">
+              <%= inline_svg_tag("icon_placemark.svg", options={class: "icon icon--placemark icon--#{category.name}"}) %>
+              <span class="filters__name"><%= category.name.capitalize %></span>
+            </div>
+            <%= inline_svg_tag("icon_checkbox_marked.svg", options={class: "icon icon--tiny icon--checkbox"}) %>
+          </label>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
