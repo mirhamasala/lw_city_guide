@@ -1,6 +1,15 @@
 {
   "name": "lw_city_guide",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "app/**/*.{js,json,css}": "prettier --trailing-comma --write",
+    "!(app/assets/stylesheets/config/**).scss": "prettier --trailing-comma --write"
+  },
   "dependencies": {
     "@rails/webpacker": "^4.0.7",
     "bootstrap": "^4.3.1",
@@ -12,6 +21,9 @@
     "serialize-javascript": "^2.1.1"
   },
   "devDependencies": {
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
     "webpack-dev-server": "^3.7.2"
   }
 }
