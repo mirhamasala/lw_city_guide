@@ -1,6 +1,8 @@
 #rating_score {
   -webkit-appearance: none;
-  &:focus { outline: none; }
+  &:focus {
+    outline: none;
+  }
 }
 
 #rating_score::-webkit-slider-thumb {
