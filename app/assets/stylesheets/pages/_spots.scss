@@ -42,8 +42,13 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  @include wrapper();
   z-index: 3;
+}
+
+@media (min-width: 768px) {
+  .spots__filters-container {
+    @include wrapper();
+  }
 }
 
 .spots__filters-container--hidden {

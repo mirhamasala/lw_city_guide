@@ -1,10 +1,16 @@
 .filters {
-  width: 256px;
+  width: 100%;
   background: $theme-color-wdg;
   padding: $spacing-5 $spacing-6;
   color: $theme-color-glg;
   font-weight: $font-medium;
   box-shadow: $theme-box-shadow;
+}
+
+@media (min-width: 768px) {
+  .filters {
+    width: 256px;
+  }
 }
 
 .filters__header {
