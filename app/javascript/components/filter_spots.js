@@ -9,6 +9,7 @@ class FilterSpots {
     this.spotsResultsContainer = document.querySelector(
       ".js-spots-results-container"
     );
+    this.spotsMap = document.querySelector(".js-spots-results-map");
     this.bind();
   }
 
@@ -31,10 +32,20 @@ class FilterSpots {
     }
   }
 
-  getResults(url) {
+  getResults(url, mapHidden) {
     fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } }).then(
       response => {
         response.text().then(html => {
+          if (!mapHidden) {
+            html = html.replace(
+              "spots-results__map--hidden",
+              "spots-results__map"
+            );
+            html = html.replace(
+              "spots-results__cards",
+              "spots-results__cards--hidden"
+            );
+          }
           this.spotsResultsContainer.innerHTML = html;
           initMapbox();
           new MapView();
@@ -49,6 +60,9 @@ class FilterSpots {
     });
   }
 
+  isMapHidden = () =>
+    this.spotsMap.classList.contains("spots-results__map--hidden");
+
   bind() {
     if (!this.spotsFiltersContainer) {
       return;
@@ -57,14 +71,14 @@ class FilterSpots {
       element.addEventListener("change", e => {
         let categories = this.getCheckedCategories();
         let url = this.buildUrl(categories);
-        this.getResults(url);
+        this.getResults(url, this.isMapHidden());
       })
     );
     this.clearFiltersLink.addEventListener("click", e => {
       this.clearFilters();
       let categories = this.getCheckedCategories();
       let url = this.buildUrl(categories);
-      this.getResults(url);
+      this.getResults(url, this.isMapHidden());
     });
   }
 }
