@@ -6,8 +6,6 @@
   position: absolute;
   top: -16px;
   left: calc(50% - 16px);
-  width: 32px;
-  height: 32px;
   cursor: pointer;
   circle {
     fill: $theme-color-wb;
@@ -28,35 +26,34 @@
   }
 }
 
-.spots__map-button--hide {
-  display: none;
-}
-
-.spots__filters-button {
+.spots__filters-link-wrap {
   display: flex;
   justify-content: flex-end;
   @include wrapper();
   padding-top: $spacing-3;
   padding-bottom: $spacing-3;
   border-bottom: 1px solid $theme-color-lgdg;
-  font-size: $text-sm;
-  cursor: pointer;
 }
 
-.spots__filters-menu {
+.spots__filters-container {
   position: absolute;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  @include wrapper();
   z-index: 3;
 }
 
-.spots__filters-menu--hide {
+@media (min-width: 768px) {
+  .spots__filters-container {
+    @include wrapper();
+  }
+}
+
+.spots__filters-container--hidden {
   display: none;
 }
 
-.spots__results {
+.spots__results-container {
   @include wrapper();
   @include spacer();
 }

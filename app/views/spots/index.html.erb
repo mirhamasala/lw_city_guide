@@ -6,15 +6,17 @@
       <p class="page-header__sub-title"><%= @city.country.name %></p>
     </header>
     <div class="spots__main">
-      <div class="spots__map-button js-map-button">
+      <div class="spots__map-button js-spots-map-button">
         <%= inline_svg_tag("icon_map.svg", options={class: "icon icon--medium"}) %>
       </div>
-      <div class="spots__filters-button js-filters-button">Filters</div>
-      <div class="spots__filters-menu spots__filters-menu--hide js-filters-menu">
+      <div class="spots__filters-link-wrap">
+        <a class="js-spots-filters-link">Filters</a>
+      </div>
+      <div class="spots__filters-container spots__filters-container--hidden js-spots-filters-container">
         <div></div>
         <%= render "shared/filters" %>
       </div>
-      <div class="spots__results js-spot-results">
+      <div class="spots__results-container js-spots-results-container">
         <%= render "spots_results" %>
       </div>
     </div>

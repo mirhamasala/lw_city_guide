@@ -1,12 +1,23 @@
-.spots-results__map-overlay {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 1px);
-  z-index: 2;
+.spots-results {
+  height: fit-content;
 }
 
-.spots-results__map-overlay--hide {
+.spots-results__map {
+  height: 816px; // Height of 9 cards
+}
+
+.spots-results__map {
+  display: block;
+}
+
+.spots-results__map--hidden {
+  display: none;
+}
+
+.spots-results__cards {
+  display: block;
+}
+
+.spots-results__cards--hidden {
   display: none;
 }

@@ -1,7 +1,8 @@
 class MapView {
   constructor() {
-    this.mapButton = document.querySelector(".js-map-button");
-    this.mapOverlay = document.querySelector(".js-map-overlay");
+    this.mapButton = document.querySelector(".js-spots-map-button");
+    this.map = document.querySelector(".js-spots-results-map");
+    this.cards = document.querySelector(".js-spots-results-cards");
     this.bind();
   }
 
@@ -9,8 +10,12 @@ class MapView {
     this.mapButton.classList.toggle("spots__map-button--pressed");
   }
 
-  toggleMapOverlay() {
-    this.mapOverlay.classList.toggle("spots-results__map-overlay--hide");
+  toggleMap() {
+    this.map.classList.toggle("spots-results__map--hidden");
+  }
+
+  toggleCards() {
+    this.cards.classList.toggle("spots-results__cards--hidden");
   }
 
   bind() {
@@ -19,7 +24,8 @@ class MapView {
     }
     this.mapButton.addEventListener("click", () => {
       this.toggleColorMapButton();
-      this.toggleMapOverlay();
+      this.toggleMap();
+      this.toggleCards();
       window.dispatchEvent(new Event("resize"));
     });
   }
