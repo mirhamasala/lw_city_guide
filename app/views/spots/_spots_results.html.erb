@@ -1,10 +1,12 @@
 <div class="spots-results">
-  <div class="spots-results__map-overlay spots-results__map-overlay--hide js-map-overlay">
-    <%= render "shared/map" %>
+  <div class="spots-results__cards js-spots-results-cards">
+    <div class="cards-grid">
+      <% @spots.each do |spot| %>
+        <%= render "spots/spot_card", spot: spot %>
+      <% end %>
+    </div>
   </div>
-  <div class="cards-grid">
-    <% @spots.each do |spot| %>
-      <%= render "spots/spot_card", spot: spot %>
-    <% end %>
+  <div class="spots-results__map spots-results__map--hidden js-spots-results-map">
+    <%= render "shared/map" %>
   </div>
 </div>

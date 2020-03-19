@@ -3,17 +3,19 @@ import { initMapbox } from "../plugins/init_mapbox";
 
 class FilterSpots {
   constructor() {
-    this.spotsFiltersContainer = document.querySelector(".js-spots-filters");
-    this.categoryFilters = document.querySelectorAll(".js-category-filter");
-    this.spotResultsContainer = document.querySelector(".js-spot-results");
+    this.spotsFiltersContainer = document.querySelector(".js-filters-main");
+    this.categoryCheckboxes = document.querySelectorAll(".js-filters-checkbox");
+    this.spotsResultsContainer = document.querySelector(
+      ".js-spots-results-container"
+    );
     this.bind();
   }
 
   getCheckedCategories() {
     let categories = [];
-    this.categoryFilters.forEach(cat => {
-      if (cat.checked) {
-        categories.push(cat.dataset.category);
+    this.categoryCheckboxes.forEach(box => {
+      if (box.checked) {
+        categories.push(box.dataset.category);
       }
     });
     return categories;
@@ -32,7 +34,7 @@ class FilterSpots {
     fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } }).then(
       response => {
         response.text().then(html => {
-          this.spotResultsContainer.innerHTML = html;
+          this.spotsResultsContainer.innerHTML = html;
           initMapbox();
           new MapView();
         });
@@ -44,7 +46,7 @@ class FilterSpots {
     if (!this.spotsFiltersContainer) {
       return;
     }
-    this.categoryFilters.forEach(element =>
+    this.categoryCheckboxes.forEach(element =>
       element.addEventListener("change", e => {
         let categories = this.getCheckedCategories();
         let url = this.buildUrl(categories);

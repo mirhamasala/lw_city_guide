@@ -6,8 +6,6 @@
   position: absolute;
   top: -16px;
   left: calc(50% - 16px);
-  width: 32px;
-  height: 32px;
   cursor: pointer;
   circle {
     fill: $theme-color-wb;
@@ -28,11 +26,7 @@
   }
 }
 
-.spots__map-button--hide {
-  display: none;
-}
-
-.spots__filters-button {
+.spots__filters-link {
   display: flex;
   justify-content: flex-end;
   @include wrapper();
@@ -43,7 +37,7 @@
   cursor: pointer;
 }
 
-.spots__filters-menu {
+.spots__filters-container {
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -52,11 +46,11 @@
   z-index: 3;
 }
 
-.spots__filters-menu--hide {
+.spots__filters-container--hidden {
   display: none;
 }
 
-.spots__results {
+.spots__results-container {
   @include wrapper();
   @include spacer();
 }
