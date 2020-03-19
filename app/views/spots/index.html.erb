@@ -9,7 +9,9 @@
       <div class="spots__map-button js-spots-map-button">
         <%= inline_svg_tag("icon_map.svg", options={class: "icon icon--medium"}) %>
       </div>
-      <div class="spots__filters-link js-spots-filters-link">Filters</div>
+      <div class="spots__filters-link-wrap">
+        <a class="js-spots-filters-link">Filters</a>
+      </div>
       <div class="spots__filters-container spots__filters-container--hidden js-spots-filters-container">
         <div></div>
         <%= render "shared/filters" %>

@@ -26,15 +26,13 @@
   }
 }
 
-.spots__filters-link {
+.spots__filters-link-wrap {
   display: flex;
   justify-content: flex-end;
   @include wrapper();
   padding-top: $spacing-3;
   padding-bottom: $spacing-3;
   border-bottom: 1px solid $theme-color-lgdg;
-  font-size: $text-sm;
-  cursor: pointer;
 }
 
 .spots__filters-container {
