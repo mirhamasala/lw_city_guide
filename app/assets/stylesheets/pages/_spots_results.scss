@@ -1,23 +1,29 @@
-.spots-results {
-  height: fit-content;
+.spots-results__cards {
+  display: block;
+  min-height: fit-content;
 }
 
-.spots-results__map {
-  height: 816px; // Height of 9 cards
+.spots-results__cards--hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .spots-results__cards {
+    min-height: 820px;
+  }
 }
 
 .spots-results__map {
   display: block;
+  height: 512px;
 }
 
 .spots-results__map--hidden {
   display: none;
 }
 
-.spots-results__cards {
-  display: block;
-}
-
-.spots-results__cards--hidden {
-  display: none;
+@media (min-width: 768px) {
+  .spots-results__map {
+    height: 820px;
+  }
 }
