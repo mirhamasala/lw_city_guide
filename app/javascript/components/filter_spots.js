@@ -5,6 +5,7 @@ class FilterSpots {
   constructor() {
     this.spotsFiltersContainer = document.querySelector(".js-filters-main");
     this.categoryCheckboxes = document.querySelectorAll(".js-filters-checkbox");
+    this.clearFiltersLink = document.querySelector(".js-filters-clear-all");
     this.spotsResultsContainer = document.querySelector(
       ".js-spots-results-container"
     );
@@ -42,6 +43,12 @@ class FilterSpots {
     );
   }
 
+  clearFilters() {
+    this.categoryCheckboxes.forEach(box => {
+      box.checked = false;
+    });
+  }
+
   bind() {
     if (!this.spotsFiltersContainer) {
       return;
@@ -53,6 +60,12 @@ class FilterSpots {
         this.getResults(url);
       })
     );
+    this.clearFiltersLink.addEventListener("click", e => {
+      this.clearFilters();
+      let categories = this.getCheckedCategories();
+      let url = this.buildUrl(categories);
+      this.getResults(url);
+    });
   }
 }
 

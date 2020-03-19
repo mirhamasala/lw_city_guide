@@ -1,7 +1,7 @@
 <div class="filters">
   <div class="filters__header">
     <div class="filters__subheader">Categories</div>
-    <%= link_to "All", city_spots_path(@city), class: "link link--underline" %>
+    <div class="link link--underline js-filters-clear-all">Clear All</div>
   </div>
   <div class="filters__main js-filters-main" data-base-url="<%= city_spots_path(@city) %>">
     <ul class="filters__list">
