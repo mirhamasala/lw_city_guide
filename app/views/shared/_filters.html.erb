@@ -7,7 +7,7 @@
     <ul class="filters__list">
       <% @categories.each do |category| %>
         <li class="filters__item">
-          <input type="checkbox" id="filters__checkbox-<%= category.name %>" class="filters__checkbox js-filters-checkbox" data-category="<%= category.name %>" checked>
+          <input type="checkbox" id="filters__checkbox-<%= category.name %>" class="filters__checkbox js-filters-checkbox" data-category="<%= category.name %>">
           <label class="filters__label" for="filters__checkbox-<%= category.name %>">
             <div class="filters__tag">
               <%= inline_svg_tag("icon_placemark.svg", options={class: "icon icon--placemark icon--#{category.name}"}) %>
