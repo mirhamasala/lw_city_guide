@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto align-items-baseline">
       <li>
-        <%= link_to set_theme_path, class: "nav-link" do %>
+        <%= link_to theme_path, method: :put, class: "nav-link" do %>
           <% if cookies[:theme] == "dark" %>
             <%= inline_svg_tag("icon_sun.svg", options={class: "icon icon--small icon--sun"}) %>
           <% else %>

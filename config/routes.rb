@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root to: "cities#index"
 
-  get "/set_theme", to: "application#set_theme", as: "set_theme"
-
   get "/404", to: "errors#not_found"
   get "/422", to: "errors#unacceptable"
   get "/500", to: "errors#internal_error"
@@ -25,4 +23,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:new, :create, :edit, :update, :destroy]
   resource :dashboard, only: [:show], as: :dashboard
   resources :countries, only: [:new, :create, :edit, :update, :destroy]
+  resource :theme, only: [:update]
 end

@@ -1,15 +1,4 @@
 // --------------------------------------------------------------
-// Theme - NOTE: The import of the theme file (themes/light_theme)
-// is the only difference between application-light.scss and
-// application-dark.scss
-// --------------------------------------------------------------
-
-@import "config/colors";
-@import "config/helpers";
-@import "themes/theme_light";
-@import "mapbox-gl/dist/mapbox-gl";
-
-// --------------------------------------------------------------
 // CSS Config
 // --------------------------------------------------------------
 
@@ -22,6 +11,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mapbox-gl/dist/mapbox-gl";
 
 // --------------------------------------------------------------
 // CSS Partials
