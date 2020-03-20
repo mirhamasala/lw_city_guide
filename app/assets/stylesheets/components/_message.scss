@@ -40,7 +40,7 @@
   margin-bottom: $spacing-0;
 }
 
-.message__svg {
+.message__background {
   position: relative;
   bottom: 50px;
   margin-bottom: -50px;
@@ -48,22 +48,22 @@
 }
 
 @media screen and (min-width: 768px) {
-  .message__svg {
+  .message__background {
     bottom: 130px;
     margin-bottom: -130px;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .message__svg {
+  .message__background {
     bottom: 240px;
     margin-bottom: -240px;
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .message__svg {
-    bottom: 360px;
-    margin-bottom: -360px;
-  }
-}
+// @media screen and (min-width: 1200px) {
+//   .message__background {
+//     bottom: 360px;
+//     margin-bottom: -360px;
+//   }
+// }

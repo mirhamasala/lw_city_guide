@@ -1,7 +1,9 @@
 <div class="cities">
   <header class="main-header">
     <h1 class="main-header__title">Find your favorite <span class="highlight highlight--none">hot spots </span><span class="main-header__text-wrap">in <span class="main-header__inner-text-wrap">Le Wagon's cities</span></span></h1>
-    <%= inline_svg_tag("main_background.svg", options={class: "main-background"}) %>
+    <div class="main-header__background">
+      <%= inline_svg_tag("main_background.svg", options={class: "main-background"}) %>
+    </div>
   </header>
   <div class="cities__main">
     <div class="cards-grid">
