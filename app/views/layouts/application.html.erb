@@ -7,7 +7,11 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= favicon_link_tag "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/198/world-map_1f5fa.png" %>
-    <%= stylesheet_link_tag "application_#{cookies[:theme]}", media: "all", "data-turbolinks-track": "reload" %>
+    <% if cookies[:theme] == "dark" %>
+      <%= stylesheet_link_tag "application_dark", media: "all", "data-turbolinks-track": "reload" %>
+    <% else %>
+      <%= stylesheet_link_tag "application_light", media: "all", "data-turbolinks-track": "reload" %>
+    <% end %>
   </head>
   <body class="main-container">
     <div class="main-container__top">
