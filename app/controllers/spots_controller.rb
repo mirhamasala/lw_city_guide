@@ -5,20 +5,25 @@ class SpotsController < ApplicationController
   before_action :set_categories, only: [:index]
 
   def index
-    @spots = policy_scope(Spot).in_city(@city)
-    if params[:categories].blank?
-      @spots = @spots
-    else
-      @spots = @spots.in_category(params[:categories].split(","))
-    end
-    @spots = @spots.published.recent.check_coordinates
-    add_map_markers(@spots)
 
-    if request.xhr?
-      render partial: "spots_results"
-    else
-      render :index
-    end
+    render plain: helpers.inline_svg_tag("icon_placemark.svg", options={class: "icon icon--placemark icon--eat"})
+    # @spots = policy_scope(Spot).in_city(@city)
+    # if params[:categories].blank?
+    #   @spots = @spots
+    # else
+    #   @spots = @spots.in_category(params[:categories].split(","))
+    # end
+    # @spots = @spots.published.recent.check_coordinates
+    # add_map_markers(@spots)
+
+
+
+    # # Rendering partials from controller
+    # if request.xhr?
+    #   render partial: "spots_results"
+    # else
+    #   render :index
+    # end
   end
 
   def new
@@ -95,7 +100,8 @@ class SpotsController < ApplicationController
         lat: spot.latitude,
         lng: spot.longitude,
         infoWindow: render_to_string(partial: "shared/infowindow", locals: { spot: spot }),
-        image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
+        # image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
+        # image_url: helpers
       }
     end
   end

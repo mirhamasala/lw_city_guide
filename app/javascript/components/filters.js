@@ -20,3 +20,5 @@ class Filters {
 }
 
 export default Filters;
+
+// Adding a hidden class

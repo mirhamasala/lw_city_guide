@@ -32,7 +32,8 @@ class FilterSpots {
     }
   }
 
-  getResults(url, mapHidden) {
+  getResults(mapHidden) {
+    let url = this.buildUrl(this.getCheckedCategories());
     fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } }).then(
       response => {
         response.text().then(html => {
@@ -69,16 +70,12 @@ class FilterSpots {
     }
     this.categoryCheckboxes.forEach(element =>
       element.addEventListener("change", e => {
-        let categories = this.getCheckedCategories();
-        let url = this.buildUrl(categories);
-        this.getResults(url, this.isMapHidden());
+        this.getResults(this.isMapHidden());
       })
     );
     this.clearFiltersLink.addEventListener("click", e => {
       this.clearFilters();
-      let categories = this.getCheckedCategories();
-      let url = this.buildUrl(categories);
-      this.getResults(url, this.isMapHidden());
+      this.getResults(this.isMapHidden());
     });
   }
 }

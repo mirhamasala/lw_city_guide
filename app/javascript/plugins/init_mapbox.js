@@ -9,7 +9,7 @@ const currentStyle = () => {
   if (themeLight.test(document.cookie)) {
     return "mapbox://styles/mapbox/light-v9";
   }
-  return "mapbox://styles/mapbox/dark-v10";
+  return "mapox://styles/mapbox/dark-v10";
 };
 
 const buildMap = () => {

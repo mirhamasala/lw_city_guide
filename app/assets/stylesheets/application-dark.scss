@@ -7,32 +7,4 @@
 @import "config/colors";
 @import "config/helpers";
 @import "themes/theme_dark";
-@import "mapbox-gl/dist/mapbox-gl";
-
-// --------------------------------------------------------------
-// CSS Config
-// --------------------------------------------------------------
-
-@import "config/index";
-
-// --------------------------------------------------------------
-// External Libraries
-// --------------------------------------------------------------
-
-@import "bootstrap/scss/bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
-// --------------------------------------------------------------
-// CSS Partials
-// --------------------------------------------------------------
-
-@import "base/base";
-@import "components/index";
-@import "pages/index";
-
-// --------------------------------------------------------------
-// CSS Layouts
-// --------------------------------------------------------------
-
-@import "layout/grid";
+@import "application_base";
