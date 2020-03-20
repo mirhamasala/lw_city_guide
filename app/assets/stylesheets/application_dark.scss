@@ -6,16 +6,33 @@
 
 @import "config/colors";
 @import "config/helpers";
-@import "config/typography";
-@import "config/spacing";
 @import "themes/theme_dark";
-@import "config/bootstrap_variables";
 @import "mapbox-gl/dist/mapbox-gl";
-@import "application_base";
 
-// Bootstrap variables are using theme variables
-// Bootstrap variables are imported in config/index
-// Through application_base
-// Which is after the theme is imported
+// --------------------------------------------------------------
+// CSS Config
+// --------------------------------------------------------------
 
-// remote:        SassC::SyntaxError: Error: Undefined variable: "$theme-color-wb"
+@import "config/index";
+
+// --------------------------------------------------------------
+// External Libraries
+// --------------------------------------------------------------
+
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// --------------------------------------------------------------
+// CSS Partials
+// --------------------------------------------------------------
+
+@import "base/base";
+@import "components/index";
+@import "pages/index";
+
+// --------------------------------------------------------------
+// CSS Layouts
+// --------------------------------------------------------------
+
+@import "layout/grid";

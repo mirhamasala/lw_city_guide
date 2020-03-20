@@ -6,9 +6,33 @@
 
 @import "config/colors";
 @import "config/helpers";
-@import "config/typography";
-@import "config/spacing";
 @import "themes/theme_light";
-@import "config/bootstrap_variables";
 @import "mapbox-gl/dist/mapbox-gl";
-@import "application_base";
+
+// --------------------------------------------------------------
+// CSS Config
+// --------------------------------------------------------------
+
+@import "config/index";
+
+// --------------------------------------------------------------
+// External Libraries
+// --------------------------------------------------------------
+
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// --------------------------------------------------------------
+// CSS Partials
+// --------------------------------------------------------------
+
+@import "base/base";
+@import "components/index";
+@import "pages/index";
+
+// --------------------------------------------------------------
+// CSS Layouts
+// --------------------------------------------------------------
+
+@import "layout/grid";
