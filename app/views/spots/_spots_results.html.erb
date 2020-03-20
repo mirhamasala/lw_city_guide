@@ -1,12 +1,23 @@
-<div class="spots-results">
-  <div class="spots-results__cards js-spots-results-cards">
-    <div class="cards-grid">
-      <% @spots.each do |spot| %>
-        <%= render "spots/spot_card", spot: spot %>
-      <% end %>
+<% if @spots.any? %>
+  <div class="spots-results">
+    <div class="spots-results__cards js-spots-results-cards">
+      <div class="cards-grid">
+        <% @spots.each do |spot| %>
+          <%= render "spots/spot_card", spot: spot %>
+        <% end %>
+      </div>
+    </div>
+    <div class="spots-results__map spots-results__map--hidden js-spots-results-map">
+      <%= render "shared/map" %>
     </div>
   </div>
-  <div class="spots-results__map spots-results__map--hidden js-spots-results-map">
-    <%= render "shared/map" %>
+<% else %>
+  <div class="spots-results spots-results--no-wrap">
+    <%= render "shared/message",
+                message_text: "Please choose a different category, or let us take you back home.",
+                :captured => capture { %>
+    <span class="highlight highlight--purple">Sorry,</span>
+    <span>we have no spots listed in this category yet.</span>
+    <% } %>
   </div>
-</div>
+<% end %>
