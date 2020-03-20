@@ -1,3 +1,15 @@
+.spots-results {
+  @include wrapper();
+  @include spacer();
+}
+
+.spots-results--no-wrap {
+  padding-right: $spacing-0;
+  padding-left: $spacing-0;
+  margin-top: $spacing-0;
+  margin-bottom: $spacing-0;
+}
+
 .spots-results__cards {
   display: block;
   min-height: fit-content;

@@ -52,8 +52,3 @@
 .spots__filters-container--hidden {
   display: none;
 }
-
-.spots__results-container {
-  @include wrapper();
-  @include spacer();
-}
