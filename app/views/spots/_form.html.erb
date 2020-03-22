@@ -1,20 +1,22 @@
-<%= simple_form_for [@city, @spot] do |f| %>
+<%= simple_form_for [@city, @spot], wrapper: :horizontal_form do |f| %>
   <% if @spot.persisted? %>
     <%= f.input :status, as: :radio_buttons, collection: [["draft", "Draft"], ["published", "Published"]], label_method: :second, value_method: :first %>
   <% end %>
-  <%= f.input :name, label: "Spot name", input_html: { autocomplete: "off" } %>
+  <%= f.association :city, collection: City.alphabetize,
+                           :option_selected => "Choose a city",
+                           label: "Where should we add this spot?" %>
+  <%= f.association :category, :placeholder => "Choose category", label: "Which category should we add it to?" %>
+  <%= f.input :sub_category, :placeholder => "Burgers · The Sunny Side Up Kind" %>
+  <%= f.input :name, label: "Location name", :placeholder => "Sunshine Bar", input_html: { autocomplete: "off" } %>
   <%= render "spots/autocomplete_dropdown" %>
-  <%= f.association :category %>
-  <%= f.input :sub_category %>
-  <%= f.input :description %>
-  <%= f.input :address, input_html: { autocomplete: "off" } %>
-  <%= f.association :city, collection: City.alphabetize %>
+  <%= f.input :address, :placeholder => "Sunshine Road 11", input_html: { autocomplete: "off" } %>
   <% if current_user.admin? || current_user.city_keeper? %>
     <%= f.input :latitude %>
     <%= f.input :longitude %>
   <% end %>
-  <%= f.input :phone_number %>
-  <%= f.input :website %>
+  <%= f.input :phone_number, :placeholder => "+11 1111 1111 11" %>
+  <%= f.input :website, :placeholder => "https://www.sunshinebar.com" %>
+  <%= f.input :description, :placeholder => "The burgers are insanely good and the beer is cheap.", label: "Tell us more about this place. Why do you like it? Why should other students come here? Feel free to share any thoughts that come to mind." %>
   <%= cl_image_tag(@spot.photo, class: "form__image-preview",
                                 :transformation=>[{:if=>"ar_gt_1:1"},
                                                   {:width=>192, :crop=>"fit"},
@@ -22,8 +24,8 @@
                                                   {:if=>"end"}]) if @spot.photo? %>
   <%= f.input :photo, folder: "city_guides/#{@spot.city}/spots/",
                       tags: [@spot.city, @spot.category],
-                      label: @spot.photo? ? "Change image" : "Upload an image",
+                      label: @spot.photo? ? "Change image" : "Upload image",
                       label_html: { class: "button button--big button--image-upload" },
                       input_html: { class: "button--file-upload" } %>
-  <%= f.submit class: "button button--big button--primary" %>
+  <%= f.submit "Share your spot", class: "button button--big button--primary" %>
 <% end %>
