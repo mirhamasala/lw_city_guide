@@ -1,10 +1,18 @@
+<header class="main-header position-relative">
+  <div class="main-background">
+    <%= inline_svg_tag("main_background.svg", options={class: "form-background"}) %>
+  </div>
+  <h1 class="main-header__title"><span class="highlight highlight--yellow highlight--none">Share</span> your hot spots with <span class="main-header__text-wrap">the <span class="main-header__inner-text-wrap">le wagon community</span></span></h1>
+  <p class="sub-header">“Happiness is the only thing that multiplies when you share it.” - Albert Schweitzer. That’s why we love to share these beautiful places with you. Feel free to add your share to the happiness tank ☺️</p>
+</header>
+
 <%= content_for(:title, "Share your favorite 🔥 spot") %>
-<div class="form">
-  <h1 class="form__header">Share your favorite 🔥 spot</h1>
-  <div class="form__main">
+<div class="form-card">
+  <h1 class="form-card__header rounded-top">Add hot spot</h1>
+  <div class="form-card__main">
     <%= render "form" %>
   </div>
-  <div class="caret-link">
+  <div class="p-5 caret-link">
     <%= inline_svg_tag("icon_caret_left.svg", options={class: "icon icon--tiny"}) %>
     <%= link_to "Cancel", root_path %>
   </div>

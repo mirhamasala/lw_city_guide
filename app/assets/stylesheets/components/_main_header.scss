@@ -5,6 +5,19 @@
   margin-bottom: $spacing-0;
   font-size: $text-3xl;
   font-weight: $font-semibold;
+  color: $black;
+  z-index: 10;
+}
+
+.sub-header {
+  @include wrapper();
+  padding-top: $spacing-8;
+  font-size: $text-lg;
+  font-weight: $font-medium;
+  color: $dark-medium-gray;
+  line-height: $spacing-6;
+  z-index: 10;
+  width: 54%;
 }
 
 .main-header__inner-text-wrap {
@@ -25,7 +38,7 @@
 @media (min-width: 992px) {
   .main-header__title {
     position: relative;
-    padding-top: $spacing-6;
+    padding-top: $spacing-18;
     padding-bottom: $spacing-0;
     font-size: $text-5xl;
     font-weight: $font-semibold;
