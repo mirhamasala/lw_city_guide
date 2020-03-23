@@ -40,8 +40,8 @@
 }
 
 .filters__checkbox + .filters__label .icon--checkbox {
-  opacity: 0.3;
-  flex-shrink: 0;
+  position: absolute;
+  opacity: 0;
 }
 
 .filters__checkbox:checked + .filters__label .icon--checkbox {
@@ -54,6 +54,11 @@
   justify-content: space-between;
   width: 100%;
   cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .filters__label-checkbox:after {
+      border-color: $brand-primary;
+    }
+  }
 }
 
 .filters__tag {
@@ -64,4 +69,18 @@
 
 .filters__name {
   padding-left: $spacing-4;
+}
+
+.filters__label-checkbox {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  &:after {
+    content: "";
+    height: 18px;
+    width: 18px;
+    border: 1px solid $form-gray;
+    border-radius: 4px;
+    transition: border-color 0.2s ease-in;
+  }
 }
