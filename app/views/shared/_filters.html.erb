@@ -13,7 +13,9 @@
               <%= inline_svg_tag("icon_placemark.svg", options={class: "icon icon--placemark icon--#{category.name}"}) %>
               <span class="filters__name"><%= category.name.capitalize %></span>
             </div>
-            <%= inline_svg_tag("icon_checkbox_marked.svg", options={class: "icon icon--tiny icon--checkbox"}) %>
+            <span class="filters__label-checkbox">
+              <%= inline_svg_tag("icon_checkbox_marked.svg", options={class: "icon icon--tiny icon--checkbox"}) %>
+            </span>
           </label>
         </li>
       <% end %>
