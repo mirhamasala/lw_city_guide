@@ -3,9 +3,9 @@
     <%= f.input :status, as: :radio_buttons, collection: [["draft", "Draft"], ["published", "Published"]], label_method: :second, value_method: :first %>
   <% end %>
   <%= f.association :city, collection: City.alphabetize,
-                           :option_selected => "Choose a city",
+                           :prompt => "Choose a city",
                            label: "Where should we add this spot?" %>
-  <%= f.association :category, :placeholder => "Choose category", label: "Which category should we add it to?" %>
+  <%= f.association :category, :prompt => "Choose category", label: "Which category should we add it to?" %>
   <%= f.input :sub_category, :placeholder => "Burgers · The Sunny Side Up Kind" %>
   <%= f.input :name, label: "Location name", :placeholder => "Sunshine Bar", input_html: { autocomplete: "off" } %>
   <%= render "spots/autocomplete_dropdown" %>
