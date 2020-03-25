@@ -26,7 +26,7 @@
 
 @media (min-width: 768px) {
   .main-header__title {
-    position: absolute;
+    position: relative;
     font-size: $text-4xl;
     font-weight: $font-semibold;
   }

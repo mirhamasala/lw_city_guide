@@ -21,6 +21,6 @@
 .form-background {
   position: absolute;
   height: 200%;
-  width: 190%;
+  max-width: 100%;
   z-index: -1;
 }
