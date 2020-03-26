@@ -19,6 +19,9 @@
       <div class="spots__results-container js-spots-results-container">
         <%= render "spots_results" %>
       </div>
+      <div class="spots__pagination">
+        <%= render "shared/pagination", pagy: @pagy %>
+      </div>
     </div>
   <% else %>
     <%= render "shared/message",

@@ -21,6 +21,7 @@ gem 'webpacker'
 
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~>1.2'
+gem 'pagy'
 gem 'pundit'
 gem 'geocoder'
 gem 'omniauth-github'
