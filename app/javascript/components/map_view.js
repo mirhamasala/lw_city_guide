@@ -31,7 +31,10 @@ class MapView {
       this.toggleColorMapButton();
       this.toggleMap();
       this.toggleCards();
-      this.toggleLoadMoreButton();
+
+      if (this.loadMoreButton) {
+        this.toggleLoadMoreButton();
+      }
       window.dispatchEvent(new Event("resize"));
     });
   }

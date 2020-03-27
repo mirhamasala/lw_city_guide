@@ -1,5 +1,7 @@
 <% link = pagy_link_proc(pagy) %>
+<% if pagy.pages > 1 %>
 <button class="button button--primary js-load-more-button"
         data-base-url="<%= city_spots_path(@city) %>"
         data-total-pages="<%= pagy.pages %>"
 >See more spots</button>
+<% end %>

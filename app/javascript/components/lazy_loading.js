@@ -6,6 +6,7 @@ class LazyLoading {
     this.spotsCardsGrid = document.querySelector(".js-cards-grid");
     this.markers = document.getElementsByClassName("js-data-markers");
     this.currentPage = 1;
+    this.lastPage;
     this.bind();
   }
 
@@ -35,10 +36,18 @@ class LazyLoading {
     if (!this.loadMoreButton) {
       return;
     }
+    this.lastPage = parseInt(this.loadMoreButton.dataset.totalPages);
+
     this.loadMoreButton.addEventListener("click", () => {
-      this.currentPage += 1;
-      const url = this.buildUrl();
-      this.lazyLoadSpots(url);
+      if (this.currentPage < this.lastPage) {
+        this.currentPage += 1;
+        const url = this.buildUrl();
+        this.lazyLoadSpots(url);
+
+        if (this.currentPage === this.lastPage) {
+          this.loadMoreButton.classList.add("d-none");
+        }
+      }
     });
   }
 }
