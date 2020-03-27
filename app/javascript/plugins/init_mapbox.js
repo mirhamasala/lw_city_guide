@@ -1,5 +1,7 @@
 import mapboxgl from "mapbox-gl";
 
+let map;
+
 const mapElement = () => {
   return document.getElementById("map");
 };
@@ -54,11 +56,11 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapbox = () => {
   if (mapElement()) {
-    const map = buildMap();
+    map = buildMap();
     const markers = JSON.parse(mapElement().dataset.markers);
     addMarkersAndInfoWindowsToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
 };
 
-export { initMapbox };
+export { initMapbox, map, addMarkersAndInfoWindowsToMap };

@@ -10,6 +10,7 @@ import { ratingSlider } from "../components/rating_slider";
 import {} from "../components/spot_autocomplete_dropdown";
 import Filters from "../components/filters";
 import FilterSpots from "../components/filter_spots";
+import LazyLoading from "../components/lazy_loading";
 import MapView from "../components/map_view";
 
 // Initialize
@@ -19,4 +20,5 @@ initMapbox();
 
 new Filters();
 new FilterSpots();
+new LazyLoading();
 new MapView();
