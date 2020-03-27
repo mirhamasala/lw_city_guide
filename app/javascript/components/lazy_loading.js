@@ -25,11 +25,12 @@ class LazyLoading {
 
     this.spotsCardsGrid.insertAdjacentHTML("beforeend", html);
 
-    const newMarkers = JSON.parse(
-      this.markers[this.currentPage - 1].dataset.markers
-    );
-
-    addMarkersAndInfoWindowsToMap(map, newMarkers);
+    if (this.markers[this.currentPage - 1]) {
+      const newMarkers = JSON.parse(
+        this.markers[this.currentPage - 1].dataset.markers
+      );
+      addMarkersAndInfoWindowsToMap(map, newMarkers);
+    }
   }
 
   bind() {
@@ -43,10 +44,6 @@ class LazyLoading {
         this.currentPage += 1;
         const url = this.buildUrl();
         this.lazyLoadSpots(url);
-
-        if (this.currentPage === this.lastPage) {
-          this.loadMoreButton.classList.add("d-none");
-        }
       }
     });
   }
