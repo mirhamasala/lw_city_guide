@@ -76,3 +76,7 @@ Have a look at the file `.env-example` for a list of required secret keys and en
 (OOCSS, BEM, SMACSS)](https://snipcart.com/blog/organize-css-modular-architecture)
 
 - [Sass: Directory Structures That Help You Maintain Your Code](https://vanseodesign.com/css/sass-directory-structures/)
+
+### JavaScript
+
+- [Detecting a Click Outside an Element in JavaScript](https://www.blustemy.io/detecting-a-click-outside-an-element-in-javascript/)
