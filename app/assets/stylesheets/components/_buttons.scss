@@ -20,6 +20,10 @@
   justify-content: center;
 }
 
+.button--hidden {
+  display: none;
+}
+
 .button--with-margin {
   margin-bottom: $spacing-4;
 }

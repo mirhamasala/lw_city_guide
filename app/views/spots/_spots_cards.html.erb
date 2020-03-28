@@ -1,0 +1,4 @@
+ <% @spots.each do |spot| %>
+  <%= render "spots/spot_card", spot: spot %>
+<% end %>
+<div style="display: none" class="js-data-markers" data-markers="<%= @markers.to_json %>"></div>

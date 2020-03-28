@@ -52,3 +52,8 @@
 .spots__filters-container--hidden {
   display: none;
 }
+
+.spots__load-more-button-wrap {
+  @include wrapper();
+  @include spacer();
+}

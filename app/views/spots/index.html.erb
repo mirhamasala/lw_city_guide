@@ -19,6 +19,9 @@
       <div class="spots__results-container js-spots-results-container">
         <%= render "spots_results" %>
       </div>
+      <div class="spots__load-more-button-wrap">
+        <%= render "shared/lazy_loading", pagy: @pagy %>
+      </div>
     </div>
   <% else %>
     <%= render "shared/message",

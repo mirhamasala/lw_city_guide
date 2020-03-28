@@ -12,10 +12,12 @@ class SpotsController < ApplicationController
       @spots = @spots.in_category(params[:categories].split(","))
     end
     @spots = @spots.published.recent.check_coordinates
+    @pagy, @spots = pagy(@spots, items: 3)
+    
     add_map_markers(@spots)
-
+    partial = params[:cards_only].nil? ? "spots_results" : "spots_cards"
     if request.xhr?
-      render partial: "spots_results"
+      render partial: partial
     else
       render :index
     end

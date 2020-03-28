@@ -11,6 +11,7 @@ import {} from "../components/spot_autocomplete_dropdown";
 import Filters from "../components/filters";
 import FiltersMenu from "../components/filters_menu";
 import FilterSpots from "../components/filter_spots";
+import LazyLoading from "../components/lazy_loading";
 import MapView from "../components/map_view";
 
 // Initialize
@@ -21,4 +22,5 @@ initMapbox();
 new Filters();
 new FiltersMenu();
 new FilterSpots();
+new LazyLoading();
 new MapView();
