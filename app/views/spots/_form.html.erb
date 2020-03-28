@@ -4,10 +4,14 @@
   <% end %>
   <%= f.association :city, collection: City.alphabetize,
                            :prompt => "Choose a city",
-                           label: "Where should we add this spot?" %>
-  <%= f.association :category, :prompt => "Choose category", label: "Which category should we add it to?" %>
+                           label: "Where should we add this spot?",
+                           input_html: { class: "col-sm-8 custom-select" } %>
+  <%= f.association :category, 
+                    :prompt => "Choose category", 
+                    label: "Which category should we add it to?",
+                    input_html: { class: "col-sm-8 custom-select" } %>
   <%= f.input :sub_category, :placeholder => "Burgers · The Sunny Side Up Kind" %>
-  <%= f.input :name, label: "Location name", :placeholder => "Sunshine Bar", input_html: { autocomplete: "off" } %>
+  <%= f.input :name, label: "Location name", :placeholder => "Sunshine Bar", input_html: { autocomplete: "off", class: "mb-3" } %>
   <%= render "spots/autocomplete_dropdown" %>
   <%= f.input :address, :placeholder => "Sunshine Road 11", input_html: { autocomplete: "off" } %>
   <% if current_user.admin? || current_user.city_keeper? %>
@@ -16,7 +20,9 @@
   <% end %>
   <%= f.input :phone_number, :placeholder => "+11 1111 1111 11" %>
   <%= f.input :website, :placeholder => "https://www.sunshinebar.com" %>
-  <%= f.input :description, :placeholder => "The burgers are insanely good and the beer is cheap.", label: "Tell us more about this place. Why do you like it? Why should other students come here? Feel free to share any thoughts that come to mind." %>
+  <%= f.input :description, :placeholder => "The burgers are insanely good and the beer is cheap.", 
+                            label: "Tell us more about this place. Why do you like it? Why should other students come here? Feel free to share any thoughts that come to mind.",
+                            label_html: { class: "mb-5" } %>
   <%= cl_image_tag(@spot.photo, class: "form__image-preview",
                                 :transformation=>[{:if=>"ar_gt_1:1"},
                                                   {:width=>192, :crop=>"fit"},
@@ -25,7 +31,7 @@
   <%= f.input :photo, folder: "city_guides/#{@spot.city}/spots/",
                       tags: [@spot.city, @spot.category],
                       label: @spot.photo? ? "Change image" : "Upload image",
-                      label_html: { class: "button button--big button--image-upload" },
+                      label_html: { class: "button button--medium button--image-upload" },
                       input_html: { class: "button--file-upload" } %>
   <%= f.submit "Share your spot", class: "button button--big button--primary" %>
 <% end %>

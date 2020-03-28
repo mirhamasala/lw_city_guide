@@ -6,10 +6,28 @@
   <p class="sub-header">“Happiness is the only thing that multiplies when you share it.” - Albert Schweitzer. That’s why we love to share these beautiful places with you. Feel free to add your share to the happiness tank ☺️</p>
 </header>
 
-<%= content_for(:title, "Share your favorite 🔥 spot") %>
-<div class="form-card">
-  <h1 class="form-card__header rounded-top">Add hot spot</h1>
-  <div class="form-card__main">
-    <%= render "form" %>
+<div class="new-spot-container">
+  <div class="new-spot__profile">
+    <div class="new-spot__profileDetails">
+      <%= image_tag current_user.avatar, class: "new-spot__user-photo" %>
+      <div class="flex-lg-row">
+        <h1 class="profile__header"><%= current_user.name %></h1>
+        <h3 class="profile__subheader">Batch #14 ( 🇩🇪 Munich 2019)</h3>
+      </div>
+    </div>
+    <div class="new-spot__main-wrapper">
+      <div class="new-spot__status">
+        <p class="new-spot__publishedSpotsSize"><span class="new-spot__published-spots-digit"> 14 </span> 🔥spots shared</p>
+        <p class="new-spot__publishedCitiesSize"><span class="new-spot__published-spots-digit"> 6 </span>le wagon cities visited </p>
+      </div>
+    </div>  
+  </div>    
+
+  <%= content_for(:title, "Share your favorite 🔥 spot") %>
+  <div class="form-card">
+    <h1 class="form-card__header rounded-top">Add hot spot</h1>
+    <div class="form-card__main">
+      <%= render "form" %>
+    </div>
   </div>
 </div>
