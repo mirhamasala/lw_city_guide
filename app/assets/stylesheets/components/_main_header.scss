@@ -5,7 +5,7 @@
   margin-bottom: $spacing-0;
   font-size: $text-3xl;
   font-weight: $font-semibold;
-  color: $black;
+  color: $theme-color-bw;
   z-index: 10;
 }
 
@@ -14,7 +14,7 @@
   padding-top: $spacing-8;
   font-size: $text-lg;
   font-weight: $font-medium;
-  color: $dark-medium-gray;
+  color: $theme-color-dmglg;
   line-height: $spacing-6;
   z-index: 10;
   width: 54%;

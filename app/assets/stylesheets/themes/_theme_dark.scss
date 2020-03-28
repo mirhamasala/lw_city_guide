@@ -4,18 +4,23 @@
 // theme_light.scss
 // --------------------------------------------------------------
 
-$theme-color-cg:         $gray;        // secondary-primary - gray
-$theme-color-sdg:        $dark-gray;   // secondary-primary - dark-gray
-$theme-color-glg:        $light-gray;  // gray              - light-gray
-$theme-color-bw:         $white;       // white             - white
-$theme-color-gw:         $white;       // gray              - white
-$theme-color-lgb:        $black;       // light-gray        - black
-$theme-color-lgg:        $gray;        // light-gray        - gray
-$theme-color-lgdg:       $dark-gray;   // light-gray        - dark-gray
-$theme-color-lrb:        $black;       // light-red         - black
-$theme-color-lrdg:       $dark-gray;   // light-red         - dark-gray
-$theme-color-wb:         $black;       // white             - black
-$theme-color-wdg:        $dark-gray;   // white             - dark-gray
+$theme-color-dglg: $lighter-gray; // deep-gray         - lighter-gray
+$theme-color-dmglg: $light-gray; // light-gray        - light-graydark-medium-gray
+$theme-color-mgw: $white; // white             - medium-gray
+$theme-color-fgw: $white; // white             - form-gray
+$theme-color-cg: $gray; // secondary-primary - gray
+$theme-color-sdg: $dark-gray; // secondary-primary - dark-gray
+$theme-color-glg: $light-gray; // gray              - light-gray
+$theme-color-bw: $white; // white             - white
+$theme-color-gw: $white; // gray              - white
+$theme-color-lgb: $black; // light-gray        - black
+$theme-color-lgg: $gray; // light-gray        - gray
+$theme-color-lgdg: $dark-gray; // light-gray        - dark-gray
+$theme-color-lrb: $black; // light-red         - black
+$theme-color-lrdg: $dark-gray; // light-red         - dark-gray
+$theme-color-wb: $black; // white             - black
+$theme-color-wdg: $dark-gray; // white             - dark-gray
+$theme-color-wg: $deep-gray; // white             - deep-gray
 
-$theme-box-shadow:       none;
+$theme-box-shadow: none;
 $theme-box-shadow-small: none;
