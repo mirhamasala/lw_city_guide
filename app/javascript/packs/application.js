@@ -9,6 +9,7 @@ import { initMapbox } from "../plugins/init_mapbox";
 import { ratingSlider } from "../components/rating_slider";
 import {} from "../components/spot_autocomplete_dropdown";
 import Filters from "../components/filters";
+import FiltersMenu from "../components/filters_menu";
 import FilterSpots from "../components/filter_spots";
 import MapView from "../components/map_view";
 
@@ -18,5 +19,6 @@ initCloudinary();
 initMapbox();
 
 new Filters();
+new FiltersMenu();
 new FilterSpots();
 new MapView();
