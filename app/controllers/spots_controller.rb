@@ -95,7 +95,7 @@ class SpotsController < ApplicationController
         lat: spot.latitude,
         lng: spot.longitude,
         infoWindow: render_to_string(partial: "shared/infowindow", locals: { spot: spot }),
-        image_url: helpers.asset_url("placemark_#{spot.category.name}.png")
+        locationMarker: render_to_string(partial: "shared/location_marker", locals: { spot: spot })
       }
     end
   end
@@ -106,7 +106,7 @@ class SpotsController < ApplicationController
       {
         lat: @spot.latitude,
         lng: @spot.longitude,
-        image_url: helpers.asset_url("placemark_#{@spot.category.name}.png")
+        locationMarker: render_to_string(partial: "shared/location_marker", locals: { spot: spot })
       }
     ]
   end

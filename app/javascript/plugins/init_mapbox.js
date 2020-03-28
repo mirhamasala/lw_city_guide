@@ -24,12 +24,7 @@ const addMarkersAndInfoWindowsToMap = (map, markers) => {
   const mapOnSpotShowPage = document.querySelector(".js-spot-map");
   markers.forEach(marker => {
     const element = document.createElement("div");
-    element.className = "marker";
-    element.style.backgroundImage = `url('${marker.image_url}')`;
-    element.style.backgroundSize = "contain";
-    element.style.backgroundRepeat = "no-repeat";
-    element.style.width = "32px";
-    element.style.height = "32px";
+    element.innerHTML = marker.locationMarker;
 
     // Don't add info windows on the spot show page
     if (mapOnSpotShowPage) {
