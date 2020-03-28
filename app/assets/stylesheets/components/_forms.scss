@@ -86,3 +86,60 @@
     width: 40%;
   }
 }
+
+.form-card {
+  max-width: 674px;
+  border-radius: $border-radius-lg;
+  box-shadow: $theme-box-shadow;
+  background-color: $theme-color-wg;
+  margin-bottom: $spacing-10;
+}
+
+.form-card__header {
+  padding: $spacing-2;
+  margin-bottom: $spacing-8;
+  color: $theme-color-wb;
+  background-color: $theme-color-bw;
+  font-weight: $font-black;
+  font-size: $text-2xl;
+}
+
+.form-card__main {
+  padding: $spacing-6;
+
+  // Right Input column
+  input[type="text"],
+  [type="tel"] {
+    border: 0;
+    background-color: $theme-color-lgg;
+    color: $theme-color-mgw;
+    border-radius: 2px;
+    padding: $spacing-6;
+    box-shadow: none;
+  }
+
+  .form-control {
+    border: 0;
+    background-color: $theme-color-lgg;
+    color: $theme-color-gw;
+    box-shadow: none;
+  }
+
+  .custom-select {
+    border-radius: 2px;
+    background-color: $theme-color-lgg;
+  }
+  .spot_description {
+    margin-bottom: $spacing-20;
+    textarea {
+      border: 0;
+      height: 120%;
+      border-radius: 2px;
+      background-color: $theme-color-lgg;
+      padding: $spacing-5;
+      color: $theme-color-mgw;
+      resize: none;
+      box-shadow: none;
+    }
+  }
+}
