@@ -22,6 +22,7 @@ $spacing-40: 10rem;    // 160px
 $spacing-48: 12rem;    // 192px
 $spacing-56: 14rem;    // 224px
 $spacing-64: 16rem;    // 256px
+$spacing-96: 24rem;    // 384px
 
 // 384px  (16 x 24)
 // 512px  (16 x 32)
@@ -53,6 +54,15 @@ $spacing-64: 16rem;    // 256px
   @media (min-width: 768px) {
     margin-top: $spacing-12;
     margin-bottom: $spacing-12;
+  }
+}
+
+@mixin spacer-lg() {
+  margin-top: $spacing-24;
+  margin-bottom: $spacing-24;
+  @media (min-width: 768px) {
+    margin-top: $spacing-96;
+    margin-bottom: $spacing-40;
   }
 }
 
