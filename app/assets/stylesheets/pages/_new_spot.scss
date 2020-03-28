@@ -1,0 +1,98 @@
+.new-spot__main-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 576px) {
+  .new-spot__main-wrapper {
+    flex-direction: row;
+  }
+}
+
+.new-spot__status {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .new-spot__status {
+    display: block;
+    min-width: 160px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .new-spot__status {
+    min-width: 192px;
+  }
+}
+
+.new-spot-container {
+  @include spacer();
+  margin: 0 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.new-spot__profile {
+  margin-top: $spacing-24;
+}
+
+.new-spot__profileDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing-8;
+  .profile__header {
+    font-size: $text-xl;
+    font-weight: $font-medium;
+    color: $theme-color-bw;
+  }
+  .profile__subheader {
+    font-size: $text-sm;
+    font-weight: $font-semibold;
+    color: $theme-color-dg;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .profile__header {
+    font-size: $text-4xl;
+  }
+}
+
+.new-spot__user-photo {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .new-spot__user-photo {
+    display: block;
+    height: 160px;
+    width: 160px;
+    margin-right: $spacing-6;
+    border-radius: 6px;
+    box-shadow: $theme-box-shadow;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .new-spot__user-photo {
+    height: 192px;
+    width: 192px;
+    margin-right: $spacing-6;
+  }
+}
+
+.new-spot__publishedSpotsSize,
+.new-spot__publishedCitiesSize {
+  color: $theme-color-dg;
+  font-weight: $font-medium;
+  font-size: $text-lg;
+}
+.new-spot__published-spots-digit {
+  color: $brand-primary;
+  font-size: $text-4xl;
+  font-weight: $font-semibold;
+  margin-right: $spacing-4;
+}
