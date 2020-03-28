@@ -27,7 +27,7 @@
 }
 
 .new-spot-container {
-  @include spacer();
+  @include spacer-lg();
   margin: 0 10%;
   display: flex;
   flex-direction: row;
@@ -35,7 +35,7 @@
 }
 
 .new-spot__profile {
-  margin-top: $spacing-24;
+  margin: $spacing-24 $spacing-4 0 0;
 }
 
 .new-spot__profileDetails {
@@ -51,7 +51,7 @@
   .profile__subheader {
     font-size: $text-sm;
     font-weight: $font-semibold;
-    color: $theme-color-dg;
+    color: $theme-color-dglg;
   }
 }
 
@@ -86,7 +86,7 @@
 
 .new-spot__publishedSpotsSize,
 .new-spot__publishedCitiesSize {
-  color: $theme-color-dg;
+  color: $theme-color-dglg;
   font-weight: $font-medium;
   font-size: $text-lg;
 }
