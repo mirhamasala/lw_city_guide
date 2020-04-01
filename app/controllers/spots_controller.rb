@@ -12,8 +12,13 @@ class SpotsController < ApplicationController
       @spots = @spots.in_category(params[:categories].split(","))
     end
     @spots = @spots.published.recent.check_coordinates
-    @pagy, @spots = pagy(@spots, items: 3)
+    @pagy, @spots = pagy(@spots, items: 2)
+
     add_map_markers(@spots)
+
+    puts "  >>>>> #{__FILE__}:#{__LINE__}"
+    p @pagy.pages
+    puts "  >>>>> #{__FILE__}:#{__LINE__}"
 
     if request.xhr?
       render partial: "spots_results"
