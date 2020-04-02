@@ -22,7 +22,7 @@ class RatingSlider {
     ) {
       this.ratingSliderThumb.style.left = `${event.offsetX - 10}px`;
       this.ratingSliderIcon.style.transform = `scale(${1 +
-        this.ratingSliderInput.value / 100})`;
+        this.ratingSliderInput.value / 300})`;
       this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
     }
   }
@@ -33,7 +33,7 @@ class RatingSlider {
       this.ratingSliderInput.value -
       10}px`;
     this.ratingSliderIcon.style.transform = `scale(${1 +
-      this.ratingSliderInput.value / 100})`;
+      this.ratingSliderInput.value / 300})`;
     this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
     this.ratingSliderInput.addEventListener(
       `${this.holdEvent}`,
