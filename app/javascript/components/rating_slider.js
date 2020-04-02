@@ -43,7 +43,7 @@ class RatingSlider {
   }
 
   bind() {
-    if (!this.ratingSliderThumb) {
+    if (!this.ratingSliderForm) {
       return;
     }
     this.setRating();
