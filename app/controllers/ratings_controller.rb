@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
     @rating = @spot.ratings.build(rating_params)
     @rating.user = current_user
     authorize @rating
-    if @rating.save!
+    if @rating.save
       redirect_to spot_path(@spot)
       flash[:notice] = "Yay! You succesfully rated #{@spot.name}! 🔥"
     else
