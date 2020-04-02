@@ -67,6 +67,7 @@ Have a look at the file `.env-example` for a list of required secret keys and en
 ### CSS
 
 - [Sticky Footer, Five Ways](https://css-tricks.com/couple-takes-sticky-footer/)
+- [Styling Cross-Browser Compatible Range Inputs with CSS](https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/)
 
 ### CSS Stylesheet Folder Structure
 
