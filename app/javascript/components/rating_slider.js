@@ -1,50 +1,54 @@
 class RatingSlider {
   constructor() {
-    this.ratingInput = document.querySelector("#rating_score");
-    this.thumb = document.querySelector("#thumb");
-    this.ratingForm = document.querySelector("#rating-form");
+    this.ratingSliderForm = document.querySelector(".js-rating-slider-form");
+    this.ratingSliderInput = document.querySelector(".js-rating-slider-input");
+    this.ratingSliderThumb = document.querySelector(".js-rating-slider-thumb");
+    this.ratingSliderValue = document.querySelector(".js-rating-slider-value");
+    this.ratingSliderIcon = document.querySelector(".js-rating-slider-icon");
     this.isClicked = false;
     this.bind();
   }
 
-  updateSlider(event) {
+  updateRating(event) {
     if (!this.isClicked) {
       return;
     }
-    if (event.offsetX > 0 && event.offsetX < this.ratingInput.offsetWidth) {
-      this.thumb.style.left = `${event.offsetX - 10}px`;
-      this.thumb.querySelector(".fire").style.transform = `scale(${1 +
-        this.ratingInput.value / 100})`;
-      this.thumb.querySelector(
-        ".value"
-      ).innerText = `${this.ratingInput.value}°`;
+    if (
+      event.offsetX > 0 &&
+      event.offsetX < this.ratingSliderInput.offsetWidth
+    ) {
+      this.ratingSliderThumb.style.left = `${event.offsetX - 10}px`;
+      this.ratingSliderIcon.style.transform = `scale(${1 +
+        this.ratingSliderInput.value / 100})`;
+      this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
     }
   }
 
-  ratingSlider() {
-    this.thumb.style.left = `${(this.ratingInput.offsetWidth / 100) *
-      this.ratingInput.value -
+  setRating() {
+    this.ratingSliderThumb.style.left = `${(this.ratingSliderInput.offsetWidth /
+      100) *
+      this.ratingSliderInput.value -
       10}px`;
-    this.thumb.querySelector(".fire").style.transform = `scale(${1 +
-      this.ratingInput.value / 100})`;
-    this.thumb.querySelector(".value").innerText = `${this.ratingInput.value}°`;
-    this.ratingInput.addEventListener(
+    this.ratingSliderIcon.style.transform = `scale(${1 +
+      this.ratingSliderInput.value / 100})`;
+    this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
+    this.ratingSliderInput.addEventListener(
       "mousedown",
       () => (this.isClicked = true)
     );
-    this.ratingInput.addEventListener("mouseup", () => {
+    this.ratingSliderInput.addEventListener("mouseup", () => {
       this.isClicked = false;
-      this.ratingForm.submit();
+      this.ratingSliderForm.submit();
     });
   }
 
   bind() {
-    if (!this.thumb) {
+    if (!this.ratingSliderThumb) {
       return;
     }
-    this.ratingSlider();
-    this.ratingInput.addEventListener("mousemove", event =>
-      this.updateSlider(event)
+    this.setRating();
+    this.ratingSliderInput.addEventListener("mousemove", event =>
+      this.updateRating(event)
     );
   }
 }
