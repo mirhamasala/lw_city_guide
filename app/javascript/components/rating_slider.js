@@ -5,12 +5,15 @@ class RatingSlider {
     this.ratingSliderThumb = document.querySelector(".js-rating-slider-thumb");
     this.ratingSliderValue = document.querySelector(".js-rating-slider-value");
     this.ratingSliderIcon = document.querySelector(".js-rating-slider-icon");
-    this.isClicked = false;
+    this.isPressed = false;
+    this.moveEvent;
+    this.holdEvent;
+    this.releaseEvent;
     this.bind();
   }
 
   updateRating(event) {
-    if (!this.isClicked) {
+    if (!this.isPressed) {
       return;
     }
     if (
@@ -33,21 +36,34 @@ class RatingSlider {
       this.ratingSliderInput.value / 100})`;
     this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
     this.ratingSliderInput.addEventListener(
-      "mousedown",
-      () => (this.isClicked = true)
+      `${this.holdEvent}`,
+      () => (this.isPressed = true)
     );
-    this.ratingSliderInput.addEventListener("mouseup", () => {
-      this.isClicked = false;
+    this.ratingSliderInput.addEventListener(`${this.releaseEvent}`, () => {
+      this.isPressed = false;
       this.ratingSliderForm.submit();
     });
+  }
+
+  setEvents() {
+    if ("ontouchstart" in document.documentElement) {
+      this.moveEvent = "touchmove";
+      this.holdEvent = "touchstart";
+      this.releaseEvent = "touchend";
+    } else {
+      this.moveEvent = "mousemove";
+      this.holdEvent = "mousedown";
+      this.releaseEvent = "mouseup";
+    }
   }
 
   bind() {
     if (!this.ratingSliderForm) {
       return;
     }
+    this.setEvents();
     this.setRating();
-    this.ratingSliderInput.addEventListener("mousemove", event =>
+    this.ratingSliderInput.addEventListener(`${this.moveEvent}`, event =>
       this.updateRating(event)
     );
   }
