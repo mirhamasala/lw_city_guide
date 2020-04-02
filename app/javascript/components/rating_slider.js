@@ -12,7 +12,7 @@ class RatingSlider {
     this.bind();
   }
 
-  updateRating(event) {
+  handleSliding(event) {
     if (!this.isPressed) {
       return;
     }
@@ -64,7 +64,7 @@ class RatingSlider {
     this.setEvents();
     this.setRating();
     this.ratingSliderInput.addEventListener(`${this.moveEvent}`, event =>
-      this.updateRating(event)
+      this.handleSliding(event)
     );
   }
 }
