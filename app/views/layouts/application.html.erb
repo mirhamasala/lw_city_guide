@@ -24,8 +24,5 @@
     </div>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>
-    <% if content_for?(:after_js) %>
-      <%= yield :after_js %>
-    <% end %>
   </body>
 </html>
