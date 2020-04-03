@@ -4,9 +4,9 @@ import "bootstrap";
 // JS Plugins
 // --------------------------------------------------------------
 
+import Autocomplete from "../plugins/autocomplete";
 import Cloudinary from "../plugins/cloudinary";
 import Map from "../plugins/map";
-import { initAutocomplete } from "../plugins/init_autocomplete";
 
 // --------------------------------------------------------------
 // JS Components
@@ -23,9 +23,9 @@ import RatingSlider from "../components/rating_slider";
 // Initialize JS Plugins
 // --------------------------------------------------------------
 
+new Autocomplete();
 new Cloudinary();
 new Map();
-initAutocomplete();
 
 // --------------------------------------------------------------
 // Initialize JS Components
