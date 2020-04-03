@@ -15,10 +15,11 @@
     "bootstrap": "^4.3.1",
     "cloudinary-core": "^2.7.4",
     "jquery": "^3.4.1",
-    "mapbox-gl": "^1.1.0",
+    "mapbox-gl": "^1.9.1",
     "places.js": "^1.16.6",
     "popper.js": "^1.15.0",
-    "serialize-javascript": "^2.1.1"
+    "serialize-javascript": "^2.1.1",
+    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
     "husky": "^4.2.3",

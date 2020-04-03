@@ -1,12 +1,18 @@
+require("turbolinks").start();
+
+// --------------------------------------------------------------
+// External JS Imports
+// --------------------------------------------------------------
+
 import "bootstrap";
 
 // --------------------------------------------------------------
 // JS Plugins
 // --------------------------------------------------------------
 
+import Autocomplete from "../plugins/autocomplete";
 import Cloudinary from "../plugins/cloudinary";
 import Map from "../plugins/map";
-import { initAutocomplete } from "../plugins/init_autocomplete";
 
 // --------------------------------------------------------------
 // JS Components
@@ -19,20 +25,22 @@ import FilterSpots from "../components/filter_spots";
 import MapView from "../components/map_view";
 import RatingSlider from "../components/rating_slider";
 
-// --------------------------------------------------------------
-// Initialize JS Plugins
-// --------------------------------------------------------------
+document.addEventListener("turbolinks:load", () => {
+  // --------------------------------------------------------------
+  // Initialize JS Plugins
+  // --------------------------------------------------------------
 
-new Cloudinary();
-new Map();
-initAutocomplete();
+  new Autocomplete();
+  new Cloudinary();
+  new Map();
 
-// --------------------------------------------------------------
-// Initialize JS Components
-// --------------------------------------------------------------
+  // --------------------------------------------------------------
+  // Initialize JS Components
+  // --------------------------------------------------------------
 
-new Filters();
-new FiltersMenu();
-new FilterSpots();
-new MapView();
-new RatingSlider();
+  new Filters();
+  new FiltersMenu();
+  new FilterSpots();
+  new MapView();
+  new RatingSlider();
+});
