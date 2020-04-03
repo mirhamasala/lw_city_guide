@@ -12,7 +12,7 @@ import Map from "../plugins/map";
 // JS Components
 // --------------------------------------------------------------
 
-import {} from "../components/spot_autocomplete_dropdown";
+import AutocompleteDropdown from "../components/autocomplete_dropdown";
 import Filters from "../components/filters";
 import FiltersMenu from "../components/filters_menu";
 import FilterSpots from "../components/filter_spots";
@@ -31,6 +31,7 @@ new Map();
 // Initialize JS Components
 // --------------------------------------------------------------
 
+new AutocompleteDropdown();
 new Filters();
 new FiltersMenu();
 new FilterSpots();
