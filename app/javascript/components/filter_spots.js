@@ -1,5 +1,5 @@
+import Map from "../plugins/map";
 import MapView from "./map_view";
-import { initMapbox } from "../plugins/init_mapbox";
 
 class FilterSpots {
   constructor() {
@@ -47,7 +47,7 @@ class FilterSpots {
             );
           }
           this.spotsResultsContainer.innerHTML = html;
-          initMapbox();
+          new Map();
           new MapView();
         });
       }
