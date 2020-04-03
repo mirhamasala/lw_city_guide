@@ -1,16 +1,16 @@
 <div class="rating-slider">
   <%= simple_form_for rating,
     url: (rating.new_record? ? spot_ratings_path(spot) : spot_rating_path(spot, rating)), html: { class: "js-rating-slider-form" } do |f| %>
-      <div class="rating-slider__inner-container">
-        <%= f.input :score, label: false, as: :range, collection: (0..100).to_a, input_html: { value: (rating.new_record? ? 0 : rating.score), class: "rating-slider__input js-rating-slider-input"} %>
-        <div class="rating-slider__thumb js-rating-slider-thumb">
-          <span class="rating-slider__value js-rating-slider-value">0°</span>
-          <div class="rating-slider__icon js-rating-slider-icon">🔥</div>
-        </div>
+    <div class="rating-slider__inner-container">
+      <%= f.input :score, label: false, as: :range, collection: (0..100).to_a, input_html: { value: (rating.new_record? ? 0 : rating.score), class: "rating-slider__input js-rating-slider-input"} %>
+      <div class="rating-slider__thumb js-rating-slider-thumb">
+        <span class="rating-slider__value js-rating-slider-value">0°</span>
+        <div class="rating-slider__icon js-rating-slider-icon">🔥</div>
       </div>
-    <% end %>
-    <div class="rating-slider__range-labels-container">
-      <p>0°</p>
-      <p>100°</p>
+    </div>
+  <% end %>
+  <div class="rating-slider__range-labels-container">
+    <p>0°</p>
+    <p>100°</p>
   </div>
 </div>
