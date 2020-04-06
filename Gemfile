@@ -40,4 +40,5 @@ group :development, :test do
   gem 'capybara'
   gem 'webdrivers'
   gem 'launchy'
+  gem 'rspec-rails', ">= 3.9.0"
 end
