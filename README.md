@@ -81,3 +81,4 @@ Have a look at the file `.env-example` for a list of required secret keys and en
 ### JavaScript
 
 - [Detecting a Click Outside an Element in JavaScript](https://www.blustemy.io/detecting-a-click-outside-an-element-in-javascript/)
+- [How Can I Make a Custom Range Input Work for Touch Screens](https://stackoverflow.com/questions/61003510/how-can-i-make-a-custom-range-input-work-for-touch-screens)
