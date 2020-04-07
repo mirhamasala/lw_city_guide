@@ -7,54 +7,57 @@ class RatingSlider {
     this.ratingSliderIcon = document.querySelector(".js-rating-slider-icon");
     this.isPressed = false;
     this.moveEvent;
-    this.holdEvent;
-    this.releaseEvent;
+    this.startEvent;
+    this.endEvent;
     this.bind();
   }
 
   setEvents() {
     if ("ontouchstart" in document.documentElement) {
       this.moveEvent = "touchmove";
-      this.holdEvent = "touchstart";
-      this.releaseEvent = "touchend";
+      this.startEvent = "touchstart";
+      this.endEvent = "touchend";
     } else {
       this.moveEvent = "mousemove";
-      this.holdEvent = "mousedown";
-      this.releaseEvent = "mouseup";
+      this.startEvent = "mousedown";
+      this.endEvent = "mouseup";
     }
   }
 
-  setCustomThumbStyleOnLoad() {
-    this.ratingSliderThumb.style.left = `${(this.ratingSliderInput.offsetWidth /
-      100) *
-      this.ratingSliderInput.value -
-      10}px`;
+  setCustomThumbStyle() {
     this.ratingSliderIcon.style.transform = `scale(${1 +
       this.ratingSliderInput.value / 150})`;
     this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
   }
 
-  setOffsets(e) {
-    if ("ontouchstart" in document.documentElement) {
-      debugger;
-      let touch = e.touches[0] || event.changedTouches[0];
-      let target = document.elementFromPoint(touch.clientX, touch.clientY);
-      event.offsetX = touch.clientX - target.getBoundingClientRect().x;
-      event.offsetY = touch.clientY - target.getBoundingClientRect().y;
-      return e;
-    }
-    return event;
+  setOffsetOnPageLoad() {
+    this.ratingSliderThumb.style.left = `${(this.ratingSliderInput.offsetWidth /
+      100) *
+      this.ratingSliderInput.value -
+      10}px`;
   }
 
-  handleCustomThumbStyleOnChange(event) {
+  handleOffsetOnChange(event) {
+    // ontouchstart -	Event occurs when screen is touched
+    if ("ontouchstart" in document.documentElement) {
+      // touches - Returns a list of all touch objects that are currently in contact with the surface
+      // touches[0] - Looks only at the first touch
+      // changedTouches - Returns a list of all touch objects whose state changed between the previous touch and this touch
+      let touch = event.touches[0] || event.changedTouches[0];
+      // touch.clientX - The horizontal coordinates of the touch
+      // touch.clientY - The vertical coordinates of the touch
+      // elementFromPoints - Returns the element that is located at the specified coordinates
+      let target = document.elementFromPoint(touch.clientX, touch.clientY);
+      // getBoundingClientRect - Returns the size of an element and its position relevant to the slider/target
+      event.offsetX = touch.clientX - target.getBoundingClientRect().x;
+    }
     if (
+      // offsetX - Returns x-coordinate of mouse cursor, relative to target element
+      // offsetWidth - Width of div including padding and border
       event.offsetX > 0 &&
       event.offsetX < this.ratingSliderInput.offsetWidth
     ) {
       this.ratingSliderThumb.style.left = `${event.offsetX - 10}px`;
-      this.ratingSliderIcon.style.transform = `scale(${1 +
-        this.ratingSliderInput.value / 150})`;
-      this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
     }
   }
 
@@ -62,22 +65,26 @@ class RatingSlider {
     if (!this.ratingSliderForm) {
       return;
     }
-    this.setCustomThumbStyleOnLoad();
     this.setEvents();
+    this.setOffsetOnPageLoad();
+    this.setCustomThumbStyle();
+
     this.ratingSliderInput.addEventListener(
-      this.holdEvent,
+      this.startEvent,
       () => (this.isPressed = true)
     );
-    this.ratingSliderInput.addEventListener(this.releaseEvent, () => {
+
+    this.ratingSliderInput.addEventListener(this.endEvent, () => {
       this.isPressed = false;
       this.ratingSliderForm.submit();
     });
+
     this.ratingSliderInput.addEventListener(this.moveEvent, event => {
       if (!this.isPressed) {
         return;
       }
-      event = this.setOffsets(event);
-      this.handleCustomThumbStyleOnChange(event);
+      this.handleOffsetOnChange(event);
+      this.setCustomThumbStyle();
     });
   }
 }
