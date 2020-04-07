@@ -12,39 +12,6 @@ class RatingSlider {
     this.bind();
   }
 
-  handleSliding(event) {
-    if (!this.isPressed) {
-      return;
-    }
-    if (
-      event.offsetX > 0 &&
-      event.offsetX < this.ratingSliderInput.offsetWidth
-    ) {
-      this.ratingSliderThumb.style.left = `${event.offsetX - 10}px`;
-      this.ratingSliderIcon.style.transform = `scale(${1 +
-        this.ratingSliderInput.value / 150})`;
-      this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
-    }
-  }
-
-  setRating() {
-    this.ratingSliderThumb.style.left = `${(this.ratingSliderInput.offsetWidth /
-      100) *
-      this.ratingSliderInput.value -
-      10}px`;
-    this.ratingSliderIcon.style.transform = `scale(${1 +
-      this.ratingSliderInput.value / 150})`;
-    this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
-    this.ratingSliderInput.addEventListener(
-      `${this.holdEvent}`,
-      () => (this.isPressed = true)
-    );
-    this.ratingSliderInput.addEventListener(`${this.releaseEvent}`, () => {
-      this.isPressed = false;
-      this.ratingSliderForm.submit();
-    });
-  }
-
   setEvents() {
     if ("ontouchstart" in document.documentElement) {
       this.moveEvent = "touchmove";
@@ -57,15 +24,61 @@ class RatingSlider {
     }
   }
 
+  setCustomThumbStyleOnLoad() {
+    this.ratingSliderThumb.style.left = `${(this.ratingSliderInput.offsetWidth /
+      100) *
+      this.ratingSliderInput.value -
+      10}px`;
+    this.ratingSliderIcon.style.transform = `scale(${1 +
+      this.ratingSliderInput.value / 150})`;
+    this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
+  }
+
+  setOffsets(e) {
+    if ("ontouchstart" in document.documentElement) {
+      debugger;
+      let touch = e.touches[0] || event.changedTouches[0];
+      let target = document.elementFromPoint(touch.clientX, touch.clientY);
+      event.offsetX = touch.clientX - target.getBoundingClientRect().x;
+      event.offsetY = touch.clientY - target.getBoundingClientRect().y;
+      return e;
+    }
+    return event;
+  }
+
+  handleCustomThumbStyleOnChange(event) {
+    if (
+      event.offsetX > 0 &&
+      event.offsetX < this.ratingSliderInput.offsetWidth
+    ) {
+      this.ratingSliderThumb.style.left = `${event.offsetX - 10}px`;
+      this.ratingSliderIcon.style.transform = `scale(${1 +
+        this.ratingSliderInput.value / 150})`;
+      this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
+    }
+  }
+
   bind() {
     if (!this.ratingSliderForm) {
       return;
     }
+    this.setCustomThumbStyleOnLoad();
     this.setEvents();
-    this.setRating();
-    this.ratingSliderInput.addEventListener(`${this.moveEvent}`, event =>
-      this.handleSliding(event)
+    this.ratingSliderInput.addEventListener(
+      this.holdEvent,
+      () => (this.isPressed = true)
     );
+    this.ratingSliderInput.addEventListener(this.releaseEvent, () => {
+      this.isPressed = false;
+      this.ratingSliderForm.submit();
+    });
+    this.ratingSliderInput.addEventListener(this.moveEvent, event => {
+      if (!this.isPressed) {
+        return;
+      }
+      event = this.setOffsets(event);
+      this.handleCustomThumbStyleOnChange(event);
+    });
   }
 }
 
