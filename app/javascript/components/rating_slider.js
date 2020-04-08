@@ -6,13 +6,17 @@ class RatingSlider {
     this.ratingSliderValue = document.querySelector(".js-rating-slider-value");
     this.ratingSliderIcon = document.querySelector(".js-rating-slider-icon");
     this.isPressed = false;
+    this.setEvents();
+    setTimeout(() => {
+      this.setPositionThumb();
+      this.setThumbStyle();
+    }, 1);
+    this.bind();
+  }
+  setEvents() {
     this.moveEvent;
     this.startEvent;
     this.endEvent;
-    this.bind();
-  }
-
-  setEvents() {
     if ("ontouchstart" in document.documentElement) {
       this.moveEvent = "touchmove";
       this.startEvent = "touchstart";
@@ -24,13 +28,13 @@ class RatingSlider {
     }
   }
 
-  setCustomThumbStyle() {
+  setThumbStyle() {
     this.ratingSliderIcon.style.transform = `scale(${1 +
       this.ratingSliderInput.value / 150})`;
     this.ratingSliderValue.innerText = `${this.ratingSliderInput.value}°`;
   }
 
-  setOffsetOnPageLoad() {
+  setPositionThumb() {
     this.ratingSliderThumb.style.left = `${(this.ratingSliderInput.offsetWidth /
       100) *
       this.ratingSliderInput.value -
@@ -65,10 +69,6 @@ class RatingSlider {
     if (!this.ratingSliderForm) {
       return;
     }
-    this.setEvents();
-    this.setOffsetOnPageLoad();
-    this.setCustomThumbStyle();
-
     this.ratingSliderInput.addEventListener(
       this.startEvent,
       () => (this.isPressed = true)
@@ -84,7 +84,7 @@ class RatingSlider {
         return;
       }
       this.handleOffsetOnChange(event);
-      this.setCustomThumbStyle();
+      this.setThumbStyle();
     });
   }
 }
