@@ -8,7 +8,8 @@ class Spot < ApplicationRecord
   belongs_to :owner, class_name: "User"
   has_many :ratings, dependent: :destroy
 
-  validates :name, :description, :address, :city_id, :category_id, presence: true
+  validates :name, :address, :city_id, :category_id, presence: true
+  validates :description, presence: true, length: { minimum: 70 }
   validates :address, uniqueness: { scope: :city }
   validates :photo, presence: true
 
