@@ -70,6 +70,8 @@ class RatingSlider {
       this.setThumbStyle();
     }, 1);
 
+    window.addEventListener("resize", () => this.setPositionThumb());
+
     this.ratingSliderInput.addEventListener(
       this.startEvent,
       () => (this.isPressed = true)
