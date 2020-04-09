@@ -7,10 +7,6 @@ class RatingSlider {
     this.ratingSliderIcon = document.querySelector(".js-rating-slider-icon");
     this.isPressed = false;
     this.setEvents();
-    setTimeout(() => {
-      this.setPositionThumb();
-      this.setThumbStyle();
-    }, 1);
     this.bind();
   }
   setEvents() {
@@ -69,6 +65,11 @@ class RatingSlider {
     if (!this.ratingSliderForm) {
       return;
     }
+    setTimeout(() => {
+      this.setPositionThumb();
+      this.setThumbStyle();
+    }, 1);
+
     this.ratingSliderInput.addEventListener(
       this.startEvent,
       () => (this.isPressed = true)
