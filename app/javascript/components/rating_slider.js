@@ -38,22 +38,12 @@ class RatingSlider {
   }
 
   handleOffsetOnChange(event) {
-    // ontouchstart -	Event occurs when screen is touched
     if ("ontouchstart" in document.documentElement) {
-      // touches - Returns a list of all touch objects that are currently in contact with the surface
-      // touches[0] - Looks only at the first touch
-      // changedTouches - Returns a list of all touch objects whose state changed between the previous touch and this touch
-      let touch = event.touches[0] || event.changedTouches[0];
-      // touch.clientX - The horizontal coordinates of the touch
-      // touch.clientY - The vertical coordinates of the touch
-      // elementFromPoints - Returns the element that is located at the specified coordinates
-      let target = document.elementFromPoint(touch.clientX, touch.clientY);
-      // getBoundingClientRect - Returns the size of an element and its position relevant to the slider/target
+      let touch = event.touches[0];
+      let target = this.ratingSliderInput;
       event.offsetX = touch.clientX - target.getBoundingClientRect().x;
     }
     if (
-      // offsetX - Returns x-coordinate of mouse cursor, relative to target element
-      // offsetWidth - Width of div including padding and border
       event.offsetX > 0 &&
       event.offsetX < this.ratingSliderInput.offsetWidth
     ) {
