@@ -55,10 +55,10 @@ class RatingSlider {
     if (!this.ratingSliderForm) {
       return;
     }
-    setTimeout(() => {
-      this.setPositionThumb();
+    window.addEventListener("load", () => {
       this.setThumbStyle();
-    }, 1);
+      this.setPositionThumb();
+    });
 
     window.addEventListener("resize", () => this.setPositionThumb());
 
